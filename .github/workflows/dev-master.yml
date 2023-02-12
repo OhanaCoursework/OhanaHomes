@@ -38,3 +38,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "ohana-homes/build/*"
           target: "/var/www/kman.space/test-github-actions"
+          tar_tmp_path: "/home/github-action-deploy/tmp"
