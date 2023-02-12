@@ -34,7 +34,7 @@ jobs:
         username: ${{ secrets.USERNAME_STAGING }}
         port: ${{ secrets.PORT_STAGING }}
         key: ${{ secrets.SSH_KEY_STAGING }}
-        source: "ohana-homes/*"
+        source: "./ohana-homes/*"
         target: "/var/www/kman.space/test-github-actions"
 
     # clean build of frontend
