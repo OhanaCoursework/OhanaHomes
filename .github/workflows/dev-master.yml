@@ -28,7 +28,6 @@ jobs:
           cd ./ohana-homes
           npm install
           npm run build
-          ls -a
       - name: copy the files
         uses: appleboy/scp-action@master
         with:
