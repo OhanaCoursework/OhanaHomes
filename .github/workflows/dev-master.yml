@@ -37,4 +37,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
           source: "."
-          target: "/var/www/kman.space/test-github-actions"
+          target: "/home/github-actions-deploy"
