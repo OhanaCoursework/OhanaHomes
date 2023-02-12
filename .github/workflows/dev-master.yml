@@ -1,0 +1,51 @@
+# this is the name of our action.
+# this will be displayed in 'Actions' tab on your repo's github page when running.
+name: deploy staging
+
+# the trigger for the action.
+# we are interested only in pushes onto a 'dev' branch
+on:
+  push:
+    branches:
+      - main
+
+# jobs to be done.
+# each job has multiple steps.
+# jobs can depend on other jobs, but in out case it's very linear.
+jobs:
+  build:
+    # name of the job (you will see this in Actions view on Github)
+    name: build and deploy of staging
+    # part of specification what kind of remote machine should Action use to execute the jobs on
+    runs-on: ubuntu-22.04
+    # steps are what you see in logs in Actions
+    steps:
+    # we use an action that somebody previously made that allows to get the latest version of the code from the specific branch
+    - name: checkout 'main'
+      uses: actions/checkout@master
+      with:
+        ref: main
+
+    # we also use previously made action that enables us to copy fies from a remote machine that Action is using currently, to another machine, via SSH
+    - name: copy the files
+      uses: appleboy/scp-action@master
+      with:
+        host:  ${{ secrets.HOST_STAGING }}
+        username: ${{ secrets.USERNAME_STAGING }}
+        port: ${{ secrets.PORT_STAGING }}
+        key: ${{ secrets.SSH_KEY_STAGING }}
+        source: "ohana-homes/*"
+        target: "/var/www/kman.space/test-github-actions"
+
+    # clean build of frontend
+    - name: build clean frontend
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST_PRODUCTION }}
+        username: ${{ secrets.USERNAME_STAGING }}
+        port: ${{ secrets.PORT_STAGING }}
+        key: ${{ secrets.SSH_KEY_STAGING }}
+        script: |
+          cd /var/www/kman.space/test-github-actions
+          yarn
+          yarn build
