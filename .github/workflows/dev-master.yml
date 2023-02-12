@@ -46,6 +46,6 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd /var/www/kman.space/test-github-actions
+          cd /var/www/kman.space/test-github-actions/ohana-homes
           yarn
           yarn build
