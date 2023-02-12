@@ -37,4 +37,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
           source: "."
-          target: "/home/github-actions-deploy"
+          target: "test"
