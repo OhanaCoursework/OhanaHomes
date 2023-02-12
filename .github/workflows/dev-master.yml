@@ -40,4 +40,5 @@ jobs:
           target: "/var/www/kman.space/test-github-actions"
           tar_tmp_path: "/home/github-action-deploy/tmp"
           overwrite: true
+          # we can strip to 2 to get rid of build folder in output
           strip_components: 1
