@@ -38,5 +38,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: "./ohana-homes/build/*"
+          source: "ohana-homes/build/*"
           target: "/var/www/kman.space/test-github-actions"
