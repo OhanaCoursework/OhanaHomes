@@ -38,4 +38,3 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "."
           target: "/var/www/kman.space/test-github-actions"
-          scripts
