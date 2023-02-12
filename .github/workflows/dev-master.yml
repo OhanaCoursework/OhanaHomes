@@ -24,9 +24,12 @@ jobs:
           node-version: 16
           cache: 'npm'
           cache-dependency-path: ./ohana-homes/package-lock.json
-      - run: cd ./ohana-homes
-      - run: npm install
-      - run: npm run build
+      - run: |
+          cd ./ohana-homes
+          npm install
+      - run: |
+          cd ./ohana-homes
+          npm run build
       - name: copy the files
         uses: appleboy/scp-action@master
         with:
