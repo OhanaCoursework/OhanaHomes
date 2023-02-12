@@ -40,3 +40,4 @@ jobs:
           target: "/var/www/kman.space/test-github-actions"
           tar_tmp_path: "/home/github-action-deploy/tmp"
           overwrite: true
+          strip_components: 1
