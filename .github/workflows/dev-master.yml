@@ -48,6 +48,4 @@ jobs:
         script: |
           ls -a
           cd /var/www/kman.space/test-github-actions/ohana-homes
-          npm run build
-          yarn
-          yarn build
+          ls -a
