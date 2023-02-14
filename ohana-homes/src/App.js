@@ -17,6 +17,10 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          You lookin' skinnier, and sexier, by God. You look like a whole-ass snack, straight up bussin For real?
+On God, on a stack, no cap.
+        </p>
       </header>
     </div>
   );
