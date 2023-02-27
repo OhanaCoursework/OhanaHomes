@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -18,8 +18,7 @@ function App() {
           Learn React
         </a>
         <p>
-          You lookin' skinnier, and sexier, by God. You look like a whole-ass snack, straight up bussin For real?
-On God, on a stack, no cap.
+          yep, yep yep, yep yep yep
         </p>
       </header>
     </div>
