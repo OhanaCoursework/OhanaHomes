@@ -35,7 +35,6 @@
     "a11y-check": "npm-run-all -p start sitemap pa11y-ci:sitemap",
     "prepare": "husky install",
     "pa11y-ci": "pa11y-ci --config .pa11yci.json"
-
   },
   "eslintConfig": {
     "extends": [
