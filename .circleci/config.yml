@@ -1,28 +1,24 @@
 version: 2
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: cimg/node:18.14.2
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - checkout
-      - run: npm install
-      - run: npm run linter
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
 
-  test:
-    docker:
-      - image: cimg/node:18.14.2
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run unit-tests
-      - run: npm run ui-tests
-
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+    - run: npm ci
+    - run: npm run linter
+    - run: npm run unit-tests
+    - run: npm run ui-tests
 
