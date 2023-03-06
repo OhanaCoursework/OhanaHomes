@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = ({ props }) => {
+const Hero = () => {
   return (
     <section>
       <div color="black">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cards = ({ props }) => {
+const Cards = () => {
   return (
     <section>
       <div color="black">

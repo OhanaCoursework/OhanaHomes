@@ -1,6 +1,6 @@
 import React from "react";
 
-const Islands = ({ props }) => {
+const Islands = () => {
   return (
     <section>
       <div color="black">

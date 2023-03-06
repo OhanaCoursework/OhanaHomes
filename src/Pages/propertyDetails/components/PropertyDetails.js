@@ -1,6 +1,6 @@
 import React from "react";
 
-const PropertDetails = ({ props }) => {
+const PropertDetails = () => {
   return (
     <section>
       <div color="black">
