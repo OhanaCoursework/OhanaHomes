@@ -1,12 +1,22 @@
 const { assert } = require("chai");
-const { Builder } = require("selenium-webdriver");
 var fs = require("fs");
+const chrome = require("selenium-webdriver/chrome");
+const firefox = require("selenium-webdriver/firefox");
+const { Builder } = require("selenium-webdriver");
 
- 
+const screen = {
+  width: 640,
+  height: 480
+};
+
+let driver = new Builder()
+    .forBrowser("chrome")
+    .setChromeOptions(new chrome.Options().headless().windowSize(screen))
+    .setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
+    .build();
+
 async function example(){
-  
-       let driver = await new Builder().forBrowser("chrome").build();
- 
+
         await driver.get("http://google.com");
              
         var title = await driver.getTitle();
