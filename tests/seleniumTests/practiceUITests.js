@@ -8,6 +8,8 @@ let driver = new Builder()
     .setChromeOptions(new chrome.Options().headless())
     .build();
 
+driver.manage().timeouts().implicitlyWait(10000);
+
 async function example(){
 
         await driver.get("http://google.com");
@@ -23,8 +25,6 @@ async function example(){
  
         //It is always a safe practice to quit the browser after execution
         await driver.quit();
-
-
 }
 
 example();
