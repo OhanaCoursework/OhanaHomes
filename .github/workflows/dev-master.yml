@@ -23,9 +23,8 @@ jobs:
         with:
           node-version: 16
           cache: "npm"
-          cache-dependency-path: ../../package-lock.json
+          cache-dependency-path: ./package-lock.json
       - run: |
-          cd ../../
           npm install
           npm run build
       - name: copy the files
