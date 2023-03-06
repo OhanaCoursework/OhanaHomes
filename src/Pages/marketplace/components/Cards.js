@@ -5,6 +5,7 @@ const Cards = ({ props }) => {
     <section>
       <div color="black">
         <h1>Card Section of Marketplace Page</h1>
+        <p>wee tester p tag</p>
       </div>
     </section>
   );
