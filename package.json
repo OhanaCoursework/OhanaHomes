@@ -10,7 +10,7 @@
     "chai": "^4.3.7",
     "chrome": "^0.1.0",
     "chrome-launcher": "^0.15.1",
-    "chromedriver": "^110.0.0",
+    "chromedriver": "^94",
     "chromium": "^3.0.3",
     "http-server": "^14.1.1",
     "jest": "^27.5.1",
