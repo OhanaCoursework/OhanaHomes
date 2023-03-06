@@ -19,7 +19,7 @@ function App() {
         </a>
         <p>
           You lookin' skinnier, and sexier, by God. You look like a whole-ass snack, straight up bussin For real?
-On God, on a stack, no cap.
+On God, on a stack, no cap. Oh no or table its broken
         </p>
       </header>
     </div>
