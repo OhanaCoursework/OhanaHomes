@@ -2,18 +2,20 @@ const { assert } = require("chai");
 var fs = require("fs");
 const chrome = require("selenium-webdriver/chrome");
 const { Builder } = require("selenium-webdriver");
-const TIMEOUT = 30000000
+const TIMEOUT = 30000000;
 
 let driver = new Builder()
     .forBrowser("chrome")
     .setChromeOptions(new chrome.Options().headless())
     .build();
 
-await driver.manage().setTimeouts( { implicit: TIMEOUT, pageLoad: 
-  TIMEOUT, script: TIMEOUT } )
-  console.info( await driver.manage().getTimeouts() )
+
 
 async function example(){
+
+      await driver.manage().setTimeouts( { implicit: TIMEOUT, pageLoad: 
+        TIMEOUT, script: TIMEOUT } )
+        console.info( await driver.manage().getTimeouts() )
 
         await driver.get("http://google.com");
              
