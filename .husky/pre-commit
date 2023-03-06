@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+branchName=$(git rev-parse --abbrev-ref HEAD)
+result=$(echo "$branchName" | grep -E "^(HEAD|develop|master|main)|(release\/([0-9]+).([0-9]+).([0-9]+))|((feature|task|bug|hotfix|epic)\/((?i)oh)-[0-9.]+-([a-zA-Z0-9-])+)$" || [[ $? == 1 ]])
+
+if [ -z "$result" ]; then
+    echo "Branch name '$branchName' is invalid"
+    echo "Branch names must follow project guidelines as seen in the read me"
+    exit 1
+fi

@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Getting Started with Ohana Homes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `npm install`
+
+Installs the scripts needed to run the application
 
 ## Available Scripts
 
@@ -39,32 +41,26 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# Git Practices
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Branchs must be named in the following format
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<type>/<ticket-number>-<description>
 
-### Code Splitting
+Where type is one of `feature`,`task`,`bug`,`hotfix` or `epic`
+e.g `feature/oh-123-adding-facial-recognition`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Commit messages
 
-### Analyzing the Bundle Size
+Based on https://www.conventionalcommits.org/en/v1.0.0/#summary.
+### Commit message convention:
+<type>: <description>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Example types include:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`fix:` a commit of the type fix patches a bug in your codebase.
+`feat:` a commit of the type feat introduces a new feature to the codebase.
+types other than fix: and feat: are allowed, for example @commitlint/config-conventional (based on the the Angular convention) recommends build:, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, `test`, and others.
+e.g. `fix: correct minor typos in code`,
+`feat: allow provided config object to extend other configs`,
+`docs: correct spelling of CHANGELOG`
