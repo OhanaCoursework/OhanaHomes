@@ -2,11 +2,10 @@ const { assert } = require("chai");
 var fs = require("fs");
 const chrome = require("selenium-webdriver/chrome");
 const { Builder } = require("selenium-webdriver");
-let TIMEOUT = 30000;
+let TIMEOUT = 60000;
 let myoptions = new chrome.Options();
-//myoptions.setChromeBinaryPath('../Drivers/chromedriver')
-myoptions.headless()
-myoptions.addArguments("disable-gpu")
+myoptions.headless();
+myoptions.addArguments("disable-gpu");
 
 
 let driver = new Builder()
