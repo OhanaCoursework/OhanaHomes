@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: "ohana-homes/build/*"
+          source: "build/*"
           target: "/var/www/ohanahomes.space"
           tar_tmp_path: "/home/github-action-deploy/tmp"
           overwrite: true
