@@ -1,0 +1,56 @@
+.aboutUs {
+    background-color: #447399;
+    color: white;
+    border: 0cm;
+}
+
+ul > li {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    align-content: center;
+    font-size: 24pt;
+    position: relative;
+    left: 1.1cm;
+}
+
+p {
+    text-align: center;
+    font-weight: 100;
+    font-size: larger;
+    font-size: 24pt;
+    padding-left: 2cm;
+    padding-right: 2cm;
+}
+
+.horizontalList {
+    display: table;
+	margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48pt;
+    font-variation-settings: "wght" 800;
+    padding-top: 1cm;
+}
+
+.listWidgets {
+    font-size: 48pt;
+    color: #DFFFEE;
+
+}
+
+button {
+    background-color: #F0DDCE;
+    font-size: 20pt;
+    border-radius: 6px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    width: 150pt;
+    height: 40pt;
+    position: relative;
+    bottom: 0.5cm;
+    filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
+}
