@@ -1,0 +1,59 @@
+.titleBlock > img {
+    width: 100%;
+    height: auto;
+}
+
+.titleBlock {
+    position: relative;
+    border: none !important;
+}
+
+.titleBlock > h1 {
+    position: absolute;
+    bottom: 0.2cm;
+    left: 1cm;
+    font-family: "Lexend";
+    color: white;
+    font-size: 50pt;
+}
+
+.ourStoryBlock > h2 {
+    padding-top: 0.5cm;
+    font-size: 36pt;
+    text-align: center;
+}
+
+.ourStoryBlock > p {
+    padding-bottom: 1cm;
+}
+
+.ourStoryBlock {
+    background-color: #447399;
+    font-family: "Lexend";
+    color: white;
+}
+
+.ourOwnerTextBlock > p {
+    color: #447399;
+    text-align: left;
+    width: 50%;
+    float: left;
+}
+
+.ourOwnerTextBlock > h2 {
+    font-size: 36pt;
+    color: #447399;
+    text-align: left;
+    width: 50%;
+    float: left;
+    padding-left: 1.8cm;
+}
+
+.ourOwnerTextBlock {
+    font-family: "Lexend";
+}
+
+.ourOwnerPhoto {
+    width: 25%;
+    float: right;
+}
