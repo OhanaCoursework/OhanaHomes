@@ -10,9 +10,11 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-rules: {
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"],
-    "react/react-in-jsx-scope": "off",
-    "no-undef": "off"
-}
+rules:
+  semi: ["error", "always"]
+  quotes: ["error", "double"]
+  react/react-in-jsx-scope: "off"
+  no-undef: "off"
+  react/prop-types: "off"
+ignorePatterns:
+  - "build/"
