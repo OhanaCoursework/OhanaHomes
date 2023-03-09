@@ -4,7 +4,8 @@ import HomeApp from "./Pages/home/App";
 import MarketplaceApp from "./Pages/marketplace/App";
 import Islands from "./Pages/islands/components/Islands";
 import PropertyDetails from "./Pages/propertyDetails/components/PropertyDetails";
-import AboutUsPage from "./Pages/aboutUs/components/aboutUs";
+import AboutUsPage from "./Pages/aboutUs/App";
+
 
 function App() {
   return (

@@ -5,7 +5,7 @@ import Footer from "../../generalComponents/footer/Footer";
 import { aboutUsData } from "../../data/pages/aboutUs/data.js";
 import "@fontsource/lexend";
 
-function AboutUsPage() {
+function AboutUs() {
   return (
     <>
       <Navbar />
@@ -15,4 +15,4 @@ function AboutUsPage() {
   );
 }
 
-export default AboutUsPage;
+export default AboutUs;

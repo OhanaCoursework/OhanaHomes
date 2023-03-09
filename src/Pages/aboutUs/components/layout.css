@@ -4,6 +4,10 @@
 }
 
 .titleBlock {
+    margin-bottom: -2rem;
+}
+
+.titleBlock {
     position: relative;
     border: none !important;
 }
@@ -17,6 +21,11 @@
     font-size: 50pt;
 }
 
+/* .ourStoryBlock {
+    margin-top: -3rem;
+    margin-bottom: -2rem;
+  } */
+  
 .ourStoryBlock > h2 {
     padding-top: 0.5cm;
     font-size: 36pt;
