@@ -16,15 +16,9 @@
     position: absolute;
     bottom: 0.2cm;
     left: 1cm;
-    font-family: "Lexend";
     color: white;
     font-size: 50pt;
 }
-
-/* .ourStoryBlock {
-    margin-top: -3rem;
-    margin-bottom: -2rem;
-  } */
   
 .ourStoryBlock > h2 {
     padding-top: 0.5cm;
@@ -37,32 +31,41 @@
 }
 
 .ourStoryBlock {
-    background-color: #447399;
-    font-family: "Lexend";
-    color: white;
+    background-color: white;
+    color: #447399;
+    margin-top: -3rem;
+    margin-bottom: -2rem;
 }
 
 .ourOwnerTextBlock > p {
-    color: #447399;
+    background-color: #447399;
     text-align: left;
     width: 50%;
     float: left;
+    margin-top: -3rem;
+    margin-bottom: -2rem;
 }
 
 .ourOwnerTextBlock > h2 {
     font-size: 36pt;
-    color: #447399;
     text-align: left;
     width: 50%;
     float: left;
     padding-left: 1.8cm;
+    background-color: #447399;
+    padding-bottom: 1cm;
+    box-sizing: border-box;
 }
 
 .ourOwnerTextBlock {
-    font-family: "Lexend";
+    background-color: #447399;
+    color: white;
+    box-sizing: border-box;
 }
 
-.ourOwnerPhoto {
+.ourOwnerTextBlock > img {
+    background-color: #447399;
     width: 25%;
-    float: right;
+    padding-top: 2cm;
+    padding-bottom: 6cm;
 }

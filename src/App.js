@@ -5,7 +5,7 @@ import MarketplaceApp from "./Pages/marketplace/App";
 import Islands from "./Pages/islands/components/Islands";
 import PropertyDetails from "./Pages/propertyDetails/components/PropertyDetails";
 import AboutUsPage from "./Pages/aboutUs/App";
-
+import "@fontsource/lexend";
 
 function App() {
   return (
