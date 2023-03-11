@@ -45,7 +45,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Branchs must be named in the following format
 
-<type>/<ticket-number>-<description>
+`<type>/<ticket-number>-<description>`
 
 Where type is one of `feature`,`task`,`bug`,`hotfix` or `epic`
 e.g `feature/oh-123-adding-facial-recognition`
@@ -54,7 +54,7 @@ e.g `feature/oh-123-adding-facial-recognition`
 
 Based on https://www.conventionalcommits.org/en/v1.0.0/#summary.
 ### Commit message convention:
-<type>: <description>
+`<type>: <description>`
 
 Example types include:
 
