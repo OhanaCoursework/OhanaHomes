@@ -6,9 +6,9 @@ module.exports = {
       ],
     },
     resolve: {
-      extensions: ['.js'],
+      extensions: [".js"],
       // add the following line:
-      mainFields: ['main', 'module', 'browser'],
+      mainFields: ["main", "module", "browser"],
     },
     // ...
   };

@@ -12,7 +12,7 @@ plugins:
   - react
 rules:
   semi: ["error", "always"]
-  quotes: ["error", "double"]
+  quotes: "off"
   react/react-in-jsx-scope: "off"
   no-undef: "off"
   react/prop-types: "off"
