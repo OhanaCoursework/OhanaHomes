@@ -13,7 +13,5 @@ export const aboutUsData = {
     paragraph5: "Oh, uh, hey you, get your damn hands off her. Do you really think I oughta swear? Of course not, Biff, now I wouldn't want that to happen. Now, uh, I'll finish those reports up tonight, and I'll run em them on over first thing tomorrow, alright? What? I'm writing this down, this is good stuff. This sounds pretty heavy.",
     altTagTitleImage: "Image of Hawaiian Holiday Home", 
     altTagOwnerImage: "A photo of our Owner"
-
-
 };
 

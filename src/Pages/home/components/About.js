@@ -16,7 +16,7 @@ const About = () => {
           <li><span className="listWidgets">204</span><br></br>Total Years of Experience</li>
         </ul> 
       </div>
-        <Link to="/aboutUs"><button type="button">About Us</button></Link>
+        <Link id="linkToAboutUs" to="/aboutUs"><button type="button">About Us</button></Link>
       </div>
     </section>
   );

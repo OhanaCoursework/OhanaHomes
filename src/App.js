@@ -1,11 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HomeApp from "./Pages/home/App";
-import MarketplaceApp from "./Pages/marketplace/App";
-import Islands from "./Pages/islands/components/Islands";
-import PropertyDetails from "./Pages/propertyDetails/components/PropertyDetails";
-import AboutUsPage from "./Pages/aboutUs/App";
-import "@fontsource/lexend";
+import HomeApp from "./Pages/home/App.js";
+import MarketplaceApp from "./Pages/marketplace/App.js";
+import Islands from "./Pages/islands/components/Islands.js";
+import PropertyDetails from "./Pages/propertyDetails/components/PropertyDetails.js";
+import AboutUsPage from "./Pages/aboutUs/App.js";
 
 function App() {
   return (
