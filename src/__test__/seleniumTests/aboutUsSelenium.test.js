@@ -1,6 +1,7 @@
 const assert = require("assert");
 const { Builder, By } = require("selenium-webdriver");
-import "@testing-library/jest-dom";
+require("@testing-library/jest-dom");
+const chrome = require('selenium-webdriver/chrome');
 
 describe("Selenium Tests for About Us Page", function () {
   let driver;
@@ -8,6 +9,7 @@ describe("Selenium Tests for About Us Page", function () {
   beforeEach(async function () {
     driver = await new Builder()
       .forBrowser("chrome")
+      .setChromeOptions(new chrome.Options().headless())
       .build();
   });
 

@@ -32,6 +32,4 @@ describe("Should Render All Components on About us Page", () => {
     expect(screen.queryByTestId("paragraph4")).toBeDefined();
     expect(screen.queryByTestId("paragraph5")).toBeDefined();
   });
-  it("should render the heading Image", () => {
-  });
 });
