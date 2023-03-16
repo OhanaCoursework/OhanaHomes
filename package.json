@@ -36,9 +36,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest src/__test__",
     "eject": "react-scripts eject",
-    "unit-tests": "mocha src/tests/unitTests",
+    "unit-tests": "mocha src/__test__/unitTests",
     "linter": "npx eslint .",
     "ui-tests": "jest test __test__/seleniumTests",
     "sitemap": "http-server src/assets/nuts-n-bolts_sitemap.xml",
