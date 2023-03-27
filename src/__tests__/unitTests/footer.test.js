@@ -43,18 +43,18 @@ describe("Footer component", () => {
   });
 
   it("renders a Facebook icon", () => {
-    expect(wrapper.find('img[src="' + facebookIcon + '"]').length).toEqual(1);
+    expect(wrapper.find("img[src=\"" + facebookIcon + "\"]").length).toEqual(1);
   });
 
   it("renders a Twitter icon", () => {
-    expect(wrapper.find('img[src="' + twitterIcon + '"]').length).toEqual(1);
+    expect(wrapper.find("img[src=\"" + twitterIcon + "\"]").length).toEqual(1);
   });
 
   it("renders an Instagram icon", () => {
-    expect(wrapper.find('img[src="' + instagramIcon + '"]').length).toEqual(1);
+    expect(wrapper.find("img[src=\"" + instagramIcon + "\"]").length).toEqual(1);
   });
 
   it("renders a website logo", () => {
-    expect(wrapper.find('img[src="' + websiteLogo + '"]').length).toEqual(1);
+    expect(wrapper.find("img[src=\"" + websiteLogo + "\"]").length).toEqual(1);
   });
 });
