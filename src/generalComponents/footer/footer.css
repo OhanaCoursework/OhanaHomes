@@ -1,0 +1,255 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  font-family: Lexend;
+}
+
+/* Component styles */
+.Container {
+  padding: 2rem;
+  background: #f0ddce;
+  height: 18rem;
+  position: fixed; /* Fixes the position of the footer at the bottom of the page */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: auto;
+}
+
+/* Three main columns for the footer content */
+.Column1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 18rem;
+  margin-bottom: 2rem;
+  width: 50%;
+  margin-left: 2.5rem;
+}
+
+.Column2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 18rem;
+  margin-bottom: 2rem;
+}
+
+.Column3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 18rem;
+}
+
+/* Fourth column used for the logo */
+.Column4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Row used to display content in columns */
+.Row {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 100px;
+}
+
+/* Vertical line used to separate the columns */
+.line {
+  border-left: 2px solid rgb(0, 0, 0);
+  height: 16.5rem;
+  align-items: left;
+  margin-top: 2rem;
+  position: absolute;
+  display: flex;
+}
+
+/* Second vertical line used to separate the columns */
+.line2 {
+  border-left: 2px solid rgb(0, 0, 0);
+  height: 16.5rem;
+  align-items: right;
+  margin-top: 2rem;
+  position: absolute;
+  display: flex;
+}
+
+/* Styles for headings */
+h1 {
+  font-weight: 400;
+  text-align: left;
+  font-size: 42px;
+  color: #000000;
+}
+
+/* Styles for paragraphs */
+p {
+  font-weight: 300;
+  font-size: 26px;
+  text-align: left;
+  color: #000000;
+  margin-top: -1.5rem;
+}
+
+/* Additional styles for specific paragraphs */
+.p1 {
+  color: #000000;
+}
+
+.p2 {
+  color: #000000;
+}
+
+/* Styles for links */
+.Link {
+  color: #000000;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  justify-content: center;
+  text-align: left;
+  margin-top: 2rem;
+  display: block;
+  margin-left: 2rem;
+}
+
+/* Styles for links on hover */
+.Link:hover {
+  color: #ff9c00;
+  transition: 200ms ease-in;
+}
+
+/* Styles for titles */
+.Title {
+  font-size: 24px;
+  color: #0c0c0c;
+  font-weight: bold;
+}
+
+/* Styles for icons */
+.icons {
+  width: 80px;
+  height: 45px;
+  margin-left: 1rem;
+  margin-top: 40px;
+  display: block;
+}
+
+.icons:hover {
+  color: #ff9c00;
+  transition: 200ms ease-in;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide Column4 when screen size is less than or equal to 1315px */
+@media (max-width: 1315px) {
+  .Column4 {
+    display: none;
+  }
+}
+
+/* Styles for responsive design on screen size less than or equal to 768px */
+@media (max-width: 768px) {
+  .Container {
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Column1,
+  .Column2,
+  .Column3 {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: -2.5rem;
+  }
+  .line {
+    border-top: 2px solid rgb(0, 0, 0);
+    border-left: none;
+    width: 100%;
+    height: 2px;
+    margin-top: 2rem;
+    margin-left: 0;
+    position: static;
+  }
+  .line2 {
+    border-top: 2px solid rgb(0, 0, 0);
+    border-left: none;
+    width: 100%;
+    height: 2px;
+    margin-top: 2rem;
+    margin-left: 0;
+    position: static;
+  }
+  .Link {
+    margin-left: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Column3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .icons {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: -0.5rem;
+    margin-bottom: -1.5rem;
+  }
+  .Row {
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 0px;
+  }
+  h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  p {
+    font-size: 22px;
+    text-align: center;
+  }
+  .Title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Styles for responsive design on screen size less than or equal to 480px */
+@media (max-width: 480px) {
+  .Link {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
