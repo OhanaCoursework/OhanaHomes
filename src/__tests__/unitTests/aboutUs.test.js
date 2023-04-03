@@ -2,7 +2,6 @@ import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import AboutUs from "../../Pages/aboutUs/components/aboutUs";
-import '@testing-library/react';
 
 
 configure({ adapter: new Adapter() });
