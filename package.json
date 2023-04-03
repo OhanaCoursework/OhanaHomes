@@ -34,7 +34,7 @@
     "eject": "react-scripts eject",
     "unit-tests": "cd src/__tests__/unitTests && npm test *",
     "linter": "npx eslint .",
-    "ui-tests": "node src/__tests__/seleniumTests/practiceUITests.js",
+    "ui-tests": "node src/__tests__/seleniumTests/aboutUsSelenium.test.js",
     "sitemap": "http-server src/assets/nuts-n-bolts_sitemap.xml",
     "pa11y-ci:sitemap": "wait-on http-get://localhost:4200 && wait-on http-get://localhost:8080 && pa11y-ci --sitemap http://localhost:8080",
     "a11y-check": "npm-run-all -p start sitemap pa11y-ci:sitemap",
