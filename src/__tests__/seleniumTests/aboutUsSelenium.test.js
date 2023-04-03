@@ -9,7 +9,7 @@ describe("Selenium Tests for About Us Page", function () {
   beforeEach(async function () {
     driver = await new Builder()
       .forBrowser("chrome")
-      .setChromeOptions(new chrome.Options().headless())
+      .setChromeOptions(new chrome.Options().headless().addArguments("disable-gpu"))
       .build();
   });
 
