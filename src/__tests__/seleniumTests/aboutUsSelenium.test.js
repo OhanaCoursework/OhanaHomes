@@ -1,22 +1,18 @@
-const assert = require("assert");
+const { assert } = require("chai");
+var fs = require("fs");
+const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
-const chrome = require('selenium-webdriver/chrome');
+let myoptions = new chrome.Options();
+myoptions.headless();
+myoptions.addArguments("disable-gpu");
 
 describe("Selenium Tests for About Us Page", function () {
-  let driver;
-
-  beforeEach(async function () {
-    driver = await new Builder()
-      .forBrowser("chrome")
-      .setChromeOptions(new chrome.Options().headless().addArguments("disable-gpu"))
-      .build();
-  });
-
-  afterEach(async function () {
-    await driver.quit();
-  });
-
   it("Should be able to navigate to the About us Page from the Hero Section", async function () {
+    let driver = await new Builder()
+    .forBrowser("chrome")
+    .setChromeOptions(myoptions)
+    .build();
+
     // Navigate to the home page
     await driver.get("http://localhost:3000/");
 
@@ -24,5 +20,18 @@ describe("Selenium Tests for About Us Page", function () {
 
     const pageTitle = await driver.findElement(By.xpath("//h1[@id='PageHeading']")).getText();
     assert.strictEqual(pageTitle, "About Us");
+
+
+    var htmlSource = await driver.getPageSource();
+    fs.appendFile(
+      "src/assets/snapshots/AboutUs-snapshot.html",
+      htmlSource,
+      function (err) {
+        if (err) throw err;
+        console.log("Saved!");
+      }
+    );
+
+    await driver.quit();
   });
 });
