@@ -1,6 +1,5 @@
 const assert = require("assert");
 const { Builder, By } = require("selenium-webdriver");
-require("@testing-library/jest-dom");
 const chrome = require('selenium-webdriver/chrome');
 
 describe("Selenium Tests for About Us Page", function () {
