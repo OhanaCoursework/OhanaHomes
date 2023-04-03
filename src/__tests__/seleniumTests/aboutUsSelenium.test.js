@@ -5,6 +5,7 @@ const { Builder, By } = require("selenium-webdriver");
 let myoptions = new chrome.Options();
 myoptions.headless();
 myoptions.addArguments("disable-gpu");
+let TIMEOUT = 60000;
 
 describe("Selenium Tests for About Us Page", function () {
   it("Should be able to navigate to the About us Page from the Hero Section", async function () {
@@ -12,6 +13,11 @@ describe("Selenium Tests for About Us Page", function () {
     .forBrowser("chrome")
     .setChromeOptions(myoptions)
     .build();
+
+    await driver
+      .manage()
+      .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+    console.info(await driver.manage().getTimeouts());
 
     // Navigate to the home page
     await driver.get("http://localhost:3000/");
