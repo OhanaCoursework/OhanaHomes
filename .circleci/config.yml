@@ -1,20 +1,10 @@
 version: 2
 jobs:
-  build:
+  build_test:
     docker:
       # specify the version you desire here
       - image: cimg/node:18.14.2
 
-    steps:
-      - checkout
-      - run: npm install --legacy-peer-deps
-      - run: npm run linter
-      - run: npm run build --if-present
-
-
-  test:
-    docker:
-      - image: cimg/node:18.14.2
     steps:
       - checkout
       - run: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -23,6 +13,7 @@ jobs:
       - run: sudo apt-get install -y google-chrome-stable
       - run: google-chrome --version
       - run: npm install --legacy-peer-deps
+      - run: npm run linter
       - run: npm run build --if-present
       - run: npm run unit-tests
       - run: npm run ui-tests -- --headless --no-sandbox
@@ -31,5 +22,4 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
-      - test
+      - build_test
