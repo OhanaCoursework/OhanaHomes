@@ -10,7 +10,7 @@ jobs:
       - run: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
       - run: echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
       - run: sudo apt-get update
-      - run: sudo apt-get install -y google-chrome-stable
+      - run: sudo apt-get install -y google-chrome-stable=110.0.5481.77
       - run: google-chrome --version
       - run: npm install --legacy-peer-deps
       - run: npm run linter
