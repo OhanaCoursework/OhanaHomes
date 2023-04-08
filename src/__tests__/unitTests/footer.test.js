@@ -5,7 +5,7 @@ import Footer from "../../generalComponents/footer/Footer.js";
 import facebookIcon from "../../assets/images/icons/facebookIcon.svg";
 import instagramIcon from "../../assets/images/icons/instagramIcon.svg";
 import twitterIcon from "../../assets/images/icons/twitterIcon.svg";
-import websiteLogo from "../../assets/images/logo/ohanaHomesLogo.svg";
+import websiteLogo from "../../assets/images/logo/footerLogo.svg";
 
 configure({ adapter: new Adapter() });
 
@@ -26,16 +26,16 @@ describe("Footer component", () => {
 
   it("renders a p element with the address", () => {
     expect(wrapper.find(".Column1").find("p").at(0).text()).toEqual(
-      "An Address 123 address street, Hawaii 90210"
+      "2121 North Nimitz Highway, Honolulu, HI 96819, United States"
     );
   });
 
   it("renders a p element with the email", () => {
-    expect(wrapper.find(".p1").text()).toEqual("testemail@email.com");
+    expect(wrapper.find(".Column1").find("p").at(1).text()).toEqual("testemail@email.com");
   });
 
   it("renders a p element with the phone number", () => {
-    expect(wrapper.find(".p2").text()).toEqual("(+1) 930 231 1231");
+    expect(wrapper.find(".Column1").find("p").at(2).text()).toEqual("(+1) 930-231-1231");
   });
 
   it("renders 4 Link elements", () => {

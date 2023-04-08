@@ -4,7 +4,7 @@ import "./footer.css";
 import facebookIcon from "../../assets/images/icons/facebookIcon.svg";
 import instagramIcon from "../../assets/images/icons/instagramIcon.svg";
 import twitterIcon from "../../assets/images/icons/twitterIcon.svg";
-import websiteLogo from "../../assets/images/logo/ohanaHomesLogo.svg";
+import websiteLogo from "../../assets/images/logo/footerLogo.svg";
 
 const Footer = () => {
   return (
@@ -13,16 +13,16 @@ const Footer = () => {
         <div className="Column1">
           <h1>Contact Us</h1>
           <p>
-            An Address 123 address street,
-            <br /> Hawaii 90210
+            2121 North Nimitz Highway,
+            <br /> Honolulu, HI 96819,
+            <br /> United States
           </p>
           <br />
-          <p className="p1">testemail@email.com</p>
+          <p>testemail@email.com</p>
           <br />
-          <p className="p2">(+1) 930 231 1231</p>
+          <p className="LastParagraph">(+1) 930-231-1231</p>
         </div>
-        <div className="Column2">
-          <div className="line" />
+        <div className="Column2 line">
           <a href="home" className="Link">
             Home
           </a>
@@ -36,8 +36,7 @@ const Footer = () => {
             Help
           </a>
         </div>
-        <div className="Column3">
-          <div className="line2" />
+        <div className="Column3 line">
           <a href="http://www.facebook.com">
             <img className="icons" src={facebookIcon} />
           </a>
