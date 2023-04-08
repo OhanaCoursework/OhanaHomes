@@ -31,7 +31,7 @@ describe("Footer component", () => {
   });
 
   it("renders a p element with the email", () => {
-    expect(wrapper.find(".Column1").find("p").at(1).text()).toEqual("testemail@email.com");
+    expect(wrapper.find(".Column1").find("p").at(1).text()).toEqual("ohanahomes@gmail.com");
   });
 
   it("renders a p element with the phone number", () => {

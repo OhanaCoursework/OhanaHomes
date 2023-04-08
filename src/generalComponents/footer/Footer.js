@@ -18,7 +18,7 @@ const Footer = () => {
             <br /> United States
           </p>
           <br />
-          <p>testemail@email.com</p>
+          <p>ohanahomes@gmail.com</p>
           <br />
           <p className="LastParagraph">(+1) 930-231-1231</p>
         </div>
