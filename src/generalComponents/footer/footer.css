@@ -18,7 +18,7 @@
 .Row {
   display: flex;
   height: 16rem;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center; 
 }
 
@@ -42,16 +42,15 @@
 .Column2 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 14rem;
 }
 
 .Column3 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 14rem;
-  padding: 10px 0px;
 }
 
 /* Fourth column used for the logo */
@@ -150,6 +149,7 @@ p {
 
   .Column3 {
     flex-direction: row;
+    padding: 10px 0px;
   }
   .icons {
     margin-left: 0rem;
