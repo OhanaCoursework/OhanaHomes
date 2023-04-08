@@ -10,7 +10,7 @@
     "chai": "^4.3.7",
     "chrome": "^0.1.0",
     "chrome-launcher": "^0.15.1",
-    "chromedriver": "110.0.0",
+    "chromedriver": "112.0.0",
     "chromium": "^3.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.7",
