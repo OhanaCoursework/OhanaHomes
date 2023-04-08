@@ -1,8 +1,9 @@
 import React from "react";
-import pathToLogo from "../../assets/images/navbarLogo.svg";
+import largeNavBarLogo from "../../assets/images/navbarLogo.svg";
+import smallNavBarLogo from "../../assets/images/logo/smallNavBarLogo.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "./layout.css";
+import "./navbar.css";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -12,7 +13,10 @@ const Navbar = () => {
     <nav className="navigation">
       <div className="brandLogoDiv">
         <Link to="/">
-          <img className="brandLogo" src = {pathToLogo} alt="Ohana homes logo"/>
+          <img className="largeBrandLogo" src = {largeNavBarLogo} alt="Ohana homes logo"/>
+        </Link>
+        <Link to="/">
+          <img className="smallBrandLogo" src = {smallNavBarLogo} alt="Ohana homes logo"/>
         </Link>
       </div>
       <div className={
@@ -65,7 +69,7 @@ const Navbar = () => {
       <div className={
           isNavExpanded ? "accountMenu expanded" : "accountMenu"
         }>
-        <button className="navBtn signUpBtn">Sign Up</button>
+        <button className="navBtn">Sign Up</button>
         <button className="loginBtn">Log in</button>
       </div>
       <button className="hamburger"
