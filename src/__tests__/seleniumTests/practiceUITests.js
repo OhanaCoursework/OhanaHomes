@@ -4,7 +4,7 @@ const chrome = require("selenium-webdriver/chrome");
 const { By, Builder } = require("selenium-webdriver");
 let TIMEOUT = 60000;
 let myoptions = new chrome.Options();
-myoptions.addArguments("--window-size=2560,1440")
+myoptions.addArguments("--window-size=2560,1440");
 myoptions.headless();
 myoptions.addArguments("disable-gpu");
 
