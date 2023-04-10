@@ -22,7 +22,7 @@ jobs:
       - run: google-chrome --version
       - run: npm install --legacy-peer-deps
       - run: npm run unit-tests
-      - run: npm run ui-tests -- --headless --no-sandbox
+      - run: nohup npm start && npm run ui-tests -- --headless --no-sandbox
 
 workflows:
   version: 2

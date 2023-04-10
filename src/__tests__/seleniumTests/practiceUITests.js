@@ -1,9 +1,10 @@
 const { assert } = require("chai");
 var fs = require("fs");
 const chrome = require("selenium-webdriver/chrome");
-const { Builder } = require("selenium-webdriver");
+const { By, Builder } = require("selenium-webdriver");
 let TIMEOUT = 60000;
 let myoptions = new chrome.Options();
+myoptions.addArguments("--window-size=2560,1440");
 myoptions.headless();
 myoptions.addArguments("disable-gpu");
 
@@ -18,10 +19,11 @@ async function example() {
     .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
   console.info(await driver.manage().getTimeouts());
 
-  await driver.get("http://google.com");
+  await driver.get("http://localhost:3000/");
 
-  var title = await driver.getTitle();
-  assert.strictEqual(title, "Google");
+  let logInButton = await driver.findElement(By.className("loginBtn"));
+
+  assert.isTrue(await logInButton.isDisplayed());
 
   var htmlSource = await driver.getPageSource();
   fs.appendFile(
