@@ -2,7 +2,7 @@
   "name": "ui-tests",
   "version": "0.1.0",
   "description": "Packages for ui tests",
-  "main": "practiceUI.test.js",
+  "main": "HomePage.test.js",
   "scripts": {
     "test": "jest"
   },

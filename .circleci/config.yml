@@ -23,7 +23,7 @@ jobs:
       - run: npm install --legacy-peer-deps
       - run: npm run unit-tests
       - run: cd src/__tests__/ui-tests && npm install
-      - run: npm test -- --no-sandbox
+      - run: npm test
 
 workflows:
   version: 2
