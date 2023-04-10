@@ -24,8 +24,8 @@ jobs:
       - run: npm run unit-tests
       - run: cd src/__tests__/ui-tests && npm install
       - run: |
-            npm start &
-            npx wait-on http://127.0.0.1:3000 && npm run test
+          npm start &
+          npx wait-on http://127.0.0.1:3000 && npm run ui-tests
 
 workflows:
   version: 2
