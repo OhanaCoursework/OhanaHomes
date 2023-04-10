@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - checkout
-      - run: npm install
+      - run: npm install --legacy-peer-deps
       - run: npm run linter
 
   test:
@@ -20,9 +20,11 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install -y google-chrome-stable
       - run: google-chrome --version
-      - run: npm install
+      - run: npm install --legacy-peer-deps
       - run: npm run unit-tests
-      - run: npm run ui-tests -- --headless --no-sandbox
+      - run: |
+            npm start &
+            npx wait-on http://127.0.0.1:3000 && npm run ui-tests -- --headless --no-sandbox
 
 workflows:
   version: 2
