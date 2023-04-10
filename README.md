@@ -1,6 +1,6 @@
 # Getting Started with Ohana Homes
 
-### `npm install`
+### `npm install --legacy-peer-deps`
 
 Installs the scripts needed to run the application
 
