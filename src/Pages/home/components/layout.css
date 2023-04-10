@@ -4,53 +4,91 @@
     border: 0cm;
 }
 
-ul > li {
-    display: inline-block;
+li {
     text-align: center;
-    padding: 20px;
+    padding: 0px 0px 16px 0px;
     align-content: center;
-    font-size: 24pt;
+    font-size: 24px;
     position: relative;
-    left: 1.1cm;
+    text-decoration: none;
+    width: 100%;
+}
+
+ul {
+    padding-inline-start: 0px;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
 }
 
 p {
     text-align: center;
     font-weight: 100;
     font-size: larger;
-    font-size: 24pt;
+    font-size: 24px;
     padding-left: 2cm;
     padding-right: 2cm;
 }
 
 .horizontalList {
-    display: table;
-	margin: 0 auto;
+    box-sizing: border-box;
+	margin: 0px;
 }
 
 h1 {
     text-align: center;
-    font-size: 48pt;
+    font-size: 48px;
     font-variation-settings: "wght" 800;
     padding-top: 1cm;
 }
 
 .listWidgets {
-    font-size: 48pt;
+    font-size: 48px;
     color: #DFFFEE;
 
 }
 
 button {
     background-color: #F0DDCE;
-    font-size: 20pt;
+    font-size: 20px;
     border-radius: 6px;
     border: none;
-    margin: 0 auto;
+    margin: 0px auto;
     display: block;
-    width: 150pt;
-    height: 40pt;
+    width: 172px;
+    height: 51px;
     position: relative;
-    bottom: 0.5cm;
     filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
 }
+
+#linkToAboutUs {
+    padding: 0px 0px 16px 0px;
+    display: flex;
+}
+
+@media (max-width: 800px) { 
+    ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+      font-size: 18px;
+      width: 155px;
+      height: 46px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+    .listWidgets {
+        font-size: 38px;
+    }
+
+    li {
+        font-size: 20px;
+    }
+  }
