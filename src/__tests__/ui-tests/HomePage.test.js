@@ -2,7 +2,7 @@ const { assert } = require("chai");
 const fs = require("fs");
 const path = require("path");
 const chrome = require("selenium-webdriver/chrome");
-const { Builder, By, Key, until } = require("selenium-webdriver");
+const { Builder, By, until } = require("selenium-webdriver");
 
 const myoptions = new chrome.Options();
 myoptions.addArguments("disable-gpu");
