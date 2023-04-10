@@ -1,0 +1,14 @@
+{
+  "name": "ui-tests",
+  "version": "0.1.0",
+  "description": "Packages for ui tests",
+  "main": "practiceUI.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Dec",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}

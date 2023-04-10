@@ -16,4 +16,4 @@ jobs:
       - run: npm install --legacy-peer-deps
       - run: npm run build --if-present
       - run: |
-            npm run pa11y-ci src/assets/snapshots/google-snapshot.html
+            npm run pa11y-ci src/assets/snapshots/HomePage-snapshot.html
