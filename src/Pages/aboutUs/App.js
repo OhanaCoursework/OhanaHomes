@@ -1,18 +1,17 @@
 import React from "react";
-import Hero from "./components/Hero.js";
-import About from "./components/About.js";
+import About from "./components/aboutUs.js";
 import Navbar from "../../generalComponents/navbar/Navbar.js";
 import Footer from "../../generalComponents/footer/Footer.js";
+import { aboutUsData } from "../../data/pages/aboutUs/data.js";
 
-function HomeApp() {
+function AboutUsPage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
+      <About {...aboutUsData}/>
       <Footer />
     </>
   );
 }
 
-export default HomeApp;
+export default AboutUsPage;

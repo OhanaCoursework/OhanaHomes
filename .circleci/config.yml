@@ -23,7 +23,9 @@ jobs:
       - run: npm install --legacy-peer-deps
       - run: npm run unit-tests
       - run: cd src/__tests__/ui-tests && npm install
-      - run: npm test
+      - run: |
+            npm start &
+            npx wait-on http://127.0.0.1:3000 && npm run test
 
 workflows:
   version: 2
