@@ -1,3 +1,9 @@
 * {
     font-family: "Lexend";
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    margin: 0px;
 }

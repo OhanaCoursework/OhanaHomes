@@ -1,6 +1,5 @@
 import React from "react";
 import "./layout.css";
-import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -16,7 +15,7 @@ const About = () => {
           <li><span className="listWidgets">204</span><br></br>Total Years of Experience</li>
         </ul> 
       </div>
-        <Link id="linkToAboutUs" to="/aboutUs"><button type="button">About Us</button></Link>
+      <a id="linkToAboutUs" href="/aboutUs"><button type="button">About Us</button></a>
       </div>
     </section>
   );

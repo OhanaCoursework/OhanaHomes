@@ -54,3 +54,11 @@ button {
     bottom: 0.5cm;
     filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
 }
+
+button:hover {
+    background-color: #eeee;
+}
+
+a {
+    text-decoration: none;
+}
