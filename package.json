@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "unit-tests": "cd src/__tests__/unitTests && npm test *",
+    "unit-tests": "npm test src/__tests__/unitTests",
     "linter": "npx eslint .",
     "ui-tests": "cd src/__tests__/ui-tests/ && npm test *",
     "sitemap": "http-server src/assets/nuts-n-bolts_sitemap.xml",
