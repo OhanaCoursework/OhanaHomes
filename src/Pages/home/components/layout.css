@@ -26,8 +26,7 @@ p {
     font-weight: 100;
     font-size: larger;
     font-size: 24px;
-    padding-left: 2cm;
-    padding-right: 2cm;
+    padding: 0px 7%;
 }
 
 .horizontalList {
@@ -59,6 +58,10 @@ button {
     height: 51px;
     position: relative;
     filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
+}
+
+button:hover {
+    background-color: #eeee;
 }
 
 #linkToAboutUs {
