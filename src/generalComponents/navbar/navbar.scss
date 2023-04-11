@@ -9,8 +9,8 @@
     color: black;
     font-family: "Lexend";
     font-size: 20px;
-  }
-  
+    z-index:1;
+
   .navigationMenu {
     width: 40%;
     height: 100%;
@@ -166,10 +166,6 @@
     text-decoration: none;
     
   }
-  
-  body {
-    margin: 0;
-  }
 
   .chevron::before {
 	border-style: solid;
@@ -223,10 +219,18 @@
 
   @media screen and (max-width: 800px) {
 
+    .dropdown {
+      background-color: #f1f1f1;
+    }
+
     .mobile {
         display: block;
-        width: 50% !important;
         box-sizing: border-box;
+    }
+
+    .mobile .navBarLink {
+      width: 50%;
+      display: inline-block;
     }
 
     .chevron.expanded:before {
@@ -260,7 +264,6 @@
         left: 0;
         flex-direction: column;
         width: 100%;
-        height: calc(100vh - 77px);
         background-color: white;
         border-top: 1px solid black;
       }
@@ -271,7 +274,6 @@
 
       .navBarLink {
         color: black;
-        width: 100%;
         padding: 10px;
       }
 
@@ -290,9 +292,7 @@
       .navigationMenu {
         width: 100%;
       }
-      .navigation {
-        display: block;
-      }
+
       .navBtn {
         width: 100%;
         padding: 10px;
@@ -323,3 +323,10 @@
         padding-right: 10px !important;
       }
   }
+}
+
+@media screen and (max-width: 800px) {
+  .navigation {
+    display: block;
+  }
+}

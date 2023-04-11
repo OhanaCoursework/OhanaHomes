@@ -3,7 +3,7 @@ import largeNavBarLogo from "../../assets/images/navbarLogo.svg";
 import smallNavBarLogo from "../../assets/images/logo/smallNavBarLogo.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "./navbar.css";
+import "./navbar.scss";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -60,8 +60,6 @@ const Navbar = () => {
           </li>
           <li className="mobile">
             <a className="navBarLink" href="/marketplace">Sign Up</a>
-          </li>
-          <li className="mobile">
             <a className="navBarLink" href="/marketplace">Log in</a>
           </li>
         </ul>
