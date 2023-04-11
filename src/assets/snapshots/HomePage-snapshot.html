@@ -1,0 +1,219 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <title>Ohana Homes</title>
+  <script defer="" src="/static/js/bundle.js"></script><style>/* Global styles */
+* {
+  box-sizing: border-box;
+  font-family: Lexend;
+}
+
+/* Component styles */
+.Container {
+  padding: 1rem 2rem;
+  background: #f0ddce;
+  position: absolute; /* Fixes the position of the footer at the bottom of the page */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Row used to display content in columns */
+.Row {
+  display: flex;
+  height: 16rem;
+  justify-content: space-around;
+  align-items: center; 
+}
+
+/* Three main columns for the footer content */
+.Column1 {
+  display: flex;
+  flex-direction: column;
+  width: 287px;
+  padding: 20px 0px;
+}
+
+.Column1 h1{
+  margin-top: 0px
+}
+
+/* last p tag in column1 has no bottom margin*/
+.LastParagraph{
+  margin-bottom: 0px;
+}
+
+.Column2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 14rem;
+}
+
+.Column3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 14rem;
+}
+
+/* Fourth column used for the logo */
+.Column4 {
+  width: 380px;
+}
+
+/* Vertical line used to separate the columns */
+.line {
+  border-left: 2px solid rgb(0, 0, 0);
+}
+
+/* Styles for headings */
+h1 {
+  font-weight: 400;
+  text-align: left;
+  font-size: 40px;
+  color: #000000;
+}
+
+/* Styles for paragraphs */
+p {
+  font-weight: 300;
+  font-size: 20px;
+  color: #000000;
+  margin-top: -1.5rem;
+}
+
+/* Styles for links */
+.Link {
+  color: #000000;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+/* Styles for links on hover */
+.Link:hover {
+  color: #ff9c00;
+  transition: 200ms ease-in;
+}
+
+/* Styles for icons */
+.icons {
+  width: 80px;
+  height: 45px;
+  margin-left: 1rem;
+  display: block;
+}
+
+.icons:hover {
+  color: #ff9c00;
+  transition: 200ms ease-in;
+}
+
+.logo {
+  display: block;
+}
+
+/* Hide Column4 when screen size is less than or equal to 1060px */
+@media (max-width: 1060px) {
+  .Column4 {
+    display: none;
+  }
+}
+
+/* Styles for responsive design on screen size less than or equal to 800px */
+@media (max-width: 800px) {
+  .Container {
+    padding: 0rem 1rem 1rem;
+  }
+  .Row {
+    flex-direction: column;
+    height: auto;
+  }
+  .Column1,
+  .Column2,
+  .Column3 {
+    width: 287px;
+    margin-left: 0;
+    height: auto;
+  }
+
+  .line {
+    border-top: 2px solid rgb(0, 0, 0);
+    border-left: none;
+  }
+  .Link {
+    margin: 0.5rem 0rem;
+  }
+
+  .Column2 {
+    align-items: center;
+  }
+
+  .Column3 {
+    flex-direction: row;
+    padding: 10px 0px;
+  }
+  .icons {
+    margin-left: 0rem;
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+/* Styles for responsive design on screen size less than or equal to 480px */
+@media (max-width: 480px) {
+  .Link {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9nZW5lcmFsQ29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxrQkFBa0I7QUFDbEI7RUFDRSxzQkFBc0I7RUFDdEIsbUJBQW1CO0FBQ3JCOztBQUVBLHFCQUFxQjtBQUNyQjtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsa0JBQWtCLEVBQUUsK0RBQStEO0VBQ25GLFNBQVM7RUFDVCxPQUFPO0VBQ1AsV0FBVztBQUNiOztBQUVBLDJDQUEyQztBQUMzQztFQUNFLGFBQWE7RUFDYixhQUFhO0VBQ2IsNkJBQTZCO0VBQzdCLG1CQUFtQjtBQUNyQjs7QUFFQSw4Q0FBOEM7QUFDOUM7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRTtBQUNGOztBQUVBLDhDQUE4QztBQUM5QztFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsNkJBQTZCO0VBQzdCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsNkJBQTZCO0VBQzdCLGFBQWE7QUFDZjs7QUFFQSxvQ0FBb0M7QUFDcEM7RUFDRSxZQUFZO0FBQ2Q7O0FBRUEsK0NBQStDO0FBQy9DO0VBQ0UsbUNBQW1DO0FBQ3JDOztBQUVBLHdCQUF3QjtBQUN4QjtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGNBQWM7QUFDaEI7O0FBRUEsMEJBQTBCO0FBQzFCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixjQUFjO0VBQ2QsbUJBQW1CO0FBQ3JCOztBQUVBLHFCQUFxQjtBQUNyQjtFQUNFLGNBQWM7RUFDZCxlQUFlO0VBQ2YscUJBQXFCO0VBQ3JCLGVBQWU7RUFDZixpQkFBaUI7QUFDbkI7O0FBRUEsOEJBQThCO0FBQzlCO0VBQ0UsY0FBYztFQUNkLHlCQUF5QjtBQUMzQjs7QUFFQSxxQkFBcUI7QUFDckI7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsY0FBYztFQUNkLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUEsa0VBQWtFO0FBQ2xFO0VBQ0U7SUFDRSxhQUFhO0VBQ2Y7QUFDRjs7QUFFQSw0RUFBNEU7QUFDNUU7RUFDRTtJQUNFLHVCQUF1QjtFQUN6QjtFQUNBO0lBQ0Usc0JBQXNCO0lBQ3RCLFlBQVk7RUFDZDtFQUNBOzs7SUFHRSxZQUFZO0lBQ1osY0FBYztJQUNkLFlBQVk7RUFDZDs7RUFFQTtJQUNFLGtDQUFrQztJQUNsQyxpQkFBaUI7RUFDbkI7RUFDQTtJQUNFLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLG1CQUFtQjtJQUNuQixpQkFBaUI7RUFDbkI7RUFDQTtJQUNFLGlCQUFpQjtFQUNuQjtFQUNBO0lBQ0Usa0JBQWtCO0VBQ3BCO0VBQ0E7SUFDRSxrQkFBa0I7RUFDcEI7QUFDRjs7QUFFQSw0RUFBNEU7QUFDNUU7RUFDRTtJQUNFLGVBQWU7RUFDakI7RUFDQTtJQUNFLGVBQWU7RUFDakI7RUFDQTtJQUNFLGVBQWU7RUFDakI7QUFDRiIsInNvdXJjZXNDb250ZW50IjpbIi8qIEdsb2JhbCBzdHlsZXMgKi9cbioge1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBmb250LWZhbWlseTogTGV4ZW5kO1xufVxuXG4vKiBDb21wb25lbnQgc3R5bGVzICovXG4uQ29udGFpbmVyIHtcbiAgcGFkZGluZzogMXJlbSAycmVtO1xuICBiYWNrZ3JvdW5kOiAjZjBkZGNlO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7IC8qIEZpeGVzIHRoZSBwb3NpdGlvbiBvZiB0aGUgZm9vdGVyIGF0IHRoZSBib3R0b20gb2YgdGhlIHBhZ2UgKi9cbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICB3aWR0aDogMTAwJTtcbn1cblxuLyogUm93IHVzZWQgdG8gZGlzcGxheSBjb250ZW50IGluIGNvbHVtbnMgKi9cbi5Sb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBoZWlnaHQ6IDE2cmVtO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjsgXG59XG5cbi8qIFRocmVlIG1haW4gY29sdW1ucyBmb3IgdGhlIGZvb3RlciBjb250ZW50ICovXG4uQ29sdW1uMSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIHdpZHRoOiAyODdweDtcbiAgcGFkZGluZzogMjBweCAwcHg7XG59XG5cbi5Db2x1bW4xIGgxe1xuICBtYXJnaW4tdG9wOiAwcHhcbn1cblxuLyogbGFzdCBwIHRhZyBpbiBjb2x1bW4xIGhhcyBubyBib3R0b20gbWFyZ2luKi9cbi5MYXN0UGFyYWdyYXBoe1xuICBtYXJnaW4tYm90dG9tOiAwcHg7XG59XG5cbi5Db2x1bW4yIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gIGhlaWdodDogMTRyZW07XG59XG5cbi5Db2x1bW4zIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gIGhlaWdodDogMTRyZW07XG59XG5cbi8qIEZvdXJ0aCBjb2x1bW4gdXNlZCBmb3IgdGhlIGxvZ28gKi9cbi5Db2x1bW40IHtcbiAgd2lkdGg6IDM4MHB4O1xufVxuXG4vKiBWZXJ0aWNhbCBsaW5lIHVzZWQgdG8gc2VwYXJhdGUgdGhlIGNvbHVtbnMgKi9cbi5saW5lIHtcbiAgYm9yZGVyLWxlZnQ6IDJweCBzb2xpZCByZ2IoMCwgMCwgMCk7XG59XG5cbi8qIFN0eWxlcyBmb3IgaGVhZGluZ3MgKi9cbmgxIHtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgZm9udC1zaXplOiA0MHB4O1xuICBjb2xvcjogIzAwMDAwMDtcbn1cblxuLyogU3R5bGVzIGZvciBwYXJhZ3JhcGhzICovXG5wIHtcbiAgZm9udC13ZWlnaHQ6IDMwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogIzAwMDAwMDtcbiAgbWFyZ2luLXRvcDogLTEuNXJlbTtcbn1cblxuLyogU3R5bGVzIGZvciBsaW5rcyAqL1xuLkxpbmsge1xuICBjb2xvcjogIzAwMDAwMDtcbiAgZm9udC1zaXplOiAyNHB4O1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgbWFyZ2luLWxlZnQ6IDJyZW07XG59XG5cbi8qIFN0eWxlcyBmb3IgbGlua3Mgb24gaG92ZXIgKi9cbi5MaW5rOmhvdmVyIHtcbiAgY29sb3I6ICNmZjljMDA7XG4gIHRyYW5zaXRpb246IDIwMG1zIGVhc2UtaW47XG59XG5cbi8qIFN0eWxlcyBmb3IgaWNvbnMgKi9cbi5pY29ucyB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDQ1cHg7XG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xuICBkaXNwbGF5OiBibG9jaztcbn1cblxuLmljb25zOmhvdmVyIHtcbiAgY29sb3I6ICNmZjljMDA7XG4gIHRyYW5zaXRpb246IDIwMG1zIGVhc2UtaW47XG59XG5cbi5sb2dvIHtcbiAgZGlzcGxheTogYmxvY2s7XG59XG5cbi8qIEhpZGUgQ29sdW1uNCB3aGVuIHNjcmVlbiBzaXplIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byAxMDYwcHggKi9cbkBtZWRpYSAobWF4LXdpZHRoOiAxMDYwcHgpIHtcbiAgLkNvbHVtbjQge1xuICAgIGRpc3BsYXk6IG5vbmU7XG4gIH1cbn1cblxuLyogU3R5bGVzIGZvciByZXNwb25zaXZlIGRlc2lnbiBvbiBzY3JlZW4gc2l6ZSBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gODAwcHggKi9cbkBtZWRpYSAobWF4LXdpZHRoOiA4MDBweCkge1xuICAuQ29udGFpbmVyIHtcbiAgICBwYWRkaW5nOiAwcmVtIDFyZW0gMXJlbTtcbiAgfVxuICAuUm93IHtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgIGhlaWdodDogYXV0bztcbiAgfVxuICAuQ29sdW1uMSxcbiAgLkNvbHVtbjIsXG4gIC5Db2x1bW4zIHtcbiAgICB3aWR0aDogMjg3cHg7XG4gICAgbWFyZ2luLWxlZnQ6IDA7XG4gICAgaGVpZ2h0OiBhdXRvO1xuICB9XG5cbiAgLmxpbmUge1xuICAgIGJvcmRlci10b3A6IDJweCBzb2xpZCByZ2IoMCwgMCwgMCk7XG4gICAgYm9yZGVyLWxlZnQ6IG5vbmU7XG4gIH1cbiAgLkxpbmsge1xuICAgIG1hcmdpbjogMC41cmVtIDByZW07XG4gIH1cblxuICAuQ29sdW1uMiB7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgfVxuXG4gIC5Db2x1bW4zIHtcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIHBhZGRpbmc6IDEwcHggMHB4O1xuICB9XG4gIC5pY29ucyB7XG4gICAgbWFyZ2luLWxlZnQ6IDByZW07XG4gIH1cbiAgaDEge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgfVxuICBwIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIH1cbn1cblxuLyogU3R5bGVzIGZvciByZXNwb25zaXZlIGRlc2lnbiBvbiBzY3JlZW4gc2l6ZSBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gNDgwcHggKi9cbkBtZWRpYSAobWF4LXdpZHRoOiA0ODBweCkge1xuICAuTGluayB7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICB9XG4gIGgxIHtcbiAgICBmb250LXNpemU6IDMycHg7XG4gIH1cbiAgcCB7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><nav>Navbar component</nav><section><div color="black"><h1>Hero Section of Home Page</h1></div></section><section><div color="black"><h1>About Section of Home Page</h1></div></section><footer class="Container" id="Container"><div class="Row" id="Row"><div class="Column1" id="Column1"><h1 id="footer-heading">Contact Us</h1><p id="footer-address">2121 North Nimitz Highway,<br> Honolulu, HI 96819,<br> United States</p><br><p id="footer-email">ohanahomes@gmail.com</p><br><p class="LastParagraph" id="footer-phone">(+1) 930-231-1231</p></div><div class="Column2 line"><a href="home" class="Link" id="home-link">Home</a><a href="about" class="Link" id="about-link">About</a><a href="contact" class="Link" id="contact-link">Contact</a><a href="help" class="Link" id="help-link">Help</a></div><div class="Column3 line"><a href="http://www.facebook.com" id="facebook-logo"><img class="icons" src="/static/media/facebookIcon.b0627e9ac1cc3cf9b6b0c708ffc08507.svg"></a><a href="http://www.twitter.com" id="twitter-logo"><img class="icons" src="/static/media/twitterIcon.5ae9f4cf80c1f851b13c3fb4494b8d39.svg"></a><a href="http://www.instagram.com" id="instagram-logo"><img class="icons" src="/static/media/instagramIcon.07456def75b3ac53822c9ed2b2fd34a8.svg"></a></div><div class="Column4"><a href="/"><img class="logo" id="website-logo" src="/static/media/footerLogo.e3ac300358ef2a73102e1ab65422d412.svg"></a></div></div></footer></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+
+</body></html>
