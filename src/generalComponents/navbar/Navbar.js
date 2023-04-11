@@ -24,7 +24,7 @@ const Navbar = () => {
         }>
         <ul>
           <li>
-            <a className="navBarLink" href="/marketplace">Buy</a>
+            <a id="buyButton" className="navBarLink" href="/marketplace">Buy</a>
           </li>
           <li>
             <a className="navBarLink" href="/marketplace">Rent</a>
