@@ -53,22 +53,22 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <a className="navBarLink" href="/marketplace">About</a>
+            <a className="navBarLink" href="/aboutUs">About</a>
           </li>
           <li>
-            <a className="navBarLink" href="/marketplace">Contact</a>
+            <a className="navBarLink" href="/contact">Contact</a>
           </li>
           <li className="mobile">
-            <a className="navBarLink" href="/marketplace">Sign Up</a>
-            <a className="navBarLink" href="/marketplace">Log in</a>
+            <a className="navBarLink" href="/signUp">Sign Up</a>
+            <a className="navBarLink" href="/login">Log in</a>
           </li>
         </ul>
       </div>
       <div className={
           isNavExpanded ? "accountMenu expanded" : "accountMenu"
         }>
-        <button className="navBtn">Sign Up</button>
-        <button className="loginBtn">Log in</button>
+        <a id="outerSignUpButton" className="navBtn" href="/signUp">Sign Up</a>
+        <a id="outerLoginButton" className="loginBtn" href="/login">Log in</a>
       </div>
       <button className="hamburger"
               onClick={() => {

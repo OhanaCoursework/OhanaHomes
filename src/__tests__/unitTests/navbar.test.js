@@ -31,11 +31,11 @@ describe("Navbar component", () => {
     });
 
     it("render the sign up button", () => {
-      expect(wrapper.find("button" ,{name: 'Sign Up'}).at(1).text()).toEqual("Sign Up");
+      expect(wrapper.find("#outerSignUpButton").text()).toEqual("Sign Up");
     });
 
     it("renders the Log in button", () => {
-      expect(wrapper.find("button" ,{name: 'Log in'}).at(2).text()).toEqual("Log in");
+      expect(wrapper.find("#outerLoginButton").text()).toEqual("Log in");
     });
 
     it("renders the Islands button", () => {
