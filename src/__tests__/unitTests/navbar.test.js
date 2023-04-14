@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Navbar from "../../generalComponents/navbar/Navbar";
-import largeNavBarLogo from "../../assets/images/navbarLogo.svg";
+import largeNavBarLogo from "../../assets/images/logo/navbarLogo.svg";
 import smallNavBarLogo from "../../assets/images/logo/smallNavBarLogo.svg";
 
 configure({ adapter: new Adapter() });
