@@ -1,33 +1,42 @@
 .navigation {
   height: 60px;
-  width: 100%;
   display: flex;
-  align-items: center;
   position: sticky;
-  top: 0;
   background-color: #F0DDCE;
-  color: black;
-  font-family: "Lexend";
-  font-size: 20px;
   z-index: 1;
+  top: 0;
+
+  .brandLogoDiv {
+    width: 30%;
+  }
+
+  .largeBrandLogo {
+    margin-left: 20px;
+    display: block;
+  }
+
+  .smallBrandLogo {
+    margin-left: 20px;
+    display: none;
+  }
 
   .navigationMenu {
     width: 40%;
-    height: 100%;
     margin: 0 auto;
-    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   .navigationMenu ul {
     display: flex;
     padding: 0;
-    height: 100%;
+    height: auto;
     justify-content: center;
     margin: 0;
+    background-color: #F0DDCE;
   }
 
   .navigationMenu li {
-    display: inline-block;
     list-style-type: none;
   }
 
@@ -35,16 +44,16 @@
     background-color: #F0DDCE;
     color: black;
     font-size: 20px;
-    border: none;
-    font-family: "Lexend";
     height: 100%;
-    margin: 0 auto;
     text-align: center;
-    vertical-align: middle;
     padding: 0px 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .navBarLink:hover {
+    background-color: #eee;
   }
 
   .navBtn {
@@ -60,64 +69,14 @@
     align-items: center;
   }
 
-  .navBarLink:hover {
-    background-color: #eee;
-  }
-
   .navBtn:hover {
     background-color: #eee;
   }
-
-
-  .largeBrandLogo {
-    margin-left: 20px;
-    display: block;
-  }
-
-  .smallBrandLogo {
-    display: none;
-  }
-
-  .brandLogoDiv {
-    width: 30%;
-  }
-
-  .accountMenu {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .loginBtn {
-    background-color: #447399;
-    color: white;
-    margin-left: 16px;
-    margin-right: 23px;
-    font-size: 20px;
-    float: right;
-    border: none;
-    font-family: "Lexend";
-    height: 35px;
-    width: 92px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .loginBtn:hover {
-    background-color: #6396bf;
-  }
-
 
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
-    min-width: fit-content;
   }
 
   /* Dropdown Content (Hidden by Default) */
@@ -137,9 +96,32 @@
     float: left;
     width: 50%;
     padding: 12px 0px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
+  }
+
+  .accountMenu {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .loginBtn {
+    background-color: #447399;
+    color: white;
+    margin-left: 16px;
+    margin-right: 20px;
+    font-size: 20px;
+    height: 35px;
+    width: 92px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginBtn:hover {
+    background-color: #6396bf;
   }
 
   .hamburger {
@@ -148,7 +130,7 @@
     width: 40px;
     padding: 0.5rem;
     border-radius: 50%;
-    background-color: #283b8b;
+    background-color: #385872;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     position: absolute;
@@ -159,14 +141,7 @@
   }
 
   .hamburger:hover {
-    background-color: #2642af;
-  }
-
-
-  a {
-    color: black;
-    text-decoration: none;
-
+    background-color: #6396bf;
   }
 
   .chevron::before {
@@ -184,22 +159,6 @@
     font-size: 16px;
     vertical-align: middle;
     margin-bottom: 5px;
-  }
-
-  @media screen and (max-width: 1100px) {
-
-    .largeBrandLogo {
-      display: none;
-    }
-
-    .smallBrandLogo {
-      margin-left: 20px;
-      display: block;
-    }
-
-    .brandLogoDiv {
-      width: 15%;
-    }
   }
 
   /* Show the dropdown menu on hover */
@@ -226,7 +185,30 @@
     }
   }
 
+  @media screen and (max-width: 1100px) {
+
+    .largeBrandLogo {
+      display: none;
+    }
+
+    .smallBrandLogo {
+      display: block;
+    }
+
+    .brandLogoDiv {
+      width: 15%;
+    }
+
+    .navigationMenu {
+      width: 55%;
+    }
+  }
+
   @media screen and (max-width: 800px) {
+
+    .brandLogoDiv {
+      width: 260px;
+    }
 
     .largeBrandLogo {
       display: block;
@@ -242,7 +224,6 @@
 
     .mobile {
       display: block;
-      box-sizing: border-box;
     }
 
     .mobile .navBarLink {
@@ -259,10 +240,6 @@
       background-color: #eee;
     }
 
-    .dropdownContent.expanded {
-      display: block;
-    }
-
     .hamburger {
       display: block;
     }
@@ -275,34 +252,17 @@
       display: none;
     }
 
-    .navigationMenu li {
-      width: 100%;
-    }
-
     .navigationMenu ul {
-      position: absolute;
-      left: 0;
-      flex-direction: column;
       width: 100%;
-      background-color: white;
       border-top: 1px solid black;
     }
 
-    .dropdownContent a {
-      padding-top: 6px;
-    }
-
     .navBarLink {
-      color: black;
       padding: 10px;
     }
 
     .navigationMenu.expanded ul {
       display: block;
-    }
-
-    .accountMenu.expanded {
-      display: flex;
     }
 
     .dropdownContent.expanded {
@@ -328,21 +288,15 @@
     }
 
     .dropdownLink {
-      padding: 0px !important;
-      width: 50% !important;
-      box-sizing: border-box
+      padding: 8px 10px !important;
     }
 
     .left {
       text-align: right;
-      padding-right: 10px !important;
-      padding-left: 10px !important;
     }
 
     .right {
       text-align: left;
-      padding-left: 10px !important;
-      padding-right: 10px !important;
     }
   }
 }

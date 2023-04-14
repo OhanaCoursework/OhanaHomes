@@ -64,9 +64,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className={
-        isNavExpanded ? "accountMenu expanded" : "accountMenu"
-      }>
+      <div className="accountMenu">
         <a id="outerSignUpButton" className="navBtn" href="/signUp">Sign Up</a>
         <a id="outerLoginButton" className="loginBtn" href="/login">Log in</a>
       </div>
