@@ -1,8 +1,9 @@
-.footer{
+.footer {
   /* Component styles */
   padding: 1rem 2rem;
   background: #f0ddce;
-  position: relative; /* Fixes the position of the footer at the bottom of the page */
+  position: relative;
+  /* Fixes the position of the footer at the bottom of the page */
   flex: 1;
 
   /* Row used to display content in columns */
@@ -10,7 +11,7 @@
     display: flex;
     height: 16rem;
     justify-content: space-evenly;
-    align-items: center; 
+    align-items: center;
   }
 
   /* Three main columns for the footer content */
@@ -21,12 +22,12 @@
     padding: 20px 0px;
   }
 
-  .Column1 h1{
+  .Column1 h1 {
     margin-top: 0px
   }
 
   /* last p tag in column1 has no bottom margin*/
-  .LastParagraph{
+  .LastParagraph {
     margin-bottom: 0px;
   }
 
@@ -115,10 +116,12 @@
     .Container {
       padding: 0rem 0rem 1rem;
     }
+
     .Row {
       flex-direction: column;
       height: auto;
     }
+
     .Column1,
     .Column2,
     .Column3 {
@@ -131,6 +134,7 @@
       border-top: 2px solid rgb(0, 0, 0);
       border-left: none;
     }
+
     .Link {
       margin: 0.5rem 0rem;
     }
@@ -142,12 +146,15 @@
     .Column3 {
       flex-direction: row;
     }
+
     .icons {
       margin-left: 0rem;
     }
+
     h1 {
       text-align: center;
     }
+
     p {
       text-align: center;
     }
@@ -158,9 +165,11 @@
     .Link {
       font-size: 20px;
     }
+
     h1 {
       font-size: 32px;
     }
+
     p {
       font-size: 18px;
     }

@@ -1,15 +1,15 @@
 .navigation {
-    height: 60px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: sticky; 
-    top: 0;
-    background-color: #F0DDCE;
-    color: black;
-    font-family: "Lexend";
-    font-size: 20px;
-    z-index:1;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #F0DDCE;
+  color: black;
+  font-family: "Lexend";
+  font-size: 20px;
+  z-index: 1;
 
   .navigationMenu {
     width: 40%;
@@ -17,7 +17,7 @@
     margin: 0 auto;
     position: relative;
   }
-  
+
   .navigationMenu ul {
     display: flex;
     padding: 0;
@@ -25,8 +25,9 @@
     justify-content: center;
     margin: 0;
   }
+
   .navigationMenu li {
-    display:inline-block;
+    display: inline-block;
     list-style-type: none;
   }
 
@@ -41,11 +42,11 @@
     text-align: center;
     vertical-align: middle;
     padding: 0px 16px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .navBtn {
     background-color: #F0DDCE;
     color: black;
@@ -54,11 +55,11 @@
     border: none;
     font-family: "Lexend";
     height: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .navBarLink:hover {
     background-color: #eee;
   }
@@ -66,8 +67,8 @@
   .navBtn:hover {
     background-color: #eee;
   }
-  
-  
+
+
   .largeBrandLogo {
     margin-left: 20px;
     display: block;
@@ -80,7 +81,7 @@
   .brandLogoDiv {
     width: 30%;
   }
-  
+
   .accountMenu {
     width: 30%;
     height: 100%;
@@ -88,7 +89,7 @@
     align-items: center;
     justify-content: flex-end;
   }
-  
+
   .loginBtn {
     background-color: #447399;
     color: white;
@@ -106,30 +107,30 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .loginBtn:hover {
     background-color: #6396bf;
   }
-  
-  
+
+
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
     min-width: fit-content;
   }
-  
+
   /* Dropdown Content (Hidden by Default) */
   .dropdownContent {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     width: 200%;
     text-align: center
   }
-  
+
   /* Links inside the dropdown */
   .dropdownContent a {
     color: black;
@@ -152,80 +153,96 @@
     transition: background-color 0.2s ease-in-out;
     position: absolute;
     top: 50%;
-    right: 25px;
+    right: 20px;
     transform: translateY(-50%);
     display: none;
   }
+
   .hamburger:hover {
     background-color: #2642af;
   }
-  
-  
+
+
   a {
     color: black;
     text-decoration: none;
-    
+
   }
 
   .chevron::before {
-	border-style: solid;
-	border-width: 0.25em 0.25em 0 0;
-	content: '';
-	display: inline-block;
-	height: 0.45em;
-	left: 0.15em;
-	position: relative;
-	top: 0;
-	transform: rotate(135deg);
-	width: 0.45em;
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    left: 0.15em;
+    position: relative;
+    top: 0;
+    transform: rotate(135deg);
+    width: 0.45em;
     margin-left: 2px;
     font-size: 16px;
     vertical-align: middle;
     margin-bottom: 5px;
-}
-
-@media screen and (max-width: 1100px) {
-
-  .largeBrandLogo {
-    display: none;
   }
 
-  .smallBrandLogo {
-      margin-left: 20px;
-      display: block;
-  }
+  @media screen and (max-width: 1100px) {
 
-  .brandLogoDiv {
-    width: 15%;
-  }
-}
-
-    /* Show the dropdown menu on hover */
-    @media screen and (min-width: 800px) {
-      .dropdown:hover .dropdownContent {display: block;}
-      .dropdown:hover .chevron::before {
-          top: 0.15em;
-          transform: rotate(-45deg);
-      }
-
-      .dropdownContent a:hover {background-color: #ddd;}
-
-      .dropdown:hover .dropBtn {background-color: #eee;}
-
-      .mobile a {
-          display: none;
-      }
+    .largeBrandLogo {
+      display: none;
     }
 
+    .smallBrandLogo {
+      margin-left: 20px;
+      display: block;
+    }
+
+    .brandLogoDiv {
+      width: 15%;
+    }
+  }
+
+  /* Show the dropdown menu on hover */
+  @media screen and (min-width: 800px) {
+    .dropdown:hover .dropdownContent {
+      display: block;
+    }
+
+    .dropdown:hover .chevron::before {
+      top: 0.15em;
+      transform: rotate(-45deg);
+    }
+
+    .dropdownContent a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropBtn {
+      background-color: #eee;
+    }
+
+    .mobile a {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 800px) {
+
+    .largeBrandLogo {
+      display: block;
+    }
+
+    .smallBrandLogo {
+      display: none;
+    }
 
     .dropdown {
       background-color: #f1f1f1;
     }
 
     .mobile {
-        display: block;
-        box-sizing: border-box;
+      display: block;
+      box-sizing: border-box;
     }
 
     .mobile .navBarLink {
@@ -234,94 +251,99 @@
     }
 
     .chevron.expanded:before {
-        top: 0.15em;
-        transform: rotate(-45deg);
+      top: 0.15em;
+      transform: rotate(-45deg);
     }
 
-    .dropBtn.expanded {background-color: #eee;}
+    .dropBtn.expanded {
+      background-color: #eee;
+    }
 
     .dropdownContent.expanded {
-        display: block;
-      }
+      display: block;
+    }
 
     .hamburger {
       display: block;
     }
+
     .accountMenu {
-        display: none;
+      display: none;
     }
 
     .navigationMenu ul {
-        display: none;
+      display: none;
     }
 
     .navigationMenu li {
-        width: 100%;
+      width: 100%;
     }
 
     .navigationMenu ul {
-        position: absolute;
-        left: 0;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        border-top: 1px solid black;
-      }
+      position: absolute;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid black;
+    }
 
-      .dropdownContent a {
-        padding-top: 6px;
-      }
+    .dropdownContent a {
+      padding-top: 6px;
+    }
 
-      .navBarLink {
-        color: black;
-        padding: 10px;
-      }
+    .navBarLink {
+      color: black;
+      padding: 10px;
+    }
 
-      .navigationMenu.expanded ul {
-        display: block;
-      }
+    .navigationMenu.expanded ul {
+      display: block;
+    }
 
-      .accountMenu.expanded {
-        display: flex;
-      }
+    .accountMenu.expanded {
+      display: flex;
+    }
 
-      .dropdownContent.expanded {
-        display: block;
-      }
+    .dropdownContent.expanded {
+      display: block;
+    }
 
-      .navigationMenu {
-        width: 100%;
-      }
+    .navigationMenu {
+      width: 100%;
+    }
 
-      .navBtn {
-        width: 100%;
-        padding: 10px;
-      }
+    .navBtn {
+      width: 100%;
+      padding: 10px;
+    }
 
-      .dropdown {
-        width: 100%;
-      }
+    .dropdown {
+      width: 100%;
+    }
 
-      .dropdownContent {
-        width: 100%;
-        position: relative;
-      }
+    .dropdownContent {
+      width: 100%;
+      position: relative;
+    }
 
-      .dropdownLink {
-        padding: 0px !important;
-        width: 50% !important;
-        box-sizing: border-box 
-      }
-      .left {
-        text-align: right;
-        padding-right: 10px !important;
-        padding-left: 10px !important;
-      }
-      .right {
-        text-align: left;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-      }
+    .dropdownLink {
+      padding: 0px !important;
+      width: 50% !important;
+      box-sizing: border-box
+    }
+
+    .left {
+      text-align: right;
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+
+    .right {
+      text-align: left;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
   }
 }
 

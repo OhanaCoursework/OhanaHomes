@@ -5,14 +5,14 @@ import AboutUs from "../../Pages/aboutUs/components/aboutUs";
 
 
 configure({ adapter: new Adapter() });
-  let wrapper;
+let wrapper;
 
 describe("Should Render All Components on About us Page", () => {
 
   beforeEach(() => {
     wrapper = shallow(<AboutUs />);
   });
-  
+
   it("should render All the Images", () => {
     expect(wrapper.find("HeadingImage")).toBeDefined();
     expect(wrapper.find("OurOwnerImage")).toBeDefined();

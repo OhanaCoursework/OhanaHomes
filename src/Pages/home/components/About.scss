@@ -2,6 +2,7 @@
     background-color: #447399;
     color: white;
     border: 0cm;
+
     li {
         text-align: center;
         padding: 0px 0px 16px 0px;
@@ -67,7 +68,7 @@
         display: flex;
     }
 
-    @media (max-width: 800px) { 
+    @media (max-width: 800px) {
         ul {
             flex-direction: column;
         }
@@ -75,16 +76,19 @@
 
     @media (max-width: 480px) {
         button {
-        font-size: 18px;
-        width: 155px;
-        height: 46px;
+            font-size: 18px;
+            width: 155px;
+            height: 46px;
         }
+
         h1 {
-        font-size: 40px;
+            font-size: 40px;
         }
+
         p {
-        font-size: 20px;
+            font-size: 20px;
         }
+
         .listWidgets {
             font-size: 38px;
         }

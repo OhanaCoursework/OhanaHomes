@@ -1,5 +1,5 @@
 .aboutUs {
-    .titleBlock > img {
+    .titleBlock>img {
         width: 100%;
         height: 100%;
     }
@@ -8,7 +8,7 @@
         position: relative;
     }
 
-    .titleBlock > h1 {
+    .titleBlock>h1 {
         position: absolute;
         top: 0%;
         bottom: 50%;
@@ -19,14 +19,14 @@
         display: flex;
         align-items: center;
     }
-    
-    .ourStoryBlock > h2 {
+
+    .ourStoryBlock>h2 {
         padding-top: 0.5cm;
         font-size: 36pt;
         text-align: center;
     }
 
-    .ourStoryBlock > p {
+    .ourStoryBlock>p {
         padding-bottom: 1cm;
         text-align: center;
         font-weight: 100;
@@ -40,7 +40,7 @@
         color: #447399;
     }
 
-    .ourOwnerTextBlock > p {
+    .ourOwnerTextBlock>p {
         background-color: #447399;
         text-align: center;
         font-weight: 100;
@@ -55,7 +55,7 @@
         padding-bottom: 30px;
     }
 
-    .ourOwnerTextBlock > h2 {
+    .ourOwnerTextBlock>h2 {
         font-size: 36pt;
         text-align: left;
         width: 100%;
@@ -72,7 +72,7 @@
         box-sizing: border-box;
     }
 
-    .ourOwnerTextBlock > img {
+    .ourOwnerTextBlock>img {
         background-color: #447399;
         float: left;
         padding-left: 7%;
@@ -80,7 +80,7 @@
     }
 
     @media (max-width: 480px) {
-        .titleBlock > h1 {
+        .titleBlock>h1 {
             width: 100%;
             display: flex;
             justify-content: center;
