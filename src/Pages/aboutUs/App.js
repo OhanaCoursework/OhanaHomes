@@ -8,7 +8,7 @@ function AboutUsPage() {
   return (
     <>
       <Navbar />
-      <About {...aboutUsData}/>
+      <About {...aboutUsData} />
       <Footer />
     </>
   );

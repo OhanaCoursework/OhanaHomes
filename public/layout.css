@@ -1,11 +1,22 @@
 * {
-    font-family: "Lexend";
+  font-family: "Lexend";
+  box-sizing: border-box;
 }
-
+html,
 body {
-    margin: 0px;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.App,
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1;
 }

@@ -27,11 +27,9 @@ describe("Selenium Tests for About Us Page", function () {
     // Navigate to the home page
     await driver.get("http://localhost:3000/");
 
-    await driver.findElement(By.xpath("//a")).click();
+    await driver.findElement(By.id("linkToAboutUs")).click();
 
-    const pageTitle = await driver
-      .findElement(By.xpath("//h1[@id='PageHeading']"))
-      .getText();
+    const pageTitle = await driver.findElement(By.id("PageHeading")).getText();
     assert.strictEqual(pageTitle, "About Us");
 
     const snapshotPath = path.join(
@@ -41,7 +39,6 @@ describe("Selenium Tests for About Us Page", function () {
     const htmlSource = await driver.getPageSource();
     fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
       if (err && err.code !== "EEXIST") throw err;
-      console.log("Saved!");
     });
   });
 });
