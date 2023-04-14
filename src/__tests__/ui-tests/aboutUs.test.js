@@ -27,12 +27,8 @@ describe("Selenium Tests for About Us Page", function () {
     // Navigate to the home page
     await driver.get("http://localhost:3000/");
 
-    await driver.findElement(By.xpath("//a")).click();
-
-    const pageTitle = await driver
-      .findElement(By.xpath("//h1[@id='PageHeading']"))
-      .getText();
-    assert.strictEqual(pageTitle, "About Us");
+    const pageTitle = await driver.findElement(By.id("about-title")).getText();
+    assert.strictEqual(pageTitle, "Hawaii's Trusted Performers");
 
     const snapshotPath = path.join(
       __dirname,
