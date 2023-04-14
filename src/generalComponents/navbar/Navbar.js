@@ -13,62 +13,113 @@ const Navbar = () => {
     <nav className="navigation">
       <div className="brandLogoDiv">
         <Link to="/">
-          <img className="largeBrandLogo" src={largeNavBarLogo} alt="Ohana homes logo" />
+          <img
+            className="largeBrandLogo"
+            src={largeNavBarLogo}
+            alt="Ohana homes logo"
+          />
         </Link>
         <Link to="/">
-          <img className="smallBrandLogo" src={smallNavBarLogo} alt="Ohana homes logo" />
+          <img
+            className="smallBrandLogo"
+            src={smallNavBarLogo}
+            alt="Ohana homes logo"
+          />
         </Link>
       </div>
-      <div className={
-        isNavExpanded ? "navigationMenu expanded" : "navigationMenu"
-      }>
+      <div
+        className={isNavExpanded ? "navigationMenu expanded" : "navigationMenu"}
+      >
         <ul>
           <li>
-            <a id="buyButton" className="navBarLink" href="/marketplace">Buy</a>
+            <a id="buyButton" className="navBarLink" href="/marketplace">
+              Buy
+            </a>
           </li>
           <li>
-            <a className="navBarLink" href="/marketplace">Rent</a>
+            <a className="navBarLink" href="/marketplace">
+              Rent
+            </a>
           </li>
           <li className="dropdown">
-            <button className={
-              isDropdownExpanded ? "navBtn dropBtn expanded" : "navBtn dropBtn"
-            } onClick={() => {
-              setIsDropdownExpanded(!isDropdownExpanded);
-            }}
-            >Islands
-              <span className={
-                isDropdownExpanded ? "chevron expanded" : "chevron"
-              }></span></button>
-            <div className={
-              isDropdownExpanded ? "dropdownContent expanded" : "dropdownContent"
-            }>
-              <a className="dropdownLink left" href="/islands">Hawai&apos;i</a>
-              <a className="dropdownLink right" href="/islands">Maui</a>
-              <a className="dropdownLink left" href="/islands">O&apos;ahu</a>
-              <a className="dropdownLink right" href="/islands">Kaua&apos;i</a>
-              <a className="dropdownLink left" href="/islands">Moloka</a>
-              <a className="dropdownLink right" href="/islands">Lāna&apos;i</a>
-              <a className="dropdownLink left" href="/islands">Ni&apos;hau</a>
-              <a className="dropdownLink right" href="/islands">Kaho&apos;olawe</a>
+            <button
+              className={
+                isDropdownExpanded
+                  ? "navBtn dropBtn expanded"
+                  : "navBtn dropBtn"
+              }
+              onClick={() => {
+                setIsDropdownExpanded(!isDropdownExpanded);
+              }}
+            >
+              Islands
+              <span
+                className={isDropdownExpanded ? "chevron expanded" : "chevron"}
+              ></span>
+            </button>
+            <div
+              className={
+                isDropdownExpanded
+                  ? "dropdownContent expanded"
+                  : "dropdownContent"
+              }
+            >
+              <a className="dropdownLink left" href="/islands">
+                Hawai&apos;i
+              </a>
+              <a className="dropdownLink right" href="/islands">
+                Maui
+              </a>
+              <a className="dropdownLink left" href="/islands">
+                O&apos;ahu
+              </a>
+              <a className="dropdownLink right" href="/islands">
+                Kaua&apos;i
+              </a>
+              <a className="dropdownLink left" href="/islands">
+                Moloka
+              </a>
+              <a className="dropdownLink right" href="/islands">
+                Lāna&apos;i
+              </a>
+              <a className="dropdownLink left" href="/islands">
+                Ni&apos;hau
+              </a>
+              <a className="dropdownLink right" href="/islands">
+                Kaho&apos;olawe
+              </a>
             </div>
           </li>
           <li>
-            <a className="navBarLink" href="/aboutUs">About</a>
+            <a className="navBarLink" href="/aboutUs">
+              About
+            </a>
           </li>
           <li>
-            <a className="navBarLink" href="/contact">Contact</a>
+            <a className="navBarLink" href="/contact">
+              Contact
+            </a>
           </li>
           <li className="mobile">
-            <a className="navBarLink" href="/signUp">Sign Up</a>
-            <a className="navBarLink" href="/login">Log in</a>
+            <a className="navBarLink" href="/signUp">
+              Sign Up
+            </a>
+            <a className="navBarLink" href="/login">
+              Log in
+            </a>
           </li>
         </ul>
       </div>
       <div className="accountMenu">
-        <a id="outerSignUpButton" className="navBtn" href="/signUp">Sign Up</a>
-        <a id="outerLoginButton" className="loginBtn" href="/login">Log in</a>
+        <a id="outerSignUpButton" className="navBtn" href="/signUp">
+          Sign Up
+        </a>
+        <a id="outerLoginButton" className="loginBtn" href="/login">
+          Log in
+        </a>
       </div>
-      <button className="hamburger"
+      <button
+        className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded);
         }}

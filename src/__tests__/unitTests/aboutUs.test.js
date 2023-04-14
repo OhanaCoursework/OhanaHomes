@@ -3,12 +3,10 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import AboutUs from "../../Pages/aboutUs/components/aboutUs";
 
-
 configure({ adapter: new Adapter() });
 let wrapper;
 
 describe("Should Render All Components on About us Page", () => {
-
   beforeEach(() => {
     wrapper = shallow(<AboutUs />);
   });
@@ -30,5 +28,3 @@ describe("Should Render All Components on About us Page", () => {
     expect(wrapper.find("paragraph5")).toBeDefined();
   });
 });
-
-

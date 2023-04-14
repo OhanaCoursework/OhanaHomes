@@ -1,100 +1,99 @@
 .about {
-    background-color: #447399;
-    color: white;
-    border: 0cm;
+  background-color: #447399;
+  color: white;
+  border: 0cm;
 
-    li {
-        text-align: center;
-        padding: 0px 0px 16px 0px;
-        align-content: center;
-        font-size: 24px;
-        position: relative;
-        text-decoration: none;
-        width: 100%;
-    }
+  li {
+    text-align: center;
+    padding: 0px 0px 16px 0px;
+    align-content: center;
+    font-size: 24px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+  }
 
+  ul {
+    padding-inline-start: 0px;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+  }
+
+  p {
+    text-align: center;
+    font-weight: 100;
+    font-size: larger;
+    font-size: 24px;
+    padding: 0px 7%;
+  }
+
+  .horizontalList {
+    box-sizing: border-box;
+    margin: 0px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 48px;
+    font-variation-settings: "wght" 800;
+    padding-top: 1cm;
+  }
+
+  .listWidgets {
+    font-size: 48px;
+    color: #dfffee;
+  }
+
+  button {
+    background-color: #f0ddce;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    margin: 0px auto;
+    display: block;
+    width: 172px;
+    height: 51px;
+    position: relative;
+    filter: drop-shadow(0px, 10px, 10px, #f0ddce);
+  }
+
+  button:hover {
+    background-color: #eee;
+  }
+
+  #linkToAboutUs {
+    padding: 0px 0px 16px 0px;
+    display: flex;
+  }
+
+  @media (max-width: 800px) {
     ul {
-        padding-inline-start: 0px;
-        width: 100%;
-        display: flex;
-        list-style-type: none;
+      flex-direction: column;
     }
+  }
 
-    p {
-        text-align: center;
-        font-weight: 100;
-        font-size: larger;
-        font-size: 24px;
-        padding: 0px 7%;
-    }
-
-    .horizontalList {
-        box-sizing: border-box;
-        margin: 0px;
+  @media (max-width: 480px) {
+    button {
+      font-size: 18px;
+      width: 155px;
+      height: 46px;
     }
 
     h1 {
-        text-align: center;
-        font-size: 48px;
-        font-variation-settings: "wght" 800;
-        padding-top: 1cm;
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 20px;
     }
 
     .listWidgets {
-        font-size: 48px;
-        color: #DFFFEE;
-
+      font-size: 38px;
     }
 
-    button {
-        background-color: #F0DDCE;
-        font-size: 20px;
-        border-radius: 6px;
-        border: none;
-        margin: 0px auto;
-        display: block;
-        width: 172px;
-        height: 51px;
-        position: relative;
-        filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
+    li {
+      font-size: 20px;
     }
-
-    button:hover {
-        background-color: #eee;
-    }
-
-    #linkToAboutUs {
-        padding: 0px 0px 16px 0px;
-        display: flex;
-    }
-
-    @media (max-width: 800px) {
-        ul {
-            flex-direction: column;
-        }
-    }
-
-    @media (max-width: 480px) {
-        button {
-            font-size: 18px;
-            width: 155px;
-            height: 46px;
-        }
-
-        h1 {
-            font-size: 40px;
-        }
-
-        p {
-            font-size: 20px;
-        }
-
-        .listWidgets {
-            font-size: 38px;
-        }
-
-        li {
-            font-size: 20px;
-        }
-    }
+  }
 }

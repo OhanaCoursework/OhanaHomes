@@ -29,9 +29,7 @@ describe("Selenium Tests for About Us Page", function () {
 
     await driver.findElement(By.id("linkToAboutUs")).click();
 
-    const pageTitle = await driver
-      .findElement(By.id("PageHeading"))
-      .getText();
+    const pageTitle = await driver.findElement(By.id("PageHeading")).getText();
     assert.strictEqual(pageTitle, "About Us");
 
     const snapshotPath = path.join(

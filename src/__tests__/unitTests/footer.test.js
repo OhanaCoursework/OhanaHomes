@@ -31,11 +31,15 @@ describe("Footer component", () => {
   });
 
   it("renders a p element with the email", () => {
-    expect(wrapper.find(".Column1").find("p").at(1).text()).toEqual("ohanahomes@gmail.com");
+    expect(wrapper.find(".Column1").find("p").at(1).text()).toEqual(
+      "ohanahomes@gmail.com"
+    );
   });
 
   it("renders a p element with the phone number", () => {
-    expect(wrapper.find(".Column1").find("p").at(2).text()).toEqual("(+1) 930-231-1231");
+    expect(wrapper.find(".Column1").find("p").at(2).text()).toEqual(
+      "(+1) 930-231-1231"
+    );
   });
 
   it("renders 4 Link elements", () => {
@@ -43,18 +47,18 @@ describe("Footer component", () => {
   });
 
   it("renders a Facebook icon", () => {
-    expect(wrapper.find("img[src=\"" + facebookIcon + "\"]").length).toEqual(1);
+    expect(wrapper.find('img[src="' + facebookIcon + '"]').length).toEqual(1);
   });
 
   it("renders a Twitter icon", () => {
-    expect(wrapper.find("img[src=\"" + twitterIcon + "\"]").length).toEqual(1);
+    expect(wrapper.find('img[src="' + twitterIcon + '"]').length).toEqual(1);
   });
 
   it("renders an Instagram icon", () => {
-    expect(wrapper.find("img[src=\"" + instagramIcon + "\"]").length).toEqual(1);
+    expect(wrapper.find('img[src="' + instagramIcon + '"]').length).toEqual(1);
   });
 
   it("renders a website logo", () => {
-    expect(wrapper.find("img[src=\"" + websiteLogo + "\"]").length).toEqual(1);
+    expect(wrapper.find('img[src="' + websiteLogo + '"]').length).toEqual(1);
   });
 });
