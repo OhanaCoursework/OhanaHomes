@@ -3,6 +3,8 @@
   max-height: 1100px;
   position: relative;
   overflow: hidden;
+  /* this makes the background flashes less obvious */
+  background-color: darkgrey;
 }
 
 .HeroSlider {
