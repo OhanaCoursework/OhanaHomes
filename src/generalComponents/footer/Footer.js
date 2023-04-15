@@ -1,6 +1,6 @@
 import React from "react";
 /* Importing necessary files and images */
-import "./footer.css";
+import "./footer.scss";
 import facebookIcon from "../../assets/images/icons/facebookIcon.svg";
 import instagramIcon from "../../assets/images/icons/instagramIcon.svg";
 import twitterIcon from "../../assets/images/icons/twitterIcon.svg";
@@ -8,7 +8,7 @@ import websiteLogo from "../../assets/images/logo/footerLogo.svg";
 
 const Footer = () => {
   return (
-    <footer className="Container" id="Container">
+    <footer className="footer" id="footer">
       <div className="Row" id="Row">
         <div className="Column1" id="Column1">
           <h1 id="footer-heading">Contact Us</h1>

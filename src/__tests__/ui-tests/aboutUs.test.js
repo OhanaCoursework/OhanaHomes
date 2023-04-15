@@ -37,7 +37,6 @@ describe("Selenium Tests for About Us Page", function () {
     const htmlSource = await driver.getPageSource();
     fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
       if (err && err.code !== "EEXIST") throw err;
-      console.log("Saved!");
     });
   });
 });
