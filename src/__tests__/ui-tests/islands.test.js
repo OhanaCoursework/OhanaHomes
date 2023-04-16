@@ -3,7 +3,7 @@ const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
 const myoptions = new chrome.Options();
-myoptions.addArguments("disable-gpu");
+myoptions.addArguments("disable-gpu", "--window-size=2560,1440");
 myoptions.headless();
 
 const mobileOptions = new chrome.Options();
@@ -46,6 +46,8 @@ describe("Selenium Tests for Islands grid", function () {
       const viewHomesButton = await driver.findElement(
         By.className("buttonDiv")
       );
+
+      driver.sleep(2000);
 
       assert.isFalse(await viewHomesButton.isDisplayed());
 
