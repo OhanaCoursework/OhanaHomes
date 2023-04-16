@@ -3,7 +3,7 @@ const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
 const myoptions = new chrome.Options();
-myoptions.addArguments("disable-gpu");
+myoptions.addArguments("disable-gpu", "user-agent=fake-useragent");
 myoptions.headless();
 
 const mobileOptions = new chrome.Options();
