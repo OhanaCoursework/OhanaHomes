@@ -5,6 +5,7 @@ import MarketplaceApp from "./Pages/marketplace/App.js";
 import Islands from "./Pages/islands/components/Islands.js";
 import PropertyDetails from "./Pages/propertyDetails/components/PropertyDetails.js";
 import AboutUsPage from "./Pages/aboutUs/App.js";
+import ContactUs from "./Pages/contactUs/App.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/islands" element={<Islands />} />
         <Route path="/propertydetails" element={<PropertyDetails />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
+        <Route path="/contactUs" element={<ContactUs />} />
       </Routes>
     </div>
   );
