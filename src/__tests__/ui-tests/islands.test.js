@@ -43,8 +43,8 @@ describe("Selenium Tests for Islands grid", function () {
     it("Should display view homes button when user hovers over island card", async function () {
       await driver.get("http://localhost:3000/");
 
-      let a = await driver.execute_script("return navigator.userAgent");
-      console.log("user agent hopefully " + a)
+      let a = await driver.executeScript("return navigator.userAgent");
+      console.log("user agent hopefully " + a);
 
       const viewHomesButton = await driver.findElement(
         By.className("buttonDiv")
