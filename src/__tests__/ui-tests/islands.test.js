@@ -45,8 +45,10 @@ describe("Selenium Tests for Islands grid", function () {
       await driver.get("http://localhost:3000/");
 
       const viewHomesButton = await driver.findElement(
-        By.className("islandButton")
+        By.className("buttonDiv")
       );
+
+      console.log(await viewHomesButton.getCssValue("opacity"));
 
       assert.isFalse(await viewHomesButton.isDisplayed());
 
