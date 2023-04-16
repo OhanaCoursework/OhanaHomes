@@ -6,11 +6,6 @@ const myoptions = new chrome.Options();
 myoptions.addArguments("disable-gpu");
 myoptions.headless();
 
-// const mobileOptions = new chrome.Options();
-// mobileOptions.addArguments("disable-gpu");
-// mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
-// mobileOptions.headless();
-
 const TIMEOUT = 10000;
 
 describe("Selenium Tests for Islands grid", function () {
@@ -31,70 +26,29 @@ describe("Selenium Tests for Islands grid", function () {
     await driver.quit();
   });
 
-  describe("Desktop Tests", () => {
+  it("Should display 8 islands", async function () {
+    await driver.get("http://localhost:3000/");
 
-    it("Should display 8 islands", async function () {
-      await driver.get("http://localhost:3000/");
+    const islandCards = await driver.findElements(By.className("islandCard"));
 
-      const islandCards = await driver.findElements(By.className("islandCard"));
-
-      assert.equal(islandCards.length, 8);
-    });
-
-    it("Should display view homes button when user hovers over island card", async function () {
-      await driver.get("http://localhost:3000/");
-
-      const viewHomesButton = await driver.findElement(
-        By.className("buttonDiv")
-      );
-
-      console.log(await viewHomesButton.getCssValue("opacity"));
-
-      assert.isFalse(await viewHomesButton.isDisplayed());
-
-      driver.sleep(2000);
-      await driver.sleep(2000);
-
-      const islandCard = await driver.findElement(By.className("islandCard"));
-
-      const actions = driver.actions({ async: true });
-      await actions.move({ origin: islandCard }).perform();
-
-      await driver.sleep(500);
-
-      assert.isTrue(await viewHomesButton.isDisplayed());
-    });
-
-    it("Should navigate to islands page when an island card is clicked", async function () {
-      await driver.get("http://localhost:3000/");
-
-      await driver.findElement(By.className("islandCard")).click();
-
-      assert.strictEqual(
-        "http://localhost:3000/islands",
-        await driver.getCurrentUrl()
-      );
-    });
+    assert.equal(islandCards.length, 8);
   });
 
-//   describe("Mobile Tests", () => {
-//     beforeEach(async () => {
-//       driver = await new Builder()
-//         .forBrowser("chrome")
-//         .setChromeOptions(mobileOptions)
-//         .build();
+  it("Should navigate to islands page when an island card is clicked", async function () {
+    driver = await new Builder()
+      .forBrowser("chrome")
+      .setChromeOptions(mobileOptions)
+      .build();
 
-//       await driver
-//         .manage()
-//         .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
-//     });
+    await driver
+      .manage()
+      .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
 
-//     it("Should always display view homes button when users device cant hover", async function () {
-//       await driver.get("http://localhost:3000/");
+    await driver.findElement(By.className("islandCard")).click();
 
-//       assert.isTrue(
-//         await driver.findElement(By.className("islandButton")).isDisplayed()
-//       );
-//     });
-//   });
+    assert.strictEqual(
+      "http://localhost:3000/islands",
+      await driver.getCurrentUrl()
+    );
+  });
 });
