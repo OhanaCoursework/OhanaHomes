@@ -6,6 +6,10 @@ const myoptions = new chrome.Options();
 myoptions.addArguments("disable-gpu");
 myoptions.headless();
 
+const mobileOptions = new chrome.Options();
+mobileOptions.addArguments("disable-gpu");
+mobileOptions.headless();
+
 const TIMEOUT = 10000;
 
 describe("Selenium Tests for Islands grid", function () {
@@ -68,10 +72,10 @@ describe("Selenium Tests for Islands grid", function () {
 
   describe("Mobile Tests", () => {
     beforeEach(async () => {
-      myoptions.setMobileEmulation({ deviceName: "iPhone SE" });
+      mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
       driver = await new Builder()
         .forBrowser("chrome")
-        .setChromeOptions(myoptions)
+        .setChromeOptions(mobileOptions)
         .build();
 
       await driver
