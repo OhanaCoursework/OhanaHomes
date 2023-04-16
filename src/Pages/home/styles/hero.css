@@ -1,23 +1,14 @@
 .HeroSection {
-  height: 100vh;
+  height: calc(100vh - 60px);
   max-height: 1100px;
   position: relative;
   overflow: hidden;
-  width: 100%;
-}
-
-.HeroSlide {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  /* this makes the background flashes less obvious */
+  background-color: darkgrey;
 }
 
 .HeroSlider {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -25,36 +16,15 @@
   justify-content: center;
 }
 
-.HeroSlider::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100vh;
-  bottom: 0vh;
-  left: 0;
-  overflow: hidden;
-  opacity: 0.4;
-  background: liner-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-}
-
 .HeroImage {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   object-fit: cover;
 }
 
 .HeroContent {
   position: relative;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   max-width: 1600px;
@@ -103,44 +73,14 @@
   bottom: 50px;
   right: 50px;
   display: flex;
-  z-index: 10;
 }
 
 .arrow {
   margin-left: 0.5rem;
 }
 
-/* .hero-text {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  background: #fff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
-
-.hero-text p {
-  font-size: 1.3rem;
-  color: #fff;
-  padding: 0.5rem 0 2rem 0;
-  text-align: center;
-  font-weight: 700;
-} */
-
 @media screen and (max-width: 800px) {
-  .HeroContent h1 {
-    text-align: left;
-  }
-
   .HeroContent p {
     padding: 0 0 2rem 0;
-    text-align: left;
   }
 }
