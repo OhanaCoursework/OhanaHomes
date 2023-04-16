@@ -50,6 +50,9 @@ describe("Selenium Tests for Islands grid", function () {
 
       assert.isFalse(await viewHomesButton.isDisplayed());
 
+      driver.sleep(2000);
+      await driver.sleep(2000);
+
       const islandCard = await driver.findElement(By.className("islandCard"));
 
       const actions = driver.actions({ async: true });
