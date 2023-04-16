@@ -8,6 +8,7 @@ myoptions.headless();
 
 const mobileOptions = new chrome.Options();
 mobileOptions.addArguments("disable-gpu");
+mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
 mobileOptions.headless();
 
 const TIMEOUT = 10000;
@@ -43,7 +44,7 @@ describe("Selenium Tests for Islands grid", function () {
       await driver.get("http://localhost:3000/");
 
       const viewHomesButton = await driver.findElement(
-        By.className("islandButton")
+        By.className("buttonDiv")
       );
 
       assert.isFalse(await viewHomesButton.isDisplayed());
