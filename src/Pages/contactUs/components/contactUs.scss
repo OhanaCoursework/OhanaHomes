@@ -1,0 +1,140 @@
+.titleBlock > img {
+    width: 100%;
+    height: 100%;
+}
+
+.titleBlock {
+    position: relative;
+}
+
+.titleBlock > h1 {
+    color: white;
+    font-size: 48pt;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.QuickLinksBlock {
+    background-color: #447399;
+    width: 100%;
+    height: 6cm;
+}
+
+.QuickLinksBlock > h2 {
+    padding-top: -5cm;
+    font-size: 24pt;
+    text-align: center;
+    color: white;
+}
+
+ul {
+    padding-inline-start: 0px;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+  }
+  
+
+li {
+    text-align: center;
+    padding: 0px 0px 16px 0px;
+    align-content: center;
+    font-size: 24px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+}
+
+li a {
+display: block;
+text-align: center;
+padding: 16px;
+text-decoration: none;
+}
+
+button {
+    background-color: #F0DDCE;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    margin: 0px auto;
+    display: block;
+    width: 172px;
+    height: 100px;
+    position: relative;
+    filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
+}
+
+button:hover {
+    background-color: #eeee;
+}
+
+@media (max-width: 800px) { 
+    ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+button {
+font-size: 18px;
+width: 155px;
+height: 46px;
+}
+h1 {
+font-size: 40px;
+}
+p {
+font-size: 20px;
+}
+.listWidgets {
+    font-size: 38px;
+}
+
+li {
+    font-size: 20px;
+}
+}
+
+textarea {
+border: 2px solid #447399;
+width: 75%;
+height: 400px;
+resize: none;  
+display: block;
+margin-left: auto;
+margin-right: auto;
+font-size: 18px;
+}
+
+.sendButton {
+    background-color: #F0DDCE;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    margin: 0px auto;
+    display: block;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
+}
+
+sendButton:hover {
+    background-color: #eeee;
+}
+
+.WhereToFindUsBlock{
+    background-color: #81BDBE;
+}
+
+iframe {
+    margin:auto;
+    display:block;
+}
+
+
+
