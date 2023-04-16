@@ -16,12 +16,8 @@ const TIMEOUT = 10000;
 describe("Selenium Tests for Islands grid", function () {
   let driver;
 
-  afterAll(async () => {
-    await driver.quit();
-  });
-
   describe("Desktop Tests", () => {
-    beforeEach(async () => {
+    beforeAll(async () => {
       driver = await new Builder()
         .forBrowser("chrome")
         .setChromeOptions(myoptions)
@@ -30,6 +26,10 @@ describe("Selenium Tests for Islands grid", function () {
       await driver
         .manage()
         .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+    });
+
+    afterAll(async () => {
+        await driver.quit();
     });
 
     it("Should display 8 islands", async function () {
@@ -74,7 +74,7 @@ describe("Selenium Tests for Islands grid", function () {
   });
 
   describe("Mobile Tests", () => {
-    beforeEach(async () => {
+    beforeAll(async () => {
       mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
       driver = await new Builder()
         .forBrowser("chrome")
@@ -84,6 +84,10 @@ describe("Selenium Tests for Islands grid", function () {
       await driver
         .manage()
         .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+    });
+
+    afterAll(async () => {
+        await driver.quit();
     });
 
     it("Should always display view homes button when users device cant hover", async function () {
