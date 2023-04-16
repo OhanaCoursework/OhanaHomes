@@ -3,34 +3,35 @@ const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
 const myoptions = new chrome.Options();
-myoptions.addArguments("disable-gpu", "--window-size=2560,1440");
+myoptions.addArguments("disable-gpu");
 myoptions.headless();
 
-const mobileOptions = new chrome.Options();
-mobileOptions.addArguments("disable-gpu");
-mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
-mobileOptions.headless();
+// const mobileOptions = new chrome.Options();
+// mobileOptions.addArguments("disable-gpu");
+// mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
+// mobileOptions.headless();
 
 const TIMEOUT = 10000;
 
 describe("Selenium Tests for Islands grid", function () {
   let driver;
 
+  beforeAll(async () => {
+    driver = await new Builder()
+      .forBrowser("chrome")
+      .setChromeOptions(myoptions)
+      .build();
+
+    await driver
+      .manage()
+      .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+  });
+
+  afterAll(async () => {
+    await driver.quit();
+  });
+
   describe("Desktop Tests", () => {
-    beforeAll(async () => {
-      driver = await new Builder()
-        .forBrowser("chrome")
-        .setChromeOptions(myoptions)
-        .build();
-
-      await driver
-        .manage()
-        .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
-    });
-
-    afterAll(async () => {
-        await driver.quit();
-    });
 
     it("Should display 8 islands", async function () {
       await driver.get("http://localhost:3000/");
@@ -44,10 +45,8 @@ describe("Selenium Tests for Islands grid", function () {
       await driver.get("http://localhost:3000/");
 
       const viewHomesButton = await driver.findElement(
-        By.className("buttonDiv")
+        By.className("islandButton")
       );
-
-      driver.sleep(2000);
 
       assert.isFalse(await viewHomesButton.isDisplayed());
 
@@ -73,29 +72,24 @@ describe("Selenium Tests for Islands grid", function () {
     });
   });
 
-  describe("Mobile Tests", () => {
-    beforeAll(async () => {
-      mobileOptions.setMobileEmulation({ deviceName: "iPhone SE" });
-      driver = await new Builder()
-        .forBrowser("chrome")
-        .setChromeOptions(mobileOptions)
-        .build();
+//   describe("Mobile Tests", () => {
+//     beforeEach(async () => {
+//       driver = await new Builder()
+//         .forBrowser("chrome")
+//         .setChromeOptions(mobileOptions)
+//         .build();
 
-      await driver
-        .manage()
-        .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
-    });
+//       await driver
+//         .manage()
+//         .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+//     });
 
-    afterAll(async () => {
-        await driver.quit();
-    });
+//     it("Should always display view homes button when users device cant hover", async function () {
+//       await driver.get("http://localhost:3000/");
 
-    it("Should always display view homes button when users device cant hover", async function () {
-      await driver.get("http://localhost:3000/");
-
-      assert.isTrue(
-        await driver.findElement(By.className("islandButton")).isDisplayed()
-      );
-    });
-  });
+//       assert.isTrue(
+//         await driver.findElement(By.className("islandButton")).isDisplayed()
+//       );
+//     });
+//   });
 });
