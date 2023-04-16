@@ -35,14 +35,7 @@ describe("Selenium Tests for Islands grid", function () {
   });
 
   it("Should navigate to islands page when an island card is clicked", async function () {
-    driver = await new Builder()
-      .forBrowser("chrome")
-      .setChromeOptions(mobileOptions)
-      .build();
-
-    await driver
-      .manage()
-      .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+    await driver.get("http://localhost:3000/");
 
     await driver.findElement(By.className("islandCard")).click();
 
