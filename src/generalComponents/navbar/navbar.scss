@@ -6,6 +6,10 @@
   z-index: 1;
   top: 0;
 
+  #outerSignUpButton {
+    cursor: pointer;
+  }
+
   .brandLogoDiv {
     width: 30%;
   }
@@ -103,13 +107,34 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-right: 20px;
   }
+
+  .loggedIn .navBtn {
+    display: none;
+  }
+
+  .loggedIn .loginBtn {
+    display: none;
+  }
+
+  .accountButton {
+    display: none;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .loggedIn .accountButton {
+    display: inline-flex;
+  }
+
 
   .loginBtn {
     background-color: #447399;
     color: white;
     margin-left: 16px;
-    margin-right: 20px;
     font-size: 20px;
     height: 35px;
     width: 92px;
@@ -118,6 +143,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
     cursor: pointer;
   }
 
@@ -160,6 +186,10 @@
     font-size: 16px;
     vertical-align: middle;
     margin-bottom: 5px;
+  }
+
+  .accountIcon {
+    margin-right: 3px;
   }
 
   /* Show the dropdown menu on hover */

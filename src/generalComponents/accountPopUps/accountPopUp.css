@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  z-index: 2;
+  font-size: 20px;
+}
+
+.modal input {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 25rem;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+.modal-content h1 {
+  margin: 0px 0px 16px 0px;
+}
+
+.modal-content p {
+  text-align: center;
+  margin: 10px;
+}
+
+.close-button {
+  margin-left: auto;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content a {
+  color: blue;
+  cursor: pointer;
+}
+
+.loginForm {
+  width: fit-content;
+}
+
+.submit {
+  background-color: #447399;
+  color: white;
+  margin: 0px auto 16px;
+  font-size: 20px;
+  height: 35px;
+  width: 92px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}

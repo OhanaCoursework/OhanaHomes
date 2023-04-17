@@ -1,10 +1,20 @@
 import React, { useEffect } from "react";
 import largeNavBarLogo from "../../assets/images/logo/navbarLogo.svg";
 import smallNavBarLogo from "../../assets/images/logo/smallNavBarLogo.svg";
+import accountIcon from "../../assets/images/icons/myAccount.svg";
 import LoginModal from "../accountPopUps/LoginModal.js";
+import SignUpModal from "../accountPopUps/SignUpModal.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { checkIfLoggedIn } from "../../helpers/authenticator/authenticator";
+import {
+  handleLogin,
+  validateLogin,
+  setupLocalUsers,
+  doesUsernameExist,
+  doPasswordsMatch,
+  createAccount,
+  logOut,
+} from "../../helpers/authenticator/authenticator.js";
 import "./navbar.scss";
 
 const Navbar = () => {
@@ -12,42 +22,146 @@ const Navbar = () => {
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
 
   useEffect(() => {
-    const modal = document.querySelector(".modal");
+    const loginModal = document.querySelector(".login");
+    const signUpModal = document.querySelector(".signUp");
     const loginTriggers = document.getElementsByClassName("loginTrigger");
-    const closeButton = document.querySelector(".close-button");
+    const signUpTriggers = document.getElementsByClassName("signUpTrigger");
+    const closeButtons = document.getElementsByClassName("close-button");
+    const accountMenu = document.querySelector(".accountMenu");
+    const loginForm = document.getElementById("loginForm");
+    const signUpForm = document.getElementById("signUpForm");
 
-    checkIfLoggedIn();
+    if (!localStorage.users) {
+      setupLocalUsers();
+    }
 
-    function toggleModal() {
-      modal.classList.toggle("show-modal");
+    function showModal(event) {
+      for (const loginTrigger of loginTriggers) {
+        if (event.target === loginTrigger) {
+          loginModal.classList.add("show-modal");
+        }
+      }
+      for (const signUpTrigger of signUpTriggers) {
+        if (event.target === signUpTrigger) {
+          signUpModal.classList.add("show-modal");
+        }
+      }
+    }
+
+    function hideModal(event) {
+      for (const loginTrigger of loginTriggers) {
+        if (event.target === loginTrigger) {
+          loginModal.classList.remove("show-modal");
+        }
+      }
+      for (const signUpTrigger of signUpTriggers) {
+        if (event.target === signUpTrigger) {
+          signUpModal.classList.remove("show-modal");
+        }
+      }
+    }
+
+    function hideAllModals() {
+      loginModal.classList.remove("show-modal");
+      signUpModal.classList.remove("show-modal");
     }
 
     function windowOnClick(event) {
-      if (event.target === modal) {
-        toggleModal();
+      if (event.target === loginModal) {
+        hideModal(loginModal);
+      } else if (event.target === signUpModal) {
+        hideModal(signUpModal);
       }
     }
 
-    for(var i = 0; i < loginTriggers.length; i++) { 
-      loginTriggers[i].addEventListener("click", toggleModal);
+    //Implementing the setInterval method
+    const interval = setInterval(() => {
+      handleLogin(accountMenu);
+      console.log("oof");
+    }, 5000);
+
+    function loginSubmit(e) {
+      e.preventDefault(); //to prevent form submission
+      validateLogin(e.target[0].value, e.target[1].value);
+      if (handleLogin(accountMenu)) {
+        loginModal.classList.remove("show-modal");
+        loginForm.reset();
+      } else {
+        alert("Could not log in");
+      }
     }
 
-    closeButton.addEventListener("click", toggleModal);
+    function createAccountSubmit(e) {
+      e.preventDefault(); //to prevent form submission
+      if (doesUsernameExist(e.target[0].value)) {
+        alert("Username exists");
+      } else if (!doPasswordsMatch(e.target[1].value, e.target[2].value)) {
+        alert("passwords dont match");
+      } else {
+        createAccount(e.target[0].value, e.target[1].value);
+        signUpModal.classList.remove("show-modal");
+        signUpForm.reset();
+      }
+    }
+
+    console.log("here");
+    handleLogin(accountMenu);
+
+    for (var i = 0; i < loginTriggers.length; i++) {
+      loginTriggers[i].addEventListener("click", showModal);
+    }
+    for (var j = 0; j < signUpTriggers.length; j++) {
+      signUpTriggers[j].addEventListener("click", showModal);
+    }
+    console.log(closeButtons);
+    for (const closeButton of closeButtons) {
+      closeButton.addEventListener("click", hideAllModals);
+    }
+    loginForm.addEventListener("submit", loginSubmit);
+    signUpForm.addEventListener("submit", createAccountSubmit);
     window.addEventListener("click", windowOnClick);
+
+    function openSignUpModal() {
+      loginModal.classList.remove("show-modal");
+      signUpModal.classList.add("show-modal");
+    }
+
+    function openLoginModal() {
+      signUpModal.classList.remove("show-modal");
+      loginModal.classList.add("show-modal");
+    }
+
+    const createAccountLink = document.querySelector(".createAccountLink");
+
+    createAccountLink.addEventListener("click", openSignUpModal);
+
+    const loginLink = document.querySelector(".loginLink");
+
+    loginLink.addEventListener("click", openLoginModal);
 
     return () => {
       window.removeEventListener("click", windowOnClick);
-      for(var j = 0; j < loginTriggers.length; j++) { 
-        loginTriggers[j].removeEventListener("click", toggleModal);
+      for (var z = 0; z < loginTriggers.length; z++) {
+        loginTriggers[z].removeEventListener("click", showModal);
       }
-      closeButton.removeEventListener("click", toggleModal);
+      for (var k = 0; k < signUpTriggers.length; k++) {
+        signUpTriggers[k].removeEventListener("click", showModal);
+      }
+      for (const closeButton of closeButtons) {
+        closeButton.removeEventListener("click", hideAllModals);
+      }
+      loginForm.removeEventListener("submit", loginSubmit);
+      signUpForm.removeEventListener("submit", createAccountSubmit);
+      createAccountLink.removeEventListener("click", openSignUpModal);
+      loginLink.removeEventListener("click", openLoginModal);
+      clearInterval(interval);
     };
-    
   }, []);
 
   return (
     <>
       <LoginModal />
+      <SignUpModal />
       <nav className="navigation">
         <div className="brandLogoDiv">
           <Link to="/">
@@ -143,21 +257,26 @@ const Navbar = () => {
               </a>
             </li>
             <li className="mobile">
-              <a className="navBarLink" href="/signUp">
-                Sign Up
-              </a>
-              <a className="navBarLink">
-                Log in
-              </a>
+              <a className="navBarLink signUpTrigger">Sign Up</a>
+              <a className="navBarLink loginTrigger">Log in</a>
             </li>
           </ul>
         </div>
         <div className="accountMenu">
-          <a id="outerSignUpButton" className="navBtn" href="/signUp">
+          <a id="outerSignUpButton" className="navBtn signUpTrigger">
             Sign Up
           </a>
           <button id="outerLoginButton" className="loginBtn loginTrigger">
             Log in
+          </button>
+          <button
+            className="accountButton navBtn"
+            onClick={() => {
+              logOut();
+            }}
+          >
+            <img className="accountIcon" src={accountIcon} />
+            My Account
           </button>
         </div>
         <button

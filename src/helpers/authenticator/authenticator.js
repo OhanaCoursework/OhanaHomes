@@ -10,29 +10,71 @@ const validLogins = [
 ];
 
 export function validateLogin(username, password) {
-  for (var i = 0; i < validLogins.length; i++) {
-    if (
-      validLogins[i].username === username &&
-      validLogins[i].password === password
-    ) {
-      createSessionCookie(username);
-      return console.log("User can log in");
+  let users = JSON.parse(localStorage.users);
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].username === username && users[i].password === password) {
+      return createSessionCookie(username);
     }
   }
-
-  console.log("user cant log in");
 }
 
-export function checkIfLoggedIn() {
-  if(document.cookie.split("; ").find((row) => row.startsWith("user="))) {
-    console.log("Already logged in");
+export function handleLogin(accountMenu) {
+  console.log("handleLogin");
+  if (checkIfLoggedIn()) {
+    accountMenu.classList.add("loggedIn");
     return true;
   } else {
-    console.log("Not logged in");
+    accountMenu.classList.remove("loggedIn");
+    return false;
+  }
+}
+
+export function doesUsernameExist(username) {
+  let users = JSON.parse(localStorage.users);
+  const foundUser = users.find((user) => user.username === username);
+  console.log(foundUser);
+  console.log(users);
+  if (foundUser) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function doPasswordsMatch(password1, password2) {
+  return password1 === password2;
+}
+
+export function createAccount(username, password) {
+  let users = JSON.parse(localStorage.users);
+  users.push({
+    username: username,
+    password: password,
+  });
+  console.log("create users");
+  console.log(users);
+  localStorage.users = JSON.stringify(users);
+}
+
+export function setupLocalUsers() {
+  localStorage.users = JSON.stringify(validLogins);
+}
+
+export function logOut() {
+  console.log("logOut");
+  document.cookie = "user=a; max-age=-1";
+  handleLogin(document.querySelector(".accountMenu"));
+}
+
+function checkIfLoggedIn() {
+  if (document.cookie.split("; ").find((row) => row.startsWith("user="))) {
+    return true;
+  } else {
     return false;
   }
 }
 
 function createSessionCookie(username) {
-  document.cookie = encodeURIComponent("user") + "=" + encodeURIComponent(username);
+  document.cookie =
+    "user=" + encodeURIComponent(username) + "; max-age=60";
 }
