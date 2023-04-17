@@ -1,7 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./contactUs.scss";
+import SendEmail from "./sendEmail.js";
 
 const ContactUs = ({pathToTitleImage}) => {
+  useEffect(() => {
+    const contactUsForm = document.getElementById('contactUsForm'); 
+
+    function formSubmit(e) {
+      e.preventDefault(); //to prevent form submission
+      console.log(e);
+      console.log(e.target[0].value);
+      < SendEmail/>;
+    }
+
+    contactUsForm.addEventListener("submit", formSubmit);
+
+    return(() => {
+      contactUsForm.removeEventListener("submit", formSubmit);
+    });
+  });
   return (
     <section className="ContactUs">
       <div color="black" className="titleBlock">
@@ -24,7 +41,7 @@ const ContactUs = ({pathToTitleImage}) => {
         <form id="contactUsForm">
           <input className="emailInput" type="text" name="userEmail" placeholder="Email Address" />          
           <textarea id="commentArea" name="comment" rows="10" cols="50" spellCheck="true" maxLength={500}></textarea>
-          <button className="sendButton">Send</button>
+          <button type="Submit" className="sendButton">Send</button>
         </form>
       </div>
       <div className="WhereToFindUsBlock">
