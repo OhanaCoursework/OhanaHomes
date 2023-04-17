@@ -31,6 +31,32 @@
   margin: 20px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   background-color: #385872;
+  touch-action: pan-y; /* Allow vertical scrolling, disable horizontal scrolling */
+  overflow-x: hidden; /* Hide horizontal overflow to prevent scrolling */
+}
+
+.custom-progress-bar {
+  width: 80%; /* Initial width */
+  height: 10px;
+  background-color: #d3cece;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-left: 10rem;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* Add opacity to show the bar by default */
+  pointer-events: auto; /* Add pointer-events to enable click events by default */
+  transition: opacity 0.3s ease-in; /* Add transition to animate opacity changes */
+}
+
+.custom-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #447399;
+  width: 0%; /* Initial width of 0% */
+  transition: width 0.3s ease-in; /* Add transition to animate width changes */
 }
 
 .houseItem:hover {
@@ -53,6 +79,7 @@
 .houseItem p {
   margin-left: 20px;
   color: #fff;
+  padding: 3px;
 }
 
 .arrowButtons {
@@ -86,14 +113,55 @@
   z-index: 10;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
   .houseList {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .right {
+    right: 50px;
+  }
+
+  .left {
+    left: 100px;
+  }
+
+  .custom-progress-bar {
+    margin-left: 0px;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1400px) {
+  .houseList {
+    margin-left: -5rem;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .houseList {
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .arrowButtons {
+    display: none;
+  }
+  .houseList {
+    margin-left: -5rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .houseList {
+    margin-left: -10rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
   .houseList {
     grid-template-columns: 1fr;
+    margin-left: 0px;
   }
-} ;
+}
