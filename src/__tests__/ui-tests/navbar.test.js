@@ -107,7 +107,7 @@ describe("Selenium Tests for NavBar", function () {
     await driver.findElement(By.linkText("Contact")).click();
 
     assert.strictEqual(
-      "http://localhost:3000/contact",
+      "http://localhost:3000/contactUs",
       await driver.getCurrentUrl()
     );
   });
