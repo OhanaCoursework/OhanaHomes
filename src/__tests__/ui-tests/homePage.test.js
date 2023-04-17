@@ -256,4 +256,25 @@ describe("Selenium Tests for Footer", function () {
       assert.strictEqual(displayProperty, "block");
     }
   });
+
+  describe("Selenium Tests for Islands grid", function () {
+    it("Should display 8 islands", async function () {
+      await driver.get("http://localhost:3000/");
+  
+      const islandCards = await driver.findElements(By.className("islandCard"));
+  
+      assert.equal(islandCards.length, 8);
+    });
+  
+    it("Should navigate to islands page when an island card is clicked", async function () {
+      await driver.get("http://localhost:3000/");
+  
+      await driver.findElement(By.className("islandCard")).click();
+  
+      assert.strictEqual(
+        "http://localhost:3000/islands",
+        await driver.getCurrentUrl()
+      );
+    });
+  });
 });
