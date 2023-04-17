@@ -149,6 +149,12 @@
     display: none;
   }
   .houseList {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  .houseList {
     margin-left: -5rem;
   }
 }

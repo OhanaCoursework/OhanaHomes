@@ -89,12 +89,17 @@ const FeaturedProperties = ({ cardData }) => {
         <div className="house">
           {/* Back button */}
           {currentPage > 0 && (
-            <IoArrowBack className="arrowButtons left" onClick={handleBack} />
+            <IoArrowBack
+              className="arrowButtons left"
+              onClick={handleBack}
+              id="backBtn"
+            />
           )}
           <div
             className="houseList"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
+            id="houseList"
           >
             {/* Map through the cards based on the calculated start and end index */}
             {cardData.slice(startIndex, endIndex).map((houseItem, key) => {
@@ -113,6 +118,7 @@ const FeaturedProperties = ({ cardData }) => {
             <IoArrowForward
               className="arrowButtons right"
               onClick={handleForward}
+              id="forwardBtn"
             />
           )}
           <div className="custom-progress-bar">
@@ -126,7 +132,7 @@ const FeaturedProperties = ({ cardData }) => {
               }}
             ></span>
           </div>
-          <a id="linkToAboutUs" href="/aboutUs">
+          <a id="btn" href="/marketplace">
             <button className="button" type="button">
               View Homes <IoMdArrowRoundForward className="arrow" />
             </button>
