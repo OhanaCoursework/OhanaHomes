@@ -27,12 +27,14 @@ describe("Selenium Tests for About Us Page", function () {
     // Navigate to the home page
     await driver.get("http://localhost:3000/");
 
-    const pageTitle = await driver.findElement(By.id("about-title")).getText();
-    assert.strictEqual(pageTitle, "Hawaii's Trusted Performers");
+    await driver.findElement(By.id("linkToAboutUs")).click();
+
+    const pageTitle = await driver.findElement(By.id("PageHeading")).getText();
+    assert.strictEqual(pageTitle, "About Us");
 
     const snapshotPath = path.join(
       __dirname,
-      "../../assets/snapshots/HomePage-snapshot.html"
+      "../../assets/snapshots/AboutUsPage-snapshot.html"
     );
     const htmlSource = await driver.getPageSource();
     fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {

@@ -1,11 +1,13 @@
 const chrome = require("selenium-webdriver/chrome");
 const { assert } = require("chai");
-const { Builder, By } = require("selenium-webdriver");
+const { Builder, By, until } = require("selenium-webdriver");
+const path = require("path");
+const fs = require("fs");
 
 const myoptions = new chrome.Options()
   .headless()
   .addArguments("disable-gpu", "--window-size=2560,1440");
-const TIMEOUT = 6000;
+const TIMEOUT = 10000;
 let driver;
 
 beforeAll(async function () {
@@ -142,5 +144,132 @@ describe("Selenium Tests for NavBar", function () {
       .click();
 
     assert.strictEqual("http://localhost:3000/", await driver.getCurrentUrl());
+  });
+});
+
+describe("Selenium Tests for Hero page", function () {
+  it("Should change slides every 5 seconds", async function () {
+    await driver.get("http://localhost:3000/");
+
+    const slideOneTitle = await driver
+      .findElement(By.id("slide-title"))
+      .getText();
+    await driver.sleep(6000);
+    const slideTwoTitle = await driver
+      .findElement(By.id("slide-title"))
+      .getText();
+
+    assert.notDeepEqual(slideOneTitle, slideTwoTitle);
+  });
+
+  it("Should navigate between slides using arrow buttons ", async function () {
+    const forwardArrow = await driver.findElement(By.id("arrow-forward"));
+    const backArrow = await driver.findElement(By.id("arrow-back"));
+
+    const firstSlideTitle = await driver
+      .findElement(By.id("slide-title"))
+      .getText();
+
+    await forwardArrow.click();
+
+    const secondSlideTitle = await driver
+      .findElement(By.id("slide-title"))
+      .getText();
+
+    assert.notDeepEqual(firstSlideTitle, secondSlideTitle);
+
+    await backArrow.click();
+
+    const originalTitle = await driver
+      .findElement(By.id("slide-title"))
+      .getText();
+
+    assert.deepEqual(firstSlideTitle, originalTitle);
+  });
+
+  it("Should navigate to the correct page when button is clicked", async function () {
+    const button = await driver.findElement(By.id("homes-button"));
+
+    await button.click();
+    const linkURL = await driver.getCurrentUrl();
+
+    assert.strictEqual(linkURL, "http://localhost:3000/homes");
+
+    const snapshotPath = path.join(
+      __dirname,
+      "../../assets/snapshots/HomePage-snapshot.html"
+    );
+    const htmlSource = await driver.getPageSource();
+    fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
+      if (err && err.code !== "EEXIST") throw err;
+      console.log("Saved!");
+    });
+  });
+});
+
+describe("Selenium Tests for Footer", function () {
+  function generateHref(linkText) {
+    const spaceIndex = linkText.indexOf(" ");
+    let href = linkText;
+    if (spaceIndex !== -1) {
+      href =
+        linkText.substring(0, spaceIndex).toLowerCase() +
+        linkText.substring(spaceIndex).replace(/\s+/g, "");
+    } else {
+      href = linkText.toLowerCase();
+    }
+    return href;
+  }
+  let driver;
+
+  beforeAll(async () => {
+    driver = await new Builder()
+      .forBrowser("chrome")
+      .setChromeOptions(myoptions)
+      .build();
+
+    await driver
+      .manage()
+      .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
+  });
+
+  afterAll(async () => {
+    await driver.quit();
+  });
+
+  it("Should load the footer component", async function () {
+    await driver.get("http://localhost:3000/");
+
+    const footerHeading = await driver
+      .findElement(By.id("footer-heading"))
+      .getText();
+    assert.strictEqual(footerHeading, "Contact Us");
+  });
+
+  it("Should navigate to the correct page when footer links are clicked", async function () {
+    const links = await driver.findElements(By.css(".Link"));
+
+    for (let i = 0; i < links.length; i++) {
+      const freshLinks = await driver.findElements(By.css(".Link")); // Re-find the elements
+      const linkText = await freshLinks[i].getText(); // Get the link text before clicking on it
+
+      const href = generateHref(linkText); // Extract href from link text
+
+      await freshLinks[i].click();
+      await driver.wait(until.stalenessOf(freshLinks[i])); // Wait for the old link to be removed from the DOM
+      const linkURL = await driver.getCurrentUrl();
+      await driver.navigate().back();
+      await driver.sleep(2000);
+      const expectedUrl = `http://localhost:3000/${href}`;
+      assert.strictEqual(linkURL, expectedUrl);
+    }
+  });
+
+  it("Should display social media icons in the footer", async function () {
+    const socialMediaIcons = await driver.findElements(By.css(".icons"));
+    for (let i = 0; i < socialMediaIcons.length; i++) {
+      const displayProperty = await socialMediaIcons[i].getCssValue("display");
+      assert.strictEqual(displayProperty, "block");
+    }
   });
 });
