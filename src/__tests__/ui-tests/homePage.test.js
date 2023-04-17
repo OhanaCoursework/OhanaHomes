@@ -220,22 +220,6 @@ describe("Selenium Tests for Footer", function () {
     }
     return href;
   }
-  let driver;
-
-  beforeAll(async () => {
-    driver = await new Builder()
-      .forBrowser("chrome")
-      .setChromeOptions(myoptions)
-      .build();
-
-    await driver
-      .manage()
-      .setTimeouts({ implicit: TIMEOUT, pageLoad: TIMEOUT, script: TIMEOUT });
-  });
-
-  afterAll(async () => {
-    await driver.quit();
-  });
 
   it("Should load the footer component", async function () {
     await driver.get("http://localhost:3000/");
