@@ -1,11 +1,11 @@
 import React from "react";
-import "./About.scss";
+import "../styles/about.scss";
 
 const About = () => {
   return (
     <section>
       <div color="black" className="about">
-        <h1>Hawaii&apos;s Trusted Performers</h1>
+        <h1 id="about-title">Hawaii&apos;s Trusted Performers</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec lacus
           eget nulla scelerisque dapibus sit amet id ex. Fusce ut velit ut orci
