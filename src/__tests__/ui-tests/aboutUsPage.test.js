@@ -34,7 +34,7 @@ describe("Selenium Tests for About Us Page", function () {
 
     const snapshotPath = path.join(
       __dirname,
-      "../../assets/snapshots/HomePage-snapshot.html"
+      "../../assets/snapshots/AboutUsPage-snapshot.html"
     );
     const htmlSource = await driver.getPageSource();
     fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
