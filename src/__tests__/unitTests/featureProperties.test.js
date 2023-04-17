@@ -3,7 +3,6 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import FeaturedProperties from "../../Pages/home/components/featuredProperties";
 import HouseItem from "../../Pages/home/components/houseItem.js";
-import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { CardData } from "../../helpers/featuredPropetiesData/propertiesData";
 
 configure({ adapter: new Adapter() });
@@ -33,7 +32,7 @@ describe("FeaturedProperties component", () => {
 
   it("increments the currentPage state when handleForward function is called", () => {
     const firstRow = wrapper.find(HouseItem).at(1).props().image;
-    const forwardBtn = wrapper.find(IoArrowForward);
+    const forwardBtn = wrapper.find(".arrowButtons").at(0);
     forwardBtn.simulate("click");
 
     const secondRow = wrapper.find(HouseItem).at(1).props().image;
@@ -41,11 +40,11 @@ describe("FeaturedProperties component", () => {
   });
 
   it("decrements the currentPage state when handleBack function is called", () => {
-    const forwardBtn = wrapper.find(IoArrowForward);
+    const forwardBtn = wrapper.find(".arrowButtons").at(0);
     forwardBtn.simulate("click");
     const secondRow = wrapper.find(HouseItem).at(1).props().image;
 
-    const backBtn = wrapper.find(IoArrowBack);
+    const backBtn = wrapper.find(".arrowButtons").at(0);
     backBtn.simulate("click");
     const firstRow = wrapper.find(HouseItem).at(1).props().image;
 
