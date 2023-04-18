@@ -10,7 +10,7 @@ const Islands = ({ islandsData }) => {
           {islandsData.map((island) => (
             <div className="islandCard" key={island.island}>
               {
-                <a href="/islands" className="islandLink">
+                <a href={island.island.toLowerCase()} className="islandLink">
                   <img
                     className="islandImage"
                     src={island.image}
