@@ -224,7 +224,7 @@ describe("FeaturedProperties Component", function () {
     assert.strictEqual(houseItems.length, 4);
   });
 
-  it("should display 4 house items in a grid with 4 columns on larger screens", async function () {
+  it("should display 3 house items in a grid with 3 columns on larger screens", async function () {
     await driver.get("http://localhost:3000/");
     // Set the window size to 1400px to trigger the updateItemsPerPage effect
     await driver.manage().window().setRect({ width: 1300, height: 800 });
@@ -242,7 +242,7 @@ describe("FeaturedProperties Component", function () {
   it("should display 2 house items in a grid with 2 columns on smaller screens", async function () {
     await driver.get("http://localhost:3000/");
     // Set the window size to 600px width to trigger the media query for smaller screens
-    await driver.manage().window().setRect({ width: 700, height: 800 });
+    await driver.manage().window().setRect({ width: 800, height: 800 });
 
     // Wait for the page to fully load
     await driver.wait(until.elementLocated(By.className("houseList")));

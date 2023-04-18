@@ -6,37 +6,37 @@
 
 .container {
   width: 100%;
-  padding: 3rem calc((100vw - 1300px) / 2);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem;
-  align-items: flex-end;
+  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
 }
 
-.button {
-  white-space: nowrap;
-  outline: none;
+.viewHomesButton .button {
   border: none;
   cursor: pointer;
-  text-decoration: none;
-  transition: 0.3s;
+  transition: 0.2s;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 14px 24px;
   color: black;
-  font-size: 16px;
-  margin-top: 2rem;
+  font-size: 20px;
   background-color: #f0ddce;
   border-radius: 6px;
-  border: none;
-  position: relative;
+}
+
+.viewHomesButton {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.viewHomesButton .button:hover {
+  background: #cd853f;
+  color: white;
 }
 
 .arrow {
   height: 17px;
-  margin-top: 3px;
+  margin-top: 2.5px;
 }
 
 .title-text {
@@ -44,29 +44,12 @@
   font-size: 48pt;
   color: #447399;
   font-weight: 500;
-  margin-left: 4.5rem;
-  margin-bottom: 1rem;
+  margin: 32px 0px 16px 72px;
+  padding: 0px 16px;
 }
 
-.title-text h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  background: #000;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
-
-@media screen and (max-width: 1400px) {
-  .container {
-    grid-template-columns: none;
-    grid-template-rows: none;
-  }
-}
-
-@media screen and (max-width: 1180px) {
-  .container {
-    /* grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); */
-  }
+.featuredHomes {
+  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
 }
