@@ -22,7 +22,7 @@ const SignUpModal = () => {
           <br />
           <input type="text" id="anotherPassword" name="anotherPassword" />
           <br />
-          <button type="submit" className="submit">Sign in</button>
+          <button type="submit" className="submit">Create Account</button>
         </form>
         <p>
           Already have and account? <a className="loginLink">Login</a>

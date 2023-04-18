@@ -14,12 +14,14 @@ import {
   doPasswordsMatch,
   createAccount,
   logOut,
+  getUsername,
 } from "../../helpers/authenticator/authenticator.js";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
+  const [isMyAccountExpanded, setIsMyAccountExpanded] = useState(false);
 
   useEffect(() => {
     const loginModal = document.querySelector(".login");
@@ -77,7 +79,6 @@ const Navbar = () => {
     //Implementing the setInterval method
     const interval = setInterval(() => {
       handleLogin(accountMenu);
-      console.log("oof");
     }, 5000);
 
     function loginSubmit(e) {
@@ -104,7 +105,6 @@ const Navbar = () => {
       }
     }
 
-    console.log("here");
     handleLogin(accountMenu);
 
     for (var i = 0; i < loginTriggers.length; i++) {
@@ -113,7 +113,6 @@ const Navbar = () => {
     for (var j = 0; j < signUpTriggers.length; j++) {
       signUpTriggers[j].addEventListener("click", showModal);
     }
-    console.log(closeButtons);
     for (const closeButton of closeButtons) {
       closeButton.addEventListener("click", hideAllModals);
     }
@@ -269,15 +268,38 @@ const Navbar = () => {
           <button id="outerLoginButton" className="loginBtn loginTrigger">
             Log in
           </button>
-          <button
-            className="accountButton navBtn"
-            onClick={() => {
-              logOut();
-            }}
-          >
-            <img className="accountIcon" src={accountIcon} />
-            My Account
-          </button>
+          <div className="myAccount">
+            <button
+              className={
+                isMyAccountExpanded
+                  ? "accountButton navBtn expanded"
+                  : "accountButton navBtn"
+              }
+              onClick={() => {
+                setIsMyAccountExpanded(!isMyAccountExpanded);
+              }}
+            >
+              <img className="accountIcon" src={accountIcon} />
+              My Account
+            </button>
+            <div
+              className={
+                isMyAccountExpanded
+                  ? "myAccountContent expanded"
+                  : "myAccountContent"
+              }
+            >
+              <p>Hi {getUsername()}</p>
+              <button
+                className="logOutButton"
+                onClick={() => {
+                  logOut();
+                }}
+              >
+                Log out
+              </button>
+            </div>
+          </div>
         </div>
         <button
           className="hamburger"

@@ -19,7 +19,6 @@ export function validateLogin(username, password) {
 }
 
 export function handleLogin(accountMenu) {
-  console.log("handleLogin");
   if (checkIfLoggedIn()) {
     accountMenu.classList.add("loggedIn");
     return true;
@@ -32,8 +31,6 @@ export function handleLogin(accountMenu) {
 export function doesUsernameExist(username) {
   let users = JSON.parse(localStorage.users);
   const foundUser = users.find((user) => user.username === username);
-  console.log(foundUser);
-  console.log(users);
   if (foundUser) {
     return true;
   } else {
@@ -51,8 +48,6 @@ export function createAccount(username, password) {
     username: username,
     password: password,
   });
-  console.log("create users");
-  console.log(users);
   localStorage.users = JSON.stringify(users);
 }
 
@@ -61,9 +56,12 @@ export function setupLocalUsers() {
 }
 
 export function logOut() {
-  console.log("logOut");
   document.cookie = "user=a; max-age=-1";
   handleLogin(document.querySelector(".accountMenu"));
+}
+
+export function getUsername() {
+  return document.cookie.split("; ").find((row) => row.startsWith("user=")).split('=')[1];
 }
 
 function checkIfLoggedIn() {
@@ -76,5 +74,5 @@ function checkIfLoggedIn() {
 
 function createSessionCookie(username) {
   document.cookie =
-    "user=" + encodeURIComponent(username) + "; max-age=60";
+    "user=" + encodeURIComponent(username) + "; max-age=1200";
 }

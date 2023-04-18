@@ -67,7 +67,7 @@ const Hero = ({ slides }) => {
               {index === current && (
                 <div className="HeroSlider">
                   <img
-                    id
+                    id={index}
                     className="HeroImage"
                     src={slide.image}
                     alt={slide.alt}
