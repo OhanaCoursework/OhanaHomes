@@ -103,14 +103,12 @@
   position: absolute;
   right: 25px;
   display: flex;
-  z-index: 10;
 }
 
 .left {
   position: absolute;
   left: 25px;
   display: flex;
-  z-index: 10;
 }
 
 @media only screen and (max-width: 1400px) {
