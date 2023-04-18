@@ -61,7 +61,9 @@ export function logOut() {
 }
 
 export function getUsername() {
-  return document.cookie.split("; ").find((row) => row.startsWith("user=")).split('=')[1];
+  if(checkIfLoggedIn()){
+    return document.cookie.split("; ").find((row) => row.startsWith("user=")).split('=')[1];
+  }
 }
 
 function checkIfLoggedIn() {

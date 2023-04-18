@@ -1,32 +1,27 @@
 .navigation {
   height: 60px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto minmax(227px, 1fr);
   position: sticky;
   background-color: #f0ddce;
   z-index: 1;
   top: 0;
+  justify-content: space-between;
 
   #outerSignUpButton {
     cursor: pointer;
   }
 
-  .brandLogoDiv {
-    width: 30%;
-  }
 
   .largeBrandLogo {
-    margin-left: 20px;
     display: block;
   }
 
   .smallBrandLogo {
-    margin-left: 20px;
     display: none;
   }
 
   .navigationMenu {
-    width: 40%;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
   }
@@ -111,6 +106,7 @@
     font-size: 16px;
     text-align: left;
     padding: 0px 16px;
+    cursor: pointer;
   }
 
   .myAccountContent p {
@@ -147,19 +143,19 @@
   }
 
   .accountMenu {
-    width: 30%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 20px;
+    background-color: #f0ddce;
+    padding-right: 10px;
   }
 
-  .loggedIn .navBtn {
-    display: none;
+  .loggedIn #outerSignUpButton {
+    display: none !important;
   }
 
   .loggedIn .loginBtn {
-    display: none;
+    display: none !important;
   }
 
   .accountButton {
@@ -259,10 +255,6 @@
     .dropdown:hover .dropBtn {
       background-color: #eee;
     }
-
-    .mobile a {
-      display: none;
-    }
   }
 
   @media screen and (max-width: 1100px) {
@@ -273,21 +265,9 @@
     .smallBrandLogo {
       display: block;
     }
-
-    .brandLogoDiv {
-      width: 15%;
-    }
-
-    .navigationMenu {
-      width: 55%;
-    }
   }
 
   @media screen and (max-width: 800px) {
-    .brandLogoDiv {
-      width: 260px;
-    }
-
     .largeBrandLogo {
       display: block;
     }
@@ -298,15 +278,6 @@
 
     .dropdown {
       background-color: #f1f1f1;
-    }
-
-    .mobile {
-      display: block;
-    }
-
-    .mobile .navBarLink {
-      width: 50%;
-      display: inline-block;
     }
 
     .chevron.expanded:before {
@@ -324,6 +295,42 @@
 
     .accountMenu {
       display: none;
+      padding-right: 0px;
+      width: 100%;
+      border-top: black solid 1px;
+    }
+
+    .myAccount {
+      width: 100%;
+    }
+
+    .myAccountContent p {
+      text-align: center;
+    }
+
+    .logOutButton {
+      text-align: center;
+    }
+    
+    .accountButton {
+      width: 100%;
+    }
+
+    .accountMenu #outerSignUpButton {
+      width: 50%;
+      padding: 0px;
+      line-height: 45px;
+      display: inline-flex;
+    }
+
+    .accountMenu .loginBtn {
+      width: 50%;
+      margin: 0px;
+      border-radius: 0px;
+      padding: 0px;
+      height: 45px;
+      display: inline-flex;
+      box-shadow: none;
     }
 
     .navigationMenu ul {
@@ -337,10 +344,7 @@
 
     .navBarLink {
       padding: 10px;
-    }
-
-    .navigationMenu.expanded ul {
-      display: block;
+      cursor: pointer;
     }
 
     .dropdownContent.expanded {
@@ -349,11 +353,13 @@
 
     .navigationMenu {
       width: 100%;
+      border-bottom: black solid 1px;
     }
 
     .navBtn {
       width: 100%;
       padding: 10px;
+      cursor: pointer;
     }
 
     .dropdown {
@@ -377,10 +383,30 @@
       text-align: left;
     }
   }
+  @media screen and (max-width: 350px) {
+    .brandLogoDiv a {
+      line-height: 60px;
+      display: inline-block;
+    }
+  
+    .largeBrandLogo {
+      width: 240px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
   .navigation {
     display: block;
+  }
+
+  .navigation.expanded .navigationMenu ul {
+    display: block;
+  }
+
+  .navigation.expanded .accountMenu {
+    display: inline-block;
   }
 }

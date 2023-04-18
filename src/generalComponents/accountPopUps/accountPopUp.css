@@ -87,3 +87,13 @@
   cursor: pointer;
   border: none;
 }
+
+@media screen and (max-width: 480px) {
+  .modal-content h1 {
+    font-size: 32px;
+  }
+
+  .modal {
+    font-size: 18px;
+  }
+ }

@@ -26,8 +26,8 @@ const Navbar = () => {
   useEffect(() => {
     const loginModal = document.querySelector(".login");
     const signUpModal = document.querySelector(".signUp");
-    const loginTriggers = document.getElementsByClassName("loginTrigger");
-    const signUpTriggers = document.getElementsByClassName("signUpTrigger");
+    const loginTrigger = document.querySelector(".loginTrigger");
+    const signUpTrigger = document.querySelector(".signUpTrigger");
     const closeButtons = document.getElementsByClassName("close-button");
     const accountMenu = document.querySelector(".accountMenu");
     const loginForm = document.getElementById("loginForm");
@@ -38,29 +38,15 @@ const Navbar = () => {
     }
 
     function showModal(event) {
-      for (const loginTrigger of loginTriggers) {
-        if (event.target === loginTrigger) {
-          loginModal.classList.add("show-modal");
-        }
-      }
-      for (const signUpTrigger of signUpTriggers) {
-        if (event.target === signUpTrigger) {
-          signUpModal.classList.add("show-modal");
-        }
+      if (event.target === loginTrigger) {
+        loginModal.classList.add("show-modal");
+      } else if (event.target === signUpTrigger) {
+        signUpModal.classList.add("show-modal");
       }
     }
 
     function hideModal(event) {
-      for (const loginTrigger of loginTriggers) {
-        if (event.target === loginTrigger) {
-          loginModal.classList.remove("show-modal");
-        }
-      }
-      for (const signUpTrigger of signUpTriggers) {
-        if (event.target === signUpTrigger) {
-          signUpModal.classList.remove("show-modal");
-        }
-      }
+      event.classList.remove("show-modal");
     }
 
     function hideAllModals() {
@@ -78,7 +64,9 @@ const Navbar = () => {
 
     //Implementing the setInterval method
     const interval = setInterval(() => {
-      handleLogin(accountMenu);
+      if (!handleLogin(accountMenu)) {
+        setIsMyAccountExpanded(false);
+      }
     }, 5000);
 
     function loginSubmit(e) {
@@ -107,18 +95,16 @@ const Navbar = () => {
 
     handleLogin(accountMenu);
 
-    for (var i = 0; i < loginTriggers.length; i++) {
-      loginTriggers[i].addEventListener("click", showModal);
-    }
-    for (var j = 0; j < signUpTriggers.length; j++) {
-      signUpTriggers[j].addEventListener("click", showModal);
-    }
+    window.addEventListener("click", windowOnClick);
+
+    loginTrigger.addEventListener("click", showModal);
+    signUpTrigger.addEventListener("click", showModal);
+
     for (const closeButton of closeButtons) {
       closeButton.addEventListener("click", hideAllModals);
     }
     loginForm.addEventListener("submit", loginSubmit);
     signUpForm.addEventListener("submit", createAccountSubmit);
-    window.addEventListener("click", windowOnClick);
 
     function openSignUpModal() {
       loginModal.classList.remove("show-modal");
@@ -140,12 +126,8 @@ const Navbar = () => {
 
     return () => {
       window.removeEventListener("click", windowOnClick);
-      for (var z = 0; z < loginTriggers.length; z++) {
-        loginTriggers[z].removeEventListener("click", showModal);
-      }
-      for (var k = 0; k < signUpTriggers.length; k++) {
-        signUpTriggers[k].removeEventListener("click", showModal);
-      }
+      loginTrigger.removeEventListener("click", showModal);
+      signUpTrigger.removeEventListener("click", showModal);
       for (const closeButton of closeButtons) {
         closeButton.removeEventListener("click", hideAllModals);
       }
@@ -161,7 +143,7 @@ const Navbar = () => {
     <>
       <LoginModal />
       <SignUpModal />
-      <nav className="navigation">
+      <nav className={isNavExpanded ? "navigation expanded" : "navigation"}>
         <div className="brandLogoDiv">
           <Link to="/">
             <img
@@ -178,11 +160,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div
-          className={
-            isNavExpanded ? "navigationMenu expanded" : "navigationMenu"
-          }
-        >
+        <div className="navigationMenu">
           <ul>
             <li>
               <a id="buyButton" className="navBarLink" href="/marketplace">
@@ -255,10 +233,6 @@ const Navbar = () => {
                 Contact
               </a>
             </li>
-            <li className="mobile">
-              <a className="navBarLink signUpTrigger">Sign Up</a>
-              <a className="navBarLink loginTrigger">Log in</a>
-            </li>
           </ul>
         </div>
         <div className="accountMenu">
@@ -293,6 +267,7 @@ const Navbar = () => {
               <button
                 className="logOutButton"
                 onClick={() => {
+                  setIsMyAccountExpanded(!isMyAccountExpanded);
                   logOut();
                 }}
               >
