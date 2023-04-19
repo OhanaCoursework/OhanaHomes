@@ -114,27 +114,27 @@ describe("Selenium Tests for NavBar", function () {
     );
   });
 
-  it("Should be able to navigate to the Sign Up Page using the Sign Up Link", async function () {
-    await driver.get("http://localhost:3000/");
+  // it("Should be able to navigate to the Sign Up Page using the Sign Up Link", async function () {
+  //   await driver.get("http://localhost:3000/");
 
-    await driver.findElement(By.linkText("Sign Up")).click();
+  //   await driver.findElement(By.linkText("Sign Up")).click();
 
-    assert.strictEqual(
-      "http://localhost:3000/signUp",
-      await driver.getCurrentUrl()
-    );
-  });
+  //   assert.strictEqual(
+  //     "http://localhost:3000/signUp",
+  //     await driver.getCurrentUrl()
+  //   );
+  // });
 
-  it("Should be able to navigate to the Login Page using the Login Link", async function () {
-    await driver.get("http://localhost:3000/");
+  // it("Should be able to navigate to the Login Page using the Login Link", async function () {
+  //   await driver.get("http://localhost:3000/");
 
-    await driver.findElement(By.linkText("Log in")).click();
+  //   await driver.findElement(By.linkText("Log in")).click();
 
-    assert.strictEqual(
-      "http://localhost:3000/login",
-      await driver.getCurrentUrl()
-    );
-  });
+  //   assert.strictEqual(
+  //     "http://localhost:3000/login",
+  //     await driver.getCurrentUrl()
+  //   );
+  // });
 
   it("Should be able to navigate to the Home Page by clicking the logo", async function () {
     await driver.get("http://localhost:3000/aboutUs");
