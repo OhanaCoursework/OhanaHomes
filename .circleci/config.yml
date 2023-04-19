@@ -25,12 +25,6 @@ jobs:
       - run: |
           npm start &
           npx wait-on http://127.0.0.1:3000 && npm run ui-tests
-      - run: |
-          mkdir -p /tmp/screenshots
-          cp capturedimage.* /tmp/screenshots
-
-      - store_artifacts:
-          path: /tmp/screenshots
 
 workflows:
   version: 2
