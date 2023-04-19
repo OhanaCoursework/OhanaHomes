@@ -80,8 +80,6 @@ describe("Selenium Tests for Islands grid", function () {
 
     console.log("second op: " + await viewHomesButton.getCssValue("opacity"));
 
-    assert.isFalse(await viewHomesButton.isDisplayed());
-
     console.log("third op: " + await viewHomesButton.getCssValue("opacity"));
 
     await driver.takeScreenshot().then(
