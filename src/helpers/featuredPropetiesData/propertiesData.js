@@ -112,4 +112,28 @@ export const CardData = [
     image: marketHouse16,
     alt: "House",
   },
+  {
+    title: "Luxury Villa in Maui, Hawaii",
+    price: "4,100,000",
+    image: marketHouse1,
+    alt: "House",
+  },
+  {
+    title: "House in Honolulu, Hawaii",
+    price: "2,680,000",
+    image: marketHouse2,
+    alt: "House",
+  },
+  {
+    title: "Modern House in Oahu, Hawaii",
+    price: "11,500,000",
+    image: marketHouse3,
+    alt: "House",
+  },
+  {
+    title: "House in Kauai, Hawaii",
+    price: "8,270,000",
+    image: marketHouse4,
+    alt: "House",
+  },
 ];

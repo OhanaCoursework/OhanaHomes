@@ -31,7 +31,7 @@ describe("FeaturedProperties component", () => {
   });
 
   it("increments the currentPage state when handleForward function is called", () => {
-    const firstRow = wrapper.find(HouseItem).at(1).props().image;
+    const firstRow = wrapper.find(HouseItem).at(0).props().image;
     const forwardBtn = wrapper.find(".arrowButtons").at(0);
     forwardBtn.simulate("click");
 
@@ -46,7 +46,7 @@ describe("FeaturedProperties component", () => {
 
     const backBtn = wrapper.find(".arrowButtons").at(0);
     backBtn.simulate("click");
-    const firstRow = wrapper.find(HouseItem).at(1).props().image;
+    const firstRow = wrapper.find(HouseItem).at(0).props().image;
 
     expect(secondRow).not.toEqual(firstRow);
   });
