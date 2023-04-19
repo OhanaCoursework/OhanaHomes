@@ -399,8 +399,6 @@ describe("Selenium Tests for Islands grid", function () {
   });
 
   it("Should navigate to islands page when an island card is clicked", async function () {
-    await driver.get("http://localhost:3000/");
-
     await driver.findElement(By.className("islandCard")).click();
 
     assert.strictEqual(
