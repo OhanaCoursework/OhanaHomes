@@ -7,7 +7,7 @@ const SignUpModal = () => {
   return (
     <div className="modal signUp">
       <div className="modal-content">
-        <span className="close-button">&times;</span>
+        <span id="signUpCloseButton" className="close-button">&times;</span>
         <h1>Create Account</h1>
         <form id="signUpForm">
           <label htmlFor="username">Username:</label>

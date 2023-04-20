@@ -10,7 +10,7 @@ const LoginModal = () => {
   return (
     <div className="modal login">
       <div className="modal-content">
-        <span className="close-button">&times;</span>
+        <span id="loginCloseButton" className="close-button">&times;</span>
         <h1>Login</h1>
         <form id="loginForm">
           <label htmlFor="username">Username:</label>

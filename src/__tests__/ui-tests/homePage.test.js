@@ -114,28 +114,6 @@ describe("Selenium Tests for NavBar", function () {
     );
   });
 
-  // it("Should be able to navigate to the Sign Up Page using the Sign Up Link", async function () {
-  //   await driver.get("http://localhost:3000/");
-
-  //   await driver.findElement(By.linkText("Sign Up")).click();
-
-  //   assert.strictEqual(
-  //     "http://localhost:3000/signUp",
-  //     await driver.getCurrentUrl()
-  //   );
-  // });
-
-  // it("Should be able to navigate to the Login Page using the Login Link", async function () {
-  //   await driver.get("http://localhost:3000/");
-
-  //   await driver.findElement(By.linkText("Log in")).click();
-
-  //   assert.strictEqual(
-  //     "http://localhost:3000/login",
-  //     await driver.getCurrentUrl()
-  //   );
-  // });
-
   it("Should be able to navigate to the Home Page by clicking the logo", async function () {
     await driver.get("http://localhost:3000/aboutUs");
 
@@ -146,6 +124,69 @@ describe("Selenium Tests for NavBar", function () {
     assert.strictEqual("http://localhost:3000/", await driver.getCurrentUrl());
   });
 });
+
+describe("Selenium Tests for account menus", function () {
+  it("Should be able to navigate to the Sign Up pop up using the Sign Up Link", async function () {
+    await driver.get("http://localhost:3000/");
+
+    assert.isFalse(
+      await driver.findElement(By.className("signUp")).isDisplayed()
+    );
+
+    await driver.findElement(By.linkText("Sign Up")).click();
+
+    assert.isTrue(
+      await driver.findElement(By.className("signUp")).isDisplayed()
+    );
+  });
+
+  it("Should be able to navigate to the Login pop up using the Login Link", async function () {
+    await driver.get("http://localhost:3000/");
+
+    assert.isFalse(
+      await driver.findElement(By.className("login")).isDisplayed()
+    );
+
+    await driver.findElement(By.linkText("Log in")).click();
+
+    assert.isTrue(
+      await driver.findElement(By.className("login")).isDisplayed()
+    );
+  });
+
+  it("Should be able to close to the Login pop up using the close button", async function () {
+    await driver.get("http://localhost:3000/");
+
+    await driver.findElement(By.linkText("Log in")).click();
+
+    assert.isTrue(
+      await driver.findElement(By.className("login")).isDisplayed()
+    );
+
+    await driver.findElement(By.id("loginCloseButton")).click();
+
+    assert.isFalse(
+      await driver.findElement(By.className("login")).isDisplayed()
+    );
+  });
+
+  it("Should be able to close to the sign up pop up using the close button", async function () {
+    await driver.get("http://localhost:3000/");
+
+    await driver.findElement(By.linkText("Sign Up")).click();
+
+    assert.isTrue(
+      await driver.findElement(By.className("signUp")).isDisplayed()
+    );
+
+    await driver.findElement(By.id("signUpCloseButton")).click();
+
+    assert.isFalse(
+      await driver.findElement(By.className("signUp")).isDisplayed()
+    );
+
+  });
+})
 
 describe("Selenium Tests for Hero page", function () {
   it("Should change slides every 5 seconds", async function () {
@@ -260,17 +301,17 @@ describe("Selenium Tests for Footer", function () {
   describe("Selenium Tests for Islands grid", function () {
     it("Should display 8 islands", async function () {
       await driver.get("http://localhost:3000/");
-  
+
       const islandCards = await driver.findElements(By.className("islandCard"));
-  
+
       assert.equal(islandCards.length, 8);
     });
-  
+
     it("Should navigate to islands page when an island card is clicked", async function () {
       await driver.get("http://localhost:3000/");
-  
+
       await driver.findElement(By.className("islandCard")).click();
-  
+
       assert.strictEqual(
         "http://localhost:3000/islands",
         await driver.getCurrentUrl()
