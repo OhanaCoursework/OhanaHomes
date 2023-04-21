@@ -3,29 +3,39 @@ import React from "react";
 import "./accountPopUp.css";
 
 const SignUpModal = () => {
-
   return (
     <div className="modal signUp">
       <div className="modal-content">
-        <span id="signUpCloseButton" className="close-button">&times;</span>
+        <span id="signUpCloseButton" className="close-button">
+          &times;
+        </span>
         <h1>Create Account</h1>
-        <form id="signUpForm">
-          <label htmlFor="username">Username:</label>
-          <br />
-          <input type="text" id="username" name="username" />
-          <br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input type="text" id="password" name="password" />
-          <br />
-          <label htmlFor="anotherPassword">Repeat Password:</label>
-          <br />
-          <input type="text" id="anotherPassword" name="anotherPassword" />
-          <br />
-          <button type="submit" className="submit">Create Account</button>
-        </form>
-        <p>
-          Already have and account? <a className="loginLink">Login</a>
+        <div className="modalForm">
+          <p id="signUpError" className="modalError">Error
+          </p>
+          <form id="signUpForm">
+            <label htmlFor="username">Username:</label>
+            <br />
+            <input type="text" id="signUpUsername" name="username" />
+            <br />
+            <label htmlFor="password">Password:</label>
+            <br />
+            <input type="password" id="signUpPassword" name="password" autoComplete="new-password"/>
+            <br />
+            <label htmlFor="anotherPassword">Repeat Password:</label>
+            <br />
+            <input type="password" id="anotherPassword" name="anotherPassword" autoComplete="off"/>
+            <br />
+            <button type="submit" className="submit">
+              Create Account
+            </button>
+          </form>
+        </div>
+        <p className="otherAccountPopUpLink">
+          Already have and account?{" "}
+          <a id="loginLink">
+            Login
+          </a>
         </p>
       </div>
     </div>
