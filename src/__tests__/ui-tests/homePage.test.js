@@ -184,9 +184,8 @@ describe("Selenium Tests for account menus", function () {
     assert.isFalse(
       await driver.findElement(By.className("signUp")).isDisplayed()
     );
-
   });
-})
+});
 
 describe("Selenium Tests for Hero page", function () {
   it("Should change slides every 5 seconds", async function () {
