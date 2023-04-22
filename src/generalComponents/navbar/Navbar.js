@@ -64,28 +64,28 @@ const Navbar = () => {
                   : "dropdownContent"
               }
             >
-              <a className="dropdownLink left" href="/islands">
+              <a className="dropdownLink left" href="/hawai'i">
                 Hawai&apos;i
               </a>
-              <a className="dropdownLink right" href="/islands">
+              <a className="dropdownLink right" href="/maui">
                 Maui
               </a>
-              <a className="dropdownLink left" href="/islands">
+              <a className="dropdownLink left" href="/o'ahu">
                 O&apos;ahu
               </a>
-              <a className="dropdownLink right" href="/islands">
+              <a className="dropdownLink right" href="/kaua&apos;i">
                 Kaua&apos;i
               </a>
-              <a className="dropdownLink left" href="/islands">
-                Moloka
+              <a className="dropdownLink left" href="/moloka'i">
+                Moloka&apos;i
               </a>
-              <a className="dropdownLink right" href="/islands">
+              <a className="dropdownLink right" href="/lāna&apos;i">
                 Lāna&apos;i
               </a>
-              <a className="dropdownLink left" href="/islands">
-                Ni&apos;hau
+              <a className="dropdownLink left" href="/ni&apos;ihau">
+                Ni&apos;ihau
               </a>
-              <a className="dropdownLink right" href="/islands">
+              <a className="dropdownLink right" href="/kaho&apos;olawe">
                 Kaho&apos;olawe
               </a>
             </div>
