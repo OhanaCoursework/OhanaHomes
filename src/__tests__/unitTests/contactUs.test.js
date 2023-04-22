@@ -45,17 +45,17 @@ describe("Email Validator should only accept valid emails", () => {
   let testInvalid = "namegmail.com";
 
   it("Null Emails should not be accepted", () => {
-    let testNullResponse = isEmailValid(testNull)
+    let testNullResponse = isEmailValid(testNull);
     assert.equal(testNullResponse, "You must enter a valid email");
   });
 
   it("Valid Emails should be accepted", () => {
-    let testValidResponse = isEmailValid(testValid)
+    let testValidResponse = isEmailValid(testValid);
     assert.equal(testValidResponse, true);
   });
 
   it("Invalid Emails should not be accepted", () => {
-    let testInvalidResponse = isEmailValid(testInvalid)
+    let testInvalidResponse = isEmailValid(testInvalid);
     assert.equal(testInvalidResponse, "You must enter a valid email");
   });
 });
