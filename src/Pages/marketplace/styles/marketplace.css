@@ -1,0 +1,39 @@
+.marketplace {
+  background-color: #447399;
+  padding-top: 32px;
+}
+
+#PageHeading {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 48px;
+  color: white;
+}
+
+.marketplaceSearch {
+  background: #F8FAF9;
+  border-radius: 6px;
+  color: #385872;
+  font-size: 20px;
+  border: none;
+  width: 700px;
+  height: 53px;
+  padding-left: 16px;
+  padding-right: 37px;
+}
+
+.searchDiv {
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.searchIcon {
+  position: relative;
+  right: 15px;
+  height: 22px;
+  width: 22px;
+  margin-left: -21.99px;
+}
