@@ -2,6 +2,7 @@
   background-color: #447399;
   color: white;
   border: 0cm;
+  text-align: center;
 
   li {
     text-align: center;
@@ -57,6 +58,7 @@
     height: 51px;
     position: relative;
     color: black;
+    cursor: pointer;
   }
 
   button:hover {
@@ -64,8 +66,9 @@
   }
 
   #linkToAboutUs {
-    padding: 0px 0px 16px 0px;
-    display: flex;
+    margin-bottom: 16px;
+    padding: 0px;
+    display: inline-block;
   }
 
   @media (max-width: 800px) {
