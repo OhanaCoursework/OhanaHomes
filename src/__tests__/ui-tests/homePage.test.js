@@ -154,7 +154,7 @@ describe("Selenium Tests for Hero page", function () {
     const slideOneTitle = await driver
       .findElement(By.id("slide-title"))
       .getText();
-    await driver.sleep(6000);
+    await driver.sleep(11000);
     const slideTwoTitle = await driver
       .findElement(By.id("slide-title"))
       .getText();
