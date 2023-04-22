@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./contactUs.scss";
+import pathToTitleImage from "../../../assets/images/ContactUsTitleImage.png";
 
-
-const ContactUs = ({pathToTitleImage}) => {
+const ContactUs = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <section className="ContactUs">
@@ -34,7 +34,7 @@ const ContactUs = ({pathToTitleImage}) => {
       </div>
       <div className="WhereToFindUsBlock">
         <h2 id="whereToFindUsHeader">Where to Find Us</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90186.7615211994!2d-157.92047030800617!3d21.33667051131379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006e5c1cddb487%3A0xb21220a7a2e42394!2s2121%20N%20Nimitz%20Hwy%2C%20Honolulu%2C%20HI%2096819%2C%20USA!5e0!3m2!1sen!2suk!4v1681691181606!5m2!1sen!2suk" width="1100" height="500" title="whereToFindUsMap"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90186.7615211994!2d-157.92047030800617!3d21.33667051131379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006e5c1cddb487%3A0xb21220a7a2e42394!2s2121%20N%20Nimitz%20Hwy%2C%20Honolulu%2C%20HI%2096819%2C%20USA!5e0!3m2!1sen!2suk!4v1681691181606!5m2!1sen!2suk" title="whereToFindUsMap"></iframe>
       </div>
     </section>
   );

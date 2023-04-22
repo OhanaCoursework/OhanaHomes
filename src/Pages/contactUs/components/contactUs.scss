@@ -5,12 +5,13 @@
 
 .titleBlock {
     position: relative;
+    margin: 0;
+    margin-bottom: -0.3%;
 }
 
 .titleBlock > h1 {
     color: white;
-    font-size: 48pt;
-    margin: 0;
+    font-size: 48px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,17 +19,19 @@
 }
 
 .QuickLinksBlock {
-    margin-top: -2.2%;
     background-color: #447399;
     width: 100%;
     height: 6cm;
+    margin: 0;
 }
 
 .QuickLinksBlock > h2 {
-    padding-top: -5cm;
-    font-size: 24pt;
-    text-align: center;
     color: white;
+    text-align: center;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    margin: 0px;
     padding-top: 1%;
 }
 
@@ -50,14 +53,14 @@ li {
     width: 100%;
 }
 
-li a {
+#LinkToAboutUs li a, #LinkToMarketPlace li a, #LinkToHome li a {
     display: block;
     text-align: center;
     padding: 16px;
     text-decoration: none;
 }
 
-button {
+#LinkToAboutUs button, #LinkToMarketPlace button, #LinkToHome button {
     background-color: #F0DDCE;
     font-size: 20px;
     border-radius: 6px;
@@ -70,40 +73,17 @@ button {
     filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
 }
 
-button > sendButton {
+#sendButton {
     position: relative;
     left: 10%;
 }
 
-button:hover {
+#LinkToAboutUs button:hover, #LinkToMarketPlace button:hover, #LinkToHome button:hover {
     background-color: #eeee;
 }
 
-@media (max-width: 800px) { 
-    ul {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-button {
-    font-size: 18px;
-    width: 155px;
-    height: 46px;
-}
-h1 {
-    font-size: 40px;
-}
-p {
-    font-size: 20px;
-}
-.listWidgets {
-    font-size: 38px;
-}
-
-li {
-    font-size: 20px;
-}
+button:hover {
+    background-color: #eeee;
 }
 
 textarea {
@@ -159,7 +139,7 @@ sendButton:hover {
     margin-left: 12.5%;
     color: white;
     padding-top: 1%;
-    font-size: 24pt;
+    font-size: 24px;
 }
 
 iframe {
@@ -167,17 +147,19 @@ iframe {
     position: relative;
     border: 2px solid #447399;
     margin-bottom: 3%;
+    width:75%;
+    height:500px
 }
 
 .CommentBlock > h2 {
     position: relative;
-    left: 12.5%;
-    font-size: 24pt;
+    font-size: 24px;
+    padding-left: 5%;
 }
 
 .CommentBlock > h3 {
     position: relative;
-    left: 12.5%;
+    padding-left: 5%;
 }
 
 .emailConfirmation {
@@ -190,7 +172,34 @@ iframe {
     margin: 0px auto;
     display: block;
     margin-top: 1%;
-    font-size: 24pt;
+    font-size: 24px;
+}
+
+@media (max-width: 800px) { 
+    ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+button {
+    font-size: 18px;
+    width: 155px;
+    height: 46px;
+}
+h1 {
+    font-size: 40px;
+}
+p {
+    font-size: 20px;
+}
+.listWidgets {
+    font-size: 38px;
+}
+
+li {
+    font-size: 20px;
+}
 }
 
 
