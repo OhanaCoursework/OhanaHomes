@@ -233,6 +233,136 @@ describe("Selenium Tests for Hero page", function () {
   });
 });
 
+describe("FeaturedProperties Component", function () {
+  it("should display 4 house items in a grid with 4 columns on larger screens", async function () {
+    await driver.get("http://localhost:3000/");
+    // Set the window size to 1400px to trigger the updateItemsPerPage effect
+    await driver.manage().window().setRect({ width: 1401, height: 800 });
+
+    // Wait for the page to fully load
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    // Get the number of house items displayed on the page
+    const houseItems = await driver.findElements(By.className("houseItem"));
+
+    // Assert that the number of house items displayed is equal to the itemsPerPage state (3)
+    assert.strictEqual(houseItems.length, 4);
+  });
+
+  it("should display 3 house items in a grid with 3 columns on larger screens", async function () {
+    await driver.get("http://localhost:3000/");
+    // Set the window size to 1400px to trigger the updateItemsPerPage effect
+    await driver.manage().window().setRect({ width: 1300, height: 800 });
+
+    // Wait for the page to fully load
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    // Get the number of house items displayed on the page
+    const houseItems = await driver.findElements(By.className("houseItem"));
+
+    // Assert that the number of house items displayed is equal to the itemsPerPage state (3)
+    assert.strictEqual(houseItems.length, 3);
+  });
+
+  it("should display 2 house items in a grid with 2 columns on smaller screens", async function () {
+    await driver.get("http://localhost:3000/");
+    // Set the window size to 600px width to trigger the media query for smaller screens
+    await driver.manage().window().setRect({ width: 800, height: 800 });
+
+    // Wait for the page to fully load
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    // Get the number of house items displayed on the page
+    const houseItems = await driver.findElements(By.className("houseItem"));
+
+    // Assert that the number of house items displayed is equal to 2
+    assert.strictEqual(houseItems.length, 2);
+  });
+
+  it("should display 1 house item in a grid with 1 column on extra small screens", async function () {
+    await driver.get("http://localhost:3000/");
+    // Set the window size to 400px width to trigger the media query for extra small screens
+    await driver.manage().window().setRect({ width: 400, height: 800 });
+
+    // Wait for the page to fully load
+    await driver.wait(until.elementLocated(By.className("houseList")));
+    // get the house items displayed on the page after clicking the forward button
+    const houseItems = await driver.findElements(By.className("houseItem"));
+
+    // Assert that the number of house items displayed is equal to the expected number (4)
+    assert.strictEqual(houseItems.length, 1);
+  });
+
+  it("should navigate to the previous page when the back button is clicked", async function () {
+    await driver.get("http://localhost:3000/");
+    await driver.manage().window().setRect({ width: 1401, height: 800 });
+    // Wait for the page to fully load
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    await driver.sleep(3000);
+
+    // Click the forward button to navigate to the next page
+    await driver.findElement(By.id("forwardBtn")).click();
+
+    // Click the back button
+    await driver.findElement(By.id("backBtn")).click();
+    await driver.sleep(3000);
+
+    // Wait for the page to fully load after clicking the back button
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    // Get the house items displayed on the page after clicking the back button
+    const houseItems = await driver.findElements(By.className("houseItem"));
+
+    // Assert that the number of house items displayed is equal to the expected number (4)
+    assert.strictEqual(houseItems.length, 4);
+
+    const firstHouseItem = await driver.findElement(By.className("houseItem"));
+    const firstHouseItemText = await firstHouseItem.getText();
+    assert.strictEqual(
+      firstHouseItemText,
+      "Luxury Villa in Maui, Hawaii\n£4,100,000"
+    );
+  });
+
+  it("should navigate to the next page when the forward button is clicked", async function () {
+    await driver.get("http://localhost:3000/");
+    // Wait for the page to fully load
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    // Click the forward button
+    await driver.findElement(By.id("forwardBtn")).click();
+    await driver.sleep(3000);
+
+    // Wait for the page to fully load after clicking the forward button
+    await driver.wait(until.elementLocated(By.className("houseList")));
+
+    // Get the house items displayed on the page after clicking the forward button
+    const houseItems = await driver.findElements(By.className("houseItem"));
+
+    // Assert that the number of house items displayed is equal to the expected number (4)
+    assert.strictEqual(houseItems.length, 4);
+
+    const firstHouseItem = await driver.findElement(By.className("houseItem"));
+
+    const firstHouseItemText = await firstHouseItem.getText();
+    assert.strictEqual(
+      firstHouseItemText,
+      "House in Big Island, Hawaii\n£6,480,000"
+    );
+  });
+
+  it("Should navigate to the correct page when button is clicked", async function () {
+    const button = await driver.findElement(By.id("btn"));
+
+    await button.click();
+    driver.sleep(3000);
+    const linkURL = await driver.getCurrentUrl();
+
+    assert.strictEqual(linkURL, "http://localhost:3000/marketplace");
+  });
+});
+
 describe("Selenium Tests for Islands grid", function () {
   it("Should display 8 islands", async function () {
     await driver.get("http://localhost:3000/");
@@ -293,5 +423,5 @@ describe("Selenium Tests for Footer", function () {
       const displayProperty = await socialMediaIcons[i].getCssValue("display");
       assert.strictEqual(displayProperty, "block");
     }
-  });
+});
 });

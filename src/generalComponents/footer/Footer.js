@@ -11,16 +11,20 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <div className="Row" id="Row">
         <div className="Column1" id="Column1">
-          <h1 id="footer-heading">Contact Us</h1>
-          <p id="footer-address">
+          <h1 className="footer-h1" id="footer-heading">
+            Contact Us
+          </h1>
+          <p className="footer-paragraph" id="footer-address">
             2121 North Nimitz Highway,
             <br /> Honolulu, HI 96819,
             <br /> United States
           </p>
           <br />
-          <p id="footer-email">ohanahomes@gmail.com</p>
+          <p className="footer-paragraph" id="footer-email">
+            ohanahomes@gmail.com
+          </p>
           <br />
-          <p className="LastParagraph" id="footer-phone">
+          <p className="footer-paragraph .LastParagraph" id="footer-phone">
             (+1) 930-231-1231
           </p>
         </div>
