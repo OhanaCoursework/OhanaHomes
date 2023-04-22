@@ -27,7 +27,7 @@ const Button = ({ children }) => {
 
   return (
     <a
-      href="/homes"
+      href="/marketplace"
       id="homes-button"
       style={buttonStyles}
       onMouseOver={handleHover}
