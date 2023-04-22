@@ -11,7 +11,8 @@ const SignUpModal = () => {
         </span>
         <h1>Create Account</h1>
         <div className="modalForm">
-          <p id="signUpError" className="modalError">Error
+          <p id="signUpError" className="modalError">
+            Error
           </p>
           <form id="signUpForm">
             <label htmlFor="username">Username:</label>
@@ -20,22 +21,29 @@ const SignUpModal = () => {
             <br />
             <label htmlFor="password">Password:</label>
             <br />
-            <input type="password" id="signUpPassword" name="password" autoComplete="new-password"/>
+            <input
+              type="password"
+              id="signUpPassword"
+              name="password"
+              autoComplete="new-password"
+            />
             <br />
             <label htmlFor="anotherPassword">Repeat Password:</label>
             <br />
-            <input type="password" id="anotherPassword" name="anotherPassword" autoComplete="off"/>
+            <input
+              type="password"
+              id="anotherPassword"
+              name="anotherPassword"
+              autoComplete="off"
+            />
             <br />
-            <button type="submit" className="submit">
+            <button id="signup-submit" type="submit" className="submit">
               Create Account
             </button>
           </form>
         </div>
         <p className="otherAccountPopUpLink">
-          Already have and account?{" "}
-          <a id="loginLink">
-            Login
-          </a>
+          Already have and account? <a id="loginLink">Login</a>
         </p>
       </div>
     </div>

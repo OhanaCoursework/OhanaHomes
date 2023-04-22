@@ -320,6 +320,7 @@ const Navbar = () => {
           </button>
           <div className="myAccount">
             <button
+              id="accountBtn"
               className={
                 isMyAccountExpanded
                   ? "accountButton navBtn expanded"
