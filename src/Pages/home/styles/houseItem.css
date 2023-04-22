@@ -1,0 +1,182 @@
+.house {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.house .houseTitle {
+  font-size: 60px;
+}
+
+.houseList {
+  height: auto;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+/* House Item styling */
+
+.houseItem {
+  border-radius: 15px;
+  width: 270px;
+  height: 330px;
+  margin: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  background-color: #385872;
+  touch-action: pan-y;
+  /* Allow vertical scrolling, disable horizontal scrolling */
+  overflow-x: hidden;
+  /* Hide horizontal overflow to prevent scrolling */
+}
+
+.houseItem h1 {
+  font-size: 22px;
+}
+
+.custom-progress-bar {
+  width: 80%;
+  /* Initial width */
+  height: 10px;
+  background-color: #d3cece;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  /* Add opacity to show the bar by default */
+  pointer-events: auto;
+  /* Add pointer-events to enable click events by default */
+  transition: opacity 0.3s ease-in;
+  /* Add transition to animate opacity changes */
+}
+
+.custom-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #447399;
+  width: 0%;
+  /* Initial width of 0% */
+  transition: width 0.3s ease-in;
+  /* Add transition to animate width changes */
+}
+
+.houseItem:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.houseItem div {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.houseItem h1,
+.houseItem p {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.house .arrowButtons {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background: #000d1a;
+  border-radius: 50px;
+  padding: 10px;
+  user-select: none;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.house .arrowButtons.visible:hover {
+  background: #cd853f;
+  transform: scale(1.05);
+}
+
+.house .arrowButtons.visible {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 845px) {
+  .title-text {
+    text-align: center;
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .houseItem h1 {
+    font-size: 20px;
+  }
+
+  .houseItem {
+    width: 250px;
+    transition: none !important;
+    margin: 10px;
+  }
+
+  .viewHomesButton .button {
+    font-size: 18px !important;
+  }
+
+  .title-text {
+    font-size: 48px;
+  }
+
+  .house .arrowButtons {
+    width: 40px;
+    height: 40px;
+  }
+
+  .viewHomesButton {
+    margin-top: 16px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .houseItem {
+    width: 250px;
+    margin: 0px;
+  }
+
+  .viewHomesButton .button {
+    font-size: 18px !important;
+  }
+
+  .title-text {
+    font-size: 48px;
+  }
+
+  .house .arrowButtons {
+    width: 32px;
+    height: 32px;
+    top: 140px;
+    position: relative;
+    padding: 5px;
+  }
+
+  .house .arrowButtons.left {
+    left: 200px;
+  }
+
+  .house .arrowButtons.right {
+    right: 40px;
+  }
+
+  .viewHomesButton {
+    margin-top: 16px !important;
+  }
+}
