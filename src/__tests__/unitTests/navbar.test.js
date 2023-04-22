@@ -55,13 +55,13 @@ describe("Navbar component", () => {
       "Kaua'i"
     );
     expect(wrapper.find("a", { name: "Moloka" }).at(6).text()).toEqual(
-      "Moloka"
+      "Moloka'i"
     );
     expect(wrapper.find("a", { name: "Lāna'i" }).at(7).text()).toEqual(
       "Lāna'i"
     );
-    expect(wrapper.find("a", { name: "Ni'hau" }).at(8).text()).toEqual(
-      "Ni'hau"
+    expect(wrapper.find("a", { name: "Ni'ihau" }).at(8).text()).toEqual(
+      "Ni'ihau"
     );
     expect(wrapper.find("a", { name: "Kaho'olawe" }).at(9).text()).toEqual(
       "Kaho'olawe"

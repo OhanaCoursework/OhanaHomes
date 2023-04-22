@@ -40,8 +40,9 @@ describe("Islands component", () => {
       expect(wrapper.find(".islandImage").at(i).prop("alt")).toEqual(
         islands[i].alt
       );
+      const islandName = wrapper.find(".islandName").at(i).text().toLowerCase();
       expect(wrapper.find(".islandLink").at(i).prop("href")).toEqual(
-        "/islands"
+        islandName
       );
     }
   });
