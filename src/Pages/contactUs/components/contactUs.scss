@@ -1,206 +1,208 @@
-.titleBlock > img {
-    width: 100%;
-    height: 100%;
-}
+.ContactUs {
+    .titleBlock > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle
+    }
 
-.titleBlock {
-    position: relative;
-    margin: 0;
-    margin-bottom: -0.3%;
-}
+    .titleBlock {
+        position: relative;
+        margin: 0;
+    }
 
-.titleBlock > h1 {
-    color: white;
-    font-size: 48px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    .titleBlock > h1 {
+        color: white;
+        font-size: 48px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-.QuickLinksBlock {
-    background-color: #447399;
-    width: 100%;
-    height: 6cm;
-    margin: 0;
-}
+    .QuickLinksBlock {
+        background-color: #447399;
+        width: 100%;
+        margin: 0;
+    }
 
-.QuickLinksBlock > h2 {
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    text-align: center;
-    position: relative;
-    margin: 0px;
-    padding-top: 1%;
-}
+    .QuickLinksBlock > h2 {
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        text-align: center;
+        position: relative;
+        margin: 0px;
+        padding-top: 1%;
+    }
 
-ul {
-    padding-inline-start: 0px;
-    width: 100%;
-    display: flex;
-    list-style-type: none;
-  }
-  
-
-li {
-    text-align: center;
-    padding: 0px 0px 16px 0px;
-    align-content: center;
-    font-size: 24px;
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-}
-
-#LinkToAboutUs li a, #LinkToMarketPlace li a, #LinkToHome li a {
-    display: block;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-}
-
-#LinkToAboutUs button, #LinkToMarketPlace button, #LinkToHome button {
-    background-color: #F0DDCE;
-    font-size: 20px;
-    border-radius: 6px;
-    border: none;
-    margin: 0px auto;
-    display: block;
-    width: 172px;
-    height: 100px;
-    position: relative;
-    filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
-}
-
-#sendButton {
-    position: relative;
-    left: 10%;
-}
-
-#LinkToAboutUs button:hover, #LinkToMarketPlace button:hover, #LinkToHome button:hover {
-    background-color: #eeee;
-}
-
-button:hover {
-    background-color: #eeee;
-}
-
-textarea {
-    border: 2px solid #447399;
-    width: 75%;
-    height: 400px;
-    resize: none;  
-    display: block;
-    font-size: 22px;
-    margin: 0px auto;
-
-}
-
-input {
-    border: 2px solid #447399;
-    width: 25%;
-    height: 50px;
-    resize: none;  
-    display: block;
-    position: relative;
-    left: 12.5%;
-    font-size: 18px;
-    margin-bottom: 3%;
-}
-
-.sendButton {
-    background-color: #F0DDCE;
-    font-size: 20px;
-    border-radius: 6px;
-    border: none;
-    margin: 0px auto;
-    display: block;
-    width: 100px;
-    height: 50px;
-    position: relative;
-    filter: drop-shadow(0px, 10px, 10px, #F0DDCE);
-    margin-top: 1%
-}
-
-sendButton:hover {
-    background-color: #eeee;
-}
-
-.WhereToFindUsBlock{
-    background-color: #81BDBE;
-}
-
-.WhereToFindUsBlock > button {
-    margin-top: 1cm;
-}
-
-.WhereToFindUsBlock > h2 {
-    margin-left: 12.5%;
-    color: white;
-    padding-top: 1%;
-    font-size: 24px;
-}
-
-iframe {
-    margin-left: 12.5%;
-    position: relative;
-    border: 2px solid #447399;
-    margin-bottom: 3%;
-    width:75%;
-    height:500px
-}
-
-.CommentBlock > h2 {
-    position: relative;
-    font-size: 24px;
-    padding-left: 5%;
-}
-
-.CommentBlock > h3 {
-    position: relative;
-    padding-left: 5%;
-}
-
-.emailConfirmation {
-    border: 2px solid green;
-    color: green;
-    border-radius: 5px;
-    width: 250px;
-    text-align: center;
-    position: relative;
-    margin: 0px auto;
-    display: block;
-    margin-top: 1%;
-    font-size: 24px;
-}
-
-@media (max-width: 800px) { 
     ul {
-        flex-direction: column;
+        padding-inline-start: 0px;
+        width: 100%;
+        display: flex;
+        list-style-type: none;
+    }
+    
+
+    li {
+        text-align: center;
+        padding: 0px 0px 16px 0px;
+        align-content: center;
+        font-size: 24px;
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    #LinkToAboutUs li a, #LinkToMarketPlace li a, #LinkToHome li a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    #LinkToAboutUs button, #LinkToMarketPlace button, #LinkToHome button {
+        background-color: #F0DDCE;
+        font-size: 20px;
+        border-radius: 6px;
+        border: none;
+        margin: 0px auto;
+        display: block;
+        width: 172px;
+        height: 100px;
+        position: relative;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    #sendButton {
+        position: relative;
+        left: 10%;
+    }
+
+    #LinkToAboutUs button:hover, #LinkToMarketPlace button:hover, #LinkToHome button:hover {
+        background-color: #eeee;
+    }
+
+    button:hover {
+        background-color: #eeee;
+    }
+
+    textarea {
+        border: 2px solid #447399;
+        width: 75%;
+        height: 400px;
+        resize: none;  
+        display: block;
+        font-size: 22px;
+        margin: 0px auto;
+
+    }
+
+    input {
+        border: 2px solid #447399;
+        width: 25%;
+        height: 50px;
+        resize: none;  
+        display: block;
+        position: relative;
+        left: 12.5%;
+        font-size: 18px;
+        margin-bottom: 3%;
+    }
+
+    .sendButton {
+        background-color: #F0DDCE;
+        font-size: 20px;
+        border-radius: 6px;
+        border: none;
+        margin: 0px auto;
+        display: block;
+        width: 100px;
+        height: 50px;
+        position: relative;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        margin-top: 1%;
+        cursor: pointer;
+    }
+
+    sendButton:hover {
+        background-color: #eeee;
+    }
+
+    .WhereToFindUsBlock{
+        background-color: #81BDBE;
+        padding-bottom: 32px;
+    }
+
+    .WhereToFindUsBlock > button {
+        margin-top: 1cm;
+    }
+
+    .WhereToFindUsBlock > h2 {
+        margin-left: 12.5%;
+        color: white;
+        padding-top: 1%;
+        font-size: 24px;
+    }
+
+    iframe {
+        margin-left: 12.5%;
+        position: relative;
+        border: 2px solid #447399;
+        width:75%;
+        height:500px
+    }
+
+    .CommentBlock > h2 {
+        position: relative;
+        font-size: 24px;
+        padding-left: 5%;
+        margin: 32px 0px
+    }
+
+    .CommentBlock > h3 {
+        position: relative;
+        padding-left: 5%;
+        margin: 32px 0px
+    }
+
+    .emailConfirmation {
+        border: 2px solid green;
+        color: green;
+        border-radius: 5px;
+        width: 250px;
+        text-align: center;
+        position: relative;
+        margin: 0px auto;
+        display: block;
+        margin-top: 1%;
+        font-size: 24px;
+    }
+
+    @media (max-width: 800px) { 
+        ul {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+    button {
+        font-size: 18px;
+        width: 155px;
+        height: 46px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .listWidgets {
+        font-size: 38px;
+    }
+
+    li {
+        font-size: 20px;
+    }
     }
 }
-
-@media (max-width: 480px) {
-button {
-    font-size: 18px;
-    width: 155px;
-    height: 46px;
-}
-h1 {
-    font-size: 40px;
-}
-p {
-    font-size: 20px;
-}
-.listWidgets {
-    font-size: 38px;
-}
-
-li {
-    font-size: 20px;
-}
-}
-
-
 

@@ -1,9 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./contactUs.scss";
 import pathToTitleImage from "../../../assets/images/ContactUsTitleImage.png";
+import { isEmailValid } from "../../../helpers/validators/emailValidator.js";
+import Alert from "../../../generalComponents/alerts/alert.js";
 
 const ContactUs = () => {
-  const [toggle, setToggle] = useState(false);
+  const [alertActive, setAlertActive] = useState(false);
+  const [alertText, setAlertText] = useState("");
+  const [alertType, setAlertType] = useState("");
+  const [alertTimeout, setAlertTimeout] = useState(false);
+  
+  function sendEmail(event) {
+    event.preventDefault();
+    let email = document.querySelector(".emailInput").value;
+    let validEmailResponse = isEmailValid(email);
+    if(validEmailResponse==true){
+      showAlert("Email Sent", "success", true);
+      event.target.reset();
+    } else {
+      showAlert(validEmailResponse, "error", true);
+    }
+    
+  }
+
+  function showAlert(text, type, timeout) {
+    setAlertText(text);
+    setAlertType(type);
+    setAlertTimeout(timeout);
+    setAlertActive(true);
+  }
+
+  useEffect(()=> {
+    const sendEmailButton = document.getElementById("contactUsForm");
+    sendEmailButton.addEventListener("submit", sendEmail);
+  
+    return () => {
+      sendEmailButton.removeEventListener("submit", sendEmail);
+    };
+  });
+
+
   return (
     <section className="ContactUs">
       <div color="black" className="titleBlock">
@@ -26,10 +62,14 @@ const ContactUs = () => {
         <form id="contactUsForm">
           <input className="emailInput" type="text" name="userEmail" placeholder="Email Address" />   
           <textarea id="commentArea" name="comment" rows="10" cols="50" spellCheck="true" maxLength={500}></textarea>
-          <button type="Submit" onClick={() => setToggle(!toggle)} className="sendButton">Send</button>
-          {toggle && (
-            <h2 className="emailConfirmation">Email Sent</h2>
-          )}
+          <button type="Submit" className="sendButton">Send</button>
+          <Alert
+            active={alertActive}
+            setActive={setAlertActive}
+            alert={alertText}
+            alertType={alertType}
+            timeout={alertTimeout}
+          />
         </form>
       </div>
       <div className="WhereToFindUsBlock">
