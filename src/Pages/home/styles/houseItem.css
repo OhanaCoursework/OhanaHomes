@@ -139,81 +139,44 @@
   .house .arrowButtons {
     width: 40px;
     height: 40px;
-   }
-   
-   .viewHomesButton {
+  }
+
+  .viewHomesButton {
     margin-top: 16px !important;
-   }
-
-/* .house .arrowButtons {
-    order: 1;
-    transition: none !important;
   }
-
-  .houseList {
-    width: 100%;
-    justify-content: center;
-    order: 2;
-  }
-
-  .house {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  } */
 }
 
-/* @media only screen and (max-width: 1400px) {
-  .houseList {
-    grid-template-columns: 1fr 1fr 1fr;
+@media (max-width: 320px) {
+  .houseItem {
+    width: 250px;
+    margin: 0px;
   }
 
-  .house .arrowButtons.right {
-    right: 50px;
+  .viewHomesButton .button {
+    font-size: 18px !important;
+  }
+
+  .title-text {
+    font-size: 48px;
+  }
+
+  .house .arrowButtons {
+    width: 32px;
+    height: 32px;
+    top: 140px;
+    position: relative;
+    padding: 5px;
   }
 
   .house .arrowButtons.left {
-    left: 50px;
+    left: 200px;
   }
 
-  .custom-progress-bar {
-    margin-left: 0px;
+  .house .arrowButtons.right {
+    right: 40px;
+  }
+
+  .viewHomesButton {
+    margin-top: 16px !important;
   }
 }
-
-@media only screen and (max-width: 1400px) {
-  .houseList {
-    margin-left: -5rem;
-  }
-}
-
-@media only screen and (max-width: 1180px) {
-  .houseList {
-    grid-template-columns: 1fr 1fr;
-    margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  .houseList {
-    margin-left: -1rem;
-  }
-}
-
-@media only screen and (max-width: 825px) {
-  .houseList {
-    margin-left: -5rem;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .houseList {
-    margin-left: -10rem;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .houseList {
-    grid-template-columns: 1fr;
-    margin-left: 0px;
-  }
-} */
