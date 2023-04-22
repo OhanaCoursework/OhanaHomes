@@ -28,7 +28,7 @@ describe("Selenium Tests for Islands Page", function () {
     await driver.get("http://localhost:3000/");
 
     const islandText = await driver
-      .findElement(By.className("islandCard"))
+      .findElement(By.className("islandName"))
       .getText();
 
     await driver.findElement(By.className("islandCard")).click();

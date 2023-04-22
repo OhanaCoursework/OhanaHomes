@@ -228,7 +228,6 @@ describe("Selenium Tests for Hero page", function () {
     const htmlSource = await driver.getPageSource();
     fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
       if (err && err.code !== "EEXIST") throw err;
-      console.log("Saved!");
     });
   });
 });
@@ -374,7 +373,7 @@ describe("Selenium Tests for Islands grid", function () {
 
   it("Should navigate to islands page when an island card is clicked", async function () {
     const islandText = await driver
-      .findElement(By.className("islandCard"))
+      .findElement(By.className("islandName"))
       .getText();
 
     const href = islandText.toLowerCase();
@@ -423,5 +422,5 @@ describe("Selenium Tests for Footer", function () {
       const displayProperty = await socialMediaIcons[i].getCssValue("display");
       assert.strictEqual(displayProperty, "block");
     }
-});
+  });
 });
