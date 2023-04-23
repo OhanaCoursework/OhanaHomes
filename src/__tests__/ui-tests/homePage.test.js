@@ -24,7 +24,21 @@ afterAll(async function () {
   await driver.quit();
 });
 
+function generateHref(linkText) {
+  const spaceIndex = linkText.indexOf(" ");
+  let href = linkText;
+  if (spaceIndex !== -1) {
+    href =
+      linkText.substring(0, spaceIndex).toLowerCase() +
+      linkText.substring(spaceIndex).replace(/\s+/g, "");
+  } else {
+    href = linkText.toLowerCase();
+  }
+  return href;
+}
+
 describe("Selenium Tests for account menus", function () {
+
   it("Should be able to navigate to the Sign Up pop up using the Sign Up Link", async function () {
     await driver.get("http://localhost:3000/");
 
@@ -84,6 +98,7 @@ describe("Selenium Tests for account menus", function () {
   });
 });
 
+
 describe("Selenium Tests for NavBar", function () {
   it("Should be able to navigate to the Marketplace Page using the Buy Link", async function () {
     await driver.get("http://localhost:3000/");
@@ -134,22 +149,34 @@ describe("Selenium Tests for NavBar", function () {
     }
   });
 
-  it("Should be navigate to islands page when island link is clicked", async function () {
+  it("Should be navigate to correct islands page when island link is clicked", async function () {
     await driver.get("http://localhost:3000/");
 
-    const islandsButton = await driver.findElement(
-      By.xpath('//button[text()="Islands"]')
-    );
+    const islandsLink = await driver.findElements(By.className("dropdownLink"));
 
-    const actions = driver.actions({ async: true });
-    await actions.move({ origin: islandsButton }).perform();
+    for (let i = 0; i < islandsLink.length; i++) {
+      const islandsButton = await driver.findElement(
+        By.xpath('//button[text()="Islands"]')
+      );
 
-    const islandsLink = await driver.findElement(By.className("dropdownLink"));
-    await islandsLink.click();
-    assert.strictEqual(
-      "http://localhost:3000/islands",
-      await driver.getCurrentUrl()
-    );
+      const actions = driver.actions({ async: true });
+      await actions.move({ origin: islandsButton }).perform();
+      const freshLinks = await driver.findElements(
+        By.className("dropdownLink")
+      ); // Re-find the elements
+
+      const linkText = await freshLinks[i].getText(); // Get the link text before clicking on it
+
+      const href = generateHref(linkText); // Extract href from link text
+
+      await freshLinks[i].click();
+      await driver.sleep(2000);
+      await driver.wait(until.stalenessOf(freshLinks[i])); // Wait for the old link to be removed from the DOM
+      const linkURL = await driver.getCurrentUrl();
+      await driver.navigate().back();
+      const expectedUrl = `http://localhost:3000/${href}`;
+      assert.strictEqual(decodeURIComponent(linkURL), expectedUrl);
+    }
   });
 
   it("Should be able to navigate to the About us Page using the About Link", async function () {
@@ -264,7 +291,6 @@ describe("Selenium Tests for Hero page", function () {
     const htmlSource = await driver.getPageSource();
     fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
       if (err && err.code !== "EEXIST") throw err;
-      console.log("Saved!");
     });
   });
 });
@@ -399,20 +425,32 @@ describe("FeaturedProperties Component", function () {
   });
 });
 
-describe("Selenium Tests for Footer", function () {
-  function generateHref(linkText) {
-    const spaceIndex = linkText.indexOf(" ");
-    let href = linkText;
-    if (spaceIndex !== -1) {
-      href =
-        linkText.substring(0, spaceIndex).toLowerCase() +
-        linkText.substring(spaceIndex).replace(/\s+/g, "");
-    } else {
-      href = linkText.toLowerCase();
-    }
-    return href;
-  }
+describe("Selenium Tests for Islands grid", function () {
+  it("Should display 8 islands", async function () {
+    await driver.get("http://localhost:3000/");
 
+    const islandCards = await driver.findElements(By.className("islandCard"));
+
+    assert.equal(islandCards.length, 8);
+  });
+
+  it("Should navigate to islands page when an island card is clicked", async function () {
+    const islandText = await driver
+      .findElement(By.className("islandName"))
+      .getText();
+
+    const href = islandText.toLowerCase();
+
+    await driver.findElement(By.className("islandCard")).click();
+
+    assert.strictEqual(
+      `http://localhost:3000/${href}`,
+      await driver.getCurrentUrl()
+    );
+  });
+});
+
+describe("Selenium Tests for Footer", function () {
   it("Should load the footer component", async function () {
     await driver.get("http://localhost:3000/");
 
@@ -447,24 +485,5 @@ describe("Selenium Tests for Footer", function () {
       const displayProperty = await socialMediaIcons[i].getCssValue("display");
       assert.strictEqual(displayProperty, "block");
     }
-  });
-});
-
-describe("Selenium Tests for Islands grid", function () {
-  it("Should display 8 islands", async function () {
-    await driver.get("http://localhost:3000/");
-
-    const islandCards = await driver.findElements(By.className("islandCard"));
-
-    assert.equal(islandCards.length, 8);
-  });
-
-  it("Should navigate to islands page when an island card is clicked", async function () {
-    await driver.findElement(By.className("islandCard")).click();
-
-    assert.strictEqual(
-      "http://localhost:3000/islands",
-      await driver.getCurrentUrl()
-    );
   });
 });
