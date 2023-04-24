@@ -3,6 +3,7 @@ import "./contactUs.scss";
 import pathToTitleImage from "../../../assets/images/ContactUsTitleImage.png";
 import { isEmailValid } from "../../../helpers/validators/emailValidator.js";
 import Alert from "../../../generalComponents/alerts/alert.js";
+import { isTextboxValid } from "../../../helpers/validators/textboxValidator.js";
 
 const ContactUs = () => {
   const [alertActive, setAlertActive] = useState(false);
@@ -13,12 +14,17 @@ const ContactUs = () => {
   function sendEmail(event) {
     event.preventDefault();
     let email = document.querySelector(".emailInput").value;
+    let text = document.getElementById("commentArea").value;
     let validEmailResponse = isEmailValid(email);
-    if(validEmailResponse==true){
+    let validTextMessage = isTextboxValid(text);
+
+    if(validEmailResponse==true && validTextMessage==true) {
       showAlert("Email Sent", "success", true);
       event.target.reset();
-    } else {
+    } else if (validEmailResponse!=true) {
       showAlert(validEmailResponse, "error", true);
+    } else if (validTextMessage!=true) {
+      showAlert(validTextMessage, "error", true);
     }
     
   }

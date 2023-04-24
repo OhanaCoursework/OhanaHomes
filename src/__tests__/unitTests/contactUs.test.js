@@ -3,6 +3,7 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import ContactUs from "../../Pages/contactUs/components/contactUs";
 import { isEmailValid } from "../../helpers/validators/emailValidator.js";
+import { isTextboxValid } from "../../helpers/validators/textboxValidator";
 import { assert } from "chai";
 
 configure({ adapter: new Adapter() });
@@ -43,6 +44,7 @@ describe("Email Validator should only accept valid emails", () => {
   let testNull = "";
   let testValid = "name@gmail.com";
   let testInvalid = "namegmail.com";
+  let testTrailingWhitespace = "name@gmail.com     ";
 
   it("Null Emails should not be accepted", () => {
     let testNullResponse = isEmailValid(testNull);
@@ -57,6 +59,37 @@ describe("Email Validator should only accept valid emails", () => {
   it("Invalid Emails should not be accepted", () => {
     let testInvalidResponse = isEmailValid(testInvalid);
     assert.equal(testInvalidResponse, "You must enter a valid email");
+  });
+
+  it("Invalid Emails should not be accepted", () => {
+    let testInvalidResponse = isEmailValid(testInvalid);
+    assert.equal(testInvalidResponse, "You must enter a valid email");
+  });
+
+  it("Emails with trailing whitespace should be removed", () => {
+    let testTrailingWhitespaceResponse = isTextboxValid(testTrailingWhitespace);
+    assert.equal(testTrailingWhitespaceResponse,true);
+  });
+});
+
+describe("Text Area Validator should only accept valid text", () => {
+  let testNull = "";
+  let testValid = "A randbom message";
+  let testTrailingWhitespace = "A randbom message     ";
+
+  it("Null Text Messages should not be accepted", () => {
+    let testNullResponse = isTextboxValid(testNull);
+    assert.equal(testNullResponse, "Please Enter a Message to Send");
+  });
+
+  it("Valid Text Messages should be accepted", () => {
+    let testValidResponse = isTextboxValid(testValid);
+    assert.equal(testValidResponse, true);
+  });
+
+  it("Whitespace from text areas should be removed", () => {
+    let testTrailingWhitespaceResponse = isTextboxValid(testTrailingWhitespace);
+    assert.equal(testTrailingWhitespaceResponse, true);
   });
 });
 
