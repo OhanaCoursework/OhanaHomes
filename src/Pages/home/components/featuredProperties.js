@@ -15,6 +15,10 @@ const FeaturedProperties = ({ cardData }) => {
   const currentPageRef = useRef();
   currentPageRef.current = currentPage;
 
+  const SWIPE_THRESHOLD = 50;
+  const ITEM_WIDTH = 310;
+  const CONTAINER_PADDING = 132;
+
   const handleBack = () => {
     // Decrement the current page by 1, but not below 0
     setCurrentPage(Math.max(0, currentPage - 1));
@@ -41,14 +45,14 @@ const FeaturedProperties = ({ cardData }) => {
 
     // If the touch distance is greater than a threshold (e.g. 50 pixels),
     // and the touch direction is positive, change to the previous page
-    if (touchDistance > 50) {
+    if (touchDistance > SWIPE_THRESHOLD) {
       // Reset touchStartX to prevent multiple pages swiping with one big swipe
       setTouchStartX(touchEndX);
       handleBack();
     }
     // If the touch distance is greater than a threshold (e.g. 50 pixels),
     // and the touch direction is negative, change to the next page
-    else if (touchDistance < -50) {
+    else if (touchDistance < -SWIPE_THRESHOLD) {
       setTouchStartX(touchEndX);
       handleForward();
       // Reset touchStartX to prevent multiple pages swiping with one big swipe
@@ -57,10 +61,13 @@ const FeaturedProperties = ({ cardData }) => {
 
   // Update itemsPerPage value based on window.innerWidth
   const updateItemsPerPage = () => {
-    const newItemsPerPage = Math.max(Math.min(
-      Math.floor(((window.innerWidth * 0.98) - 132) / 310),
-      10
-    ),1);
+    const newItemsPerPage = Math.max(
+      Math.min(
+        Math.floor((window.innerWidth * 0.98 - CONTAINER_PADDING) / ITEM_WIDTH),
+        10
+      ),
+      1
+    );
     console.log("New per page:" + newItemsPerPage);
     console.log(window.innerWidth);
     setItemsPerPage(newItemsPerPage);
@@ -70,6 +77,17 @@ const FeaturedProperties = ({ cardData }) => {
     ) {
       console.log("update page");
       setCurrentPage(Math.floor(cardData.length / newItemsPerPage) - 1);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowLeft") {
+      // Left arrow key
+
+      handleBack();
+    } else if (e.key === "ArrowRight") {
+      // Right arrow key
+      handleForward();
     }
   };
 
@@ -86,13 +104,74 @@ const FeaturedProperties = ({ cardData }) => {
     };
   }, []);
 
+  useEffect(() => {
+    // Create an array to store the image URLs
+    const imageUrlsToLoad = [];
+
+    // Calculate the start and end index of items to display
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    // Loop through the cardData and add the image URLs to the array
+    for (let i = startIndex; i < endIndex; i++) {
+      if (cardData[i]) {
+        imageUrlsToLoad.push(cardData[i].image);
+      }
+    }
+
+    // Load the images into the browser cache
+    const preloadImages = () => {
+      const loadImage = (index) => {
+        if (index >= imageUrlsToLoad.length) {
+          return;
+        }
+        const image = new Image();
+        image.src = imageUrlsToLoad[index];
+        image.onload = () => {
+          loadImage(index + 1);
+        };
+      };
+      loadImage(0);
+    };
+
+    // Call the preloadImages function using requestAnimationFrame
+    const preloadWithAnimationFrame = () => {
+      requestAnimationFrame(preloadImages);
+    };
+    preloadWithAnimationFrame();
+
+    // Load the next row of images if applicable
+    if (currentPage < lastPage) {
+      const nextStartIndex = (currentPage + 1) * itemsPerPage;
+      const nextEndIndex = nextStartIndex + itemsPerPage;
+      for (let i = nextStartIndex; i < nextEndIndex; i++) {
+        if (cardData[i]) {
+          imageUrlsToLoad.push(cardData[i].image);
+        }
+      }
+      preloadWithAnimationFrame();
+    }
+
+    // Load the previous row of images if applicable
+    if (currentPage > 0) {
+      const prevStartIndex = (currentPage - 1) * itemsPerPage;
+      const prevEndIndex = prevStartIndex + itemsPerPage;
+      for (let i = prevStartIndex; i < prevEndIndex; i++) {
+        if (cardData[i]) {
+          imageUrlsToLoad.push(cardData[i].image);
+        }
+      }
+      preloadWithAnimationFrame();
+    }
+  }, [currentPage, cardData]);
+
   // Calculate the start and end index of items to display
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const lastPage = Math.floor(cardData.length / itemsPerPage) - 1;
 
   return (
-    <section>
+    <section onKeyDown={handleKeyDown} tabIndex={0}>
       <h1 className="title-text">Featured Homes</h1>
       <div className="container">
         <div className="featuredHomes">

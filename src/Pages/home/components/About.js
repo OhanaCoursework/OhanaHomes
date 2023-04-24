@@ -5,19 +5,29 @@ const About = () => {
   return (
     <section>
       <div color="black" className="about">
-        <h1 id="about-title">Hawaii&apos;s Trusted Performers</h1>
+        <h1 id="about-title">Welcome to Ohana Homes</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec lacus
-          eget nulla scelerisque dapibus sit amet id ex. Fusce ut velit ut orci
-          aliquet cursus id vitae ligula. Phasellus in rutrum mi, sed maximus
-          dolor. Donec sit amet tincidunt eros. Curabitur pulvinar tempus
-          aliquet.
+          Ohana Homes is a premier real estate agency based in Hawaii, serving
+          clients with a team of experienced professionals who are dedicated to
+          exceeding your expectations. With a proven track record of success, we
+          have earned a reputation as Hawaii&apos;s trusted performers in the
+          real estate industry.
         </p>
         <p>
-          Mauris ac suscipit lorem. Curabitur tempus magna mi, sit amet tempus
-          nisi congue a. Phasellus ut magna leo. Donde esta la bibliotechia, ni
-          hao, ni ha min. i ch habe zwei geschwestern und einen? Ja Ich Sprechen
-          sie Deutsch, Du bist?
+          Our mission is to provide exceptional service to our clients, whether
+          you are buying, selling, or investing in real estate. We understand
+          that each client&apos;s needs are unique, and we take pride in
+          tailoring our services to meet those needs with the utmost
+          professionalism and integrity.
+        </p>
+        <p>
+          Our team of experts brings a wealth of experience and local market
+          knowledge to the table. We stay up-to-date with the latest industry
+          trends and technologies, allowing us to provide cutting-edge
+          strategies and solutions to help our clients achieve their real estate
+          goals. We are committed to delivering results and exceeding
+          expectations, making your real estate journey a seamless and rewarding
+          experience.
         </p>
         <div className="horizontalList">
           <ul>
@@ -36,7 +46,7 @@ const About = () => {
           </ul>
         </div>
         <a id="linkToAboutUs" href="/aboutUs">
-          <button type="button">About Us</button>
+          <button type="button">Learn More About Us</button>
         </a>
       </div>
     </section>
