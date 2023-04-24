@@ -8,11 +8,6 @@
   top: 0;
   justify-content: space-between;
 
-  #outerSignUpButton {
-    cursor: pointer;
-  }
-
-
   .largeBrandLogo {
     display: block;
   }
@@ -72,51 +67,6 @@
     background-color: #eee;
   }
 
-  .myAccount {
-    position: relative;
-    display: none;
-  }
-
-  .accountButton.expanded {
-    background-color: #eee;
-  }
-
-  .myAccountContent {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 100%;
-    text-align: center;
-  }
-
-  .myAccountContent button:hover {
-    background-color: #ddd;
-  }
-
-  .myAccountContent.expanded {
-    display: block;
-  }
-
-  .logOutButton {
-    border: none;
-    border-top: 1px solid darkgrey;
-    width: 100%;
-    height: 40px;
-    font-size: 16px;
-    text-align: left;
-    padding: 0px 16px;
-    cursor: pointer;
-  }
-
-  .myAccountContent p {
-    margin: 0px;
-    line-height: 40px;
-    text-align: left;
-    padding: 0px 16px;
-  }
-
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
@@ -140,60 +90,6 @@
     float: left;
     width: 50%;
     padding: 12px 0px;
-  }
-
-  .accountMenu {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: #f0ddce;
-    padding-right: 10px;
-  }
-
-  .loggedIn #outerSignUpButton {
-    display: none !important;
-  }
-
-  .loggedIn .loginBtn {
-    display: none !important;
-  }
-
-  .accountButton {
-    display: none;
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    height: 60px;
-  }
-
-  .loggedIn .accountButton {
-    display: inline-flex;
-  }
-
-  .loggedIn .myAccount {
-    display: inline-block;
-  }
-
-
-  .loginBtn {
-    background-color: #447399;
-    color: white;
-    margin-left: 16px;
-    font-size: 20px;
-    height: 35px;
-    width: 92px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-  }
-
-  .loginBtn:hover {
-    background-color: #6396bf;
   }
 
   .hamburger {
@@ -268,7 +164,6 @@
   }
 
   @media screen and (max-width: 800px) {
-
     .largeBrandLogo {
       display: block;
     }
@@ -292,46 +187,6 @@
 
     .hamburger {
       display: block;
-    }
-
-    .accountMenu {
-      display: none;
-      padding-right: 0px;
-      width: 100%;
-      border-top: black solid 1px;
-    }
-
-    .myAccount {
-      width: 100%;
-    }
-
-    .myAccountContent p {
-      text-align: center;
-    }
-
-    .logOutButton {
-      text-align: center;
-    }
-    
-    .accountButton {
-      width: 100%;
-    }
-
-    .accountMenu #outerSignUpButton {
-      width: 50%;
-      padding: 0px;
-      line-height: 45px;
-      display: inline-flex;
-    }
-
-    .accountMenu .loginBtn {
-      width: 50%;
-      margin: 0px;
-      border-radius: 0px;
-      padding: 0px;
-      height: 45px;
-      display: inline-flex;
-      box-shadow: none;
     }
 
     .navigationMenu ul {
@@ -389,7 +244,7 @@
       line-height: 60px;
       display: inline-block;
     }
-  
+
     .largeBrandLogo {
       width: 240px;
       display: inline-block;
