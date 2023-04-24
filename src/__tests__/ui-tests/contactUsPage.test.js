@@ -1,6 +1,4 @@
 const { assert } = require("chai");
-const fs = require("fs");
-const path = require("path");
 const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 

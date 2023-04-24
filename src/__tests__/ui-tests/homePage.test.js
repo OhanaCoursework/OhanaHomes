@@ -1,8 +1,6 @@
 const chrome = require("selenium-webdriver/chrome");
 const { assert } = require("chai");
 const { Builder, By, until } = require("selenium-webdriver");
-const path = require("path");
-const fs = require("fs");
 
 const myoptions = new chrome.Options()
   .headless()
