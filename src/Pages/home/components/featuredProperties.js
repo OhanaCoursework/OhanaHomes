@@ -222,7 +222,7 @@ const FeaturedProperties = ({ cardData }) => {
               }}
             ></span>
           </div>
-          <a id="btn" className="viewHomesButton" href="/marketplace">
+          <a id="btn" aria-label="Button to the Marketplace page" className="viewHomesButton" href="/marketplace">
             <button className="button" type="button">
               View Homes <IoMdArrowRoundForward className="arrow" />
             </button>

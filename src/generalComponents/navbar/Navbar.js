@@ -32,17 +32,18 @@ const Navbar = () => {
       >
         <ul>
           <li>
-            <a id="buyButton" className="navBarLink" href="/marketplace">
+            <a id="buyButton" aria-label="Link in Navigation Bar to Marketplace Page" className="navBarLink" href="/marketplace">
               Buy
             </a>
           </li>
           <li>
-            <a className="navBarLink" href="/marketplace">
+            <a className="navBarLink" aria-label="Link in Navigation Bar to Rent Page" href="/marketplace">
               Rent
             </a>
           </li>
           <li className="dropdown">
             <button
+              aria-label="Dropdown Of Islands"
               className={
                 isDropdownExpanded
                   ? "navBtn dropBtn expanded"
@@ -64,61 +65,62 @@ const Navbar = () => {
                   : "dropdownContent"
               }
             >
-              <a className="dropdownLink left" href="/hawai'i">
+              <a className="dropdownLink left" aria-label="Link in Navigation Bar to Informational Page on Hawai'i" href="/hawai'i">
                 Hawai&apos;i
               </a>
-              <a className="dropdownLink right" href="/maui">
+              <a className="dropdownLink right" aria-label="Link in Navigation Bar to Informational Page on Maui" href="/maui">
                 Maui
               </a>
-              <a className="dropdownLink left" href="/o'ahu">
+              <a className="dropdownLink left" aria-label="Link in Navigation Bar to Informational Page on o'ahu" href="/o'ahu">
                 O&apos;ahu
               </a>
-              <a className="dropdownLink right" href="/kaua&apos;i">
+              <a className="dropdownLink right" aria-label="Link in Navigation Bar to Informational Page on Kaua'i" href="/kaua&apos;i">
                 Kaua&apos;i
               </a>
-              <a className="dropdownLink left" href="/moloka'i">
+              <a className="dropdownLink left" aria-label="Link in Navigation Bar to Informational Page on Moloka" href="/moloka'i">
                 Moloka&apos;i
               </a>
-              <a className="dropdownLink right" href="/lāna&apos;i">
+              <a className="dropdownLink right" aria-label="Link in Navigation Bar to Informational Page on Lana'i" href="/lāna&apos;i">
                 Lāna&apos;i
               </a>
-              <a className="dropdownLink left" href="/ni&apos;ihau">
+              <a className="dropdownLink left" aria-label="Link in Navigation Bar to Informational Page on ni'ihau" href="/ni&apos;ihau">
                 Ni&apos;ihau
               </a>
-              <a className="dropdownLink right" href="/kaho&apos;olawe">
+              <a className="dropdownLink right" aria-label="Link in Navigation Bar to Informational Page on Kaho'olawe" href="/kaho&apos;olawe">
                 Kaho&apos;olawe
               </a>
             </div>
           </li>
           <li>
-            <a className="navBarLink" href="/aboutUs">
+            <a className="navBarLink" aria-label="Link in Navigation Bar to the About Us page" href="/aboutUs">
               About
             </a>
           </li>
           <li>
-            <a className="navBarLink" href="/contactUs">
+            <a className="navBarLink" aria-label="Link in Navigation Bar to the Contact Us page" href="/contactUs">
               Contact
             </a>
           </li>
           <li className="mobile">
-            <a className="navBarLink" href="/signUp">
+            <a className="navBarLink" aria-label="Link in Navigation Bar to Create an Account" href="/signUp">
               Sign Up
             </a>
-            <a className="navBarLink" href="/login">
+            <a className="navBarLink" aria-label="Link in Navigation Bar to create an account" href="/login">
               Log in
             </a>
           </li>
         </ul>
       </div>
       <div className="accountMenu">
-        <a id="outerSignUpButton" className="navBtn" href="/signUp">
+        <a id="outerSignUpButton" aria-label="Link in Navigation Bar to to Create an Account" className="navBtn" href="/signUp">
           Sign Up
         </a>
-        <a id="outerLoginButton" className="loginBtn" href="/login">
+        <a id="outerLoginButton" aria-label="Link in Navigation Bar to to Login" className="loginBtn" href="/login">
           Log in
         </a>
       </div>
       <button
+        aria-label="View Navigation Bar"
         className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded);

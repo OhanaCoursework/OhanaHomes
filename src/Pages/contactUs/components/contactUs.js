@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./contactUs.scss";
-import pathToTitleImage from "../../../assets/images/ContactUsTitleImage.png";
+import pathToTitleImage from "../../../assets/images/ContactUsTitleImage.webp";
 import { isEmailValid } from "../../../helpers/validators/emailValidator.js";
 import Alert from "../../../generalComponents/alerts/alert.js";
 import { isTextboxValid } from "../../../helpers/validators/textboxValidator.js";
@@ -56,9 +56,9 @@ const ContactUs = () => {
         <h2 id="usefulLinksHeader">Useful Links</h2>
         <div className="horizontallist">
           <ul>
-            <li><span className="listWidgets"></span><a id="LinkToAboutUs" href="/aboutUs"><button type="button">About Us</button></a></li>
-            <li><span className="listWidgets"></span><a id="LinkToMarketPlace" href="/marketplace"><button type="button">Marketplace</button></a></li>
-            <li><span className="listWidgets"></span><a id="LinkToHome" href="/"><button type="button">Home</button></a></li>
+            <li><span className="listWidgets"></span><a id="LinkToAboutUs" aria-label="Button to the About Us Page" href="/aboutUs"><button type="button">About Us</button></a></li>
+            <li><span className="listWidgets"></span><a id="LinkToMarketPlace" aria-label="Button to the Marketplace page" href="/marketplace"><button type="button">Marketplace</button></a></li>
+            <li><span className="listWidgets"></span><a id="LinkToHome" aria-label="Button to the Home Page" href="/"><button type="button">Home</button></a></li>
           </ul>
         </div>
       </div>
@@ -67,7 +67,7 @@ const ContactUs = () => {
         <h3>Leave us a review or get in contact with our team</h3>
         <form id="contactUsForm">
           <input className="emailInput" type="text" name="userEmail" placeholder="Email Address" />   
-          <textarea id="commentArea" name="comment" rows="10" cols="50" spellCheck="true" maxLength={500}></textarea>
+          <textarea id="commentArea" name="comment" rows="10" cols="50" placeholder="Enter your message here..." spellCheck="true" maxLength={500}></textarea>
           <button type="Submit" className="sendButton">Send</button>
           <Alert
             active={alertActive}

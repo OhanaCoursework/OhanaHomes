@@ -1,19 +1,19 @@
-import marketHouse1 from "../../assets/images/marketPlace/marketHouse1.jpg";
-import marketHouse2 from "../../assets/images/marketPlace/marketHouse2.jpg";
-import marketHouse3 from "../../assets/images/marketPlace/marketHouse3.jpg";
-import marketHouse4 from "../../assets/images/marketPlace/marketHouse4.jpg";
-import marketHouse5 from "../../assets/images/marketPlace/marketHouse5.jpg";
-import marketHouse6 from "../../assets/images/marketPlace/marketHouse6.jpg";
-import marketHouse7 from "../../assets/images/marketPlace/marketHouse7.jpg";
-import marketHouse8 from "../../assets/images/marketPlace/marketHouse8.jpg";
-import marketHouse9 from "../../assets/images/marketPlace/marketHouse9.jpg";
-import marketHouse10 from "../../assets/images/marketPlace/marketHouse10.jpg";
-import marketHouse11 from "../../assets/images/marketPlace/marketHouse11.jpg";
-import marketHouse12 from "../../assets/images/marketPlace/marketHouse12.jpg";
-import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.jpg";
-import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.jpg";
-import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.jpg";
-import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
+import marketHouse1 from "../../assets/images/marketPlace/marketHouse1.webp";
+import marketHouse2 from "../../assets/images/marketPlace/marketHouse2.webp";
+import marketHouse3 from "../../assets/images/marketPlace/marketHouse3.webp";
+import marketHouse4 from "../../assets/images/marketPlace/marketHouse4.webp";
+import marketHouse5 from "../../assets/images/marketPlace/marketHouse5.webp";
+import marketHouse6 from "../../assets/images/marketPlace/marketHouse6.webp";
+import marketHouse7 from "../../assets/images/marketPlace/marketHouse7.webp";
+import marketHouse8 from "../../assets/images/marketPlace/marketHouse8.webp";
+import marketHouse9 from "../../assets/images/marketPlace/marketHouse9.webp";
+import marketHouse10 from "../../assets/images/marketPlace/marketHouse10.webp";
+import marketHouse11 from "../../assets/images/marketPlace/marketHouse11.webp";
+import marketHouse12 from "../../assets/images/marketPlace/marketHouse12.webp";
+import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.webp";
+import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.webp";
+import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.webp";
+import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.webp";
 export const CardData = [
   {
     title: "Luxury Villa in Maui, Hawaii",

@@ -16,7 +16,7 @@ const IslandsPage = ({ islandData }) => {
         <h2 id="OurStoryHeading">Why visit {islandData.island}?</h2>
         <p className="paragraph1">{islandData.description}</p>
 
-        <a id="marketplaceBtn" className="islandPageButton" href="/marketplace">
+        <a id="marketplaceBtn" aria-label="Button to the marketplace page" className="islandPageButton" href="/marketplace">
           View Homes On This Island
         </a>
       </div>

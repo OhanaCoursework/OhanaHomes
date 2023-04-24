@@ -1,5 +1,5 @@
-import pathToTitleImage from "../../../assets/images/aboutUsPageImg.jpg";
-import pathToOwnerPhoto from "../../../assets/images/ourOwnerImg.jpg";
+import pathToTitleImage from "../../../assets/images/aboutUsPageImg.webp";
+import pathToOwnerPhoto from "../../../assets/images/ourOwnerImg.webp";
 
 export const aboutUsData = {
   paragraph1:

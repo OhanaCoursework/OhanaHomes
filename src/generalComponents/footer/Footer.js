@@ -29,42 +29,47 @@ const Footer = () => {
           </p>
         </div>
         <div className="Column2 line">
-          <a href="home" className="Link" id="home-link">
+          <a href="home" aria-label="Link in Footer to the Home Page" className="Link" id="home-link">
             Home
           </a>
-          <a href="aboutUs" className="Link" id="about-link">
+          <a href="aboutUs" aria-label="Link in Footer to About Us Page" className="Link" id="about-link">
             About Us
           </a>
-          <a href="contactUs" className="Link" id="contact-link">
+          <a href="contactUs" aria-label="Link in Footer to Contact Us Page" className="Link" id="contact-link">
             Contact Us
           </a>
-          <a href="help" className="Link" id="help-link">
+          <a href="help" aria-label="Link in Footer to Help Page" className="Link" id="help-link">
             Help
           </a>
         </div>
         <div className="Column3 line">
           <a
+            aria-label="Facebook logo"
             href="https://www.facebook.com/McDonalds2915EManoaRd/"
             id="facebook-logo"
           >
-            <img className="icons" src={facebookIcon} />
+            <img className="icons" alt="Facebook Icon" src={facebookIcon} />
           </a>
           <a
+            aria-label="Twitter logo"
             href="https://twitter.com/McDonaldsHawaii?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
             id="twitter-logo"
           >
-            <img className="icons" src={twitterIcon} />
+            <img className="icons" alt="Twitter Icon" src={twitterIcon} />
           </a>
           <a
+            aria-label="Instagram logo"
             href="https://www.instagram.com/mcdonaldshawaii/?hl=en"
             id="instagram-logo"
           >
-            <img className="icons" src={instagramIcon} />
+            <img className="icons" alt="Instagram Icon" src={instagramIcon} />
           </a>
         </div>
         <div className="Column4">
-          <a href="/">
-            <img className="logo" id="website-logo" src={websiteLogo} />
+          <a
+          aria-label="Ohana Homes logo"
+          href="/">
+            <img className="logo" id="website-logo" alt="Ohana Homes Logo" src={websiteLogo} />
           </a>
         </div>
       </div>

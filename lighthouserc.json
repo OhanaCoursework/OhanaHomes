@@ -1,0 +1,14 @@
+{
+  "ci": {
+    "collect": {
+      "url": ["http://localhost:3000/","http://localhost:3000/contactUs","http://localhost:3000/aboutUs"]
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "csp-xss": "off"
+      }
+    }
+    
+  }
+}

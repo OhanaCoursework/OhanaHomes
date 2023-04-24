@@ -45,7 +45,7 @@ const About = () => {
             </li>
           </ul>
         </div>
-        <a id="linkToAboutUs" href="/aboutUs">
+        <a id="linkToAboutUs" aria-label="Button to the About Us Page" href="/aboutUs">
           <button type="button">Learn More About Us</button>
         </a>
       </div>
