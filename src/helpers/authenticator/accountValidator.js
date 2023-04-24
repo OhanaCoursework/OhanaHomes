@@ -3,28 +3,6 @@ const passwordPattern = new RegExp(
   "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[a-zA-Z0-9!@#$£%^&*()_+]+$"
 );
 
-export function validateAccountDetails(username, password, secondPassword) {
-  let usernameErrors = validateUsername(username);
-
-  if (usernameErrors) {
-    return usernameErrors;
-  }
-
-  let passwordErrors = validatePassword(password);
-
-  if (passwordErrors) {
-    return passwordErrors;
-  }
-
-  if (!secondPassword) {
-    return "Please enter your password again";
-  }
-
-  if (password !== secondPassword) {
-    return "Passwords do not match";
-  }
-}
-
 export function validateUsername(username) {
   if (!username) {
     return "Username is empty";
@@ -62,7 +40,7 @@ export function validatePassword(password) {
 }
 
 function doesUsernameExist(username) {
-  let users = JSON.parse(localStorage.users);
+  let users = JSON.parse(localStorage.users || "[]");
   const foundUser = users.find((user) => user.username === username);
   if (foundUser) {
     return true;
