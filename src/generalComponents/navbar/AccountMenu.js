@@ -16,8 +16,9 @@ import {
   openSignUpModal,
 } from "../../helpers/authenticator/accountLoginHelper";
 import { isUserLoggedIn } from "../../helpers/authenticator/authenticator.js";
+import { showAlert } from "../alerts/alert";
 
-const AccountMenu = ({ showAlert }) => {
+const AccountMenu = () => {
   const [isMyAccountExpanded, setIsMyAccountExpanded] = useState(false);
 
   function checkLoginInCookieAndHandleResponse() {

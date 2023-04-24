@@ -14,8 +14,9 @@ import {
   validateUsername,
   validatePassword,
 } from "../../../helpers/authenticator/accountValidator";
+import { showAlert } from "../../alerts/alert";
 
-const SignUpModal = ({ showAlert }) => {
+const SignUpModal = () => {
   function usernameValidator(event) {
     console.log("username val");
     if (event.target.value) {

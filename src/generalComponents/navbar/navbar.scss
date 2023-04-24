@@ -4,7 +4,7 @@
   grid-template-columns: 1fr auto minmax(227px, 1fr);
   position: sticky;
   background-color: #f0ddce;
-  z-index: 1;
+  z-index: 5;
   top: 0;
   justify-content: space-between;
 
@@ -129,10 +129,6 @@
     margin-bottom: 5px;
   }
 
-  .accountIcon {
-    margin-right: 3px;
-  }
-
   /* Show the dropdown menu on hover */
   @media screen and (min-width: 800px) {
     .dropdown:hover .dropdownContent {
@@ -255,6 +251,10 @@
       right: 7px;
     }
   }
+}
+
+#topNavBarDiv.modalOpen {
+  z-index: 1;
 }
 
 @media screen and (max-width: 800px) {

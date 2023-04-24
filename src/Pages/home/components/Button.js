@@ -1,4 +1,5 @@
 const Button = ({ children }) => {
+  // Styles for the button
   const buttonStyles = {
     whiteSpace: "nowrap",
     outline: "none",
@@ -17,17 +18,19 @@ const Button = ({ children }) => {
     marginLeft: "-15px",
   };
 
+  // Event handler for hover effect
   const handleHover = (e) => {
     e.target.style.transform = "translateY(-2px)";
   };
 
+  // Event handler for hover out effect
   const handleHoverOut = (e) => {
     e.target.style.transform = "translateY(0)";
   };
 
   return (
     <a
-      href="/homes"
+      href="/marketplace"
       id="homes-button"
       style={buttonStyles}
       onMouseOver={handleHover}

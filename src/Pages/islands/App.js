@@ -1,13 +1,17 @@
 import React from "react";
-import Islands from "./components/Islands.js";
+import {useParams} from 'react-router-dom';
+import IslandsPage from "./components/IslandsPage.js";
 import Navbar from "../../generalComponents/navbar/Navbar";
 import Footer from "../../generalComponents/footer/Footer";
+import { IslandsData } from "../../helpers/islandsData/islandsData.js";
 
 function IslandsApp() {
+  const island = IslandsData.find((island) => island.island.toLowerCase() === useParams().island);
+  
   return (
     <>
       <Navbar />
-      <Islands />
+      <IslandsPage islandData = {island} />
       <Footer />
     </>
   );

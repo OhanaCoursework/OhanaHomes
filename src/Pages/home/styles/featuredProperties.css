@@ -1,0 +1,55 @@
+.section {
+  width: 100%;
+  height: 100%;
+  padding: 3rem 0rem;
+}
+
+.container {
+  width: 100%;
+  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
+}
+
+.viewHomesButton .button {
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  color: black;
+  font-size: 20px;
+  background-color: #f0ddce;
+  border-radius: 6px;
+}
+
+.viewHomesButton {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.viewHomesButton .button:hover {
+  background: #cd853f;
+  color: white;
+}
+
+.arrow {
+  height: 17px;
+  margin-top: 2.5px;
+}
+
+.title-text {
+  position: relative;
+  font-size: 48pt;
+  color: #447399;
+  font-weight: 500;
+  margin: 32px 0px 16px 72px;
+  padding: 0px 16px;
+}
+
+.featuredHomes {
+  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
+}

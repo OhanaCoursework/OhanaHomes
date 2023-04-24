@@ -9,7 +9,7 @@
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-  z-index: 2;
+  z-index: 3;
   font-size: clamp(14px, 4vw, 20px);
 }
 

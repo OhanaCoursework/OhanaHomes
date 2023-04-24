@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 /* Importing necessary files and images */
 import "./accountPopUp.css";
+import { showAlert } from "../../alerts/alert";
 import {
   isUserLoggedIn,
   attemptUserLogin,
@@ -16,7 +17,7 @@ import {
   resetLoginError,
 } from "../../../helpers/authenticator/accountLoginHelper";
 
-const LoginModal = ({ showAlert }) => {
+const LoginModal = () => {
   function usernameValidator(event) {
     presenceValidator(event.target, "Username is empty");
   }

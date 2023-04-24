@@ -4,21 +4,25 @@ export function openLoginModal() {
   document.getElementById("loginForm").reset();
   hideSignUpModal();
   document.querySelector(".login").classList.add("show-modal");
+  document.getElementById("topNavBarContainer").style.zIndex = 2;
 }
 
 export function openSignUpModal() {
   document.getElementById("signUpForm").reset();
   hideLoginModal();
   document.querySelector(".signUp").classList.add("show-modal");
+  document.getElementById("topNavBarContainer").style.zIndex = 2;
 }
 
 export function hideLoginModal() {
+  document.getElementById("topNavBarContainer").style = "";
   document.querySelector(".login").classList.remove("show-modal");
   resetFormFormFields(document.getElementById("loginForm"));
   resetLoginError();
 }
 
 export function hideSignUpModal() {
+  document.getElementById("topNavBarContainer").style = "";
   document.querySelector(".signUp").classList.remove("show-modal");
   resetFormFormFields(document.getElementById("signUpForm"));
 }

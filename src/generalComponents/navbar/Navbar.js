@@ -13,17 +13,6 @@ import "./navbar.scss";
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
-  const [alertActive, setAlertActive] = useState(false);
-  const [alertText, setAlertText] = useState("");
-  const [alertType, setAlertType] = useState("");
-  const [alertTimeout, setAlertTimeout] = useState(false);
-
-  function showAlert(text, type, timeout) {
-    setAlertText(text);
-    setAlertType(type);
-    setAlertTimeout(timeout);
-    setAlertActive(true);
-  }
 
   useEffect(() => {
     if (!localStorage.users) {
@@ -33,16 +22,10 @@ const Navbar = () => {
 
   return (
     <>
-      <Alert
-        active={alertActive}
-        setActive={setAlertActive}
-        alert={alertText}
-        alertType={alertType}
-        timeout={alertTimeout}
-      />
-      <LoginModal showAlert={showAlert} />
-      <SignUpModal showAlert={showAlert} />
-      <nav className={isNavExpanded ? "navigation expanded" : "navigation"}>
+      <Alert />
+      <LoginModal />
+      <SignUpModal />
+      <nav id="topNavBarContainer" className={isNavExpanded ? "navigation expanded" : "navigation"}>
         <div className="brandLogoDiv">
           <Link to="/">
             <img
@@ -128,13 +111,13 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a className="navBarLink" href="/contact">
+              <a className="navBarLink" href="/contactUs">
                 Contact
               </a>
             </li>
           </ul>
         </div>
-        <AccountMenu showAlert={showAlert} />
+        <AccountMenu />
         <button
           className="hamburger"
           onClick={() => {
