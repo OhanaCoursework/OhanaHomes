@@ -19,3 +19,5 @@ jobs:
           npm run pa11y-ci src/assets/snapshots/HomePage-snapshot.html
           npm run pa11y-ci src/assets/snapshots/IslandsPage-snapshot.html
           npm run pa11y-ci src/assets/snapshots/AboutUsPage-snapshot.html
+          npm run pa11y-ci src/assets/snapshots/HeroPage-snapshot.html
+          npm run pa11y-ci src/assets/snapshots/ContactUsPage-snapshot.html

@@ -2,7 +2,7 @@
   "#": "Automated accessibility testing ~ https://github.com/pa11y/pa11y-ci",
 
   "defaults": {
-    "standard": "WCAG2A",
+    "standard": "WCAG2AAA",
     "timeout": 10000,
     "wait": 2000,
     "ignore": [
