@@ -2,7 +2,7 @@
   "#": "Automated accessibility testing ~ https://github.com/pa11y/pa11y-ci",
 
   "defaults": {
-    "standard": "WCAG2A",
+    "standard": "WCAG2AAA",
     "timeout": 10000,
     "wait": 2000,
     "ignore": [
@@ -10,5 +10,12 @@
       "WCAG2A.Principle1.Guideline1_1.1_1_1.H37",
       "WCAG2A.Principle1.Guideline1_3.1_3_1.H71.3"
     ]
-  }
+  },
+  "urls": [
+      "http://localhost:3000/",
+      "http://localhost:3000/contactUs",
+      "http://localhost:3000/aboutUs",
+      "http://localhost:3000/hawai'i"
+
+  ]
 }

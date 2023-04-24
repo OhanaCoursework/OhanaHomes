@@ -74,5 +74,9 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.2",
     "react-spring": "^9.7.1"
+  },
+  "main": "./lib/pa11y-ci.js",
+  "bin": {
+    "pa11y-ci": "./bin/pa11y-ci.js"
   }
 }

@@ -66,8 +66,8 @@ const ContactUs = () => {
         <h2 id="getInContactHeader">Get in Contact</h2>
         <h3>Leave us a review or get in contact with our team</h3>
         <form id="contactUsForm">
-          <input className="emailInput" type="text" name="userEmail" placeholder="Email Address" />   
-          <textarea id="commentArea" name="comment" rows="10" cols="50" placeholder="Enter your message here..." spellCheck="true" maxLength={500}></textarea>
+          <input className="emailInput" type="text" name="userEmail" aria-label="Entry box for email address" placeholder="Email Address" />   
+          <textarea id="commentArea" aria-label="Text area for message" name="comment" rows="10" cols="50" placeholder="Enter your message here..." spellCheck="true" maxLength={500}></textarea>
           <button type="Submit" className="sendButton">Send</button>
           <Alert
             active={alertActive}
