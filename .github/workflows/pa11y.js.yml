@@ -16,4 +16,4 @@ jobs:
       - run: npm install --legacy-peer-deps
       - run: |
           npm start &
-          npx wait-on http://127.0.0.1:3000 && npm run pa11y-ci
+          npx wait-on http://127.0.0.1:3000 && 

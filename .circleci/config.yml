@@ -27,6 +27,9 @@ jobs:
           npx wait-on http://127.0.0.1:3000 && npm run ui-tests
       - run: |
           npm start &
+          npx wait-on http://127.0.0.1:3000 && npm run pa11y-ci  
+      - run: |
+          npm start &
           npx wait-on http://127.0.0.1:3000 && npm exec lighthouse-ci http://127.0.0.1:3000/ 
           && npm exec lighthouse-ci http://127.0.0.1:3000/contactUs 
           && npm exec lighthouse-ci http://127.0.0.1:3000/aboutUs
