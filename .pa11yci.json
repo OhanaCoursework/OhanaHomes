@@ -12,10 +12,10 @@
     ]
   },
   "urls": [
-      "http://localhost:3000/",
-      "http://localhost:3000/contactUs",
-      "http://localhost:3000/aboutUs",
-      "http://localhost:3000/hawai'i"
+      "http://127.0.0.1:3000/",
+      "http://127.0.0.1:3000/contactUs",
+      "http://127.0.0.1:3000/aboutUs",
+      "http://127.0.0.1:3000/hawai'i"
 
   ]
 }
