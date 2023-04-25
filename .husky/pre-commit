@@ -13,3 +13,5 @@ fi
 
 npx eslint ./ --fix
 npm run linter
+
+npm run pa11y-ci
