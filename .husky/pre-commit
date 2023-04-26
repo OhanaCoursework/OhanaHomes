@@ -6,7 +6,7 @@ result=$(echo "$branchName" | grep -E "^(HEAD|develop|master|main)|(release\/([0
 
 if [ -z "$result" ]; then
     echo "Branch name '$branchName' is invalid"
-    eco "You can use `git branch -m 'New Branch Name'` to update the branch name"
+    echo "You can use `git branch -m 'New Branch Name'` to update the branch name"
     echo "Branch names must follow project guidelines as seen in the read me"
     exit 1
 fi
