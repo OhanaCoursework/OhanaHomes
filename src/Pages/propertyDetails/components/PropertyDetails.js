@@ -1,44 +1,41 @@
-import React, { useState } from "react";
-import property from "./propertyInfo";
-import Modal from "./PropertyDModal.js";
-import "./Styles/PropertyD.css";
+import React from "react";
+import "./PropertyDetails.scss";
+import { useParams } from 'react-router-dom';
+import { CardData as BuyCardData } from "../../../helpers/featuredPropetiesData/buyPropertiesData.js";
+import { CardData as RentCardData } from "../../../helpers/featuredPropetiesData/rentPropertiesData.js";
 
+const PropertyDetails = () =>  {
+    const regex = /-/g;
+    var property;
+    let { propertyId } = useParams();
 
-const gimmeeDaModal = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  const viewMoreInfoClick = () => {
-    setShowModal(true);
-  };
-
-  const Close = () => {
-    setShowModal(false);
-  };
-
-  return (
-    <div>
-      <h1>Property Details </h1>
-      <div className="property-deets">
-        <div className="button" onClick={viewMoreInfoClick}>
-          <img src={property.image} alt={property.alt} />
-          <h2>{property.title}</h2>
-          <p>{property.description}</p>
-          <p>Price: {property.price}</p>
-          <p>Bedrooms: {property.bedrooms}</p>
-          <p>Bathrooms: {property.bathrooms}</p>
-          <p>Size: {property.size}㎡</p>
-          <p>Address: {property.address}</p>
-          <p>Island: {property.island}</p>
-          <p>Zipcode: {property.zipcode}</p>
-          <p>Keywords: {property.keywords.join(", ")}</p>
+    let AllProperties = BuyCardData.concat(RentCardData);
+    
+    property = AllProperties.find(property => property.id == propertyId);
+    
+    return (
+      <section className="PropertyDetails">
+        <div id="imageBlock">
+          <img id="PropertyImg" src={property.image} alt={"image of " + property.title}></img>
         </div>
-      </div>
-      {showModal && (
-        <Modal onClose={Close} property={property} />
-      )}
-    </div>
-  );
-};
+        <div className="propertyDetailsBlock">
+          <h2>{property.title}</h2>
+          <h3>{"Address: " + property.address}</h3>
+          <h3>{"Price: "+property.price}</h3>
+          <br></br>
+          <h3>Property Information</h3>
+          <ul>
+            <li>{"Bedrooms: " + property.bedrooms}</li>
+            <li>{"Bathrooms: " + property.bathrooms}</li>
+            <li>{"Size (sq/Ft): " + property.size}</li>
+            <li>{"Island: " + property.island}</li>
+            <li>{"Zipcode: " + property.zipcode}</li>
+            <li>{"Move In Date: " + property.moveInDate.replace(regex, "/")}</li>
+            <li>{"Date Added: " + property.dateAdded.replace(regex, "/").slice(0,10)}</li>
+          </ul>
+        </div>
+      </section>
+    );
+  };
 
-export default gimmeeDaModal;
-
+export default PropertyDetails;

@@ -1,0 +1,27 @@
+.PropertyDetails {
+  #imageBlock {
+    background-color: #F0DDCE;
+    position: relative;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+  }
+
+  #imageBlock > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+  .propertyDetailsBlock {
+    background-color: #81BDBE;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .propertyDetailsBlock > h2 {
+    margin: 0;
+  }
+
+}

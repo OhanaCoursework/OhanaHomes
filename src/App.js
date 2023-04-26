@@ -9,7 +9,6 @@ import LoginPage from "./Pages/login/App.js";
 import SignUpPage from "./Pages/signUp/App.js";
 import ContactUs from "./Pages/contactUs/App.js";
 
-
 function App() {
   return (
     <div className="App">
@@ -17,7 +16,7 @@ function App() {
         <Route path="/" element={<HomeApp />} />
         <Route path="/marketplace" element={<MarketplaceApp />} />
         <Route path="/island" element={ <IslandsApp />} />
-        <Route path="/propertydetails" element={<PropertyDetailsApp />} />
+        <Route path="/propertydetails/:propertyId" element={<PropertyDetailsApp />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signUp" element={<SignUpPage />} />

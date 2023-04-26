@@ -7,8 +7,7 @@ import Footer from "../../generalComponents/footer/Footer.js";
 import { SliderDataOne } from "../../helpers/heroData/sliderData.js";
 import { IslandsData } from "../../helpers/islandsData/islandsData.js";
 import FeaturedProperties from "./components/featuredProperties.js";
-import { CardData } from "../../helpers/featuredPropetiesData/propertiesData";
-
+import { CardData } from "../../helpers/featuredPropetiesData/buyPropertiesData.js";
 function HomeApp() {
   return (
     <>
