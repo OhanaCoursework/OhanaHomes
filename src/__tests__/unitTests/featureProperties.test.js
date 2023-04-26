@@ -3,7 +3,7 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import FeaturedProperties from "../../Pages/home/components/featuredProperties";
 import HouseItem from "../../Pages/home/components/houseItem.js";
-import { CardData } from "../../helpers/featuredPropetiesData/propertiesData";
+import { CardData } from "../../helpers/featuredPropetiesData/buyPropertiesData";
 
 configure({ adapter: new Adapter() });
 
