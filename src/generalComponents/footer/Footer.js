@@ -43,13 +43,22 @@ const Footer = () => {
           </a>
         </div>
         <div className="Column3 line">
-          <a href="http://www.facebook.com" id="facebook-logo">
+          <a
+            href="https://www.facebook.com/McDonalds2915EManoaRd/"
+            id="facebook-logo"
+          >
             <img className="icons" src={facebookIcon} />
           </a>
-          <a href="http://www.twitter.com" id="twitter-logo">
+          <a
+            href="https://twitter.com/McDonaldsHawaii?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+            id="twitter-logo"
+          >
             <img className="icons" src={twitterIcon} />
           </a>
-          <a href="http://www.instagram.com" id="instagram-logo">
+          <a
+            href="https://www.instagram.com/mcdonaldshawaii/?hl=en"
+            id="instagram-logo"
+          >
             <img className="icons" src={instagramIcon} />
           </a>
         </div>

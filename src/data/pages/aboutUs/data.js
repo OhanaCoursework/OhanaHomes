@@ -3,19 +3,19 @@ import pathToOwnerPhoto from "../../../assets/images/ourOwnerImg.jpg";
 
 export const aboutUsData = {
   paragraph1:
-    "What, what, ma? Don't pay any attention to him, he's in one of his moods. Sam, quit fiddling with that thing, come in here to dinner. Now let's see, you already know Lorraine, this is Milton, this is Sally, that's Toby, and over there in the playpen is little baby Joey. Hello. What? Uncle Jailbird Joey?",
+    "Welcome to Ohana Homes, your luxury real estate destination for stunning Hawaiian homes. Our story began with a deep love for the Hawaiian islands and a passion for helping others find their dream homes in this paradise. With years of experience and expertise in the local real estate market, we have become the go-to choice for those seeking exceptional properties in Hawaii.",
   paragraph2:
-    "No wait, Doc, the bruise, the bruise on your head, I know how that happened, you told me the whole story. you were standing on your toilet and you were hanging a clock, and you fell, and you hit your head on the sink, and that's when you came up with the idea for the flux capacitor, which makes time travel possible. Radiation suit, of course, cause all of the fall out from the atomic wars. This is truly amazing, a portable television studio. No wonder your president has to be an actor, he's gotta look good on television. Well, I figured, what the hell. Good, I'll see you tonight. Don't forget, now, 1:15 a.m., Twin Pines Mall. Well gee, I don't know.",
+    "At Ohana Homes, we understand that a home is not just a place to live, but a sanctuary where memories are made and cherished. We are dedicated to providing our clients with unparalleled service, personalized attention, and a seamless buying experience. Our team of knowledgeable and professional agents are committed to exceeding your expectations, whether you are looking for a beachfront estate, a luxury villa, or a cozy cottage nestled in the lush greenery of the islands.",
   paragraph3:
-    "Check out that four by four. That is hot. Someday, Jennifer, someday. Wouldn't it be great to take that truck up to the lake. Throw a couple of sleeping bags in the back. Lie out under the stars. So tell me, future boy, who's president of the United States in 1985? George, there's nothing to be scared of. All it takes is a little self confidence. You know, if you put your mind to it, you could accomplish anything. That's him. Great good, good, Lorraine, I had a feeling about you two.",
+    "We take pride in our extensive network of connections, local market insights, and industry expertise, which allow us to offer our clients exclusive access to the finest properties in Hawaii. We are passionate about showcasing the unique beauty of the islands and helping our clients discover their own piece of paradise in this tropical haven.",
   pathToTitleImage: pathToTitleImage,
   pathToOwnerPhoto: pathToOwnerPhoto,
-  ourStoryHeading: "Our story So Far",
-  ourOwnerHeading: "Our Owner",
+  ourStoryHeading: "Our Story So Far",
+  ourOwnerHeading: "Meet Our Team",
   paragraph4:
-    "Alright kid, you stick to your father like glue and make sure that he takes her to the dance. Wait a minute, wait a minute. 1:15 in the morning? You're gonna break his arm. Biff, leave him alone. Let him go. Let him go. Hey, hey, keep rolling, keep rolling there. No, no, no, no, this sucker's electrical. But I need a nuclear reaction to generate the one point twenty-one gigawatts of electricity that I need. Well, uh, listen, uh, I really-",
+    "Our team at Ohana Homes is made up of experienced and dedicated professionals who share a common love for Hawaii and a commitment to providing exceptional service to our clients. We believe that every client is like family, and we treat them with the utmost care and respect. Our passion for real estate and our deep understanding of the local market make us the ideal choice for all your luxury home buying needs in Hawaii.",
   paragraph5:
-    "Oh, uh, hey you, get your damn hands off her. Do you really think I oughta swear? Of course not, Biff, now I wouldn't want that to happen. Now, uh, I'll finish those reports up tonight, and I'll run em them on over first thing tomorrow, alright? What? I'm writing this down, this is good stuff. This sounds pretty heavy.",
-  altTagTitleImage: "Image of Hawaiian Holiday Home",
-  altTagOwnerImage: "A photo of our Owner",
+    "We are proud to be a part of the Ohana Homes family, and we look forward to helping you find your perfect Hawaiian home. Contact us today to start your journey to paradise!",
+  altTagTitleImage: "Image of Ohana Homes Team",
+  altTagOwnerImage: "A photo of our Team",
 };
