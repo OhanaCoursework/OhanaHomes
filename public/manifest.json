@@ -1,7 +1,13 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "start_url": ".",
+  "name": "Ohana Homes",
+  "icons": [
+    {
+      "src": "../src/assets/images/logo/navBarLogo.webp",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./",
+  "scope": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

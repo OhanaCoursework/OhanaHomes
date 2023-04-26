@@ -38,7 +38,7 @@ const ContactUs = () => {
 
   useEffect(()=> {
     const sendEmailButton = document.getElementById("contactUsForm");
-    sendEmailButton.addEventListener("submit", sendEmail);
+    sendEmailButton.addEventListener("submit", sendEmail, { passive: true});
   
     return () => {
       sendEmailButton.removeEventListener("submit", sendEmail);

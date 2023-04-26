@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: 18.x
       - run: npm install --legacy-peer-deps
-      - run: npm exec lhci healthcheck
+      - run: npm exec lhci autorun

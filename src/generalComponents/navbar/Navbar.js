@@ -12,14 +12,14 @@ const Navbar = () => {
   return (
     <nav className="navigation">
       <div className="brandLogoDiv">
-        <Link to="/">
+        <Link aria-label="Link to the home page" to="/">
           <img
             className="largeBrandLogo"
             src={largeNavBarLogo}
             alt="Ohana homes logo"
           />
         </Link>
-        <Link to="/">
+        <Link aria-label="Link to the home page" o="/">
           <img
             className="smallBrandLogo"
             src={smallNavBarLogo}

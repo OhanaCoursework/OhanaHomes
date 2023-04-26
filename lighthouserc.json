@@ -12,7 +12,30 @@
         "uses-long-cache-ttl": "off",
         "maskable-icon": "off",
         "image-aspect-ratio": "off",
-        "render-blocking-resources": "off"
+        "render-blocking-resources": "off",
+        "max-potential-fid": "off",
+        "splash-screen": "off",
+        "service-worker": "off",
+        "preload-lcp-image": "off",
+        "uses-responsive-images": "off",
+        "unsized-images": "off",
+        "largest-contentful-paint": "off",
+        "interactive": ["warn", {"minScore": 0.1}],
+        "unused-javascript": "off",
+        "unminified-javascript": "off",
+        "mainthread-work-breakdown": ["warn", {"minScore": 0.5}],
+        "speed-index": "off",
+        "offscreen-images": "off",
+        "unminified-css": "off",
+        "legacy-javascript": "off",
+        "first-meaningful-paint": ["warn", {"minScore": 0.4}],
+        "first-contentful-paint": ["warn", {"minScore": 0.20}],
+        "timing-budget": "off",
+        "cumulative-layout-shift": "off",
+        "total-byte-weight": "off",
+        "errors-in-console": "off",
+        "uses-passive-event-listeners": "off",
+        "modern-image-formats": "off"
       }
     }
     
