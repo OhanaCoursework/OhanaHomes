@@ -4,7 +4,7 @@ import Navbar from "../../generalComponents/navbar/Navbar";
 import Footer from "../../generalComponents/footer/Footer";
 import PropertyDetailsModal from "./components/PropertyDModal.js";
 import propertyInfo from "./components/propertyInfo";
-//
+
 
 
 function PropertyDetailsApp() {
