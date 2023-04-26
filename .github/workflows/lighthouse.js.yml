@@ -1,4 +1,4 @@
-name: pa11y
+name: LightHouse-Ci
 on:
   push:
     branches: [main]
