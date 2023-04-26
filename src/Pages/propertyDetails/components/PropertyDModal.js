@@ -1,4 +1,3 @@
-
 // Importing CSS styles, React framework, and Data 
 import React from "react";
 import "./Styles/PropertyD.css";
