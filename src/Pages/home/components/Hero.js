@@ -82,15 +82,14 @@ const Hero = ({ slides }) => {
         {slides.map((slide, index) => {
           return (
             <div className="HeroSlide" key={index}>
-              {index ===
-  current && (
+              {index === current && (
                 <div className="HeroSlider">
                   <img
-                    id
+                    id={index}
                     className="HeroImage"
                     src={slide.image}
                     alt={slide.alt}
-                    loading="eager" 
+                    loading="eager"
                     onLoad={animations.onStart}
                   />
                   <div className="HeroContent">

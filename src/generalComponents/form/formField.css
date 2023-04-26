@@ -1,0 +1,122 @@
+.modalForm {
+  width: 100%;
+}
+
+.modalInputLabel {
+  border: 1px solid black;
+  border-color: rgb(51, 54, 57);
+  border-radius: 4px;
+  align-self: stretch;
+  display: flex;
+}
+
+.modalInputLabelOuterDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  height: 3.5em;
+}
+
+.modalInputLabelSpanDiv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: 400;
+  color: rgb(113, 118, 123);
+  font-size: clamp(16px, 5vw, 24px);
+}
+
+.modalInputLabelSpanDiv span {
+  display: inline;
+}
+
+.modalInputDiv {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  margin-top: 1em;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-direction: row;
+  padding-left: 1em;
+  padding-right: 1em;
+  overflow: hidden;
+  display: flex;
+}
+
+.modalInputLabel:focus-within {
+  box-shadow: rgb(29, 155, 240) 0px 0px 0px 1px;
+  border-color: rgb(29, 155, 240);
+}
+
+.modalInputLabel:focus-within .modalInputLabelSpanDiv {
+  align-items: start;
+  padding-top: 0.5em;
+  color: rgb(29, 155, 240);
+}
+
+.modalInputLabel:focus-within .labelSpan {
+  font-size: clamp(14px, 4vw, 20px);
+}
+
+.modalInputLabel.active .modalInputLabelSpanDiv {
+  align-items: start;
+  padding-top: 0.5em;
+}
+
+.modalInputLabel.active .labelSpan {
+  font-size: clamp(14px, 4vw, 20px);
+}
+
+.modalInput {
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 0px !important;
+  padding: 0px;
+  border: none;
+  display: inline-block;
+  outline: none;
+  font-size: clamp(16px, 5vw, 24px);
+  height: 1em;
+}
+
+.formErrorDiv {
+  padding: 2px 8px;
+  line-height: 15px;
+}
+
+.formErrorDiv span {
+  font-size: clamp(12px, 3vw, 16px);
+}
+
+.formField {
+  position: relative;
+  padding: 14px 0px
+}
+
+.formField.fieldError {
+  color: rgb(244, 33, 46);
+  padding-bottom: 0px;
+}
+
+.formField.fieldError .modalInputLabelSpanDiv {
+  color: rgb(244, 33, 46);
+}
+
+.formField.fieldError .modalInputLabel {
+  border-color: rgb(244, 33, 46);
+}
+
+.formField.fieldError .modalInputLabel:focus-within {
+  box-shadow: rgb(244, 33, 46) 0px 0px 0px 1px;
+}
+
+.showHidePasswordIcon {
+  z-index: 1;
+}

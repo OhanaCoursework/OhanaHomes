@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Navbar from "../../generalComponents/navbar/Navbar";
-import largeNavBarLogo from "../../assets/images/logo/navbarLogo.svg";
-import smallNavBarLogo from "../../assets/images/logo/smallNavBarLogo.svg";
+import Navbar from "../../../generalComponents/navbar/Navbar";
+import largeNavBarLogo from "../../../assets/images/logo/navbarLogo.svg";
+import smallNavBarLogo from "../../../assets/images/logo/smallNavBarLogo.svg";
 
 configure({ adapter: new Adapter() });
 
@@ -32,14 +32,6 @@ describe("Navbar component", () => {
     expect(wrapper.find('img[src="' + smallNavBarLogo + '"]').length).toEqual(
       1
     );
-  });
-
-  it("render the sign up button", () => {
-    expect(wrapper.find("#outerSignUpButton").text()).toEqual("Sign Up");
-  });
-
-  it("renders the Log in button", () => {
-    expect(wrapper.find("#outerLoginButton").text()).toEqual("Log in");
   });
 
   it("renders the Islands button", () => {

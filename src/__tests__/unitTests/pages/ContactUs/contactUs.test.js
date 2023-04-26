@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import ContactUs from "../../Pages/contactUs/components/contactUs";
-import { isEmailValid } from "../../helpers/validators/emailValidator.js";
-import { isTextboxValid } from "../../helpers/validators/textboxValidator";
+import ContactUs from "../../../../Pages/contactUs/components/contactUs";
+import { isEmailValid } from "../../../../helpers/validators/emailValidator.js";
+import { isTextboxValid } from "../../../../helpers/validators/textboxValidator";
 import { assert } from "chai";
 
 configure({ adapter: new Adapter() });
