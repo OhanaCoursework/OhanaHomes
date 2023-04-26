@@ -5,7 +5,7 @@
   opacity: 0;
   visibility: hidden;
   transition: visibility 1s linear 0.25s, opacity 1s 0s, top 1s ease 0s, color 0s ease 1s, background-color 0s ease 1s;
-  z-index: 1;
+  z-index: 3;
   font-size: 20px;
 }
 
@@ -49,15 +49,21 @@
 .error {
   color: white;
   background-color: rgb(156, 43, 46, 0.8);
-  z-index: 3;
+  z-index: 4;
 }
 
 .error .alert-close-button:hover {
   color: red;
 }
 
+.close-instantly {
+  transition: none;
+  opacity: 0;
+  top: 0px;
+  visibility: hidden;
+}
 @media screen and (max-width: 800px) {
   .alert {
-    z-index: 2;
+    z-index: 5;
   }
 }

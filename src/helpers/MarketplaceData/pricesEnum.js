@@ -35,5 +35,5 @@ export const RentPrices = [
 ];
 
 export function getPrice(price) {
-  return parseInt(price.replaceAll(/£|,|pm/ig, ''));
+  return parseInt(price.replaceAll(/£|,|pm/gi, ""));
 }

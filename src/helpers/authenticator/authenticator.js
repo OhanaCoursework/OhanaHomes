@@ -54,6 +54,6 @@ export function isUserLoggedIn() {
   return document.cookie.split("; ").find((row) => row.startsWith("user="));
 }
 
-function createSessionCookie(username) {
+export function createSessionCookie(username) {
   document.cookie = "user=" + encodeURIComponent(username) + "; max-age=1200";
 }

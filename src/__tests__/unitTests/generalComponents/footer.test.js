@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Footer from "../../generalComponents/footer/Footer.js";
-import facebookIcon from "../../assets/images/icons/facebookIcon.svg";
-import instagramIcon from "../../assets/images/icons/instagramIcon.svg";
-import twitterIcon from "../../assets/images/icons/twitterIcon.svg";
-import websiteLogo from "../../assets/images/logo/footerLogo.svg";
+import Footer from "../../../generalComponents/footer/Footer.js";
+import facebookIcon from "../../../assets/images/icons/facebookIcon.svg";
+import instagramIcon from "../../../assets/images/icons/instagramIcon.svg";
+import twitterIcon from "../../../assets/images/icons/twitterIcon.svg";
+import websiteLogo from "../../../assets/images/logo/footerLogo.svg";
 
 configure({ adapter: new Adapter() });
 
