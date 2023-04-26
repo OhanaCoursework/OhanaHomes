@@ -1,0 +1,98 @@
+.marketplace {
+  background-color: #447399;
+  padding-top: 32px;
+}
+
+#PageHeading {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 48px;
+  color: white;
+}
+
+.marketplaceSearch {
+  background: #F8FAF9;
+  border-radius: 6px;
+  color: #385872;
+  font-size: clamp(14px, 3vw, 20px);
+  border: none;
+  width: 100%;
+  max-width: min(700px, 90%);
+  height: 53px;
+  padding-left: 16px;
+  padding-right: 37px;
+  text-overflow: ellipsis;
+}
+
+.searchDiv {
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.searchIcon {
+  position: relative;
+  right: 15px;
+  height: 22px;
+  width: 22px;
+  margin-left: -22px;
+  top: 5px;
+}
+
+.marketplaceSearchForm {
+  width: 100%;
+  text-align: center;
+}
+
+.propertiesFilter {
+  font-size: clamp(14px, 3vw, 20px);
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.moveInDiv {
+  background-color: lightgray;
+  width: fit-content;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px gray solid;
+}
+
+.moveInDiv input {
+  font-size: clamp(14px, 3vw, 20px);
+  padding: 6px;
+  border-radius: 0px;
+  border: none;
+}
+
+.moveInDiv label {
+  font-size: clamp(14px, 3vw, 20px);
+  padding: 6px;
+}
+
+.outerFilterDiv {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.filterDiv {
+  max-width: min(1600px, 90%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+  width: 100%;
+  grid-gap: 16px;
+  
+}
+
+.marketPlaceContentDiv {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+}

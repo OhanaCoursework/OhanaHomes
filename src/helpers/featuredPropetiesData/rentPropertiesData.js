@@ -338,7 +338,7 @@ export const CardData = [
   },
 ];
 
-export function getSortedCardData() {
+export function getRentMarketplaceData() {
   CardData.sort(comparePropertiesPriceDesc);
   return CardData;
 }

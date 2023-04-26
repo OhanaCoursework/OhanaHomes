@@ -37,6 +37,66 @@ function generateHref(linkText) {
   return href;
 }
 
+describe("Selenium Tests for account menus", function () {
+  it("Should be able to navigate to the Sign Up pop up using the Sign Up Link", async function () {
+    await driver.get("http://localhost:3000/");
+
+    assert.isFalse(
+      await driver.findElement(By.id("signUpCloseButton")).isDisplayed()
+    );
+
+    await driver.findElement(By.id("outerSignUpButton")).click();
+
+    await driver.sleep(1000);
+
+    assert.isTrue(
+      await driver.findElement(By.id("signUpCloseButton")).isDisplayed()
+    );
+  });
+
+  it("Should be able to navigate to the Login pop up using the Login Link", async function () {
+    await driver.get("http://localhost:3000/");
+
+    assert.isFalse(
+      await driver.findElement(By.id("loginCloseButton")).isDisplayed()
+    );
+
+    await driver.findElement(By.id("outerLoginButton")).click();
+    await driver.sleep(1000);
+
+    assert.isTrue(
+      await driver.findElement(By.id("loginCloseButton")).isDisplayed()
+    );
+  });
+
+  it("Should be able to close to the Login pop up using the close button", async function () {
+    await driver.findElement(By.id("loginCloseButton")).click();
+    await driver.sleep(1000);
+
+    assert.isFalse(
+      await driver.findElement(By.id("loginCloseButton")).isDisplayed()
+    );
+  });
+
+  it("Should be able to close to the sign up pop up using the close button", async function () {
+    await driver.get("http://localhost:3000/");
+
+    await driver.findElement(By.id("outerSignUpButton")).click();
+    await driver.sleep(1000);
+
+    assert.isTrue(
+      await driver.findElement(By.id("signUpCloseButton")).isDisplayed()
+    );
+
+    await driver.findElement(By.id("signUpCloseButton")).click();
+    await driver.sleep(1000);
+
+    assert.isFalse(
+      await driver.findElement(By.id("signUpCloseButton")).isDisplayed()
+    );
+  });
+});
+
 describe("Selenium Tests for NavBar", function () {
   it("Should be able to navigate to the Marketplace Page using the Buy Link", async function () {
     await driver.get("http://localhost:3000/");
@@ -139,25 +199,25 @@ describe("Selenium Tests for NavBar", function () {
     );
   });
 
-  it("Should be able to navigate to the Sign Up Page using the Sign Up Link", async function () {
+  it("Should be able to create an account and log in", async function () {
     await driver.get("http://localhost:3000/");
 
-    await driver.findElement(By.linkText("Sign Up")).click();
+    await driver.findElement(By.id("outerSignUpButton")).click();
 
+    await driver.findElement(By.id("signUpUsername")).sendKeys("username123");
+    await driver.findElement(By.id("signUpPassword")).sendKeys("Password123!");
+
+    await driver.findElement(By.id("signup-submit")).click();
+
+    await driver.findElement(By.id("outerLoginButton")).click();
+
+    await driver.findElement(By.id("loginUsername")).sendKeys("username123");
+    await driver.findElement(By.id("loginPassword")).sendKeys("Password123!");
+
+    await driver.findElement(By.id("login-submit")).click();
     assert.strictEqual(
-      "http://localhost:3000/signUp",
-      await driver.getCurrentUrl()
-    );
-  });
-
-  it("Should be able to navigate to the Login Page using the Login Link", async function () {
-    await driver.get("http://localhost:3000/");
-
-    await driver.findElement(By.linkText("Log in")).click();
-
-    assert.strictEqual(
-      "http://localhost:3000/login",
-      await driver.getCurrentUrl()
+      "My Account",
+      await driver.findElement(By.id("accountBtn")).getText()
     );
   });
 

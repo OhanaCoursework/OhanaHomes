@@ -14,6 +14,7 @@ import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.jpg";
 import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.jpg";
 import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.jpg";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
+import { Island } from "../islandsData/islandsEnum";
 
 export const CardData = [
   {
@@ -27,7 +28,7 @@ export const CardData = [
     size: 464,
     dateAdded: "2018-12-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "maui",
+    island: Island.Maui,
     zipcode: "90210",
     regions: ["West Maui", "Kapalua"],
     moveInDate: "2021-12-10",
@@ -339,7 +340,7 @@ export const CardData = [
   },
 ];
 
-export function getSortedCardData() {
+export function getBuyMarketplaceData() {
   CardData.sort(comparePropertiesPriceDesc);
   return CardData;
 }
