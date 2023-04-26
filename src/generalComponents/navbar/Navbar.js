@@ -19,7 +19,7 @@ const Navbar = () => {
             alt="Ohana homes logo"
           />
         </Link>
-        <Link aria-label="Link to the home page" o="/">
+        <Link aria-label="Link to the home page" to="/">
           <img
             className="smallBrandLogo"
             src={smallNavBarLogo}
