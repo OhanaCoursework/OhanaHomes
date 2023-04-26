@@ -98,8 +98,7 @@ const LoginModal = () => {
         </span>
         <h1>Login</h1>
         <div className="modalForm">
-          <p id="loginError" className="modalError">
-          </p>
+          <p id="loginError" className="modalError"></p>
           <form id="loginForm" className="accountPopUpForm">
             <FormField
               name="username"
@@ -115,7 +114,7 @@ const LoginModal = () => {
               type="password"
               validator={passwordValidator}
             />
-            <button type="submit" className="submit">
+            <button id="login-submit" type="submit" className="submit">
               Sign in
             </button>
           </form>

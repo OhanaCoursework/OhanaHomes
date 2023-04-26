@@ -13,7 +13,7 @@ const FormField = ({ name, id, label, type, validator }) => {
     onInputTimeOut = setTimeout(() => {
       console.log("timeout");
       console.log(validator !== undefined);
-      if(validator !== undefined) {
+      if (validator !== undefined) {
         console.log(validator(event));
         validator(event);
       }
@@ -82,8 +82,11 @@ const FormField = ({ name, id, label, type, validator }) => {
   );
 };
 
-export function resetFormFormFields(form) {
-  console.log(form);
+export function resetFormFields(form) {
+  if (!form || typeof form[Symbol.iterator] !== "function") {
+    return;
+  }
+
   for (const formElement of form) {
     if (formElement.tagName === "INPUT") {
       validateFormField(formElement);

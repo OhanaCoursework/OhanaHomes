@@ -46,10 +46,13 @@ export function closeAlert() {
 
 export function closeExistingAlert() {
   clearTimeout(alertRemovalTimeout);
-  document.getElementById("alertDiv").className = "alert " + "close-instantly";
-  setTimeout(() => {
-    document.getElementById("alertDiv").classList.remove("close-instantly");
-  }, 1);
+  const alertDiv = document.getElementById("alertDiv");
+  if (alertDiv) {
+    alertDiv.className = "alert " + "close-instantly";
+    setTimeout(() => {
+      alertDiv.classList.remove("close-instantly");
+    }, 1);
+  }
 }
 
 export default Alert;

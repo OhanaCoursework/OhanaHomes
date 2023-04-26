@@ -1,4 +1,4 @@
-import { resetFormFormFields } from "../../generalComponents/form/formField";
+import { resetFormFields } from "../../generalComponents/form/formField";
 
 export function openLoginModal() {
   document.getElementById("loginForm").reset();
@@ -17,14 +17,14 @@ export function openSignUpModal() {
 export function hideLoginModal() {
   document.getElementById("topNavBarContainer").style = "";
   document.querySelector(".login").classList.remove("show-modal");
-  resetFormFormFields(document.getElementById("loginForm"));
+  resetFormFields(document.getElementById("loginForm"));
   resetLoginError();
 }
 
 export function hideSignUpModal() {
   document.getElementById("topNavBarContainer").style = "";
   document.querySelector(".signUp").classList.remove("show-modal");
-  resetFormFormFields(document.getElementById("signUpForm"));
+  resetFormFields(document.getElementById("signUpForm"));
 }
 
 export function displayLoggedInUI() {

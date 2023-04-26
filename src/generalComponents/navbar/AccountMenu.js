@@ -79,6 +79,7 @@ const AccountMenu = () => {
       </button>
       <div className="myAccount">
         <button
+          id="accountBtn"
           className={
             isMyAccountExpanded
               ? "accountButton navBtn expanded"
@@ -116,4 +117,4 @@ const AccountMenu = () => {
   );
 };
 
-export default AccountMenu; 
+export default AccountMenu;

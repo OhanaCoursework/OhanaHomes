@@ -20,7 +20,7 @@ const SignUpModal = () => {
   function usernameValidator(event) {
     console.log("username val");
     if (event.target.value) {
-      console.log(event.target,);
+      console.log(event.target);
       formValidator(event.target, validateUsername);
     } else {
       validateFormField(event.target);
@@ -100,7 +100,7 @@ const SignUpModal = () => {
               type="password"
               validator={passwordValidator}
             />
-            <button type="submit" className="submit">
+            <button id="signup-submit" type="submit" className="submit">
               Create Account
             </button>
           </form>

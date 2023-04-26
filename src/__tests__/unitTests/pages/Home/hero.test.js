@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Hero from "../../Pages/home/components/Hero";
-import Button from "../../Pages/home/components/Button";
+import Hero from "../../../../Pages/home/components/Hero";
+import Button from "../../../../Pages/home/components/Button";
 
 configure({ adapter: new Adapter() });
 
