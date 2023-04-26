@@ -1,4 +1,6 @@
 
+
+// this is my ghetto version of Garf's code im sorry garf
 /*
 import marketHouse1 from "../../assets/images/marketPlace/marketHouse1.jpg";
 import marketHouse2 from "../../assets/images/marketPlace/marketHouse2.jpg";
@@ -17,9 +19,7 @@ import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.jpg";
 import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.jpg";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
 */
-
-
-
+//
 
 
 

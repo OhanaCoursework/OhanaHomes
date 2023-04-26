@@ -13,4 +13,3 @@ fi
 
 npx eslint ./ --fix
 npm run linter
-
