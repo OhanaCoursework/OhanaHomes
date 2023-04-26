@@ -4,6 +4,7 @@ import Modal from "./PropertyDModal.js";
 import "./Styles/PropertyD.css";
 
 
+
 const gimmeeDaModal = () => {
   const [showModal, setShowModal] = useState(false);
 
