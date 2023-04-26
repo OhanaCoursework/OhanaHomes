@@ -4,6 +4,7 @@ import { IoMdArrowRoundForward } from "react-icons/io"; // Importing arrow icon 
 import { IoArrowForward, IoArrowBack } from "react-icons/io5"; // Importing arrow icons from react-icons library
 import { useSpring, animated } from "react-spring"; // Importing animation hooks from react-spring library
 import "../styles/hero.css"; // Importing CSS file for Hero component
+import HomePageSearchBar from "./homePageSearchBar";
 
 const Hero = ({ slides }) => {
   const [current, setCurrent] = useState(0); // State for current slide index
@@ -82,15 +83,14 @@ const Hero = ({ slides }) => {
         {slides.map((slide, index) => {
           return (
             <div className="HeroSlide" key={index}>
-              {index ===
-  current && (
+              {index === current && (
                 <div className="HeroSlider">
                   <img
                     id={index}
                     className="HeroImage"
                     src={slide.image}
                     alt={slide.alt}
-                    loading="eager" 
+                    loading="eager"
                     onLoad={animations.onStart}
                   />
                   <div className="HeroContent">
@@ -112,6 +112,7 @@ const Hero = ({ slides }) => {
             </div>
           );
         })}
+        <HomePageSearchBar />
         <div className="sliderButtons">
           <IoArrowBack
             id="arrow-back"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import HouseItem from "./houseItem.js";
 import "../styles/propertiesGrid.css";
@@ -45,6 +45,30 @@ const PropertiesGrid = ({ housesList, setHouseList }) => {
 
     setHouseList(housesToSort);
   }
+
+  function showNoPropertiesFound() {
+    document
+      .querySelector(".propertiesGridItems")
+      .classList.add("noPropertiesFound");
+  }
+
+  function resetNoPropertiesFound() {
+    document
+      .querySelector(".propertiesGridItems")
+      .classList.remove("noPropertiesFound");
+  }
+
+  function handleShowingProperties(housesList) {
+    if (housesList && housesList.length) {
+      resetNoPropertiesFound();
+    } else {
+      showNoPropertiesFound();
+    }
+  }
+
+  useEffect(() =>{
+    handleShowingProperties(housesList);
+  });
 
   return (
     <div className="propertiesGrid">

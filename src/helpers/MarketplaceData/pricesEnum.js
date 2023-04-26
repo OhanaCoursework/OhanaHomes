@@ -1,4 +1,4 @@
-export const Prices = [
+export const SalePrices = [
   "£100,000",
   "£200,000",
   "£300,000",
@@ -17,6 +17,23 @@ export const Prices = [
   "£15,000,000",
 ];
 
+export const RentPrices = [
+  "£500pm",
+  "£1,000pm",
+  "£2,000pm",
+  "£3,000pm",
+  "£4,000pm",
+  "£5,000pm",
+  "£6,000pm",
+  "£7,000pm",
+  "£8,000pm",
+  "£9,000pm",
+  "£10,000pm",
+  "£15,000pm",
+  "£20,000pm",
+  "£25,000pm",
+];
+
 export function getPrice(price) {
-  return parseInt(price.replaceAll(/£|,/ig, ''));
+  return parseInt(price.replaceAll(/£|,|pm/ig, ''));
 }

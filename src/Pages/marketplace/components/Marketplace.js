@@ -1,21 +1,52 @@
 import React, { useEffect, useState } from "react";
 import PropertiesGrid from "./propertiesGrid.js";
 import "../styles/marketplace.css";
-import searchIcon from "../../../assets/images/icons/searchIcon.svg";
-import { getSortedCardData } from "../../../helpers/featuredPropetiesData/buyPropertiesData.js";
-import { comparePriorityDesc } from "../../../helpers/featuredPropetiesData/buyPropertiesData.js";
+import SearchBar from "./searchBar.js";
+import { getRentMarketplaceData } from "../../../helpers/featuredPropetiesData/rentPropertiesData.js";
+import {
+  comparePriorityDesc,
+  getBuyMarketplaceData,
+} from "../../../helpers/featuredPropetiesData/buyPropertiesData.js";
 import { Islands } from "../../../helpers/islandsData/islandsEnum.js";
 import {
-  Prices,
+  RentPrices,
+  SalePrices,
   getPrice,
 } from "../../../helpers/MarketplaceData/pricesEnum.js";
+import { MarketplaceTypeEnum } from "./MarketplaceTypeEnum.js";
 
-const Marketplace = () => {
-  const [housesList, sethousesList] = useState(getSortedCardData());
+const Marketplace = ({ marketplaceType, searchQuery }) => {
+  const [housesList, sethousesList] = useState(getInitialMarketplaceData());
   const [filteredHousesList, setFilteredHousesList] = useState(
-    getSortedCardData()
+    getInitialMarketplaceData()
   );
   const [appliedFilters, setAppliedFilters] = useState();
+
+  function getPrices() {
+    if (marketplaceType === MarketplaceTypeEnum.Buy) {
+      console.log(SalePrices);
+      return SalePrices;
+    } else {
+      console.log(RentPrices);
+      return RentPrices;
+    }
+  }
+
+  function getInitialMarketplaceData() {
+    if (searchQuery) {
+      return search(searchQuery);
+    } else {
+      return getDefaultMarketplaceData();
+    }
+  }
+
+  function getDefaultMarketplaceData() {
+    if (marketplaceType === MarketplaceTypeEnum.Buy) {
+      return getBuyMarketplaceData();
+    } else {
+      return getRentMarketplaceData();
+    }
+  }
 
   function search(searchQuery) {
     let results = [];
@@ -30,7 +61,7 @@ const Marketplace = () => {
       });
 
     if (regMap.length > 0) {
-      results = getSortedCardData()
+      results = getDefaultMarketplaceData()
         .reduce((results, property) => {
           let priority = 0;
 
@@ -64,7 +95,6 @@ const Marketplace = () => {
         .sort(comparePriorityDesc);
     }
 
-    console.log(results);
     return results;
   }
 
@@ -79,36 +109,37 @@ const Marketplace = () => {
       for (const [key, value] of Object.entries(appliedFilters)) {
         switch (key) {
           case "minPrice":
-            newHouseList = newHouseList.filter(
-              (house) => getPrice(house.price) > value
-            );
+            if (value) {
+              newHouseList = newHouseList.filter(
+                (house) => getPrice(house.price) > value
+              );
+            }
             break;
           case "maxPrice":
-            newHouseList = newHouseList.filter(
-              (house) => getPrice(house.price) < value
-            );
+            if (value) {
+              newHouseList = newHouseList.filter(
+                (house) => getPrice(house.price) < value
+              );
+            }
             break;
           case "island":
-            console.log("here");
-            newHouseList = newHouseList.filter(
-              (house) => house.island === value
-            );
+            if (value) {
+              newHouseList = newHouseList.filter(
+                (house) => house.island === value
+              );
+            }
             break;
           case "beds":
-            console.log("bed");
-            console.log(newHouseList);
             newHouseList = newHouseList.filter(
               (house) => house.bedrooms > value
             );
             break;
           case "baths":
-            console.log("here");
             newHouseList = newHouseList.filter(
               (house) => house.bathrooms > value
             );
             break;
           case "moveInDate":
-            console.log("here");
             newHouseList = newHouseList.filter(
               (house) => house.moveInDate > value
             );
@@ -119,6 +150,8 @@ const Marketplace = () => {
       setFilteredHousesList(newHouseList);
       if (!newHouseList || !newHouseList.length) {
         showNoPropertiesFound();
+      } else {
+        resetNoPropertiesFound();
       }
     } else {
       setFilteredHousesList(housesList);
@@ -171,53 +204,47 @@ const Marketplace = () => {
       .classList.remove("noPropertiesFound");
   }
 
+  function handleSearchResults(searchResults) {
+    if (searchResults && searchResults.length > 0) {
+      resetNoPropertiesFound();
+      setMostRelevantSorting();
+    } else {
+      showNoPropertiesFound();
+    }
+  }
+
   useEffect(() => {
     function onSearchSubmit(e) {
       e.preventDefault(); //to prevent form submission
-      if (e.target[0].value) {
-        let searchResults = search(e.target[0].value);
+      if (e.target[0].value.trim()) {
+        let searchResults = search(e.target[0].value.trim());
         sethousesList(searchResults);
-        if (searchResults && searchResults.length > 0) {
-          resetNoPropertiesFound();
-          setMostRelevantSorting();
-        } else {
-          showNoPropertiesFound();
-        }
+        handleSearchResults(searchResults);
       } else {
         resetNoPropertiesFound();
-        sethousesList(getSortedCardData());
+        sethousesList(getDefaultMarketplaceData());
       }
     }
 
     filterHousesList();
 
-    document
-      .getElementById("marketplaceSearch")
-      .addEventListener("submit", onSearchSubmit);
+    const searchForm = document.getElementById("marketplaceSearch");
+    searchForm.addEventListener("submit", onSearchSubmit);
 
     return () => {
-      document
-        .getElementById("marketplaceSearch")
-        .removeEventListener("submit", onSearchSubmit);
+      searchForm.removeEventListener("submit", onSearchSubmit);
     };
   }, [appliedFilters, housesList]);
 
   return (
     <section>
       <div className="marketplace" color="black">
-        <h1 id="PageHeading">Marketplace Page</h1>
-        <div className="searchDiv">
-          <form id="marketplaceSearch" className="marketplaceSearchForm">
-            <input
-              type="text"
-              placeholder="Enter an address, region, island, or ZIP code"
-              className="marketplaceSearch"
-              id="marketplaceSearchInput"
-            />
-            <img className="searchIcon" src={searchIcon} />
-            <input type="submit" hidden />
-          </form>
-        </div>
+        <h1 id="PageHeading">
+          {marketplaceType === MarketplaceTypeEnum.Buy
+            ? "Properties For Sale"
+            : "Properties For Rent"}
+        </h1>
+        <SearchBar searchQuery={searchQuery} />
         <div className="outerFilterDiv">
           <div className="filterDiv">
             <select
@@ -226,8 +253,8 @@ const Marketplace = () => {
               className="propertiesFilter"
               onChange={onChangeFilterHouses}
             >
-              <option value="" selected disabled>
-                Island
+              <option value="" selected>
+                Any Island
               </option>
               {Islands.map((island) => {
                 return (
@@ -243,10 +270,10 @@ const Marketplace = () => {
               className="propertiesFilter"
               onChange={onChangeFilterHouses}
             >
-              <option value="" selected disabled>
-                Min Price
+              <option value="" selected>
+                No Min Price
               </option>
-              {Prices.map((price) => {
+              {getPrices().map((price) => {
                 return (
                   <option key={price} value={getPrice(price)}>
                     {price}
@@ -260,10 +287,10 @@ const Marketplace = () => {
               className="propertiesFilter"
               onChange={onChangeFilterHouses}
             >
-              <option value="" selected disabled>
-                Max Price
+              <option value="" selected>
+                No Max Price
               </option>
-              {Prices.map((price) => {
+              {getPrices().map((price) => {
                 return (
                   <option key={price} value={getPrice(price)}>
                     {price}
