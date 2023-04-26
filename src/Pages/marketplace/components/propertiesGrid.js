@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import HouseItem from "./houseItem.js";
 import "../styles/propertiesGrid.css";
@@ -8,21 +8,17 @@ import {
   compareDateAddedDesc,
   comparePropertiesPriceAsc,
   comparePropertiesPriceDesc,
-} from "../../../helpers/featuredPropetiesData/propertiesData";
+  comparePriorityDesc,
+} from "../../../helpers/featuredPropetiesData/buyPropertiesData.js";
 
-const PropertiesGrid = ({housesList}) => {
-  const [displayedHouseList, setDisplayedHouseList] = useState(
-    housesList
-  );
-
+const PropertiesGrid = ({ housesList, setHouseList }) => {
   function sortHousesList() {
     const propertiesSortSelect = document.getElementById("propertiesSort");
 
-    let housesToSort = [].concat(displayedHouseList);
+    let housesToSort = [].concat(housesList);
     let selected = propertiesSortSelect.value;
     switch (selected) {
-      case "largest":
-        console.log("here");
+      case "biggest":
         housesToSort.sort(compareSizeAsc);
         break;
       case "smallest":
@@ -32,37 +28,46 @@ const PropertiesGrid = ({housesList}) => {
         housesToSort.sort(comparePropertiesPriceDesc);
         break;
       case "highest":
-        console.log("here");
         housesToSort.sort(comparePropertiesPriceAsc);
         break;
       case "recent":
         housesToSort.sort(compareDateAddedDesc);
+        break;
+      case "most-relevant":
+        if (housesToSort[0].priority) {
+          housesToSort.sort(comparePriorityDesc);
+        }
         break;
       default:
         console.log("here2");
         break;
     }
 
-    setDisplayedHouseList(housesToSort);
+    setHouseList(housesToSort);
   }
 
   return (
     <div className="propertiesGrid">
       <div className="propertiesGridContent">
-        <select
-          id="propertiesSort"
-          className="propertiesSort"
-          onChange={sortHousesList}
-        >
-          <option value="" selected disabled>Sort By</option>
-          <option value="largest">Largest ㎡</option>
-          <option value="smallest">Smallest ㎡</option>
-          <option value="lowest">Lowest Price</option>
-          <option value="highest">Highest Price</option>
-          <option value="recent">Recently Added</option>
-        </select>
         <div className="propertiesGridItems">
-          {displayedHouseList.map((houseItem, key) => {
+          <div>
+            <select
+              id="propertiesSort"
+              className="propertiesSort"
+              onChange={sortHousesList}
+            >
+              <option value="" selected disabled>
+                Sort By
+              </option>
+              <option value="most-relevant">Most Relevant</option>
+              <option value="biggest">Biggest</option>
+              <option value="smallest">Smallest</option>
+              <option value="lowest">Lowest Price</option>
+              <option value="highest">Highest Price</option>
+              <option value="recent">Recently Added</option>
+            </select>
+          </div>
+          {housesList.map((houseItem, key) => {
             return (
               <HouseItem
                 key={key}
@@ -75,6 +80,9 @@ const PropertiesGrid = ({housesList}) => {
               />
             );
           })}
+          <h1 id="noPropertiesFoundText" className="noPropertiesFoundText">
+            No Properties Found, please search again
+          </h1>
         </div>
       </div>
     </div>
