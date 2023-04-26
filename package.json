@@ -68,5 +68,11 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.2",
     "react-spring": "^9.7.1"
+  },
+  "settings": {
+    "react": {
+      "version": "17.0"
+    }
+  }
 }
-}
+  
