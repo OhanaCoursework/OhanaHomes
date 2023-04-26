@@ -20,7 +20,7 @@ import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
 
 
 
-// god help me 
+
 
 
 const property = [
