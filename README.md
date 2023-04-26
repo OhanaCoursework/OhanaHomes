@@ -64,3 +64,7 @@ types other than fix: and feat: are allowed, for example @commitlint/config-conv
 e.g. `fix: correct minor typos in code`,
 `feat: allow provided config object to extend other configs`,
 `docs: correct spelling of CHANGELOG`
+
+### When Commiting on Branch
+
+You will need to have the app running using npm start. This will allow Pa11y tests to run against the URL's defined in the .pa11yci.json. If as URL is not included in here then the test will not be run on that page.

@@ -26,26 +26,9 @@ jobs:
           npm start &
           npx wait-on http://127.0.0.1:3000 && npm run ui-tests
 
-  pa11y:
-    docker:
-      - image: cimg/node:18.14.2
-    steps:
-      - checkout
-      - run: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-      - run: echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-      - run: sudo apt-get update
-      - run: sudo apt-get install -y google-chrome-stable
-      - run: google-chrome --version
-      - run: npm install --legacy-peer-deps
-      - run: npm run unit-tests
-      - run: |
-          npm start &
-          npx wait-on http://127.0.0.1:3000 && npm run pa11y-ci
-
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
       - test
-      - pa11y

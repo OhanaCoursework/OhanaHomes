@@ -47,6 +47,7 @@ const Footer = () => {
             aria-label="Facebook logo"
             href="https://www.facebook.com/McDonalds2915EManoaRd/"
             id="facebook-logo"
+            alt="Facebook Logo"
           >
             <img className="icons" alt="Facebook Icon" src={facebookIcon} />
           </a>
@@ -54,6 +55,7 @@ const Footer = () => {
             aria-label="Twitter logo"
             href="https://twitter.com/McDonaldsHawaii?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
             id="twitter-logo"
+            alt="Twitter Logo"
           >
             <img className="icons" alt="Twitter Icon" src={twitterIcon} />
           </a>
@@ -61,6 +63,7 @@ const Footer = () => {
             aria-label="Instagram logo"
             href="https://www.instagram.com/mcdonaldshawaii/?hl=en"
             id="instagram-logo"
+            alt="Instagram Logo"
           >
             <img className="icons" alt="Instagram Icon" src={instagramIcon} />
           </a>
@@ -68,6 +71,7 @@ const Footer = () => {
         <div className="Column4">
           <a
           aria-label="Ohana Homes logo"
+          alt="Ohana Homes Logo"
           href="/">
             <img className="logo" id="website-logo" alt="Ohana Homes Logo" src={websiteLogo} />
           </a>

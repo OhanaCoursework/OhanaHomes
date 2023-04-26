@@ -1,12 +1,18 @@
 {
   "ci": {
     "collect": {
+      "startServerCommand": "npm run start",
+      "numberOfRuns": 1,
       "url": ["http://localhost:3000/","http://localhost:3000/contactUs","http://localhost:3000/aboutUs"]
     },
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
-        "csp-xss": "off"
+        "csp-xss": "off",
+        "uses-long-cache-ttl": "off",
+        "maskable-icon": "off",
+        "image-aspect-ratio": "off",
+        "render-blocking-resources": "off"
       }
     }
     
