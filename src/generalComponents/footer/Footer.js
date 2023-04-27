@@ -25,7 +25,7 @@ const Footer = () => {
           </p>
           <br />
           <p className="footer-paragraph .LastParagraph" id="footer-phone">
-            <a className="contactLink" href="tel: 930231231">(+1) 930-231-1231</a>
+            <a className="contactLink" href="tel: 9302311231">(+1) 930-231-1231</a>
           </p>
         </div>
         <div className="Column2 line">
