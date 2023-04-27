@@ -1,28 +1,22 @@
 .navigation {
   height: 60px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto minmax(227px, 1fr);
   position: sticky;
   background-color: #f0ddce;
-  z-index: 1;
+  z-index: 5;
   top: 0;
-
-  .brandLogoDiv {
-    width: 30%;
-  }
+  justify-content: space-between;
 
   .largeBrandLogo {
-    margin-left: 20px;
     display: block;
   }
 
   .smallBrandLogo {
-    margin-left: 20px;
     display: none;
   }
 
   .navigationMenu {
-    width: 40%;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
   }
@@ -98,32 +92,6 @@
     padding: 12px 0px;
   }
 
-  .accountMenu {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .loginBtn {
-    background-color: #2d5c82;
-    color: white;
-    margin-left: 16px;
-    margin-right: 20px;
-    font-size: 20px;
-    height: 35px;
-    width: 92px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .loginBtn:hover {
-    background-color: #6396bf;
-  }
-
   .hamburger {
     border: 0;
     height: 40px;
@@ -179,10 +147,6 @@
     .dropdown:hover .dropBtn {
       background-color: #eee;
     }
-
-    .mobile a {
-      display: none;
-    }
   }
 
   @media screen and (max-width: 1100px) {
@@ -193,21 +157,9 @@
     .smallBrandLogo {
       display: block;
     }
-
-    .brandLogoDiv {
-      width: 15%;
-    }
-
-    .navigationMenu {
-      width: 55%;
-    }
   }
 
   @media screen and (max-width: 800px) {
-    .brandLogoDiv {
-      width: 260px;
-    }
-
     .largeBrandLogo {
       display: block;
     }
@@ -218,15 +170,6 @@
 
     .dropdown {
       background-color: #f1f1f1;
-    }
-
-    .mobile {
-      display: block;
-    }
-
-    .mobile .navBarLink {
-      width: 50%;
-      display: inline-block;
     }
 
     .chevron.expanded:before {
@@ -242,10 +185,6 @@
       display: block;
     }
 
-    .accountMenu {
-      display: none;
-    }
-
     .navigationMenu ul {
       display: none;
     }
@@ -257,10 +196,7 @@
 
     .navBarLink {
       padding: 10px;
-    }
-
-    .navigationMenu.expanded ul {
-      display: block;
+      cursor: pointer;
     }
 
     .dropdownContent.expanded {
@@ -269,11 +205,13 @@
 
     .navigationMenu {
       width: 100%;
+      border-bottom: black solid 1px;
     }
 
     .navBtn {
       width: 100%;
       padding: 10px;
+      cursor: pointer;
     }
 
     .dropdown {
@@ -297,10 +235,38 @@
       text-align: left;
     }
   }
+  @media screen and (max-width: 350px) {
+    .brandLogoDiv a {
+      line-height: 60px;
+      display: inline-block;
+    }
+
+    .largeBrandLogo {
+      width: 240px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .hamburger {
+      right: 7px;
+    }
+  }
+}
+
+#topNavBarDiv.modalOpen {
+  z-index: 1;
 }
 
 @media screen and (max-width: 800px) {
   .navigation {
     display: block;
+  }
+
+  .navigation.expanded .navigationMenu ul {
+    display: block;
+  }
+
+  .navigation.expanded .accountMenu {
+    display: inline-block;
   }
 }
