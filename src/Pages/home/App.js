@@ -14,7 +14,7 @@ function HomeApp() {
     <>
       <Navbar />
       <Hero slides={SliderDataOne} />
-      <FeaturedProperties cardData={CardData} />
+      <FeaturedProperties CardData={CardData} />
       <About />
       <Islands islandsData={IslandsData} />
       <Footer />

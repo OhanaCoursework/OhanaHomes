@@ -6,7 +6,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import "../styles/houseItem.css";
 import "../styles/featuredProperties.css";
 
-const FeaturedProperties = ({ cardData }) => {
+const FeaturedProperties = ({ CardData }) => {
   const [currentPage, setCurrentPage] = useState(0); // Current page index
   const [itemsPerPage, setItemsPerPage] = useState(4); // Number of items to show per page, initially set to 4
   const [touchStartX, setTouchStartX] = useState(0);
@@ -28,7 +28,7 @@ const FeaturedProperties = ({ cardData }) => {
   const handleForward = () => {
     // Increment the current page by 1, but not above the number of pages
     setCurrentPage(
-      Math.min(Math.floor(cardData.length / itemsPerPage) - 1, currentPage + 1)
+      Math.min(Math.floor(CardData.length / itemsPerPage) - 1, currentPage + 1)
     );
     setSwipeCount(swipeCount + 1); // Increment swipe count
   };
@@ -73,10 +73,10 @@ const FeaturedProperties = ({ cardData }) => {
     setItemsPerPage(newItemsPerPage);
     if (
       currentPageRef.current >
-      Math.floor(cardData.length / newItemsPerPage) - 1
+      Math.floor(CardData.length / newItemsPerPage) - 1
     ) {
       console.log("update page");
-      setCurrentPage(Math.floor(cardData.length / newItemsPerPage) - 1);
+      setCurrentPage(Math.floor(CardData.length / newItemsPerPage) - 1);
     }
   };
 
@@ -112,10 +112,10 @@ const FeaturedProperties = ({ cardData }) => {
     const startIndex = currentPage * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    // Loop through the cardData and add the image URLs to the array
+    // Loop through the CardData and add the image URLs to the array
     for (let i = startIndex; i < endIndex; i++) {
-      if (cardData[i]) {
-        imageUrlsToLoad.push(cardData[i].image);
+      if (CardData[i]) {
+        imageUrlsToLoad.push(CardData[i].image);
       }
     }
 
@@ -145,8 +145,8 @@ const FeaturedProperties = ({ cardData }) => {
       const nextStartIndex = (currentPage + 1) * itemsPerPage;
       const nextEndIndex = nextStartIndex + itemsPerPage;
       for (let i = nextStartIndex; i < nextEndIndex; i++) {
-        if (cardData[i]) {
-          imageUrlsToLoad.push(cardData[i].image);
+        if (CardData[i]) {
+          imageUrlsToLoad.push(CardData[i].image);
         }
       }
       preloadWithAnimationFrame();
@@ -157,18 +157,18 @@ const FeaturedProperties = ({ cardData }) => {
       const prevStartIndex = (currentPage - 1) * itemsPerPage;
       const prevEndIndex = prevStartIndex + itemsPerPage;
       for (let i = prevStartIndex; i < prevEndIndex; i++) {
-        if (cardData[i]) {
-          imageUrlsToLoad.push(cardData[i].image);
+        if (CardData[i]) {
+          imageUrlsToLoad.push(CardData[i].image);
         }
       }
       preloadWithAnimationFrame();
     }
-  }, [currentPage, cardData]);
+  }, [currentPage, CardData]);
 
   // Calculate the start and end index of items to display
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const lastPage = Math.floor(cardData.length / itemsPerPage) - 1;
+  const lastPage = Math.floor(CardData.length / itemsPerPage) - 1;
 
   return (
     <section onKeyDown={handleKeyDown} tabIndex={0}>
@@ -193,7 +193,7 @@ const FeaturedProperties = ({ cardData }) => {
               id="houseList"
             >
               {/* Map through the cards based on the calculated start and end index */}
-              {cardData.slice(startIndex, endIndex).map((houseItem, key) => {
+              {CardData.slice(startIndex, endIndex).map((houseItem, key) => {
                 return (
                   <HouseItem
                     key={key}
