@@ -374,7 +374,7 @@ describe("FeaturedProperties Component", function () {
     const firstHouseItemText = await firstHouseItem.getText();
     assert.strictEqual(
       firstHouseItemText,
-      "Luxury Villa, Hawaii\n£4,100,000"
+      "Luxury Villa, Hawaii\n$4,100,000"
     );
   });
 
@@ -401,7 +401,7 @@ describe("FeaturedProperties Component", function () {
     const firstHouseItemText = await firstHouseItem.getText();
     assert.strictEqual(
       firstHouseItemText,
-      "House in Big Island, Hawaii\n£6,480,000"
+      "House in Big Island, Hawaii\n$6,480,000"
     );
   });
 

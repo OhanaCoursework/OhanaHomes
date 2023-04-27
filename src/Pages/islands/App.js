@@ -6,7 +6,7 @@ import Footer from "../../generalComponents/footer/Footer";
 import { IslandsData } from "../../helpers/islandsData/islandsData.js";
 
 function IslandsApp() {
-  const island = IslandsData.find((island) => island.island.toLowerCase() === useParams().island);
+  const island = IslandsData.find((island) => island.island.value === useParams().island);
   
   return (
     <>

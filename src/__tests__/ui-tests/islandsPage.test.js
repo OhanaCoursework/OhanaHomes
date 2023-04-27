@@ -41,7 +41,7 @@ describe("Selenium Tests for Islands Page", function () {
     await driver.findElement(By.id("marketplaceBtn")).click();
 
     assert.strictEqual(
-      "http://localhost:3000/marketplace",
+      "http://localhost:3000/marketplace?type=buy&island=hawai%27i",
       await driver.getCurrentUrl()
     );
   });

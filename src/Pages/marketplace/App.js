@@ -8,10 +8,11 @@ function MarketplaceApp() {
   const [searchParams] = useSearchParams();
   const type = searchParams.get('type');
   const searchQuery = searchParams.get('searchQuery');
+  const island = searchParams.get('island');
   return (
     <>
       <Navbar />
-      <Marketplace marketplaceType={type} intialSearchQuery={searchQuery}/>
+      <Marketplace marketplaceType={type} intialSearchQuery={searchQuery} filterIsland={island}/>
       <Footer />
     </>
   );

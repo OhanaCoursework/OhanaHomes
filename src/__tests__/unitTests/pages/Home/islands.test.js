@@ -2,18 +2,19 @@ import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Islands from "../../../../Pages/home/components/Islands";
+import { Island } from "../../../../helpers/islandsData/islandsEnum";
 
 configure({ adapter: new Adapter() });
 
 describe("Islands component", () => {
   const islands = [
     {
-      island: "Hawai'i",
+      island: Island.Hawaii,
       image: "hawaiiImage.webp",
       alt: "An image of the coast of Hawai'i",
     },
     {
-      island: "Maui",
+      island: Island.Maui,
       image: "mauiImage.webp",
       alt: "An image of a road on the coast of Maui",
     },
@@ -32,7 +33,7 @@ describe("Islands component", () => {
   it("renders current cards with given data", () => {
     for (let i = 0; i < islands.length; i++) {
       expect(wrapper.find(".islandName").at(i).text()).toEqual(
-        islands[i].island
+        islands[i].island.uiText
       );
       expect(wrapper.find(".islandImage").at(i).prop("src")).toEqual(
         islands[i].image
