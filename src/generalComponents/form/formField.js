@@ -8,20 +8,15 @@ const FormField = ({ name, id, label, type, validator }) => {
   let onInputTimeOut;
 
   function formFieldOnInput(event) {
-    console.log("field input");
     clearTimeout(onInputTimeOut);
     onInputTimeOut = setTimeout(() => {
-      console.log("timeout");
-      console.log(validator !== undefined);
       if (validator !== undefined) {
-        console.log(validator(event));
         validator(event);
       }
     }, 500);
   }
 
   function showPassword(event) {
-    console.log(event);
     const password = document.getElementById("signUpPassword");
     if (password.getAttribute("type") === "password") {
       password.setAttribute("type", "text");
@@ -33,7 +28,6 @@ const FormField = ({ name, id, label, type, validator }) => {
   }
 
   function formFieldOnClick(event) {
-    console.log(event);
     if (event.target.classList.contains("modalInput")) {
       event.target.labels[0].classList.add("active");
     }

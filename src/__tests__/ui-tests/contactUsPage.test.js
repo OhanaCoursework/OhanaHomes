@@ -42,7 +42,7 @@ describe("Selenium Tests for Contact Us Page", function () {
     await driver.findElement(By.linkText("Marketplace")).click();
 
     const pageTitleMarketplace = await driver.findElement(By.id("PageHeading")).getText();
-    assert.strictEqual(pageTitleMarketplace, "Card Section of Marketplace Page");
+    assert.strictEqual(pageTitleMarketplace, "Properties For Rent");
 
     await driver.get("http://localhost:3000/contactUs");
     await driver.findElement(By.linkText("Home")).click();

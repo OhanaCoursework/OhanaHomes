@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="Column2 line">
-          <a href="home" aria-label="Link in Footer to the Home Page" className="Link" id="home-link">
+          <a href="/" aria-label="Link in Footer to the Home Page" className="Link" id="home-link">
             Home
           </a>
           <a href="aboutUs" aria-label="Link in Footer to About Us Page" className="Link" id="about-link">
@@ -37,9 +37,6 @@ const Footer = () => {
           </a>
           <a href="contactUs" aria-label="Link in Footer to Contact Us Page" className="Link" id="contact-link">
             Contact Us
-          </a>
-          <a href="help" aria-label="Link in Footer to Help Page" className="Link" id="help-link">
-            Help
           </a>
         </div>
         <div className="Column3 line">

@@ -68,14 +68,11 @@ const FeaturedProperties = ({ cardData }) => {
       ),
       1
     );
-    console.log("New per page:" + newItemsPerPage);
-    console.log(window.innerWidth);
     setItemsPerPage(newItemsPerPage);
     if (
       currentPageRef.current >
       Math.floor(cardData.length / newItemsPerPage) - 1
     ) {
-      console.log("update page");
       setCurrentPage(Math.floor(cardData.length / newItemsPerPage) - 1);
     }
   };

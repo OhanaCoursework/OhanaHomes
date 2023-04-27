@@ -42,8 +42,8 @@ describe("Footer component", () => {
     );
   });
 
-  it("renders 4 Link elements", () => {
-    expect(wrapper.find(".Column2").find("a").length).toEqual(4);
+  it("renders 3 Link elements", () => {
+    expect(wrapper.find(".Column2").find("a").length).toEqual(3);
   });
 
   it("renders a Facebook icon", () => {

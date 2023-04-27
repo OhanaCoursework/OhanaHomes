@@ -9,6 +9,7 @@ import { useState } from "react";
 import { setupLocalUsers } from "../../helpers/authenticator/authenticator.js";
 import AccountMenu from "./AccountMenu";
 import "./navbar.scss";
+import { Island } from "../../helpers/islandsData/islandsEnum";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -25,7 +26,10 @@ const Navbar = () => {
       <Alert />
       <LoginModal />
       <SignUpModal />
-      <nav id="topNavBarContainer" className={isNavExpanded ? "navigation expanded" : "navigation"}>
+      <nav
+        id="topNavBarContainer"
+        className={isNavExpanded ? "navigation expanded" : "navigation"}
+      >
         <div className="brandLogoDiv">
           <Link aria-label="Link to the home page" to="/">
             <img
@@ -45,12 +49,16 @@ const Navbar = () => {
         <div className="navigationMenu">
           <ul>
             <li>
-              <a id="buyButton" className="navBarLink" href="/marketplace">
+              <a
+                id="buyButton"
+                className="navBarLink"
+                href="/marketplace?type=buy"
+              >
                 Buy
               </a>
             </li>
             <li>
-              <a className="navBarLink" href="/marketplace">
+              <a className="navBarLink" href="/marketplace?type=rent">
                 Rent
               </a>
             </li>
@@ -79,30 +87,19 @@ const Navbar = () => {
                     : "dropdownContent"
                 }
               >
-                <a className="dropdownLink left" href="/hawai'i">
-                  Hawai&apos;i
-                </a>
-                <a className="dropdownLink right" href="/maui">
-                  Maui
-                </a>
-                <a className="dropdownLink left" href="/o'ahu">
-                  O&apos;ahu
-                </a>
-                <a className="dropdownLink right" href="/kaua&apos;i">
-                  Kaua&apos;i
-                </a>
-                <a className="dropdownLink left" href="/moloka'i">
-                  Moloka&apos;i
-                </a>
-                <a className="dropdownLink right" href="/lāna&apos;i">
-                  Lāna&apos;i
-                </a>
-                <a className="dropdownLink left" href="/ni&apos;ihau">
-                  Ni&apos;ihau
-                </a>
-                <a className="dropdownLink right" href="/kaho&apos;olawe">
-                  Kaho&apos;olawe
-                </a>
+                {Island.getAllValues().map((island, index) => {
+                  return (
+                    <a
+                      key={island.value}
+                      className={
+                        "dropdownLink " + ((index % 2) === 0 ? "left" : "right")
+                      }
+                      href={"/" + island.value}
+                    >
+                      {island.uiText}
+                    </a>
+                  );
+                })}
               </div>
             </li>
             <li>
