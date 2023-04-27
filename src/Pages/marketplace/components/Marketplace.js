@@ -11,9 +11,13 @@ import {
 import { MarketplaceTypeEnum } from "./MarketplaceTypeEnum.js";
 import { getMarketplaceData } from "./marketplace.service.js";
 
-const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
-  const [searchQuery, setSearchQuery] = useState(intialSearchQuery ? intialSearchQuery : "");
-  const [appliedFilters, setAppliedFilters] = useState();
+const Marketplace = ({ marketplaceType, intialSearchQuery, filterIsland }) => {
+  const [searchQuery, setSearchQuery] = useState(
+    intialSearchQuery ? intialSearchQuery : ""
+  );
+  const [appliedFilters, setAppliedFilters] = useState(() =>
+    getDefaultFiltering()
+  );
   const [appliedSorting, setAppliedSorting] = useState(() =>
     getDefaultSorting()
   );
@@ -32,6 +36,13 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
     } else {
       return RentPrices;
     }
+  }
+
+  function getDefaultFiltering() {
+    if (filterIsland) {
+      return { island: filterIsland };
+    }
+    return;
   }
 
   function getDefaultSorting() {
@@ -81,7 +92,9 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
 
   function onSearchSubmit(e) {
     e.preventDefault();
-    let newSearchQueryValue = document.getElementById("marketplaceSearchInput").value;
+    let newSearchQueryValue = document.getElementById(
+      "marketplaceSearchInput"
+    ).value;
     if (newSearchQueryValue && newSearchQueryValue.trim()) {
       setAppliedSorting("most-relevant");
     } else {
@@ -109,7 +122,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
             ? "Properties For Sale"
             : "Properties For Rent"}
         </h1>
-        <SearchBar searchQuery={searchQuery}/>
+        <SearchBar searchQuery={searchQuery} />
         <div className="outerFilterDiv">
           <div className="filterDiv">
             <select
@@ -118,7 +131,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
               className="propertiesFilter"
               title="Island Filter"
               onChange={onChangeFilterHouses}
-              defaultValue={""}
+              defaultValue={filterIsland}
             >
               <option value="">Any Island</option>
               {Island.getAllValues().map((island) => {
