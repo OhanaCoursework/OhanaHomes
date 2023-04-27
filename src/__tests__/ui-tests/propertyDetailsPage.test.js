@@ -27,26 +27,26 @@ describe("Selenium Tests for Property Details Page", function () {
     await driver.manage().window().setRect({ width: 1401, height: 800 });
 
     // Check that the page title contains the property name
-    const pageTitle = await driver.findElement(By.tagName("h2")).getText();
-    assert.include(pageTitle.toLowerCase(), "property 1");
+    const pageTitle = await driver.findElement(By.className("propertyTitle")).getText();
+    assert.include(pageTitle.toLowerCase(), "uxury villa in maui, hawaii");
 
     // Check that the property details are displayed correctly
     const details = await driver.findElement(By.className("propertyDetailsBlock")).getText();
-    assert.include(details, "Address: 123 Main St");
-    assert.include(details, "Price: $500,000");
-    assert.include(details, "Bedrooms: 3");
-    assert.include(details, "Bathrooms: 2");
-    assert.include(details, "Size (sq/Ft): 2000");
-    assert.include(details, "Island: No");
-    assert.include(details, "Zipcode: 12345");
-    assert.include(details, "Move In Date: 12/31/2023");
-    assert.include(details, "Date Added: 01/01/2023");
+    assert.include(details, "Address: 123 Nimitz Highway");
+    assert.include(details, "Price: 4,100,000");
+    assert.include(details, "Bedrooms: 5");
+    assert.include(details, "Bathrooms: 3");
+    assert.include(details, "Size (sq/Ft): 464");
+    assert.include(details, "Island: Island.maui");
+    assert.include(details, "Zipcode: 90210");
+    assert.include(details, "Move In Date: 2021/12/10");
+    assert.include(details, "Date Added: 2018/12/10");
 
     // Check that the property images are displayed correctly
     const images = await driver.findElements(By.css(".gallery img"));
     assert.strictEqual(images.length, 3);
-    assert.include(await images[0].getAttribute("src"), "property1-image1.jpg");
-    assert.include(await images[1].getAttribute("src"), "property1-image2.jpg");
-    assert.include(await images[2].getAttribute("src"), "property1-image3.jpg");
+    assert.include(await images[0].getAttribute("src"), "bed1.d93568add29c65b9f611.jpg");
+    assert.include(await images[1].getAttribute("src"), "bath2.43c75b35164e7acb0a1c.jpg");
+    assert.include(await images[2].getAttribute("src"), "den.3fbcd78357282930a60b.jpg");
   });
 });

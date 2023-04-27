@@ -39,7 +39,7 @@ const PropertyDetails = () =>  {
                 </div>
         </div>
         <div className="propertyDetailsBlock">
-          <h2>{property.title}</h2>
+          <h2 className="propertyTitle">{property.title}</h2>
           <h3>{"Address: " + property.address}</h3>
           <h3>{"Price: "+property.price}</h3>
           <br></br>
