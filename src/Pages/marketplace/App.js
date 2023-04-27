@@ -11,7 +11,7 @@ function MarketplaceApp() {
   return (
     <>
       <Navbar />
-      <Marketplace marketplaceType={type} searchQuery={searchQuery}/>
+      <Marketplace marketplaceType={type} intialSearchQuery={searchQuery}/>
       <Footer />
     </>
   );

@@ -16,18 +16,18 @@ import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.jpg";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
 import { Island } from "../islandsData/islandsEnum";
 
-export const CardData = [
+export const buyPropertiesData = [
   {
-    title: "Luxury Villa in Maui, Hawaii",
+    title: "Luxury Villa, Hawaii",
     price: "4,100,000",
     image: marketHouse1,
     alt: "House",
-    bedrooms: 5,
+    bedrooms: 7,
     bathrooms: 3,
     size: 464,
     dateAdded: "2018-12-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Maui,
+    island: Island.Maui.value,
     zipcode: "90210",
     regions: ["West Maui", "Kapalua"],
     moveInDate: "2021-12-10",
@@ -38,29 +38,29 @@ export const CardData = [
     image: marketHouse2,
     alt: "House",
     bedrooms: 5,
-    bathrooms: 3,
-    size: 464,
-    dateAdded: "2018-12-10T13:45:00.000Z",
-    address: "123 Nimitz Highway",
-    island: "o'ahu",
-    zipcode: "90210",
+    bathrooms: 4,
+    size: 484,
+    dateAdded: "2019-12-10T13:45:00.000Z",
+    address: "94 Kunia Road",
+    island: Island.Oahu.value,
+    zipcode: "96210",
     regions: ["Honolulu"],
-    moveInDate: "2021-12-10",
+    moveInDate: "2022-05-10",
   },
   {
     title: "Modern House in O'ahu, Hawaii",
     price: "11,500,000",
     image: marketHouse3,
     alt: "House",
-    bedrooms: 5,
+    bedrooms: 8,
     bathrooms: 3,
-    size: 464,
-    dateAdded: "2018-12-10T13:45:00.000Z",
+    size: 833,
+    dateAdded: "2018-03-02T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
-    zipcode: "90210",
+    island: Island.Oahu.value,
+    zipcode: "96420",
     regions: ["Leeward Coast", "Makaha"],
-    moveInDate: "2021-12-10",
+    moveInDate: "2021-11-10",
   },
   {
     title: "House in Kauai, Hawaii",
@@ -72,7 +72,7 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "kaua'i",
+    island: Island.Kauai.value,
     zipcode: "90210",
     regions: ["South Kauai", "Kalaheo"],
     moveInDate: "2021-12-10",
@@ -87,7 +87,7 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "hawai'i",
+    island: Island.Hawaii.value,
     zipcode: "90210",
     regions: ["Ka'u", "Naalehu"],
     moveInDate: "2022-12-10",
@@ -102,7 +102,7 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "lāna'i",
+    island: Island.Lānai.value,
     zipcode: "90210",
     regions: ["Lanai City"],
     moveInDate: "2022-12-10",
@@ -117,7 +117,7 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "maui",
+    island: Island.Maui.value,
     zipcode: "90210",
     regions: ["North Shore", "Haiku"],
     moveInDate: "2022-12-10",
@@ -132,7 +132,7 @@ export const CardData = [
     size: 864,
     dateAdded: "2017-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "hawai'i",
+    island: Island.Hawaii.value,
     zipcode: "90210",
     regions: ["Kailua", "Kona", "Kona Town"],
     moveInDate: "2023-12-10",
@@ -147,7 +147,7 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
+    island: Island.Oahu.value,
     zipcode: "90210",
     regions: ["Waikiki", "Honolulu"],
     moveInDate: "2023-12-10",
@@ -163,7 +163,7 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
+    island: Island.Oahu.value,
     zipcode: "90210",
     regions: ["Honolulu"],
     moveInDate: "2023-12-10",
@@ -178,7 +178,7 @@ export const CardData = [
     size: 1064,
     dateAdded: "2020-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "maui",
+    island: Island.Maui.value,
     zipcode: "90210",
     regions: ["East Maui", "Hana"],
     moveInDate: "2023-09-10",
@@ -193,7 +193,7 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
+    island: Island.Oahu.value,
     zipcode: "90210",
     regions: ["Kailua", "windward coast", "Kailua bay"],
     moveInDate: "2023-09-10",
@@ -208,7 +208,7 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "hawai'i",
+    island: Island.Hawaii.value,
     zipcode: "90210",
     regions: ["Hilo"],
     moveInDate: "2023-09-10",
@@ -223,7 +223,7 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "lāna'i",
+    island: Island.Lānai.value,
     zipcode: "90210",
     regions: ["Lanai City"],
     moveInDate: "2023-09-10",
@@ -238,7 +238,7 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "moloka'i",
+    island: Island.Molokai.value,
     zipcode: "90210",
     regions: ["East Moloka'i", "Kaunakakai"],
     moveInDate: "2023-09-10",
@@ -253,7 +253,7 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
+    island: Island.Oahu.value,
     zipcode: "90210",
     regions: ["North Shore", "Laie"],
     moveInDate: "2023-05-10",
@@ -268,7 +268,7 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "maui",
+    island: Island.Maui.value,
     zipcode: "90210",
     regions: ["south Maui", "wailea"],
     moveInDate: "2023-05-10",
@@ -283,7 +283,7 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
+    island: Island.Oahu.value,
     zipcode: "90210",
     regions: ["Honolulu"],
     moveInDate: "2023-05-10",
@@ -298,7 +298,7 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "o'ahu",
+    island: Island.Oahu.value,
     zipcode: "90210",
     regions: ["North Shore", "Kaena Point"],
     moveInDate: "2023-05-10",
@@ -313,82 +313,9 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: "kaua'i",
+    island: Island.Kauai.value,
     zipcode: "90210",
     regions: ["Kihue", "Puhi"],
     moveInDate: "2023-05-10",
   },
 ];
-
-export function getBuyMarketplaceData() {
-  CardData.sort(comparePropertiesPriceDesc);
-  return CardData;
-}
-
-export function comparePropertiesPriceDesc(a, b) {
-  let priceA = parseInt(a.price.replaceAll(",", ""));
-  let priceB = parseInt(b.price.replaceAll(",", ""));
-
-  if (priceA < priceB) {
-    return -1;
-  }
-  if (priceA > priceB) {
-    return 1;
-  }
-  return 0;
-}
-
-export function comparePropertiesPriceAsc(a, b) {
-  let priceA = parseInt(a.price.replaceAll(",", ""));
-  let priceB = parseInt(b.price.replaceAll(",", ""));
-
-  if (priceA > priceB) {
-    return -1;
-  }
-  if (priceA < priceB) {
-    return 1;
-  }
-  return 0;
-}
-
-export function compareSizeAsc(a, b) {
-  if (a.size > b.size) {
-    return -1;
-  }
-  if (a.size < b.size) {
-    return 1;
-  }
-  return 0;
-}
-
-export function compareSizeDesc(a, b) {
-  if (a.size < b.size) {
-    return -1;
-  }
-  if (a.size > b.size) {
-    return 1;
-  }
-  return 0;
-}
-
-export function comparePriorityDesc(a, b) {
-  if (a.priority > b.priority) {
-    return -1;
-  }
-  if (a.priority < b.priority) {
-    return 1;
-  }
-  return 0;
-}
-
-export function compareDateAddedDesc(a, b) {
-  let dateA = new Date(a.dateAdded);
-  let dateB = new Date(b.dateAdded);
-  if (dateA > dateB) {
-    return -1;
-  }
-  if (dateA < dateB) {
-    return 1;
-  }
-  return 0;
-}

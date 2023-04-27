@@ -37,6 +37,7 @@ const HomePageSearchBar = () => {
     <div className="searchDiv homePage">
       <div className="searchBarButtons">
         <button
+          id="buySearchButton"
           name="buy"
           className="searchBarButton buy selected"
           onClick={selectButton}
@@ -44,6 +45,7 @@ const HomePageSearchBar = () => {
           Buy
         </button>
         <button
+          id="rentSearchButton"
           name="rent"
           className="searchBarButton rent"
           onClick={selectButton}

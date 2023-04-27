@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import searchIcon from "../../../assets/images/icons/searchIcon.svg";
 
 const SearchBar = ({ searchQuery }) => {
-  const [inputValue, setInputValue] = useState(searchQuery);
+  const [internalSearchQuery, setInternalSearchQuery] = useState(searchQuery);
 
   function handleChange(event) {
-    const value = event.target.value;
-    setInputValue(value);
+    setInternalSearchQuery(event.target.value);
   }
 
   return (
@@ -17,7 +16,7 @@ const SearchBar = ({ searchQuery }) => {
           placeholder="Enter an address, region, island, or ZIP code"
           className="marketplaceSearch"
           id="marketplaceSearchInput"
-          value={inputValue}
+          value={internalSearchQuery}
           onChange={handleChange}
         />
         <img className="searchIcon" src={searchIcon} />

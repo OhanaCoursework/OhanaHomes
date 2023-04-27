@@ -18,9 +18,7 @@ import { showAlert } from "../../alerts/alert";
 
 const SignUpModal = () => {
   function usernameValidator(event) {
-    console.log("username val");
     if (event.target.value) {
-      console.log(event.target);
       formValidator(event.target, validateUsername);
     } else {
       validateFormField(event.target);
