@@ -21,11 +21,11 @@ const Footer = () => {
           </p>
           <br />
           <p className="footer-paragraph" id="footer-email">
-            ohanahomes@gmail.com
+            <a className="contactLink" href = "mailto: ohanahomes@gmail.com">ohanahomes@gmail.com</a>
           </p>
           <br />
           <p className="footer-paragraph .LastParagraph" id="footer-phone">
-            (+1) 930-231-1231
+            <a className="contactLink" href="tel: 930231231">(+1) 930-231-1231</a>
           </p>
         </div>
         <div className="Column2 line">

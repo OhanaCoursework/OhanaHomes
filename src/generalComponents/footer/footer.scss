@@ -51,6 +51,18 @@
     width: 380px;
   }
 
+  .contactLink {
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .contactLink:hover {
+    color: #ff9c00;
+    transition: 200ms ease-in;
+  }
+
   /* Vertical line used to separate the columns */
   .line {
     border-left: 2px solid rgb(0, 0, 0);
