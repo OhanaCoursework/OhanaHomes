@@ -9,7 +9,7 @@ function HouseItem({ image, title, price, bedrooms, bathrooms, size }) {
     <div className="detailedHouseItem">
       <div style={{ backgroundImage: `url(${image})` }}></div>
       <h1> {title}</h1>
-      <p>£{price}</p>
+      <p>${price}</p>
       <hr />
       <p className="detailsParagraph">
         <img className="bedIcon" src={bedIcon} alt="Bed Icon"/> {bedrooms}{" "}
