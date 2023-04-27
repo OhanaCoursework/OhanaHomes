@@ -236,12 +236,12 @@ describe("Selenium Tests for marketplace page", function () {
       By.id("propertiesFilterMoveInDate")
     );
 
-    await moveInDateFilter.sendKeys("03/06/2023");
+    await moveInDateFilter.sendKeys("04/04/2023");
 
     const showProperties = await driver.findElements(
       By.className("detailedHouseItem")
     );
 
-    assert.strictEqual(showProperties.length, 2);
+    assert.strictEqual(showProperties.length, 3);
   });
 });

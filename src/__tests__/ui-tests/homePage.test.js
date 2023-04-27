@@ -34,6 +34,10 @@ function generateHref(linkText) {
   } else {
     href = linkText.toLowerCase();
   }
+
+  if(linkText === 'Home') {
+    return '';
+  }
   return href;
 }
 
