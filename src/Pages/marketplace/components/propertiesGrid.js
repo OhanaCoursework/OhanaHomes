@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import HouseItem from "./houseItem.js";
+import DetailedHouseItem from "./detailedHouseItem.js";
 import "../styles/propertiesGrid.css";
 
 const PropertiesGrid = ({ housesList, appliedSorting, setAppliedSorting }) => {
@@ -41,7 +41,7 @@ const PropertiesGrid = ({ housesList, appliedSorting, setAppliedSorting }) => {
             housesList.length > 0 &&
             housesList.map((houseItem, key) => {
               return (
-                <HouseItem
+                <DetailedHouseItem
                   key={key}
                   image={houseItem.image}
                   title={houseItem.title}

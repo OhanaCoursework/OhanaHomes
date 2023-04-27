@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import largeNavBarLogo from "../../assets/images/logo/navbarLogo.svg";
 import smallNavBarLogo from "../../assets/images/logo/smallNavBarLogo.svg";
 import Alert from "../alerts/alert";
-import LoginModal from "./accountPopUps/LoginModal.js";
-import SignUpModal from "./accountPopUps/SignUpModal.js";
+import LoginModal from "./accountPopUps/loginModal.js";
+import SignUpModal from "./accountPopUps/signUpModal.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { setupLocalUsers } from "../../helpers/authenticator/authenticator.js";
 import AccountMenu from "./AccountMenu";
 import "./navbar.scss";
-import { Island } from "../../helpers/islandsData/islandsEnum";
+import { Island } from "../../data/enum/islandsEnum";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);

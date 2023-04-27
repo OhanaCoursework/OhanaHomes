@@ -19,7 +19,7 @@
   align-items: center;
   padding: 14px 24px;
   color: black;
-  font-size: 20px;
+  font-size: clamp(14px, 3vw, 20px);
   background-color: #f0ddce;
   border-radius: 6px;
 }
@@ -41,7 +41,7 @@
 
 .title-text {
   position: relative;
-  font-size: 48pt;
+  font-size: clamp(28px, 8vw, 48px);
   color: #447399;
   font-weight: 500;
   margin: 32px 0px 16px 72px;

@@ -1,12 +1,12 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Marketplace from "../../../../Pages/marketplace/components/Marketplace";
+import Marketplace from "../../../../Pages/marketplace/components/marketplace";
 import * as marketPlaceService from "../../../../Pages/marketplace/components/marketplace.service";
 import marketHouse1 from "../../../../assets/images/marketPlace/marketHouse1.webp";
 import marketHouse2 from "../../../../assets/images/marketPlace/marketHouse2.webp";
 import marketHouse3 from "../../../../assets/images/marketPlace/marketHouse3.webp";
-import { Island } from "../../../../helpers/islandsData/islandsEnum";
+import { Island } from "../../../../data/enum/islandsEnum";
 
 const buyMockValues = [
   {

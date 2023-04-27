@@ -4,7 +4,7 @@ import bedIcon from "../../../assets/images/icons/bedIcon.svg";
 import bathIcon from "../../../assets/images/icons/bathIcon.svg";
 import sizeIcon from "../../../assets/images/icons/sizeIcon.svg";
 
-function HouseItem({ image, title, price, bedrooms, bathrooms, size }) {
+function DetailedHouseItem({ image, title, price, bedrooms, bathrooms, size }) {
   return (
     <div className="detailedHouseItem">
       <div style={{ backgroundImage: `url(${image})` }}></div>
@@ -22,4 +22,4 @@ function HouseItem({ image, title, price, bedrooms, bathrooms, size }) {
   );
 }
 
-export default HouseItem;
+export default DetailedHouseItem;

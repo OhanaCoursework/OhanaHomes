@@ -14,7 +14,7 @@ import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.webp";
 import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.webp";
 import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.webp";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.webp";
-import { Island } from "../islandsData/islandsEnum";
+import { Island } from "../enum/islandsEnum";
 
 export const rentPropertiesData = [
   {
