@@ -16,12 +16,23 @@ import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.jpg";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
 import { Island } from "../islandsData/islandsEnum";
 
+import front1 from "../../assets/images/properties/180-front.jpg";
+import balcony from "../../assets/images/properties/balcony.jpg";
+import bath01 from "../../assets/images/properties/bath2.jpg";
+import bath02 from "../../assets/images/properties/bathpic01.jpg";
+import bed from "../../assets/images/properties/bed1.jpg";
+import den from "../../assets/images/properties/den.jpg";
+
+
 export const CardData = [
   {
     id: 1,
     title: "Luxury Villa in Maui, Hawaii",
     price: "4,100,000",
     image: marketHouse1,
+    image1: bed,
+    image2: bath01,
+    image3: den,
     alt: "House",
     bedrooms: 5,
     bathrooms: 3,
@@ -37,7 +48,9 @@ export const CardData = [
     id: 2,
     title: "House in Honolulu, Hawaii",
     price: "2,680,000",
-    image: marketHouse2,
+    image: front1,
+    image1: balcony,
+    image2: bath02,
     alt: "House",
     bedrooms: 5,
     bathrooms: 3,

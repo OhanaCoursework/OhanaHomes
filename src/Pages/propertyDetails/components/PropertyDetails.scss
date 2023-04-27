@@ -1,10 +1,21 @@
 .PropertyDetails {
   #imageBlock {
-    background-color: #F0DDCE;
+    background-color: #eee;
     position: relative;
     margin: 0;
-    display: inline-block;
+    display: table;
+    width: 40%;
+    padding: 10px;
+    height: 40%;
+    padding: 32px 0px;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px ;
+    display: table;
     width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    
+
   }
 
   #imageBlock > img {
@@ -12,16 +23,69 @@
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+    
+
   }
+  
+  
 
   .propertyDetailsBlock {
     background-color: #81BDBE;
     width: 100%;
     margin: 0;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    display: inline-block;
+    height: 50vh;
+    border: 6px solid #e7edf1;
+    text-align: justify;
+    padding-left: 10%;
+    padding-top: 7S;
+    padding-bottom: 30% ;
   }
   
   .propertyDetailsBlock > h2 {
+    border-radius: 6px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: 0;
+    color: black;
+    padding-top: 1.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-bottom: 1.5%;
+
+    font-size: 38px;
+    width: fit-content;
   }
+
+  .propertyDetailsBlock > h3 {
+    margin: 0;
+    color: #447399;
+    padding-top: 1%;
+    font-size: 20px;
+  }
+
+  .propertyDetailsBlock > ul {
+    border: 5px outset #447399 ;
+    border-radius: 5px;
+    outline-style: double;
+    outline-width: 12% ;
+    outline-color: #eee;
+    background-color: #eee;
+    padding-inline-start: 0px;
+    width: 20%;
+    list-style-type: none;
+    position: absolute;
+    padding-top: 0%;
+    padding-right: 1%;
+    padding-bottom: 0%;
+    padding-left: 1%;
+    line-height: 150%;
+    
+
+    
+  }
+  
 
 }
