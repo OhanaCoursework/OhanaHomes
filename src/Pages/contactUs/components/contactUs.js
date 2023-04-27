@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./contactUs.scss";
 import pathToTitleImage from "../../../assets/images/ContactUsTitleImage.webp";
 import { isEmailValid } from "../../../helpers/validators/emailValidator.js";
-import Alert from "../../../generalComponents/alerts/alert.js";
 import { isTextboxValid } from "../../../helpers/validators/textboxValidator.js";
 import { showAlert } from "../../../generalComponents/alerts/alert.js";
 
@@ -26,7 +25,7 @@ const ContactUs = () => {
 
   useEffect(()=> {
     const sendEmailButton = document.getElementById("contactUsForm");
-    sendEmailButton.addEventListener("submit", sendEmail, { passive: true});
+    sendEmailButton.addEventListener("submit", sendEmail);
   
     return () => {
       sendEmailButton.removeEventListener("submit", sendEmail);
@@ -57,7 +56,6 @@ const ContactUs = () => {
           <input className="emailInput" type="text" name="userEmail" aria-label="Entry box for email address" placeholder="Email Address" />   
           <textarea id="commentArea" aria-label="Text area for message" name="comment" rows="10" cols="50" placeholder="Enter your message here..." spellCheck="true" maxLength={500}></textarea>
           <button type="Submit" className="sendButton">Send</button>
-          <Alert/>
         </form>
       </div>
       <div className="WhereToFindUsBlock">

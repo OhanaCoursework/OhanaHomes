@@ -4,10 +4,11 @@ import "./alert.css";
 
 const Alert = () => {
   return (
-    <div className="alert alertDiv">
+    <div id="alertDiv" className="alert">
       <div className="alert-content">
-        <p className="alertMessage"></p>
+        <p id="alertMessage"></p>
         <span
+          id="alertCloseButton"
           className="alert-close-button"
           onClick={closeAlert}
         >
@@ -23,8 +24,8 @@ let alertRemovalTimeout;
 export function showAlert(alert, alertType, timeout) {
   closeExistingAlert();
   setTimeout(() => {
-    document.querySelector("alertMessage").innerText = alert;
-    document.querySelector("alertDiv").className =
+    document.getElementById("alertMessage").innerText = alert;
+    document.getElementById("alertDiv").className =
       "alert " + "show-alert " + alertType;
     if (timeout) {
       alertRemovalTimeout = setTimeout(() => {
