@@ -116,6 +116,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
               name="island"
               id="propertiesFilterIslands"
               className="propertiesFilter"
+              title="Island Filter"
               onChange={onChangeFilterHouses}
               defaultValue={""}
             >
@@ -132,6 +133,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
               name="minPrice"
               id="propertiesFilterMinPrice"
               className="propertiesFilter"
+              title="Min Price Filter"
               onChange={onChangeFilterHouses}
             >
               <option value="" selected>
@@ -149,6 +151,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
               name="maxPrice"
               id="propertiesFilterMaxPrice"
               className="propertiesFilter"
+              title="Max Price Filter"
               onChange={onChangeFilterHouses}
             >
               <option value="" selected>
@@ -167,6 +170,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
               id="propertiesFilterBeds"
               className="propertiesFilter"
               onChange={onChangeFilterHouses}
+              title="Number of Beds Filter"
             >
               <option value="0" selected>
                 0+ Beds
@@ -181,6 +185,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
               name="baths"
               id="propertiesFilterBaths"
               className="propertiesFilter"
+              title="Number of Baths Filter"
               onChange={onChangeFilterHouses}
             >
               <option value="0" selected>
@@ -198,6 +203,7 @@ const Marketplace = ({ marketplaceType, intialSearchQuery }) => {
                 id="propertiesFilterMoveInDate"
                 name="moveIn"
                 className="propertiesFilterMoveInDate"
+                title="Move in date filter"
                 type="date"
                 onChange={dateOnChangeFilterHouses}
               ></input>

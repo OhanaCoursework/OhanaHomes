@@ -30,6 +30,7 @@ const Button = ({ children }) => {
 
   return (
     <a
+    aria-label="Button to the Marketplace Page"
       href="/marketplace"
       id="homes-button"
       style={buttonStyles}

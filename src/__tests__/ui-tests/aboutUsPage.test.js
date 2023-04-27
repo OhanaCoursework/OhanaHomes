@@ -1,6 +1,4 @@
 const { assert } = require("chai");
-const fs = require("fs");
-const path = require("path");
 const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
@@ -32,13 +30,5 @@ describe("Selenium Tests for About Us Page", function () {
     const pageTitle = await driver.findElement(By.id("PageHeading")).getText();
     assert.strictEqual(pageTitle, "About Us");
 
-    const snapshotPath = path.join(
-      __dirname,
-      "../../assets/snapshots/AboutUsPage-snapshot.html"
-    );
-    const htmlSource = await driver.getPageSource();
-    fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
-      if (err && err.code !== "EEXIST") throw err;
-    });
   });
 });

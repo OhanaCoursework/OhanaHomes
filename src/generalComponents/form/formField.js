@@ -59,6 +59,7 @@ const FormField = ({ name, id, label, type, validator }) => {
             {type === "password" && (
               <img
                 className="showHidePasswordIcon"
+                alt="show hide password button"
                 src={showIcon}
                 onClick={showPassword}
               />

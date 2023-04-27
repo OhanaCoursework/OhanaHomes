@@ -89,7 +89,7 @@ const AccountMenu = () => {
             setIsMyAccountExpanded(!isMyAccountExpanded);
           }}
         >
-          <img className="accountIcon" src={accountIcon} />
+          <img alt="My account icon" className="accountIcon" src={accountIcon} />
           My Account
         </button>
         <div

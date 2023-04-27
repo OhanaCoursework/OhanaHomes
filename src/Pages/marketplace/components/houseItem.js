@@ -12,11 +12,11 @@ function HouseItem({ image, title, price, bedrooms, bathrooms, size }) {
       <p>£{price}</p>
       <hr />
       <p className="detailsParagraph">
-        <img className="bedIcon" src={bedIcon} /> {bedrooms}{" "}
+        <img className="bedIcon" src={bedIcon} alt="Bed Icon"/> {bedrooms}{" "}
         {bedrooms > 1 ? "beds" : "bed"}
-        <img className="bathIcon" src={bathIcon} /> {bathrooms}{" "}
+        <img className="bathIcon" src={bathIcon} alt="Bath Icon"/> {bathrooms}{" "}
         {bathrooms > 1 ? "baths\n" : "bath\n"}
-        <img className="sizeIcon" src={sizeIcon} /> {size}㎡
+        <img className="sizeIcon" src={sizeIcon} alt="Size Icon" /> {size}㎡
       </p>
     </div>
   );

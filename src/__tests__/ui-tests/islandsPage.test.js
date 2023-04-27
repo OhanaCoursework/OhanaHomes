@@ -1,6 +1,4 @@
 const { assert } = require("chai");
-const fs = require("fs");
-const path = require("path");
 const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
@@ -38,14 +36,6 @@ describe("Selenium Tests for Islands Page", function () {
       .getText();
     assert.strictEqual(pageTitle, islandText);
 
-    const snapshotPath = path.join(
-      __dirname,
-      "../../assets/snapshots/IslandsPage-snapshot.html"
-    );
-    const htmlSource = await driver.getPageSource();
-    fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
-      if (err && err.code !== "EEXIST") throw err;
-    });
   });
   it("Should be able to use the view homes button ", async function () {
     await driver.findElement(By.id("marketplaceBtn")).click();

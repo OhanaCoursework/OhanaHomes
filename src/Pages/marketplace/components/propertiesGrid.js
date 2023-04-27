@@ -26,6 +26,7 @@ const PropertiesGrid = ({ housesList, appliedSorting, setAppliedSorting }) => {
                 id="propertiesSort"
                 className="propertiesSort"
                 onChange={sortOnChange}
+                title="Sorting"
               >
                 <option value="most-relevant">Most Relevant</option>
                 <option value="biggest">Biggest</option>

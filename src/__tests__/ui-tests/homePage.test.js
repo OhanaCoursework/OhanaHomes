@@ -1,8 +1,6 @@
 const chrome = require("selenium-webdriver/chrome");
 const { assert } = require("chai");
 const { Builder, By, until, Key } = require("selenium-webdriver");
-const path = require("path");
-const fs = require("fs");
 
 const myoptions = new chrome.Options()
   .headless()
@@ -285,14 +283,6 @@ describe("Selenium Tests for Hero page", function () {
 
     assert.strictEqual(linkURL, "http://localhost:3000/marketplace");
 
-    const snapshotPath = path.join(
-      __dirname,
-      "../../assets/snapshots/HomePage-snapshot.html"
-    );
-    const htmlSource = await driver.getPageSource();
-    fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
-      if (err && err.code !== "EEXIST") throw err;
-    });
   });
 });
 

@@ -31,14 +31,14 @@ const Navbar = () => {
         className={isNavExpanded ? "navigation expanded" : "navigation"}
       >
         <div className="brandLogoDiv">
-          <Link to="/">
+          <Link aria-label="Link to the home page" to="/">
             <img
               className="largeBrandLogo"
               src={largeNavBarLogo}
               alt="Ohana homes logo"
             />
           </Link>
-          <Link to="/">
+          <Link aria-label="Link to the home page" to="/">
             <img
               className="smallBrandLogo"
               src={smallNavBarLogo}
@@ -117,6 +117,7 @@ const Navbar = () => {
         <AccountMenu />
         <button
           className="hamburger"
+          aria-label="Hamburger button"
           onClick={() => {
             setIsNavExpanded(!isNavExpanded);
           }}

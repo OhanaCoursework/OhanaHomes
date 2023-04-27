@@ -28,7 +28,8 @@
         background-color: #447399;
         width: 100%;
         margin: 0;
-        cursor: default
+        cursor: default;
+        padding: 32px;
     }
 
     .QuickLinksBlock > h2 {
@@ -113,6 +114,7 @@
         left: 12.5%;
         font-size: 18px;
         margin-bottom: 3%;
+        min-width: min(75%, 200px);
     }
 
     .sendButton {
@@ -136,7 +138,7 @@
 
     .WhereToFindUsBlock{
         background-color: #81BDBE;
-        padding-bottom: 32px;
+        padding: 32px;
     }
 
     .WhereToFindUsBlock > button {
@@ -145,7 +147,7 @@
 
     .WhereToFindUsBlock > h2 {
         margin-left: 12.5%;
-        color: white;
+        color: black;
         padding-top: 1%;
         font-size: 24px;
     }
@@ -158,11 +160,15 @@
         height:500px
     }
 
+    .CommentBlock {
+        padding: 32px;
+    }
+
     .CommentBlock > h2 {
         position: relative;
         font-size: 24px;
         padding-left: 5%;
-        margin: 32px 0px
+        margin: 0px 0px 32px;
     }
 
     .CommentBlock > h3 {

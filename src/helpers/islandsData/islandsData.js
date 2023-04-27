@@ -1,11 +1,11 @@
-import hawaiiImage from "../../assets/images/islandImages/hawaii.png";
-import kahoolaweImage from "../../assets/images/islandImages/kaho'olawe.png";
-import kauaiImage from "../../assets/images/islandImages/kauai.png";
-import lanaiImage from "../../assets/images/islandImages/lanai.png";
-import mauiImage from "../../assets/images/islandImages/maui.png";
-import molokaiImage from "../../assets/images/islandImages/molokai.png";
-import niihauImage from "../../assets/images/islandImages/niihau.png";
-import oahuImage from "../../assets/images/islandImages/oahu.png";
+import hawaiiImage from "../../assets/images/islandImages/hawaii.webp";
+import kahoolaweImage from "../../assets/images/islandImages/kaho'olawe.webp";
+import kauaiImage from "../../assets/images/islandImages/kauai.webp";
+import lanaiImage from "../../assets/images/islandImages/lanai.webp";
+import mauiImage from "../../assets/images/islandImages/maui.webp";
+import molokaiImage from "../../assets/images/islandImages/molokai.webp";
+import niihauImage from "../../assets/images/islandImages/niihau.webp";
+import oahuImage from "../../assets/images/islandImages/oahu.webp";
 
 export const IslandsData = [
   {

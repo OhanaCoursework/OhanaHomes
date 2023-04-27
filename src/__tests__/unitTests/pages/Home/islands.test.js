@@ -9,12 +9,12 @@ describe("Islands component", () => {
   const islands = [
     {
       island: "Hawai'i",
-      image: "hawaiiImage.png",
+      image: "hawaiiImage.webp",
       alt: "An image of the coast of Hawai'i",
     },
     {
       island: "Maui",
-      image: "mauiImage.png",
+      image: "mauiImage.webp",
       alt: "An image of a road on the coast of Maui",
     },
   ];

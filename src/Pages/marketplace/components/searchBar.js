@@ -16,11 +16,12 @@ const SearchBar = ({ searchQuery }) => {
           placeholder="Enter an address, region, island, or ZIP code"
           className="marketplaceSearch"
           id="marketplaceSearchInput"
+          aria-label="Text input to search for properties on marketplace page"
           value={internalSearchQuery}
           onChange={handleChange}
         />
-        <img className="searchIcon" src={searchIcon} />
-        <input type="submit" hidden />
+        <img alt="Search icon" className="searchIcon" src={searchIcon} />
+        <input aria-label="Hidden submit button" type="submit" hidden />
       </form>
     </div>
   );
