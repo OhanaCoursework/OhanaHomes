@@ -1,0 +1,36 @@
+.searchBarButton {
+  font-size: clamp(14px, 3vw, 20px);
+  border: none;
+  padding: 6px 28px;
+  display: inline-block;
+  color: #F8FAF9;
+  background-color: #385872;
+  cursor: pointer;
+}
+
+.searchBarButton.buy{
+  border-top-left-radius: 6px;
+}
+
+.searchBarButton.rent{
+  border-top-right-radius: 6px;
+}
+
+.searchBarButton.selected {
+  color: #385872;
+  background-color: #F8FAF9;
+}
+
+
+.searchBarButtons {
+  width: 100%;
+  max-width: min(700px, 90%);
+}
+
+.searchDiv.homePage {
+  flex-direction: column;
+}
+
+.homePage .marketplaceSearch {
+  border-radius: 0px 6px 6px 6px;
+}

@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="Column2 line">
-          <a href="home" className="Link" id="home-link">
+          <a href="/" className="Link" id="home-link">
             Home
           </a>
           <a href="aboutUs" className="Link" id="about-link">
@@ -37,9 +37,6 @@ const Footer = () => {
           </a>
           <a href="contactUs" className="Link" id="contact-link">
             Contact Us
-          </a>
-          <a href="help" className="Link" id="help-link">
-            Help
           </a>
         </div>
         <div className="Column3 line">

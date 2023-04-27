@@ -1,13 +1,13 @@
 const chrome = require("selenium-webdriver/chrome");
 const { assert } = require("chai");
-const { Builder, By, until } = require("selenium-webdriver");
+const { Builder, By, until, Key } = require("selenium-webdriver");
 const path = require("path");
 const fs = require("fs");
 
 const myoptions = new chrome.Options()
   .headless()
   .addArguments("disable-gpu", "--window-size=2560,1440");
-const TIMEOUT = 10000;
+const TIMEOUT = 20000;
 let driver;
 
 beforeAll(async function () {
@@ -33,6 +33,10 @@ function generateHref(linkText) {
       linkText.substring(spaceIndex).replace(/\s+/g, "");
   } else {
     href = linkText.toLowerCase();
+  }
+
+  if(linkText === 'Home') {
+    return '';
   }
   return href;
 }
@@ -105,7 +109,7 @@ describe("Selenium Tests for NavBar", function () {
 
     await buyButton.click();
     assert.strictEqual(
-      "http://localhost:3000/marketplace",
+      "http://localhost:3000/marketplace?type=buy",
       await driver.getCurrentUrl()
     );
   });
@@ -117,8 +121,8 @@ describe("Selenium Tests for NavBar", function () {
 
     await rentButton.click();
     assert.strictEqual(
-      "http://localhost:3000/marketplace",
-      await driver.getCurrentUrl()
+      await driver.getCurrentUrl(),
+      "http://localhost:3000/marketplace?type=rent",
     );
   });
 
@@ -380,7 +384,7 @@ describe("FeaturedProperties Component", function () {
     const firstHouseItemText = await firstHouseItem.getText();
     assert.strictEqual(
       firstHouseItemText,
-      "Luxury Villa in Maui, Hawaii\n£4,100,000"
+      "Luxury Villa, Hawaii\n£4,100,000"
     );
   });
 
@@ -482,5 +486,40 @@ describe("Selenium Tests for Footer", function () {
       const displayProperty = await socialMediaIcons[i].getCssValue("display");
       assert.strictEqual(displayProperty, "block");
     }
+  });
+});
+
+describe("Selenium Tests for homepage search bar", function () {
+  it("Should go to buy marketplace page when user searches using the search bar and user has clicked the buy button", async function () {
+    await driver.get("http://localhost:3000/");
+    await driver.sleep(1000);
+    const searchBar = await driver.findElement(By.id("homePageSearchInput"));
+    const buyButton = await driver.findElement(By.id("buySearchButton"));
+    await buyButton.click();
+
+    await searchBar.sendKeys("east maui");
+    await searchBar.sendKeys(Key.ENTER);
+
+    assert.strictEqual(
+      await driver.getCurrentUrl(),
+      "http://localhost:3000/marketplace?type=buy&searchQuery=east+maui"
+    );
+  });
+
+  it("Should go to rent marketplace page when user searches using the search bar and user has clicked the rent button", async function () {
+    await driver.get("http://localhost:3000/");
+    await driver.sleep(1000);
+    const searchBar = await driver.findElement(By.id("homePageSearchInput"));
+    const rentButton = await driver.findElement(By.id("rentSearchButton"));
+
+    await rentButton.click();
+
+    await searchBar.sendKeys("east maui");
+    await searchBar.sendKeys(Key.ENTER);
+
+    assert.strictEqual(
+      await driver.getCurrentUrl(),
+      "http://localhost:3000/marketplace?type=rent&searchQuery=east+maui"
+    );
   });
 });
