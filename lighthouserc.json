@@ -37,6 +37,7 @@
         "uses-passive-event-listeners": "off",
         "modern-image-formats": "off",
         "crawlable-anchors": "off",
+        "tap-targets": ["warn", {"minScore": 0.8}],
         "bootup-time": ["warn", {"minScore": 0.4}]
       }
     }
