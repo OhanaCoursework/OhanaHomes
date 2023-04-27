@@ -47,7 +47,6 @@ const PropertyDetails = () =>  {
             <li>{"Bedrooms: " + property.bedrooms}</li>
             <li>{"Bathrooms: " + property.bathrooms}</li>
             <li>{"Size (sq/Ft): " + property.size}</li>
-            <li>{"Island: " + property.island}</li>
             <li>{"Zipcode: " + property.zipcode}</li>
             <li>{"Move In Date: " + property.moveInDate.replace(regex, "/")}</li>
             <li>{"Date Added: " + property.dateAdded.replace(regex, "/").slice(0,10)}</li>

@@ -45,8 +45,8 @@ describe("Selenium Tests for Property Details Page", function () {
     // Check that the property images are displayed correctly
     const images = await driver.findElements(By.css(".gallery img"));
     assert.strictEqual(images.length, 3);
-    assert.include(await images[0].getAttribute("src"), "bed1.d93568add29c65b9f611.jpg");
-    assert.include(await images[1].getAttribute("src"), "bath2.43c75b35164e7acb0a1c.jpg");
-    assert.include(await images[2].getAttribute("src"), "den.3fbcd78357282930a60b.jpg");
+    assert.include(await images[0].getAttribute("src"), "bed1.webp");
+    assert.include(await images[1].getAttribute("src"), "bath2.webp");
+    assert.include(await images[2].getAttribute("src"), "den.webp");
   });
 });
