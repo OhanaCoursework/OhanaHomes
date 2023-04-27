@@ -1,9 +1,12 @@
+// imports 
 import React from "react";
 import "./PropertyDetails.scss";
 import { useParams } from 'react-router-dom';
 import { CardData as BuyCardData } from "../../../helpers/featuredPropetiesData/buyPropertiesData.js";
 import { CardData as RentCardData } from "../../../helpers/featuredPropetiesData/rentPropertiesData.js";
 
+
+// concant BUY and RENT data, use PropertyId to retrieve properties
 const PropertyDetails = () =>  {
     const regex = /-/g;
     var property;
@@ -12,6 +15,11 @@ const PropertyDetails = () =>  {
     let AllProperties = BuyCardData.concat(RentCardData);
     
     property = AllProperties.find(property => property.id == propertyId);
+    
+
+
+
+// main image, gallery, and further details block
     
     return (
       <section className="PropertyDetails">
@@ -49,5 +57,7 @@ const PropertyDetails = () =>  {
       </section>
     );
   };
+
+  //exports 
 
 export default PropertyDetails;

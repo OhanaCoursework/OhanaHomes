@@ -1,4 +1,6 @@
 .PropertyDetails {
+
+  // image styles
   #imageBlock {
     background-color: #eee;
     position: relative;
@@ -27,63 +29,59 @@
 
   }
 
+  // more info box- styling
   .propertyDetailsBlock {
     background-color: #81BDBE;
     width: 100%;
-    margin: 0;
-    height: 100%;
-    position: relative;
-    margin: 0;
-    display: inline-block;
-    height: 50vh;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
     border: 6px solid #e7edf1;
     text-align: justify;
-    padding-left: 10%;
-    padding-top: 7S;
-    padding-bottom: 30% ;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  
+
+
+  // header styles
   .propertyDetailsBlock > h2 {
+    background-color: #eee;
+    color: #010102;
+    padding: 20px;
     border-radius: 6px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    margin: 0;
-    color: black;
-    padding-top: 1.5%;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    padding-bottom: 1.5%;
-
+    margin-bottom: 20px;
     font-size: 38px;
-    width: fit-content;
-  }
-
-  .propertyDetailsBlock > h3 {
-    margin: 0;
-    color: #447399;
-    padding-top: 1%;
-    font-size: 20px;
-  }
-
-  .propertyDetailsBlock > ul {
-    border: 5px outset #447399 ;
-    border-radius: 5px;
-    outline-style: double;
-    outline-width: 12% ;
-    outline-color: #eee;
-    background-color: #eee;
-    padding-inline-start: 0px;
-    width: 20%;
-    list-style-type: none;
-    position: absolute;
-    padding-top: 0%;
-    padding-right: 1%;
-    padding-bottom: 0%;
-    padding-left: 1%;
-    line-height: 150%;
-    
-
-    
+    text-align: center;
   }
   
+  .propertyDetailsBlock > h3 {
+    color: #447399;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  // list style 
+  .propertyDetailsBlock > ul {
+    background-color: white;
+    border: 5px outset #447399;
+    border-radius: 5px;
+    outline-style: double;
+    outline-width: 20%;
+    outline-color: #eee;
+    width: 60%;
+    max-width: 400px;
+    list-style-type: none;
+    padding: 50px;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
 
 }
