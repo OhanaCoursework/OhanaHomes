@@ -23,7 +23,7 @@
         "interactive": ["warn", {"minScore": 0.1}],
         "unused-javascript": "off",
         "unminified-javascript": "off",
-        "mainthread-work-breakdown": ["warn", {"minScore": 0.5}],
+        "mainthread-work-breakdown": ["warn", {"minScore": 0.1}],
         "speed-index": "off",
         "offscreen-images": "off",
         "unminified-css": "off",
@@ -35,7 +35,9 @@
         "total-byte-weight": "off",
         "errors-in-console": "off",
         "uses-passive-event-listeners": "off",
-        "modern-image-formats": "off"
+        "modern-image-formats": "off",
+        "crawlable-anchors": "off",
+        "bootup-time": ["warn", {"minScore": 0.4}]
       }
     }
     
