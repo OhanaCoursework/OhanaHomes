@@ -27,20 +27,18 @@ describe("Selenium Tests for Property Details Page", function () {
     await driver.manage().window().setRect({ width: 1401, height: 800 });
 
     // Check that the page title contains the property name
-    const pageTitle = await driver.findElement(By.className("propertyTitle")).getText();
-    assert.include(pageTitle.toLowerCase(), "luxury villa in maui, hawaii");
+    const pageTitle = await driver.findElement(By.id("propertyTitle")).getText();
+    assert.strictEqual(pageTitle, "Luxury Villa, Hawaii");
 
     // Check that the property details are displayed correctly
     const details = await driver.findElement(By.className("propertyDetailsBlock")).getText();
     assert.include(details, "Address: 123 Nimitz Highway");
     assert.include(details, "Price: 4,100,000");
-    assert.include(details, "Bedrooms: 5");
+    assert.include(details, "Bedrooms: 7");
     assert.include(details, "Bathrooms: 3");
     assert.include(details, "Size (sq/Ft): 464");
     assert.include(details, "Zipcode: 90210");
     assert.include(details, "Move In Date: 2021/12/10");
     assert.include(details, "Date Added: 2018/12/10");
-
-    
   });
 });

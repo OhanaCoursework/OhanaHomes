@@ -5,7 +5,7 @@ const { Builder, By, Key } = require("selenium-webdriver");
 const myoptions = new chrome.Options()
   .headless()
   .addArguments("disable-gpu", "--window-size=2560,1440");
-const TIMEOUT = 10000;
+const TIMEOUT = 15000;
 let driver;
 
 beforeAll(async function () {

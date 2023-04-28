@@ -18,6 +18,7 @@ import { Island } from "../islandsData/islandsEnum";
 
 export const CardData = [
   {
+    id: 20,
     title: "Luxury Villa, Hawaii",
     price: "4,100pm",
     image: marketHouse1,
