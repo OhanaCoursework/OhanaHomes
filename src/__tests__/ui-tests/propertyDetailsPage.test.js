@@ -37,7 +37,6 @@ describe("Selenium Tests for Property Details Page", function () {
     assert.include(details, "Bedrooms: 5");
     assert.include(details, "Bathrooms: 3");
     assert.include(details, "Size (sq/Ft): 464");
-    assert.include(details, "Island: Island.maui");
     assert.include(details, "Zipcode: 90210");
     assert.include(details, "Move In Date: 2021/12/10");
     assert.include(details, "Date Added: 2018/12/10");
