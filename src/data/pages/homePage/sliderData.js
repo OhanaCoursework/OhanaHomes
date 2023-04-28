@@ -1,10 +1,10 @@
-import ImageOne from "../../assets/images/heroImages/property1.webp";
-import ImageTwo from "../../assets/images/heroImages/property2.webp";
-import ImageThree from "../../assets/images/heroImages/property3.webp";
-import ImageFour from "../../assets/images/heroImages/property4.webp";
-import ImageFive from "../../assets/images/heroImages/property5.webp";
-import ImageSix from "../../assets/images/heroImages/property6.webp";
-import ImageSeven from "../../assets/images/heroImages/property7.webp";
+import ImageOne from "../../../assets/images/heroImages/property1.webp";
+import ImageTwo from "../../../assets/images/heroImages/property2.webp";
+import ImageThree from "../../../assets/images/heroImages/property3.webp";
+import ImageFour from "../../../assets/images/heroImages/property4.webp";
+import ImageFive from "../../../assets/images/heroImages/property5.webp";
+import ImageSix from "../../../assets/images/heroImages/property6.webp";
+import ImageSeven from "../../../assets/images/heroImages/property7.webp";
 
 export const SliderDataOne = [
   {

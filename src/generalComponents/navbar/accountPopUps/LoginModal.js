@@ -9,7 +9,7 @@ import {
 import FormField, {
   invalidateFormField,
   validateFormField,
-} from "../../../generalComponents/form/formField";
+} from "../../form/formField";
 import {
   hideLoginModal,
   openSignUpModal,

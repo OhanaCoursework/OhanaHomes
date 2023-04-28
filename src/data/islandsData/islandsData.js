@@ -6,7 +6,7 @@ import mauiImage from "../../assets/images/islandImages/maui.webp";
 import molokaiImage from "../../assets/images/islandImages/molokai.webp";
 import niihauImage from "../../assets/images/islandImages/niihau.webp";
 import oahuImage from "../../assets/images/islandImages/oahu.webp";
-import { Island } from "./islandsEnum";
+import { Island } from "../enum/islandsEnum";
 
 export const IslandsData = [
   {
