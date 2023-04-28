@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, configure } from "enzyme";
 import IslandsPage from "../../../../Pages/islands/components/IslandsPage";
 import Adapter from "enzyme-adapter-react-16";
-import { Island } from "../../../../helpers/islandsData/islandsEnum";
+import { Island } from "../../../../data/enum/islandsEnum";
 
 configure({ adapter: new Adapter() });
 

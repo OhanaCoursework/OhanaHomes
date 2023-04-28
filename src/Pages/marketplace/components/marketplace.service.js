@@ -1,4 +1,4 @@
-import { MarketplaceTypeEnum } from "./MarketplaceTypeEnum";
+import { MarketplaceTypeEnum } from "../../../data/enum/MarketplaceTypeEnum";
 import {
   compareDateAddedDesc,
   comparePriorityDesc,
@@ -8,8 +8,8 @@ import {
   compareSizeDesc,
   getBuyMarketplaceData,
   getRentMarketplaceData,
-} from "../../../helpers/featuredPropetiesData/featuredPropertiesDataHelper";
-import { getPrice } from "../../../helpers/MarketplaceData/pricesEnum";
+} from "../../../data/featuredPropetiesData/featuredPropertiesDataHelper";
+import { getPrice } from "../../../data/enum/pricesEnum";
 
 export function getMarketplaceData(
   searchQuery,

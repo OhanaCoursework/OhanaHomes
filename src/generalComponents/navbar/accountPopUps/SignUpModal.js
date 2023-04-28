@@ -9,11 +9,11 @@ import {
 import FormField, {
   invalidateFormField,
   validateFormField,
-} from "../../../generalComponents/form/formField";
+} from "../../form/formField";
 import {
   validateUsername,
   validatePassword,
-} from "../../../helpers/authenticator/accountValidator";
+} from "../../../helpers/validators/accountValidator";
 import { showAlert } from "../../alerts/alert";
 
 const SignUpModal = () => {
