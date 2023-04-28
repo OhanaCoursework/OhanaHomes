@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
-import IslandsPage from "../../../../Pages/islands/components/islandsPage";
+import {IslandsPage} from "../../../../Pages/islands/components/islandsPage";
 import Adapter from "enzyme-adapter-react-16";
 import { Island } from "../../../../data/enum/islandsEnum";
 
