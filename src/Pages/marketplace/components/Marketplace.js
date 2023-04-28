@@ -8,7 +8,7 @@ import {
   SalePrices,
   getPrice,
 } from "../../../data/enum/pricesEnum.js";
-import { MarketplaceTypeEnum } from "../../../data/enum/MarketplaceTypeEnum.js";
+import { MarketplaceTypeEnum } from "../../../data/enum/marketplaceTypeEnum.js";
 import { getMarketplaceData } from "./marketplace.service.js";
 
 const Marketplace = ({ marketplaceType, intialSearchQuery, filterIsland }) => {

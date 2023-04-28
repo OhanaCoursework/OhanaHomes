@@ -1,4 +1,4 @@
-import { MarketplaceTypeEnum } from "../../../data/enum/MarketplaceTypeEnum";
+import { MarketplaceTypeEnum } from "../../../data/enum/marketplaceTypeEnum";
 import {
   compareDateAddedDesc,
   comparePriorityDesc,
