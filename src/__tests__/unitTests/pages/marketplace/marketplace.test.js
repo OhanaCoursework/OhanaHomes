@@ -6,7 +6,7 @@ import * as marketPlaceService from "../../../../Pages/marketplace/components/ma
 import marketHouse1 from "../../../../assets/images/marketPlace/marketHouse1.webp";
 import marketHouse2 from "../../../../assets/images/marketPlace/marketHouse2.webp";
 import marketHouse3 from "../../../../assets/images/marketPlace/marketHouse3.webp";
-import { Island } from "../../../../data/enum/islandsEnum";
+import { Island } from "../../../../data/enum/islandsEnum.js";
 
 const buyMockValues = [
   {

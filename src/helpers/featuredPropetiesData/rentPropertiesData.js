@@ -14,26 +14,14 @@ import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.webp";
 import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.webp";
 import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.webp";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.webp";
-
-import front1 from "../../assets/images/properties/180-front.webp";
-import balcony from "../../assets/images/properties/balcony.webp";
-import bath01 from "../../assets/images/properties/bathpic01.webp";
-import bath02 from "../../assets/images/properties/bath2.webp";
-import den from "../../assets/images/properties/den.webp";
-import bed from "../../assets/images/properties/bed1.webp";
-
-
-import { Island } from "../enum/islandsEnum.js";
+import { Island } from "../../data/enum/islandsEnum.js";
 
 export const CardData = [
   {
-    id: 1,
+    id: 20,
     title: "Luxury Villa, Hawaii",
-    price: "4,100,000",
+    price: "4,100pm",
     image: marketHouse1,
-    image1: bed,
-    image2: bath01,
-    image3: den,
     alt: "House",
     bedrooms: 7,
     bathrooms: 3,
@@ -46,12 +34,10 @@ export const CardData = [
     moveInDate: "2021-12-10",
   },
   {
-    id: 2,
+    id: 21,
     title: "House in Honolulu, Hawaii",
-    price: "2,680,000",
-    image: front1,
-    image1: balcony,
-    image2: bath02,
+    price: "2,680pm",
+    image: marketHouse2,
     alt: "House",
     bedrooms: 5,
     bathrooms: 4,
@@ -64,9 +50,9 @@ export const CardData = [
     moveInDate: "2022-05-10",
   },
   {
-    id: 3,
+    id: 22,
     title: "Modern House in O'ahu, Hawaii",
-    price: "11,500,000",
+    price: "11,500pm",
     image: marketHouse3,
     alt: "House",
     bedrooms: 8,
@@ -80,9 +66,9 @@ export const CardData = [
     moveInDate: "2021-11-10",
   },
   {
-    id: 3,
+    id: 23,
     title: "House in Kauai, Hawaii",
-    price: "8,270,000",
+    price: "8,270pm",
     image: marketHouse4,
     alt: "House",
     bedrooms: 7,
@@ -96,9 +82,9 @@ export const CardData = [
     moveInDate: "2021-12-10",
   },
   {
-    id: 4,
+    id: 24,
     title: "House in Big Island, Hawaii",
-    price: "6,480,000",
+    price: "6,480pm",
     image: marketHouse5,
     alt: "House",
     bedrooms: 7,
@@ -112,9 +98,9 @@ export const CardData = [
     moveInDate: "2022-12-10",
   },
   {
-    id: 5,
+    id: 25,
     title: "House in Lanai, Hawaii",
-    price: "8,760,000",
+    price: "8,760pm",
     image: marketHouse6,
     alt: "House",
     bedrooms: 7,
@@ -128,9 +114,9 @@ export const CardData = [
     moveInDate: "2022-12-10",
   },
   {
-    id: 6,
+    id: 26,
     title: "Beachfront House in Maui, Hawaii",
-    price: "9,850,000",
+    price: "9,850pm",
     image: marketHouse7,
     alt: "House",
     bedrooms: 5,
@@ -144,9 +130,9 @@ export const CardData = [
     moveInDate: "2022-12-10",
   },
   {
-    id: 7,
+    id: 27,
     title: "House in Kona, Hawaii",
-    price: "3,195,000",
+    price: "3,195pm",
     image: marketHouse8,
     alt: "House",
     bedrooms: 7,
@@ -160,9 +146,9 @@ export const CardData = [
     moveInDate: "2023-12-10",
   },
   {
-    id: 8,
+    id: 28,
     title: "Luxury Villa in Waikiki, Hawaii",
-    price: "5,245,000",
+    price: "5,245pm",
     image: marketHouse9,
     alt: "House",
     bedrooms: 3,
@@ -177,9 +163,9 @@ export const CardData = [
   },
 
   {
-    id: 9,
+    id: 29,
     title: "Beachfront Villa in Honolulu, Hawaii",
-    price: "7,850,000",
+    price: "7,850pm",
     image: marketHouse10,
     alt: "House",
     bedrooms: 3,
@@ -193,9 +179,9 @@ export const CardData = [
     moveInDate: "2023-12-10",
   },
   {
-    id: 10,
+    id: 30,
     title: "Oceanfront Mansion in Maui, Hawaii",
-    price: "12,995,000",
+    price: "12,995pm",
     image: marketHouse11,
     alt: "House",
     bedrooms: 7,
@@ -209,9 +195,9 @@ export const CardData = [
     moveInDate: "2023-09-10",
   },
   {
-    id: 11,
+    id: 31,
     title: "Elegant Estate in Kailua, Hawaii",
-    price: "8,750,000",
+    price: "8,750pm",
     image: marketHouse12,
     alt: "House",
     bedrooms: 3,
@@ -225,9 +211,9 @@ export const CardData = [
     moveInDate: "2023-09-10",
   },
   {
-    id: 12,
+    id: 32,
     title: "Luxurious Retreat in Big Island, Hawaii",
-    price: "9,995,000",
+    price: "9,995pm",
     image: marketHouse13,
     alt: "House",
     bedrooms: 6,
@@ -241,9 +227,9 @@ export const CardData = [
     moveInDate: "2023-09-10",
   },
   {
-    id: 13,
+    id: 33,
     title: "Island Paradise in Lanai, Hawaii",
-    price: "19,500,000",
+    price: "19,500pm",
     image: marketHouse14,
     alt: "House",
     bedrooms: 6,
@@ -257,9 +243,9 @@ export const CardData = [
     moveInDate: "2023-09-10",
   },
   {
-    id: 14,
+    id: 34,
     title: "Exclusive Estate in Molokai, Hawaii",
-    price: "6,995,000",
+    price: "6,995pm",
     image: marketHouse15,
     alt: "House",
     bedrooms: 6,
@@ -273,9 +259,9 @@ export const CardData = [
     moveInDate: "2023-09-10",
   },
   {
-    id: 15,
+    id: 35,
     title: "Oceanfront Home in O'ahu, Hawaii",
-    price: "11,500,000",
+    price: "11,500pm",
     image: marketHouse16,
     alt: "House",
     bedrooms: 6,
@@ -289,9 +275,9 @@ export const CardData = [
     moveInDate: "2023-05-10",
   },
   {
-    id: 16,
+    id: 36,
     title: "Luxury Villa in Maui, Hawaii",
-    price: "4,100,000",
+    price: "4,100pm",
     image: marketHouse1,
     alt: "House",
     bedrooms: 6,
@@ -305,9 +291,9 @@ export const CardData = [
     moveInDate: "2023-05-10",
   },
   {
-    id: 17,
+    id: 37,
     title: "House in Honolulu, Hawaii",
-    price: "2,680,000",
+    price: "2,680pm",
     image: marketHouse2,
     alt: "House",
     bedrooms: 6,
@@ -321,9 +307,9 @@ export const CardData = [
     moveInDate: "2023-05-10",
   },
   {
-    id: 18,
+    id: 38,
     title: "Modern House in O'ahu, Hawaii",
-    price: "11,500,000",
+    price: "11,500pm",
     image: marketHouse3,
     alt: "House",
     bedrooms: 6,
@@ -337,9 +323,9 @@ export const CardData = [
     moveInDate: "2023-05-10",
   },
   {
-    id: 19,
+    id: 39,
     title: "House in Kauai, Hawaii",
-    price: "8,270,000",
+    price: "8,270pm",
     image: marketHouse4,
     alt: "House",
     bedrooms: 6,
@@ -353,4 +339,3 @@ export const CardData = [
     moveInDate: "2023-05-10",
   },
 ];
-

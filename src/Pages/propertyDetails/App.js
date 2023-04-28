@@ -14,3 +14,5 @@ function PropertyDetailsApp() {
 }
 
 export default PropertyDetailsApp;
+
+

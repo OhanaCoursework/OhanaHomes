@@ -1,86 +1,72 @@
-import marketHouse1 from "../../assets/images/marketPlace/marketHouse1.webp";
-import marketHouse2 from "../../assets/images/marketPlace/marketHouse2.webp";
-import marketHouse3 from "../../assets/images/marketPlace/marketHouse3.webp";
-import marketHouse4 from "../../assets/images/marketPlace/marketHouse4.webp";
-import marketHouse5 from "../../assets/images/marketPlace/marketHouse5.webp";
-import marketHouse6 from "../../assets/images/marketPlace/marketHouse6.webp";
-import marketHouse7 from "../../assets/images/marketPlace/marketHouse7.webp";
-import marketHouse8 from "../../assets/images/marketPlace/marketHouse8.webp";
-import marketHouse9 from "../../assets/images/marketPlace/marketHouse9.webp";
-import marketHouse10 from "../../assets/images/marketPlace/marketHouse10.webp";
-import marketHouse11 from "../../assets/images/marketPlace/marketHouse11.webp";
-import marketHouse12 from "../../assets/images/marketPlace/marketHouse12.webp";
-import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.webp";
-import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.webp";
-import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.webp";
-import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.webp";
-
-import front1 from "../../assets/images/properties/180-front.webp";
-import balcony from "../../assets/images/properties/balcony.webp";
-import bath01 from "../../assets/images/properties/bathpic01.webp";
-import bath02 from "../../assets/images/properties/bath2.webp";
-import den from "../../assets/images/properties/den.webp";
-import bed from "../../assets/images/properties/bed1.webp";
 
 
-import { Island } from "../enum/islandsEnum.js";
+// this is my ghetto version of Garf's code im sorry garf
+/*
+import marketHouse1 from "../../assets/images/marketPlace/marketHouse1.jpg";
+import marketHouse2 from "../../assets/images/marketPlace/marketHouse2.jpg";
+import marketHouse3 from "../../assets/images/marketPlace/marketHouse3.jpg";
+import marketHouse4 from "../../assets/images/marketPlace/marketHouse4.jpg";
+import marketHouse5 from "../../assets/images/marketPlace/marketHouse5.jpg";
+import marketHouse6 from "../../assets/images/marketPlace/marketHouse6.jpg";
+import marketHouse7 from "../../assets/images/marketPlace/marketHouse7.jpg";
+import marketHouse8 from "../../assets/images/marketPlace/marketHouse8.jpg";
+import marketHouse9 from "../../assets/images/marketPlace/marketHouse9.jpg";
+import marketHouse10 from "../../assets/images/marketPlace/marketHouse10.jpg";
+import marketHouse11 from "../../assets/images/marketPlace/marketHouse11.jpg";
+import marketHouse12 from "../../assets/images/marketPlace/marketHouse12.jpg";
+import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.jpg";
+import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.jpg";
+import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.jpg";
+import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.jpg";
+*/
+//
 
-export const CardData = [
+
+
+const property = [
   {
-    id: 1,
-    title: "Luxury Villa, Hawaii",
+    title: "Luxury Villa in Maui, Hawaii",
     price: "4,100,000",
     image: marketHouse1,
-    image1: bed,
-    image2: bath01,
-    image3: den,
     alt: "House",
-    bedrooms: 7,
+    bedrooms: 5,
     bathrooms: 3,
     size: 464,
     dateAdded: "2018-12-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Maui.value,
+    island: "Maui",
     zipcode: "90210",
-    regions: ["West Maui", "Kapalua"],
-    moveInDate: "2021-12-10",
+    keywords: ["West Maui", "Kapalua"],
   },
   {
-    id: 2,
     title: "House in Honolulu, Hawaii",
     price: "2,680,000",
-    image: front1,
-    image1: balcony,
-    image2: bath02,
+    image: marketHouse2,
     alt: "House",
     bedrooms: 5,
-    bathrooms: 4,
-    size: 484,
-    dateAdded: "2019-12-10T13:45:00.000Z",
-    address: "94 Kunia Road",
-    island: Island.Oahu.value,
-    zipcode: "96210",
-    regions: ["Honolulu"],
-    moveInDate: "2022-05-10",
+    bathrooms: 3,
+    size: 464,
+    dateAdded: "2018-12-10T13:45:00.000Z",
+    address: "123 Nimitz Highway",
+    island: "O'ahu",
+    zipcode: "90210",
+    keywords: ["Honolulu"],
   },
   {
-    id: 3,
     title: "Modern House in O'ahu, Hawaii",
     price: "11,500,000",
     image: marketHouse3,
     alt: "House",
-    bedrooms: 8,
+    bedrooms: 5,
     bathrooms: 3,
-    size: 833,
-    dateAdded: "2018-03-02T13:45:00.000Z",
+    size: 464,
+    dateAdded: "2018-12-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
-    zipcode: "96420",
-    regions: ["Leeward Coast", "Makaha"],
-    moveInDate: "2021-11-10",
+    island: "O'ahu",
+    zipcode: "90210",
+    keywords: ["Leeward Coast", "Makaha"],
   },
   {
-    id: 3,
     title: "House in Kauai, Hawaii",
     price: "8,270,000",
     image: marketHouse4,
@@ -90,13 +76,11 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Kauai.value,
+    island: "Kauai",
     zipcode: "90210",
-    regions: ["South Kauai", "Kalaheo"],
-    moveInDate: "2021-12-10",
+    keywords: ["South Kauai", "Kalaheo"],
   },
   {
-    id: 4,
     title: "House in Big Island, Hawaii",
     price: "6,480,000",
     image: marketHouse5,
@@ -106,13 +90,11 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Hawaii.value,
+    island: "Hawai'i",
     zipcode: "90210",
-    regions: ["Ka'u", "Naalehu"],
-    moveInDate: "2022-12-10",
+    keywords: ["Ka'u", "Naalehu"],
   },
   {
-    id: 5,
     title: "House in Lanai, Hawaii",
     price: "8,760,000",
     image: marketHouse6,
@@ -122,13 +104,11 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Lānai.value,
+    island: "Lanai",
     zipcode: "90210",
-    regions: ["Lanai City"],
-    moveInDate: "2022-12-10",
+    keywords: ["Lanai City"],
   },
   {
-    id: 6,
     title: "Beachfront House in Maui, Hawaii",
     price: "9,850,000",
     image: marketHouse7,
@@ -138,13 +118,11 @@ export const CardData = [
     size: 664,
     dateAdded: "2019-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Maui.value,
+    island: "Maui",
     zipcode: "90210",
-    regions: ["North Shore", "Haiku"],
-    moveInDate: "2022-12-10",
+    keywords: ["North Shore", "Haiku"],
   },
   {
-    id: 7,
     title: "House in Kona, Hawaii",
     price: "3,195,000",
     image: marketHouse8,
@@ -154,13 +132,11 @@ export const CardData = [
     size: 864,
     dateAdded: "2017-11-10T13:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Hawaii.value,
+    island: "Hawai'i",
     zipcode: "90210",
-    regions: ["Kailua", "Kona", "Kona Town"],
-    moveInDate: "2023-12-10",
+    keywords: ["Kailua", "Kona", "Kona Town"],
   },
   {
-    id: 8,
     title: "Luxury Villa in Waikiki, Hawaii",
     price: "5,245,000",
     image: marketHouse9,
@@ -170,14 +146,12 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
+    island: "O'ahu",
     zipcode: "90210",
-    regions: ["Waikiki", "Honolulu"],
-    moveInDate: "2023-12-10",
+    keywords: ["Waikiki", "Honolulu"],
   },
 
   {
-    id: 9,
     title: "Beachfront Villa in Honolulu, Hawaii",
     price: "7,850,000",
     image: marketHouse10,
@@ -187,13 +161,11 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
+    island: "O'ahu",
     zipcode: "90210",
-    regions: ["Honolulu"],
-    moveInDate: "2023-12-10",
+    keywords: ["Honolulu"],
   },
   {
-    id: 10,
     title: "Oceanfront Mansion in Maui, Hawaii",
     price: "12,995,000",
     image: marketHouse11,
@@ -203,13 +175,11 @@ export const CardData = [
     size: 1064,
     dateAdded: "2020-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Maui.value,
+    island: "Maui",
     zipcode: "90210",
-    regions: ["East Maui", "Hana"],
-    moveInDate: "2023-09-10",
+    keywords: ["East Maui", "Hana"],
   },
   {
-    id: 11,
     title: "Elegant Estate in Kailua, Hawaii",
     price: "8,750,000",
     image: marketHouse12,
@@ -219,13 +189,11 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-11-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
+    island: "O'ahu",
     zipcode: "90210",
-    regions: ["Kailua", "windward coast", "Kailua bay"],
-    moveInDate: "2023-09-10",
+    keywords: ["Kailua", "windward coast", "Kailua bay"],
   },
   {
-    id: 12,
     title: "Luxurious Retreat in Big Island, Hawaii",
     price: "9,995,000",
     image: marketHouse13,
@@ -235,13 +203,11 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Hawaii.value,
+    island: "Hawai'i",
     zipcode: "90210",
-    regions: ["Hilo"],
-    moveInDate: "2023-09-10",
+    keywords: ["Hilo"],
   },
   {
-    id: 13,
     title: "Island Paradise in Lanai, Hawaii",
     price: "19,500,000",
     image: marketHouse14,
@@ -251,13 +217,11 @@ export const CardData = [
     size: 264,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Lānai.value,
+    island: "Lanai",
     zipcode: "90210",
-    regions: ["Lanai City"],
-    moveInDate: "2023-09-10",
+    keywords: ["Lanai City"],
   },
   {
-    id: 14,
     title: "Exclusive Estate in Molokai, Hawaii",
     price: "6,995,000",
     image: marketHouse15,
@@ -267,13 +231,11 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Molokai.value,
+    island: "Moloka'i",
     zipcode: "90210",
-    regions: ["East Moloka'i", "Kaunakakai"],
-    moveInDate: "2023-09-10",
+    keywords: ["East Moloka'i", "Kaunakakai"],
   },
   {
-    id: 15,
     title: "Oceanfront Home in O'ahu, Hawaii",
     price: "11,500,000",
     image: marketHouse16,
@@ -283,13 +245,11 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
+    island: "O'ahu",
     zipcode: "90210",
-    regions: ["North Shore", "Laie"],
-    moveInDate: "2023-05-10",
+    keywords: ["North Shore", "Laie"],
   },
   {
-    id: 16,
     title: "Luxury Villa in Maui, Hawaii",
     price: "4,100,000",
     image: marketHouse1,
@@ -299,13 +259,11 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Maui.value,
+    island: "Maui",
     zipcode: "90210",
-    regions: ["south Maui", "wailea"],
-    moveInDate: "2023-05-10",
+    keywords: ["south Maui", "wailea"],
   },
   {
-    id: 17,
     title: "House in Honolulu, Hawaii",
     price: "2,680,000",
     image: marketHouse2,
@@ -315,13 +273,11 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
+    island: "O'ahu",
     zipcode: "90210",
-    regions: ["Honolulu"],
-    moveInDate: "2023-05-10",
+    keywords: ["Honolulu"],
   },
   {
-    id: 18,
     title: "Modern House in O'ahu, Hawaii",
     price: "11,500,000",
     image: marketHouse3,
@@ -331,13 +287,11 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Oahu.value,
+    island: "O'ahu",
     zipcode: "90210",
-    regions: ["North Shore", "Kaena Point"],
-    moveInDate: "2023-05-10",
+    keywords: ["North Shore", "Kaena Point"],
   },
   {
-    id: 19,
     title: "House in Kauai, Hawaii",
     price: "8,270,000",
     image: marketHouse4,
@@ -347,10 +301,12 @@ export const CardData = [
     size: 764,
     dateAdded: "2017-09-10T12:45:00.000Z",
     address: "123 Nimitz Highway",
-    island: Island.Kauai.value,
+    island: "Kauai",
     zipcode: "90210",
-    regions: ["Kihue", "Puhi"],
-    moveInDate: "2023-05-10",
+    keywords: ["Kihue", "Puhi"],
   },
 ];
+
+export default property;
+
 

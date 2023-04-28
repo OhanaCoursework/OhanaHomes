@@ -1,5 +1,5 @@
-import { buyPropertiesData } from "./buyPropertiesData";
-import { rentPropertiesData } from "./rentPropertiesData";
+import { CardData as buyPropertiesData } from "./buyPropertiesData";
+import { CardData as rentPropertiesData } from "./rentPropertiesData";
 
 export function getBuyMarketplaceData() {
   return buyPropertiesData;

@@ -3,7 +3,7 @@ const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
 const myoptions = new chrome.Options().headless().addArguments("disable-gpu");
-const TIMEOUT = 6000;
+const TIMEOUT = 9000;
 let driver;
 
 beforeAll(async function () {

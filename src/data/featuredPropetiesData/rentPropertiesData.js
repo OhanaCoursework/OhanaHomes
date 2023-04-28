@@ -14,10 +14,11 @@ import marketHouse13 from "../../assets/images/marketPlace/marketHouse13.webp";
 import marketHouse14 from "../../assets/images/marketPlace/marketHouse14.webp";
 import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.webp";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.webp";
-import { Island } from "../../data/enum/islandsEnum";
+import { Island } from "../enum/islandsEnum.js";
 
-export const rentPropertiesData = [
+export const CardData = [
   {
+    id: 20,
     title: "Luxury Villa, Hawaii",
     price: "4,100pm",
     image: marketHouse1,
@@ -33,6 +34,7 @@ export const rentPropertiesData = [
     moveInDate: "2021-12-10",
   },
   {
+    id: 21,
     title: "House in Honolulu, Hawaii",
     price: "2,680pm",
     image: marketHouse2,
@@ -48,6 +50,7 @@ export const rentPropertiesData = [
     moveInDate: "2022-05-10",
   },
   {
+    id: 22,
     title: "Modern House in O'ahu, Hawaii",
     price: "11,500pm",
     image: marketHouse3,
@@ -63,6 +66,7 @@ export const rentPropertiesData = [
     moveInDate: "2021-11-10",
   },
   {
+    id: 23,
     title: "House in Kauai, Hawaii",
     price: "8,270pm",
     image: marketHouse4,
@@ -78,6 +82,7 @@ export const rentPropertiesData = [
     moveInDate: "2021-12-10",
   },
   {
+    id: 24,
     title: "House in Big Island, Hawaii",
     price: "6,480pm",
     image: marketHouse5,
@@ -93,6 +98,7 @@ export const rentPropertiesData = [
     moveInDate: "2022-12-10",
   },
   {
+    id: 25,
     title: "House in Lanai, Hawaii",
     price: "8,760pm",
     image: marketHouse6,
@@ -108,6 +114,7 @@ export const rentPropertiesData = [
     moveInDate: "2022-12-10",
   },
   {
+    id: 26,
     title: "Beachfront House in Maui, Hawaii",
     price: "9,850pm",
     image: marketHouse7,
@@ -123,6 +130,7 @@ export const rentPropertiesData = [
     moveInDate: "2022-12-10",
   },
   {
+    id: 27,
     title: "House in Kona, Hawaii",
     price: "3,195pm",
     image: marketHouse8,
@@ -138,6 +146,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-12-10",
   },
   {
+    id: 28,
     title: "Luxury Villa in Waikiki, Hawaii",
     price: "5,245pm",
     image: marketHouse9,
@@ -154,6 +163,7 @@ export const rentPropertiesData = [
   },
 
   {
+    id: 29,
     title: "Beachfront Villa in Honolulu, Hawaii",
     price: "7,850pm",
     image: marketHouse10,
@@ -169,6 +179,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-12-10",
   },
   {
+    id: 30,
     title: "Oceanfront Mansion in Maui, Hawaii",
     price: "12,995pm",
     image: marketHouse11,
@@ -184,6 +195,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-09-10",
   },
   {
+    id: 31,
     title: "Elegant Estate in Kailua, Hawaii",
     price: "8,750pm",
     image: marketHouse12,
@@ -199,6 +211,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-09-10",
   },
   {
+    id: 32,
     title: "Luxurious Retreat in Big Island, Hawaii",
     price: "9,995pm",
     image: marketHouse13,
@@ -214,6 +227,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-09-10",
   },
   {
+    id: 33,
     title: "Island Paradise in Lanai, Hawaii",
     price: "19,500pm",
     image: marketHouse14,
@@ -229,6 +243,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-09-10",
   },
   {
+    id: 34,
     title: "Exclusive Estate in Molokai, Hawaii",
     price: "6,995pm",
     image: marketHouse15,
@@ -244,6 +259,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-09-10",
   },
   {
+    id: 35,
     title: "Oceanfront Home in O'ahu, Hawaii",
     price: "11,500pm",
     image: marketHouse16,
@@ -259,6 +275,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-05-10",
   },
   {
+    id: 36,
     title: "Luxury Villa in Maui, Hawaii",
     price: "4,100pm",
     image: marketHouse1,
@@ -274,6 +291,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-05-10",
   },
   {
+    id: 37,
     title: "House in Honolulu, Hawaii",
     price: "2,680pm",
     image: marketHouse2,
@@ -289,6 +307,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-05-10",
   },
   {
+    id: 38,
     title: "Modern House in O'ahu, Hawaii",
     price: "11,500pm",
     image: marketHouse3,
@@ -304,6 +323,7 @@ export const rentPropertiesData = [
     moveInDate: "2023-05-10",
   },
   {
+    id: 39,
     title: "House in Kauai, Hawaii",
     price: "8,270pm",
     image: marketHouse4,
