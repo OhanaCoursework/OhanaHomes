@@ -28,7 +28,7 @@ describe("Selenium Tests for Property Details Page", function () {
 
     // Check that the page title contains the property name
     const pageTitle = await driver.findElement(By.className("propertyTitle")).getText();
-    assert.include(pageTitle.toLowerCase(), "Luxury villa in maui, hawaii");
+    assert.include(pageTitle.toLowerCase(), "luxury villa in maui, hawaii");
 
     // Check that the property details are displayed correctly
     const details = await driver.findElement(By.className("propertyDetailsBlock")).getText();
