@@ -16,7 +16,7 @@ import marketHouse15 from "../../assets/images/marketPlace/marketHouse15.webp";
 import marketHouse16 from "../../assets/images/marketPlace/marketHouse16.webp";
 import { Island } from "../enum/islandsEnum.js";
 
-export const CardData = [
+export const rentPropertiesData = [
   {
     id: 20,
     title: "Luxury Villa, Hawaii",

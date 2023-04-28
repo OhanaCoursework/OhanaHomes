@@ -7,14 +7,14 @@ import Footer from "../../generalComponents/footer/Footer.js";
 import { SliderDataOne } from "../../data/pages/homePage/sliderData.js";
 import { IslandsData } from "../../data/islandsData/islandsData.js";
 import FeaturedProperties from "./components/featuredProperties.js";
-import { CardData as buyPropertiesData } from "../../helpers/featuredPropetiesData/buyPropertiesData.js";
+import { getBuyMarketplaceData } from "../../data/featuredPropetiesData/featuredPropertiesDataHelper.js";
 
 function HomeApp() {
   return (
     <>
       <Navbar />
       <Hero slides={SliderDataOne} />
-      <FeaturedProperties CardData={buyPropertiesData} />
+      <FeaturedProperties CardData={getBuyMarketplaceData()} />
       <About />
       <Islands islandsData={IslandsData} />
       <Footer />
