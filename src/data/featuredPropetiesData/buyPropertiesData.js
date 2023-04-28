@@ -25,7 +25,7 @@ import bed from "../../assets/images/properties/bed1.webp";
 
 import { Island } from "../enum/islandsEnum.js";
 
-export const CardData = [
+export const buyPropertiesData = [
   {
     id: 1,
     title: "Luxury Villa, Hawaii",

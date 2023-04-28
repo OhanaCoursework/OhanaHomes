@@ -21,7 +21,7 @@ afterAll(async function () {
 });
 
 describe("Selenium Tests for Contact Us Page", function () {
-  it("Should be able to navigate to the Contact Us Us Page from the Hero Section", async function () {
+  it("Should be able to navigate to the Contact Us Page from the Hero Section", async function () {
     // Navigate to the home page
     await driver.get("http://localhost:3000/");
     await driver.manage().window().setRect({ width: 1401, height: 800 });

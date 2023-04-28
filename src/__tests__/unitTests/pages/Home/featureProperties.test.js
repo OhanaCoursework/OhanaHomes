@@ -3,7 +3,7 @@ import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import FeaturedProperties from "../../../../Pages/home/components/featuredProperties.js";
 import HouseItem from "../../../../Pages/home/components/houseItem.js";
-import { CardData } from "../../../../helpers/featuredPropetiesData/buyPropertiesData.js";
+import { getBuyMarketplaceData } from "../../../../data/featuredPropetiesData/featuredPropertiesDataHelper.js";
 
 configure({ adapter: new Adapter() });
 
@@ -11,7 +11,7 @@ describe("FeaturedProperties component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<FeaturedProperties CardData={CardData} />); // Pass currentPage as a prop
+    wrapper = shallow(<FeaturedProperties CardData={getBuyMarketplaceData()} />); // Pass currentPage as a prop
   });
 
   it("renders the correct number of HouseItem components based on itemsPerPage", () => {
@@ -21,7 +21,7 @@ describe("FeaturedProperties component", () => {
     const endIndex = startIndex + itemsPerPage;
     const houseItems = wrapper.find(HouseItem);
     expect(houseItems).toHaveLength(
-      CardData.slice(startIndex, endIndex).length
+      getBuyMarketplaceData().slice(startIndex, endIndex).length
     );
   });
 
