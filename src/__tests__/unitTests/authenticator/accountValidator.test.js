@@ -1,7 +1,7 @@
 import {
   validateUsername,
   validatePassword,
-} from "../../../helpers/authenticator/accountValidator";
+} from "../../../helpers/validators/accountValidator";
 
 describe("validateUsername", () => {
   it('should return "Username is empty" when username is empty', () => {

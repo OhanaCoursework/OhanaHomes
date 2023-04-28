@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import PropertiesGrid from "./propertiesGrid.js";
 import "../styles/marketplace.css";
 import SearchBar from "./searchBar.js";
-import { Island } from "../../../helpers/islandsData/islandsEnum.js";
+import { Island } from "../../../data/enum/islandsEnum.js";
 import {
   RentPrices,
   SalePrices,
   getPrice,
-} from "../../../helpers/MarketplaceData/pricesEnum.js";
-import { MarketplaceTypeEnum } from "./MarketplaceTypeEnum.js";
+} from "../../../data/enum/pricesEnum.js";
+import { MarketplaceTypeEnum } from "../../../data/enum/marketplaceTypeEnum.js";
 import { getMarketplaceData } from "./marketplace.service.js";
 
 const Marketplace = ({ marketplaceType, intialSearchQuery, filterIsland }) => {

@@ -23,7 +23,7 @@ import den from "../../assets/images/properties/den.webp";
 import bed from "../../assets/images/properties/bed1.webp";
 
 
-import { Island } from "../islandsData/islandsEnum";
+import { Island } from "../../data/enum/islandsEnum.js";
 
 export const CardData = [
   {

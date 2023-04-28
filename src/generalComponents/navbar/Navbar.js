@@ -9,7 +9,7 @@ import { useState } from "react";
 import { setupLocalUsers } from "../../helpers/authenticator/authenticator.js";
 import AccountMenu from "./AccountMenu";
 import "./navbar.scss";
-import { Island } from "../../helpers/islandsData/islandsEnum";
+import { Island } from "../../data/enum/islandsEnum.js";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);

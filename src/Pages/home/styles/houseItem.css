@@ -7,10 +7,6 @@
   flex-direction: row;
 }
 
-.house .houseTitle {
-  font-size: 60px;
-}
-
 .houseList {
   height: auto;
   display: inline-flex;
@@ -33,7 +29,7 @@
 }
 
 .houseItem h1 {
-  font-size: 22px;
+  font-size: clamp(14px, 4vw, 22px);
 }
 
 .custom-progress-bar {
@@ -118,22 +114,10 @@
 }
 
 @media (max-width: 480px) {
-  .houseItem h1 {
-    font-size: 20px;
-  }
-
   .houseItem {
     width: 250px;
     transition: none !important;
     margin: 10px;
-  }
-
-  .viewHomesButton .button {
-    font-size: 18px !important;
-  }
-
-  .title-text {
-    font-size: 48px;
   }
 
   .house .arrowButtons {
@@ -150,14 +134,6 @@
   .houseItem {
     width: 250px;
     margin: 0px;
-  }
-
-  .viewHomesButton .button {
-    font-size: 18px !important;
-  }
-
-  .title-text {
-    font-size: 48px;
   }
 
   .house .arrowButtons {

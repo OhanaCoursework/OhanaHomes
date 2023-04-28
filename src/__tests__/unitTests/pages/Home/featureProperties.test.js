@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import FeaturedProperties from "../../../../Pages/home/components/featuredProperties";
+import FeaturedProperties from "../../../../Pages/home/components/featuredProperties.js";
 import HouseItem from "../../../../Pages/home/components/houseItem.js";
 import { CardData } from "../../../../helpers/featuredPropetiesData/buyPropertiesData.js";
 
