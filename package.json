@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/lexend": "^4.5.15",
+    "@lhci/cli": "^0.11.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "browser": "^0.2.6",
@@ -16,16 +17,21 @@
     "enzyme-adapter-react-16": "^1.15.7",
     "http-server": "^14.1.1",
     "jest": "^27.5.1",
+    "lighthouse": "^10.1.1",
+    "lighthouse-ci": "^1.13.1",
     "mocha": "^10.2.0",
     "pa11y": "^6.2.3",
     "pa11y-ci": "^3.0.1",
+    "puppeteer": "^19.11.0",
     "react": "^18.2.0",
+    "react-addons-perf": "^15.4.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-scripts": "5.0.1",
     "requirejs": "^2.3.6",
     "sass": "^1.61.0",
     "selenium-webdriver": "^4.8.1",
+    "to-fast-properties": "^4.0.0",
     "wait-on": "^7.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -70,9 +76,8 @@
     "react-router-dom": "^6.8.2",
     "react-spring": "^9.7.1"
   },
-  "settings": {
-    "react": {
-      "version": "16.0"
-    }
+  "main": "./lib/pa11y-ci.js",
+  "bin": {
+    "pa11y-ci": "./bin/pa11y-ci.js"
   }
 }

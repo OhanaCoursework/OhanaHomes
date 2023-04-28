@@ -25,29 +25,18 @@
 
 
 .propertiesSort {
-  font-size: 20px;
+  font-size: clamp(14px, 3vw, 20px);
   border-radius: 6px;
   padding: 6px;
-  width: 190px;
+  width: fit-content;
   height: fit-content;
   position: relative;
   margin-left: -190px;
   bottom: 40px;
   left: 210px;
+  color: black;
 }
 
 .noPropertiesFoundText {
-  display: none;
-}
-
-.noPropertiesFound .propertiesSort{
-  visibility: hidden;
-}
-
-.noPropertiesFound .noPropertiesFoundText{
   display: block;
-}
-
-.noPropertiesFound {
-  padding-top: 0px;
 }

@@ -1,6 +1,4 @@
 const { assert } = require("chai");
-const fs = require("fs");
-const path = require("path");
 const chrome = require("selenium-webdriver/chrome");
 const { Builder, By } = require("selenium-webdriver");
 
@@ -19,14 +17,6 @@ beforeAll(async function () {
 });
 
 afterAll(async function () {
-  const snapshotPath = path.join(
-    __dirname,
-    "../../assets/snapshots/ContactUsPage-snapshot.html"
-  );
-  const htmlSource = await driver.getPageSource();
-  fs.writeFile(snapshotPath, htmlSource, { flag: "wx" }, function (err) {
-    if (err && err.code !== "EEXIST") throw err;
-  });
   await driver.quit();
 });
 

@@ -39,7 +39,6 @@ export function closeAlert() {
   document.getElementById("alertMessage").innerText = "";
   document.getElementById("alertDiv").className = "alert";
   if (alertRemovalTimeout) {
-    console.log("close clear timeout");
     clearTimeout(alertRemovalTimeout);
   }
 }

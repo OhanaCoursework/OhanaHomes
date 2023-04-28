@@ -37,6 +37,7 @@ const HomePageSearchBar = () => {
     <div className="searchDiv homePage">
       <div className="searchBarButtons">
         <button
+          id="buySearchButton"
           name="buy"
           className="searchBarButton buy selected"
           onClick={selectButton}
@@ -44,6 +45,7 @@ const HomePageSearchBar = () => {
           Buy
         </button>
         <button
+          id="rentSearchButton"
           name="rent"
           className="searchBarButton rent"
           onClick={selectButton}
@@ -57,9 +59,10 @@ const HomePageSearchBar = () => {
           placeholder="Enter an address, region, island, or ZIP code"
           className="marketplaceSearch"
           id="homePageSearchInput"
+          aria-label="Text input to search for properties on marketplace page"
         />
-        <img className="searchIcon" src={searchIcon} />
-        <input type="submit" hidden />
+        <img alt="Search icon" className="searchIcon" src={searchIcon} />
+        <input aria-label="hidden submit button" type="submit" hidden />
       </form>
     </div>
   );

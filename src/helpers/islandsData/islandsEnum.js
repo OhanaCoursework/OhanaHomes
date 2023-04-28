@@ -1,22 +1,11 @@
-export const Islands = [
-  "Maui",
-  "O'ahu",
-  "Hawai'i",
-  "Kaua'i",
-  "Moloka",
-  "Lāna'i",
-  "Ni'hau",
-  "Kaho'olawe",
-];
-
 export class Island {
   static Maui = new Island("Maui", "maui");
   static Oahu = new Island("O'ahu", "o'ahu");
   static Hawaii = new Island("Hawai'i", "hawai'i");
   static Kauai = new Island("Kaua'i", "kaua'i");
-  static Moloka = new Island("Moloka", "moloka");
+  static Molokai = new Island("Moloka'i", "moloka'i");
   static Lānai = new Island("Lāna'i", "lāna'i");
-  static Nihau = new Island("Ni'hau", "ni'hau");
+  static Niihau = new Island("Ni'ihau", "ni'ihau");
   static Kahoolawe = new Island("Kaho'olawe", "kaho'olawe");
 
   constructor(uiText, value) {
@@ -24,7 +13,7 @@ export class Island {
     this.value = value;
   }
 
-  toString() {
-    return `Island.${this.value}`;
+  static getAllValues() {
+    return Object.keys(Island).map((island) => Island[island]);
   }
 }

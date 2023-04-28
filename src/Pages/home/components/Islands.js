@@ -8,16 +8,16 @@ const Islands = ({ islandsData }) => {
         <h1 className="islandGridTitle">Browse By Island</h1>
         <div className="islandsGrid">
           {islandsData.map((island) => (
-            <div className="islandCard" key={island.island}>
+            <div className="islandCard" key={island.island.value}>
               {
-                <a href={island.island.toLowerCase()} className="islandLink">
+                <a aria-label="Button to the islands page" href={island.island.value} className="islandLink">
                   <img
                     className="islandImage"
                     src={island.image}
                     alt={island.alt}
                   ></img>
                   <div className="islandContent">
-                    <h1 className="islandName">{island.island}</h1>
+                    <h1 className="islandName">{island.island.uiText}</h1>
                     <div className="buttonDiv">
                       <span className="islandButton">View Homes</span>
                     </div>

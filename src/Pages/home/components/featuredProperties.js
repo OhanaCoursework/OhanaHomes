@@ -68,15 +68,12 @@ const FeaturedProperties = ({ CardData }) => {
       ),
       1
     );
-    console.log("New per page:" + newItemsPerPage);
-    console.log(window.innerWidth);
     setItemsPerPage(newItemsPerPage);
     if (
       currentPageRef.current >
       Math.floor(CardData.length / newItemsPerPage) - 1
     ) {
-      console.log("update page");
-      setCurrentPage(Math.floor(CardData.length / newItemsPerPage) - 1);
+      setCurrentPage(Math.floor(cardData.length / newItemsPerPage) - 1);
     }
   };
 
@@ -222,7 +219,7 @@ const FeaturedProperties = ({ CardData }) => {
               }}
             ></span>
           </div>
-          <a id="btn" className="viewHomesButton" href="/marketplace">
+          <a id="btn" aria-label="Button to the Marketplace page" className="viewHomesButton" href="/marketplace">
             <button className="button" type="button">
               View Homes <IoMdArrowRoundForward className="arrow" />
             </button>

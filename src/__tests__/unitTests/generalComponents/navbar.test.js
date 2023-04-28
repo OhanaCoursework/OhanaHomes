@@ -38,11 +38,11 @@ describe("Navbar component", () => {
     expect(wrapper.find("button", { name: "Islands" }).at(0).text()).toEqual(
       "Islands"
     );
-    expect(wrapper.find("a", { name: "Hawai'i" }).at(2).text()).toEqual(
+    expect(wrapper.find("a", { name: "Maui" }).at(2).text()).toEqual("Maui");
+    expect(wrapper.find("a", { name: "O'ahu" }).at(3).text()).toEqual("O'ahu");
+    expect(wrapper.find("a", { name: "Hawai'i" }).at(4).text()).toEqual(
       "Hawai'i"
     );
-    expect(wrapper.find("a", { name: "Maui" }).at(3).text()).toEqual("Maui");
-    expect(wrapper.find("a", { name: "O'ahu" }).at(4).text()).toEqual("O'ahu");
     expect(wrapper.find("a", { name: "Kaua'i" }).at(5).text()).toEqual(
       "Kaua'i"
     );
