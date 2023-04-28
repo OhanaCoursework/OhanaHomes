@@ -28,7 +28,7 @@ describe("Selenium Tests for Property Details Page", function () {
 
     // Check that the page title contains the property name
     const pageTitle = await driver.findElement(By.className("propertyTitle")).getText();
-    assert.include(pageTitle.toLowerCase(), "uxury villa in maui, hawaii");
+    assert.include(pageTitle.toLowerCase(), "Luxury villa in maui, hawaii");
 
     // Check that the property details are displayed correctly
     const details = await driver.findElement(By.className("propertyDetailsBlock")).getText();
@@ -42,7 +42,7 @@ describe("Selenium Tests for Property Details Page", function () {
     assert.include(details, "Date Added: 2018/12/10");
 
     // Check that the property images are displayed correctly
-    const images = await driver.findElements(By.css(".gallery img"));
+    const images = await driver.findElements(By.css(".container"));
     assert.strictEqual(images.length, 3);
     assert.include(await images[0].getAttribute("src"), "bed1.webp");
     assert.include(await images[1].getAttribute("src"), "bath2.webp");
