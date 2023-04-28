@@ -1,5 +1,5 @@
 import React from "react";
-import "./islandsPage.css";
+import"../styles/islandsPage.css";
 
 const IslandsPage = ({ islandData }) => {
   return (
