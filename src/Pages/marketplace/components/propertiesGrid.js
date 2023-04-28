@@ -43,6 +43,7 @@ const PropertiesGrid = ({ housesList, appliedSorting, setAppliedSorting }) => {
               return (
                 <HouseItem
                   key={key}
+                  id={houseItem.id}
                   image={houseItem.image}
                   title={houseItem.title}
                   price={houseItem.price}
