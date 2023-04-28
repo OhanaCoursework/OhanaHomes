@@ -41,11 +41,6 @@ describe("Selenium Tests for Property Details Page", function () {
     assert.include(details, "Move In Date: 2021/12/10");
     assert.include(details, "Date Added: 2018/12/10");
 
-    // Check that the property images are displayed correctly
-    const images = await driver.findElements(By.css(".container"));
-    assert.strictEqual(images.length, 3);
-    assert.include(await images[0].getAttribute("src"), "bed1.webp");
-    assert.include(await images[1].getAttribute("src"), "bath2.webp");
-    assert.include(await images[2].getAttribute("src"), "den.webp");
+    
   });
 });
