@@ -1,5 +1,5 @@
 import React from "react";
-import Marketplace from "./components/marketplace.js";
+import Marketplace from "./components/Marketplace.js";
 import Navbar from "../../generalComponents/navbar/Navbar.js";
 import Footer from "../../generalComponents/footer/Footer.js";
 import { useSearchParams } from "react-router-dom";

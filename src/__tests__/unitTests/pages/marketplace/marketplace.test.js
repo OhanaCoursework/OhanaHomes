@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { Marketplace } from "../../../../Pages/marketplace/components/marketplace.js";
+import { Marketplace } from "../../../../Pages/marketplace/components/Marketplace.js";
 import * as marketPlaceService from "../../../../Pages/marketplace/components/marketplace.service";
 import marketHouse1 from "../../../../assets/images/marketPlace/marketHouse1.webp";
 import marketHouse2 from "../../../../assets/images/marketPlace/marketHouse2.webp";
